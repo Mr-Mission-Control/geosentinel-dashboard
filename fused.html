@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><title>GeoSentinel · Fused view</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font:14px system-ui;background:#0d1117;color:#c9d1d9;margin:0}header{padding:10px 16px;background:#161b22}main{display:grid;grid-template-columns:2fr 1fr;gap:12px;padding:12px}
+section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;margin:4px 0 8px}table{width:100%;border-collapse:collapse;font-size:12px}td,th{padding:2px 4px;border-bottom:1px solid #21262d;text-align:left}
+.ok{color:#3fb950}.bad{color:#f85149}.muted{color:#8b949e}.tag{font-size:11px;background:#30363d;border-radius:3px;padding:1px 4px}a{color:#58a6ff}svg{width:100%;background:#0b1d2a}
+.scroll{max-height:320px;overflow:auto}@media(max-width:900px){main{grid-template-columns:1fr}}</style></head><body>
+<header><b>GeoSentinel</b> fused view · <span id="gen" class="muted"></span> · <a href="index.html">main dashboard</a></header>
+<main>
+<section><h2>Entropy grid (normalized 0–1) &amp; active alerts</h2><svg id="map" viewBox="-180 -90 360 180" preserveAspectRatio="xMidYMid meet"></svg>
+<div class="muted">Cell colour = normalized entropy · red outline = flagged (entropy_high / entropy_spike / low_skill) · dots = events with severity ≥ 0.5</div></section>
+<section><h2>Accuracy back-checks</h2><div id="acc" class="scroll"></div></section>
+<section><h2>Source health</h2><div id="health" class="scroll"></div></section>
+<section><h2>Astro context</h2><div id="astro"></div>
+<h2>Exploratory overlays <span class="tag">exploratory/non-scientific overlay</span></h2><div id="expl" class="muted"></div></section>
+</main>
+<script>
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const col=h=>`hsl(${Math.round(220-220*h)},80%,50%)`;
+function render(d){
+ document.getElementById("gen").textContent="generated "+d.generated_at;
+ const m=document.getElementById("map");let s="";
+ for(let x=-180;x<=180;x+=30)s+=`<line x1="${x}" y1="-90" x2="${x}" y2="90" stroke="#1f3b4d" stroke-width=".3"/>`;
+ for(let y=-90;y<=90;y+=30)s+=`<line x1="-180" y1="${y}" x2="180" y2="${y}" stroke="#1f3b4d" stroke-width=".3"/>`;
+ for(const c of (d.entropy&&d.entropy.cells)||[]){const f=c.flags&&c.flags.length;
+  s+=`<rect x="${c.lon}" y="${-(c.lat+c.size_deg)}" width="${c.size_deg}" height="${c.size_deg}" fill="${col(c.entropy)}" fill-opacity=".45" stroke="${f?"#f85149":"none"}" stroke-width="${f?.8:0}"><title>${esc(c.lat)},${esc(c.lon)} H=${c.entropy} n=${c.n} skill=${c.skill_conf} ${esc((c.flags||[]).join(","))}</title></rect>`;}
+ for(const e of d.events||[])if(e.lat!=null&&e.severity>=.5)s+=`<circle cx="${e.lon}" cy="${-e.lat}" r="1.2" fill="#f0883e"><title>${esc(e.title)}</title></circle>`;
+ m.innerHTML=s;
+ let h="<table><tr><th>source</th><th>status</th><th>detail</th></tr>";
+ for(const [k,v] of Object.entries(d.sources||{}))h+=`<tr><td>${esc(k)} <span class="tag">core</span></td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?v.count+" events":v.error)}</td></tr>`;
+ for(const [k,v] of Object.entries(d.context||{}))if(v&&typeof v==="object")h+=`<tr><td>${esc(k)}</td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?(v.category||""):v.error)}</td></tr>`;
+ document.getElementById("health").innerHTML=h+"</table>"+(d.catalog&&d.catalog.counts?`<div class="muted">catalog: ${esc(JSON.stringify(d.catalog.counts))}</div>`:"");
+ let a="<table><tr><th>check</th><th>win</th><th>n</th><th>POD</th><th>FAR</th><th>Brier</th><th>MAE</th></tr>";
+ const f=x=>x==null?"–":(+x).toFixed(2);
+ for(const [k,v] of Object.entries((d.verification&&d.verification.checks)||{}))for(const [w,r] of Object.entries(v.windows||{}))
+  a+=`<tr><td>${esc(k)}${v.label?' <span class="tag">exploratory</span>':""}</td><td>${w}</td><td>${r.n}</td><td>${f(r.pod)}</td><td>${f(r.far)}</td><td>${f(r.brier)}</td><td>${f(r.mae)}</td></tr>`;
+ document.getElementById("acc").innerHTML=a+"</table>";
+ const A=d.astro||{};document.getElementById("astro").innerHTML=`<table>${["moon_phase","moon_illumination","moon_distance_km","sun_distance_au","tidal_forcing_proxy","solar_elevation_deg_rogers"].map(k=>`<tr><td>${k}</td><td>${esc(A[k])}</td></tr>`).join("")}</table>`;
+ const X=d.exploratory||{};document.getElementById("expl").innerHTML=`<pre style="white-space:pre-wrap;font-size:11px">${esc(JSON.stringify({astro:A.exploratory,gematria:X.gematria},null,1))}</pre>`;
+}
+fetch("data/latest.json").then(r=>r.json()).then(render).catch(e=>document.getElementById("gen").textContent="load failed: "+e);
+</script></body></html>
