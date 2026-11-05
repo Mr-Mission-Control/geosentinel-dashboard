@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mission Hub</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#f1eff8;--panel:#fff;--ink:#1b1733;--mute:#6b6585;--line:#d9d4ec;--a:#5b3df5;--b:#d6177f;--tag:#ebe7ff;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0a1f;--panel:#17122f;--ink:#ece8ff;--mute:#9a93bd;--line:#2c2552;--a:#8b7cff;--b:#ff4fa3;--tag:#2a2150;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d0a1f;--panel:#17122f;--ink:#ece8ff;--mute:#9a93bd;--line:#2c2552;--a:#8b7cff;--b:#ff4fa3;--tag:#2a2150;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "IBM Plex Sans",system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:40px 20px 64px}
+.nav{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 20px;font-size:.95rem}
+.nav a{color:var(--a);text-decoration:none;font-weight:500}
+.nav a:hover{color:var(--b)}
+h1{font:800 clamp(2.4rem,8vw,4.4rem)/1 Syne,system-ui,sans-serif;margin:0 0 8px;letter-spacing:-.02em;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mute);margin:0 0 20px;max-width:58ch}
+.note{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:0 0 20px;color:var(--mute);font-size:.95rem}
+.note strong{color:var(--ink);font-weight:500}
+.toolbar{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:16px}
+#q{width:100%}
+form#f{display:grid;grid-template-columns:1fr 1.4fr auto auto auto;gap:8px;margin-bottom:12px}
+.form-hint{color:var(--mute);font-size:.9rem;margin:0 0 28px}
+input,select,button{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 12px;min-width:0}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+button{cursor:pointer;background:var(--a);border-color:var(--a);color:#fff;font-weight:500}
+.cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;min-width:0}
+h2{font:600 1.3rem Syne,system-ui,sans-serif;margin:0 0 12px}
+ul{list-style:none;margin:0;padding:0}
+li{display:flex;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--line);flex-wrap:wrap}
+li:first-child{border-top:0;padding-top:0}
+li a{flex:1;color:var(--ink);text-decoration:none;overflow-wrap:anywhere;font-weight:500;min-width:8rem}
+li a:hover{color:var(--b)}
+.tag{font-size:.75rem;font-weight:500;background:var(--tag);color:var(--mute);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.badge{font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mute)}
+li button{background:none;border-color:transparent;color:var(--mute);padding:4px 8px}
+.empty{color:var(--mute);margin:0}
+@media (max-width:900px){.cols{grid-template-columns:1fr 1fr}}
+@media (max-width:720px){form#f{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<nav class="nav" aria-label="Dashboard">
+  <a href="index.html">← GeoSentinel dashboard</a>
+  <a href="fused.html">Fused view</a>
+</nav>
+<h1>Mission Hub</h1>
+<p class="sub">Shared links for Joesef (Mr. Mission Control) — same list on every device. Local adds stay on this browser only.</p>
+<p class="note"><strong>Shared list</strong> comes from <code>data/hub_links.json</code> in the repo (deployed with the dashboard). Use the form below only for private, device-local extras; they are not synced.</p>
+<div class="toolbar">
+  <input id="q" type="search" placeholder="Search shared + local links…" aria-label="Search links" autocomplete="off">
+</div>
+<form id="f" aria-label="Add a link on this device only">
+  <input id="label" placeholder="Label" required aria-label="Label">
+  <input id="url" type="url" placeholder="https://claude.ai/chat/…" required aria-label="URL">
+  <select id="kind" aria-label="List">
+    <option value="chats">Chats</option>
+    <option value="tasks">Tasks</option>
+    <option value="code">Code</option>
+  </select>
+  <select id="source" aria-label="Source">
+    <option>Claude</option>
+    <option>Copilot</option>
+    <option>Gemini</option>
+    <option>Other</option>
+  </select>
+  <button type="submit">Add locally</button>
+</form>
+<p class="form-hint">“Add locally” writes to this browser’s localStorage only. To share a link everywhere, add it to <code>data/hub_links.json</code> and redeploy.</p>
+<div class="cols">
+  <section><h2>Chats</h2><ul id="chats"></ul></section>
+  <section><h2>Tasks</h2><ul id="tasks"></ul></section>
+  <section><h2>Code</h2><ul id="code"></ul></section>
+</div>
+</main>
+<script>
+(function(){
+  var KEY="mission-hub-local-v1";
+  var SECTIONS=["chats","tasks","code"];
+  var shared={chats:[],tasks:[],code:[]};
+  var local={chats:[],tasks:[],code:[]};
+  try{
+    var raw=localStorage.getItem(KEY);
+    if(raw){
+      var p=JSON.parse(raw);
+      SECTIONS.forEach(function(k){local[k]=Array.isArray(p[k])?p[k]:[]});
+    }
+  }catch(e){}
+  function saveLocal(){try{localStorage.setItem(KEY,JSON.stringify(local))}catch(e){}}
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]})}
+  function matches(item,q){
+    if(!q)return true;
+    var hay=((item.label||"")+" "+(item.url||"")+" "+(item.source||"")).toLowerCase();
+    return hay.indexOf(q)!==-1;
+  }
+  function render(){
+    var q=(document.getElementById("q").value||"").trim().toLowerCase();
+    SECTIONS.forEach(function(k){
+      var ul=document.getElementById(k);
+      ul.innerHTML="";
+      var rows=[];
+      (shared[k]||[]).forEach(function(item){
+        if(matches(item,q)) rows.push({item:item,scope:"shared"});
+      });
+      (local[k]||[]).forEach(function(item,i){
+        if(matches(item,q)) rows.push({item:item,scope:"local",index:i});
+      });
+      if(!rows.length){
+        var empty=document.createElement("li");
+        empty.style.border="0";empty.style.padding="0";
+        empty.innerHTML='<p class="empty">'+(q?"No matches.":(shared[k]&&shared[k].length?"No local extras.":"Nothing here yet."))+'</p>';
+        ul.appendChild(empty);
+        return;
+      }
+      rows.forEach(function(row){
+        var item=row.item;
+        var li=document.createElement("li");
+        var a=document.createElement("a");
+        a.textContent=item.label||item.url;a.href=item.url;a.target="_blank";a.rel="noopener noreferrer";
+        li.appendChild(a);
+        if(item.source){
+          var tag=document.createElement("span");tag.className="tag";tag.textContent=item.source;li.appendChild(tag);
+        }
+        var badge=document.createElement("span");badge.className="badge";badge.textContent=row.scope;li.appendChild(badge);
+        if(row.scope==="local"){
+          var b=document.createElement("button");
+          b.type="button";b.textContent="Remove";
+          b.setAttribute("aria-label","Remove local "+(item.label||"link"));
+          b.onclick=function(){local[k].splice(row.index,1);saveLocal();render()};
+          li.appendChild(b);
+        }
+        ul.appendChild(li);
+      });
+    });
+  }
+  document.getElementById("f").addEventListener("submit",function(e){
+    e.preventDefault();
+    var l=document.getElementById("label"),u=document.getElementById("url");
+    var k=document.getElementById("kind").value;
+    var src=document.getElementById("source").value;
+    local[k].push({label:l.value.trim(),url:u.value.trim(),source:src});
+    saveLocal();render();
+    l.value="";u.value="";l.focus();
+  });
+  document.getElementById("q").addEventListener("input",render);
+  fetch("data/hub_links.json",{cache:"no-store"}).then(function(r){
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    return r.json();
+  }).then(function(doc){
+    SECTIONS.forEach(function(k){shared[k]=Array.isArray(doc[k])?doc[k]:[]});
+    render();
+  }).catch(function(){
+    shared={chats:[],tasks:[],code:[]};
+    render();
+  });
+})();
+</script>
+</body>
+</html>
