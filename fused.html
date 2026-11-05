@@ -10,14 +10,28 @@ section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;marg
 <div class="muted">Cell colour = normalized entropy · red outline = flagged (entropy_high / entropy_spike / low_skill) · dots = events with severity ≥ 0.5</div></section>
 <section><h2>Accuracy back-checks</h2><div id="acc" class="scroll"></div></section>
 <section><h2>Source health</h2><div id="health" class="scroll"></div></section>
+<section><h2>Air quality timeline <span class="tag">OpenAQ</span></h2><div id="air" class="scroll"></div></section>
+<section><h2>Hydro gauges <span class="tag">advisory only</span></h2><div id="hydro"></div></section>
 <section><h2>Astro context</h2><div id="astro"></div>
 <h2>Exploratory overlays <span class="tag">exploratory/non-scientific overlay</span></h2><div id="expl" class="muted"></div></section>
 </main>
+<script src="refresh.js"></script>
 <script>
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const col=h=>`hsl(${Math.round(220-220*h)},80%,50%)`;
+const spark=a=>{if(!a||a.length<2)return'<span class="muted">no history</span>';const lo=Math.min(...a),hi=Math.max(...a),r=hi-lo||1;
+ return `<svg viewBox="0 0 100 20" preserveAspectRatio="none" style="width:110px;height:22px;background:none;vertical-align:middle"><polyline fill="none" stroke="#58a6ff" stroke-width="1.2" points="${a.map((y,i)=>`${(i*100/(a.length-1)).toFixed(1)},${(19-18*(y-lo)/r).toFixed(1)}`).join(" ")}"/></svg>`;};
+const sgn=x=>x==null?"–":(x>0?"+":"")+(+x).toFixed(2);
+function renderHydro(H){const el=document.getElementById("hydro");
+ if(!H||!H.sites||!Object.keys(H.sites).length){el.innerHTML='<div class="muted">no hydro data in this snapshot</div>';return;}
+ let t="<table><tr><th>gauge</th><th>latest stage</th><th>Δ6h / Δ24h</th><th>FFT dominant period</th><th>7-day</th></tr>";
+ for(const [id,g] of Object.entries(H.sites))t+=`<tr><td>${esc(g.name||id)}<br><a class="muted" href="https://waterdata.usgs.gov/monitoring-location/${encodeURIComponent(id)}/">USGS ${esc(id)}</a></td>`+
+  `<td>${g.latest_ft==null?"–":esc(g.latest_ft)+" ft"}<br><span class="muted">${esc(g.latest_time||"")}</span></td>`+
+  `<td class="${g.rising?"bad":""}">${sgn(g.rise_6h_ft)} / ${sgn(g.rise_24h_ft)} ft${g.rising?" · rising":""}<br><span class="muted">range ${esc(g.min_ft)}–${esc(g.max_ft)} ft</span></td>`+
+  `<td>${g.dominant_period_h==null?"–":esc(g.dominant_period_h)+" h"}<br><span class="muted">${esc(g.samples)} samples</span></td><td>${spark(g.history_ft)}</td></tr>`;
+ el.innerHTML=t+`</table><div class="muted">${H.any_rising?'<span class="bad">a gauge is rising ≥1 ft/6h</span> · ':""}gage height (USGS 00065) · ${esc(H.label||"")}</div>`;}
 function render(d){
- document.getElementById("gen").textContent="generated "+d.generated_at;
+ document.getElementById("gen").textContent="generated "+d.generated_at+(d._refresh?" · "+d._refresh:"");
  const m=document.getElementById("map");let s="";
  for(let x=-180;x<=180;x+=30)s+=`<line x1="${x}" y1="-90" x2="${x}" y2="90" stroke="#1f3b4d" stroke-width=".3"/>`;
  for(let y=-90;y<=90;y+=30)s+=`<line x1="-180" y1="${y}" x2="180" y2="${y}" stroke="#1f3b4d" stroke-width=".3"/>`;
@@ -25,9 +39,12 @@ function render(d){
   s+=`<rect x="${c.lon}" y="${-(c.lat+c.size_deg)}" width="${c.size_deg}" height="${c.size_deg}" fill="${col(c.entropy)}" fill-opacity=".45" stroke="${f?"#f85149":"none"}" stroke-width="${f?.8:0}"><title>${esc(c.lat)},${esc(c.lon)} H=${c.entropy} n=${c.n} skill=${c.skill_conf} ${esc((c.flags||[]).join(","))}</title></rect>`;}
  for(const e of d.events||[])if(e.lat!=null&&e.severity>=.5)s+=`<circle cx="${e.lon}" cy="${-e.lat}" r="1.2" fill="#f0883e"><title>${esc(e.title)}</title></circle>`;
  m.innerHTML=s;
+ const NM=(d.catalog&&d.catalog.names)||{},nm=(k,v)=>NM[k]||(v&&v.name)||k,lab=(k,v)=>{const n=nm(k,v);return n===k?esc(k):`${esc(n)} <span class="muted">${esc(k)}</span>`;};
+ renderHydro(d.hydro);
+ renderAir(document.getElementById("air"), d, t => t);
  let h="<table><tr><th>source</th><th>status</th><th>detail</th></tr>";
- for(const [k,v] of Object.entries(d.sources||{}))h+=`<tr><td>${esc(k)} <span class="tag">core</span></td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?v.count+" events":v.error)}</td></tr>`;
- for(const [k,v] of Object.entries(d.context||{}))if(v&&typeof v==="object")h+=`<tr><td>${esc(k)}</td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?(v.category||""):v.error)}</td></tr>`;
+ for(const [k,v] of Object.entries(d.sources||{}))h+=`<tr><td>${lab(k,v)} <span class="tag">core</span></td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?v.count+" events":v.error)}</td></tr>`;
+ for(const [k,v] of Object.entries(d.context||{}))if(v&&typeof v==="object")h+=`<tr><td>${lab(k,v)}</td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?(v.category||""):v.error)}</td></tr>`;
  document.getElementById("health").innerHTML=h+"</table>"+(d.catalog&&d.catalog.counts?`<div class="muted">catalog: ${esc(JSON.stringify(d.catalog.counts))}</div>`:"");
  let a="<table><tr><th>check</th><th>win</th><th>n</th><th>POD</th><th>FAR</th><th>Brier</th><th>MAE</th></tr>";
  const f=x=>x==null?"–":(+x).toFixed(2);
@@ -37,5 +54,5 @@ function render(d){
  const A=d.astro||{};document.getElementById("astro").innerHTML=`<table>${["moon_phase","moon_illumination","moon_distance_km","sun_distance_au","tidal_forcing_proxy","solar_elevation_deg_rogers"].map(k=>`<tr><td>${k}</td><td>${esc(A[k])}</td></tr>`).join("")}</table>`;
  const X=d.exploratory||{};document.getElementById("expl").innerHTML=`<pre style="white-space:pre-wrap;font-size:11px">${esc(JSON.stringify({astro:A.exploratory,gematria:X.gematria},null,1))}</pre>`;
 }
-fetch("data/latest.json").then(r=>r.json()).then(render).catch(e=>document.getElementById("gen").textContent="load failed: "+e);
+loadSnapshot().then(render).catch(e=>document.getElementById("gen").textContent="load failed: "+e);
 </script></body></html>
