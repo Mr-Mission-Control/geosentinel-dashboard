@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-11-05T22:51:57.479980+00:00",
+ "generated_at": "2026-11-05T23:36:52.131743+00:00",
  "sources": {
   "usgs_eq": {
    "ok": true,
-   "count": 90
+   "count": 91
   },
   "noaa_swpc": {
    "ok": true,
@@ -11,7 +11,7 @@
   },
   "nws": {
    "ok": true,
-   "count": 502
+   "count": 509
   },
   "usgs_hans": {
    "ok": true,
@@ -58,8 +58,8 @@
    {
     "region": "AZ",
     "index": 7.57,
-    "n": 9,
-    "floods": 8,
+    "n": 8,
+    "floods": 7,
     "hazards": [
      "weather_alert"
     ],
@@ -70,6 +70,16 @@
     "index": 7.01,
     "n": 5,
     "floods": 0,
+    "hazards": [
+     "weather_alert"
+    ],
+    "marine": false
+   },
+   {
+    "region": "CO",
+    "index": 6.87,
+    "n": 4,
+    "floods": 4,
     "hazards": [
      "weather_alert"
     ],
@@ -88,7 +98,7 @@
    {
     "region": "CA",
     "index": 6.44,
-    "n": 12,
+    "n": 17,
     "floods": 0,
     "hazards": [
      "weather_alert"
@@ -124,16 +134,6 @@
      "weather_alert"
     ],
     "marine": true
-   },
-   {
-    "region": "CO",
-    "index": 5.97,
-    "n": 3,
-    "floods": 3,
-    "hazards": [
-     "weather_alert"
-    ],
-    "marine": false
    },
    {
     "region": "Mid-Indian Ridge",
@@ -178,6 +178,42 @@
   ]
  },
  "events": [
+  {
+   "id": "usgs:us7000twd4",
+   "source": "usgs_eq",
+   "hazard": "earthquake",
+   "time": "2026-11-05T23:04:57.395000+00:00",
+   "severity": 0.35555555555555546,
+   "title": "M4.6 147 km SSE of False Pass, Alaska",
+   "lat": 53.5527,
+   "lon": -162.9503,
+   "region": "147 km SSE of False Pass, Alaska",
+   "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twd4",
+   "raw": {
+    "mag": 4.6,
+    "depth_km": 16.134,
+    "alert": "green",
+    "tsunami": 0
+   }
+  },
+  {
+   "id": "usgs:us7000twcy",
+   "source": "usgs_eq",
+   "hazard": "earthquake",
+   "time": "2026-11-05T22:34:48.173000+00:00",
+   "severity": 0.35555555555555546,
+   "title": "M4.6 south of the Fiji Islands",
+   "lat": -23.5322,
+   "lon": 179.9392,
+   "region": "south of the Fiji Islands",
+   "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twcy",
+   "raw": {
+    "mag": 4.6,
+    "depth_km": 523.445,
+    "alert": null,
+    "tsunami": 0
+   }
+  },
   {
    "id": "usgs:us7000twaq",
    "source": "usgs_eq",
@@ -1781,24 +1817,6 @@
    }
   },
   {
-   "id": "usgs:us7000tu4z",
-   "source": "usgs_eq",
-   "hazard": "earthquake",
-   "time": "2026-10-29T23:04:49.300000+00:00",
-   "severity": 0.35555555555555546,
-   "title": "M4.6 59 km SW of Port-Vila, Vanuatu",
-   "lat": -18.1317,
-   "lon": 167.9345,
-   "region": "59 km SW of Port-Vila, Vanuatu",
-   "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tu4z",
-   "raw": {
-    "mag": 4.6,
-    "depth_km": 10,
-    "alert": null,
-    "tsunami": 0
-   }
-  },
-  {
    "id": "swpc:kp:2026-11-05T18:00:00",
    "source": "noaa_swpc",
    "hazard": "space_weather",
@@ -1912,18 +1930,18 @@
    }
   },
   {
-   "id": "swpc:wind:2026-11-05T22:45:00Z",
+   "id": "swpc:wind:2026-11-05T23:32:00Z",
    "source": "noaa_swpc",
    "hazard": "space_weather",
-   "time": "2026-11-05T22:45:00Z",
-   "severity": 0.04,
-   "title": "Solar wind 324 km/s",
+   "time": "2026-11-05T23:32:00Z",
+   "severity": 0.025,
+   "title": "Solar wind 315 km/s",
    "lat": null,
    "lon": null,
    "region": "global",
    "url": "https://www.swpc.noaa.gov/products/real-time-solar-wind",
    "raw": {
-    "speed": 324.0,
+    "speed": 315.0,
     "density": null
    }
   },
@@ -2078,6 +2096,182 @@
    }
   },
   {
+   "id": "nws:urn:oid:2.49.0.1.840.0.49d5778bf8d9b58b6da7a72525e3e90c2c321fbe.001.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T17:28:00-06:00",
+   "severity": 0.55,
+   "title": "Special Weather Statement: Oklahoma",
+   "lat": null,
+   "lon": null,
+   "region": "OK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.49d5778bf8d9b58b6da7a72525e3e90c2c321fbe.001.1",
+   "raw": {
+    "event": "Special Weather Statement",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-05T18:00:00-06:00",
+    "headline": "Special Weather Statement issued November 5 at 5:28PM CST by NWS Norman OK",
+    "states": [
+     "OK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.3f22e725a6b49e148978f53d9f1d0b8280ae6e01.001.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T17:25:00-06:00",
+   "severity": 0.3,
+   "title": "Flood Advisory: Canadian, OK; Oklahoma, OK",
+   "lat": null,
+   "lon": null,
+   "region": "OK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3f22e725a6b49e148978f53d9f1d0b8280ae6e01.001.1",
+   "raw": {
+    "event": "Flood Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-05T19:30:00-06:00",
+    "headline": "Flood Advisory issued November 5 at 5:25PM CST until November 5 at 7:30PM CST by NWS Norman OK",
+    "states": [
+     "OK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.7c1572b152ab72a1bdd1c12d1e0c47f94d4057dd.001.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T15:02:00-08:00",
+   "severity": 0.55,
+   "title": "Dense Fog Advisory: Merced - Madera - Mendota; Caruthers - San Joaquin - Selma; Delano-Wasco-Shafter; Hanford - Corcoran - Lemoore; Visalia ",
+   "lat": null,
+   "lon": null,
+   "region": "CA",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7c1572b152ab72a1bdd1c12d1e0c47f94d4057dd.001.1",
+   "raw": {
+    "event": "Dense Fog Advisory",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-05T23:15:00-08:00",
+    "headline": "Dense Fog Advisory issued November 5 at 3:02PM PST until November 6 at 10:00AM PST by NWS Hanford CA",
+    "states": [
+     "CA"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.f3cd4f13218d5ae50b4c6ef29992cf8e3315eaa7.001.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T15:58:00-07:00",
+   "severity": 0.8,
+   "title": "Flood Warning: Alamosa, CO; Conejos, CO; Costilla, CO",
+   "lat": null,
+   "lon": null,
+   "region": "CO",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f3cd4f13218d5ae50b4c6ef29992cf8e3315eaa7.001.1",
+   "raw": {
+    "event": "Flood Warning",
+    "severity": "Severe",
+    "urgency": "Expected",
+    "expires": "2026-11-06T16:00:00-07:00",
+    "headline": "Flood Warning issued November 5 at 3:58PM MST until November 6 at 4:00PM MST by NWS Pueblo CO",
+    "states": [
+     "CO"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.17646c1209a44a2ef238a7bbe4aa3384b038b913.003.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T14:56:00-08:00",
+   "severity": 0.55,
+   "title": "Beach Hazards Statement: Catalina and Santa Barbara Islands; Santa Barbara County Southwestern Coast; Santa Barbara County Southeastern Coast; Ma",
+   "lat": null,
+   "lon": null,
+   "region": "CA",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.17646c1209a44a2ef238a7bbe4aa3384b038b913.003.1",
+   "raw": {
+    "event": "Beach Hazards Statement",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-06T15:00:00-08:00",
+    "headline": "Beach Hazards Statement issued November 5 at 2:56PM PST until November 10 at 12:00PM PST by NWS Los Angeles/Oxnard CA",
+    "states": [
+     "CA"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.17646c1209a44a2ef238a7bbe4aa3384b038b913.002.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T14:56:00-08:00",
+   "severity": 0.55,
+   "title": "Beach Hazards Statement: Ventura County Beaches",
+   "lat": null,
+   "lon": null,
+   "region": "CA",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.17646c1209a44a2ef238a7bbe4aa3384b038b913.002.1",
+   "raw": {
+    "event": "Beach Hazards Statement",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-06T15:00:00-08:00",
+    "headline": "Beach Hazards Statement issued November 5 at 2:56PM PST until November 10 at 12:00PM PST by NWS Los Angeles/Oxnard CA",
+    "states": [
+     "CA"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.17646c1209a44a2ef238a7bbe4aa3384b038b913.001.2",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T14:56:00-08:00",
+   "severity": 0.3,
+   "title": "High Surf Advisory: San Luis Obispo County Beaches; Santa Barbara County Central Coast Beaches",
+   "lat": null,
+   "lon": null,
+   "region": "CA",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.17646c1209a44a2ef238a7bbe4aa3384b038b913.001.2",
+   "raw": {
+    "event": "High Surf Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-06T15:00:00-08:00",
+    "headline": "High Surf Advisory issued November 5 at 2:56PM PST until November 9 at 10:00PM PST by NWS Los Angeles/Oxnard CA",
+    "states": [
+     "CA"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.17646c1209a44a2ef238a7bbe4aa3384b038b913.001.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T14:56:00-08:00",
+   "severity": 0.3,
+   "title": "Coastal Flood Advisory: San Luis Obispo County Beaches; Santa Barbara County Central Coast Beaches",
+   "lat": null,
+   "lon": null,
+   "region": "CA",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.17646c1209a44a2ef238a7bbe4aa3384b038b913.001.1",
+   "raw": {
+    "event": "Coastal Flood Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-06T15:00:00-08:00",
+    "headline": "Coastal Flood Advisory issued November 5 at 2:56PM PST until November 9 at 10:00PM PST by NWS Los Angeles/Oxnard CA",
+    "states": [
+     "CA"
+    ]
+   }
+  },
+  {
    "id": "nws:urn:oid:2.49.0.1.840.0.bc29d6c8a002d2e7b6196378a47c1a69ef889177.001.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -2100,28 +2294,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.20a808090c45e8b36bbabe087973e954a10a93ab.002.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-05T17:20:00-05:00",
-   "severity": 0.3,
-   "title": "Small Craft Advisory: Chesapeake Bay from Drum Point MD to Smith Point VA; Tangier Sound and the inland waters surrounding Bloodsworth Island",
-   "lat": null,
-   "lon": null,
-   "region": "AN",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.20a808090c45e8b36bbabe087973e954a10a93ab.002.1",
-   "raw": {
-    "event": "Small Craft Advisory",
-    "severity": "Minor",
-    "urgency": "Expected",
-    "expires": "2026-11-06T01:30:00-05:00",
-    "headline": "Small Craft Advisory issued November 5 at 5:20PM EST until November 6 at 3:00AM EST by NWS Baltimore MD/Washington DC",
-    "states": [
-     "AN"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.20a808090c45e8b36bbabe087973e954a10a93ab.001.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -2138,6 +2310,28 @@
     "urgency": "Past",
     "expires": "2026-11-05T17:35:36-05:00",
     "headline": "The Small Craft Advisory has been cancelled.",
+    "states": [
+     "AN"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.20a808090c45e8b36bbabe087973e954a10a93ab.002.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T17:20:00-05:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Chesapeake Bay from Drum Point MD to Smith Point VA; Tangier Sound and the inland waters surrounding Bloodsworth Island",
+   "lat": null,
+   "lon": null,
+   "region": "AN",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.20a808090c45e8b36bbabe087973e954a10a93ab.002.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-06T01:30:00-05:00",
+    "headline": "Small Craft Advisory issued November 5 at 5:20PM EST until November 6 at 3:00AM EST by NWS Baltimore MD/Washington DC",
     "states": [
      "AN"
     ]
@@ -3070,28 +3264,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.3847a9a1f442264d3fb2f11af0a70e26abf3ff9d.001.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-05T15:18:00-06:00",
-   "severity": 0.55,
-   "title": "Gale Warning: Green Bay south of line from  Cedar River to Rock Island Passage and north of a line from Oconto WI to Little Sturgeon B",
-   "lat": null,
-   "lon": null,
-   "region": "LM",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3847a9a1f442264d3fb2f11af0a70e26abf3ff9d.001.1",
-   "raw": {
-    "event": "Gale Warning",
-    "severity": "Moderate",
-    "urgency": "Expected",
-    "expires": "2026-11-06T00:00:00-06:00",
-    "headline": "Gale Warning issued November 5 at 3:18PM CST until November 5 at 9:00PM CST by NWS Green Bay WI",
-    "states": [
-     "LM"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.3847a9a1f442264d3fb2f11af0a70e26abf3ff9d.001.2",
    "source": "nws",
    "hazard": "weather_alert",
@@ -3108,6 +3280,28 @@
     "urgency": "Expected",
     "expires": "2026-11-06T00:00:00-06:00",
     "headline": "Small Craft Advisory issued November 5 at 3:18PM CST until November 6 at 6:00PM CST by NWS Green Bay WI",
+    "states": [
+     "LM"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.3847a9a1f442264d3fb2f11af0a70e26abf3ff9d.001.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T15:18:00-06:00",
+   "severity": 0.55,
+   "title": "Gale Warning: Green Bay south of line from  Cedar River to Rock Island Passage and north of a line from Oconto WI to Little Sturgeon B",
+   "lat": null,
+   "lon": null,
+   "region": "LM",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3847a9a1f442264d3fb2f11af0a70e26abf3ff9d.001.1",
+   "raw": {
+    "event": "Gale Warning",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-06T00:00:00-06:00",
+    "headline": "Gale Warning issued November 5 at 3:18PM CST until November 5 at 9:00PM CST by NWS Green Bay WI",
     "states": [
      "LM"
     ]
@@ -4567,28 +4761,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.3a58661399d071736a55bb64d5c370d8cd78ed1f.006.4",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-05T11:33:00-09:00",
-   "severity": 0.3,
-   "title": "Small Craft Advisory: Cape Edgecumbe to Cape Spencer out to 15 NM; Cape Edgecumbe to Cape Spencer from 15 to 80 NM",
-   "lat": null,
-   "lon": null,
-   "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3a58661399d071736a55bb64d5c370d8cd78ed1f.006.4",
-   "raw": {
-    "event": "Small Craft Advisory",
-    "severity": "Minor",
-    "urgency": "Expected",
-    "expires": "2026-11-05T19:45:00-09:00",
-    "headline": "Small Craft Advisory issued November 5 at 11:33AM AKST until November 6 at 6:00PM AKST by NWS Juneau AK",
-    "states": [
-     "PK"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.3a58661399d071736a55bb64d5c370d8cd78ed1f.009.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -4605,6 +4777,28 @@
     "urgency": "Immediate",
     "expires": "2026-11-05T19:45:00-09:00",
     "headline": "Storm Warning issued November 5 at 11:33AM AKST until November 5 at 3:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.3a58661399d071736a55bb64d5c370d8cd78ed1f.006.4",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T11:33:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cape Edgecumbe to Cape Spencer out to 15 NM; Cape Edgecumbe to Cape Spencer from 15 to 80 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3a58661399d071736a55bb64d5c370d8cd78ed1f.006.4",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-05T19:45:00-09:00",
+    "headline": "Small Craft Advisory issued November 5 at 11:33AM AKST until November 6 at 6:00PM AKST by NWS Juneau AK",
     "states": [
      "PK"
     ]
@@ -4655,6 +4849,28 @@
    }
   },
   {
+   "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.003.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T15:33:00-05:00",
+   "severity": 0.55,
+   "title": "Gale Warning: Manitou Island to Point Isabelle MI; Point Isabelle to Lower Entrance of Portage Canal MI; Portage Lake to Huron Island ",
+   "lat": null,
+   "lon": null,
+   "region": "LS",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.003.1",
+   "raw": {
+    "event": "Gale Warning",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-06T03:45:00-05:00",
+    "headline": "Gale Warning issued November 5 at 3:33PM EST until November 6 at 1:00AM EST by NWS Marquette MI",
+    "states": [
+     "LS"
+    ]
+   }
+  },
+  {
    "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.002.2",
    "source": "nws",
    "hazard": "weather_alert",
@@ -4693,28 +4909,6 @@
     "urgency": "Expected",
     "expires": "2026-11-06T03:45:00-05:00",
     "headline": "Small Craft Advisory issued November 5 at 3:33PM EST until November 6 at 7:00PM EST by NWS Marquette MI",
-    "states": [
-     "LS"
-    ]
-   }
-  },
-  {
-   "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.003.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-05T15:33:00-05:00",
-   "severity": 0.55,
-   "title": "Gale Warning: Manitou Island to Point Isabelle MI; Point Isabelle to Lower Entrance of Portage Canal MI; Portage Lake to Huron Island ",
-   "lat": null,
-   "lon": null,
-   "region": "LS",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.003.1",
-   "raw": {
-    "event": "Gale Warning",
-    "severity": "Moderate",
-    "urgency": "Expected",
-    "expires": "2026-11-06T03:45:00-05:00",
-    "headline": "Gale Warning issued November 5 at 3:33PM EST until November 6 at 1:00AM EST by NWS Marquette MI",
     "states": [
      "LS"
     ]
@@ -4787,16 +4981,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.005.2",
+   "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.006.2",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-05T15:33:00-05:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Marquette to Munising MI; Munising to Grand Marais MI",
+   "title": "Small Craft Advisory: Grand Marais to Whitefish Point MI",
    "lat": null,
    "lon": null,
    "region": "LS",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.005.2",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.006.2",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -4809,16 +5003,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.006.2",
+   "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.005.2",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-05T15:33:00-05:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Grand Marais to Whitefish Point MI",
+   "title": "Small Craft Advisory: Marquette to Munising MI; Munising to Grand Marais MI",
    "lat": null,
    "lon": null,
    "region": "LS",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.006.2",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.005.2",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -4985,28 +5179,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.007.2",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-05T15:33:00-05:00",
-   "severity": 0.3,
-   "title": "Small Craft Advisory: Green Bay North of line from Cedar River MI to Rock Island Passage; Seul Choix Point to Point Detour MI; 5NM East of a l",
-   "lat": null,
-   "lon": null,
-   "region": "LM",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.007.2",
-   "raw": {
-    "event": "Small Craft Advisory",
-    "severity": "Minor",
-    "urgency": "Expected",
-    "expires": "2026-11-06T03:45:00-05:00",
-    "headline": "Small Craft Advisory issued November 5 at 3:33PM EST until November 6 at 7:00AM EST by NWS Marquette MI",
-    "states": [
-     "LM"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.010.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -5025,6 +5197,28 @@
     "headline": "Gale Warning issued November 5 at 3:33PM EST until November 6 at 1:00AM EST by NWS Marquette MI",
     "states": [
      "LS"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.007.2",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T15:33:00-05:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Green Bay North of line from Cedar River MI to Rock Island Passage; Seul Choix Point to Point Detour MI; 5NM East of a l",
+   "lat": null,
+   "lon": null,
+   "region": "LM",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2bf0e4a54aed57fb6dadc3d1f23d5d387171fe34.007.2",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-06T03:45:00-05:00",
+    "headline": "Small Craft Advisory issued November 5 at 3:33PM EST until November 6 at 7:00AM EST by NWS Marquette MI",
+    "states": [
+     "LM"
     ]
    }
   },
@@ -6416,28 +6610,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.e96b9a3b5f056374f293a703d5d39936f0441d89.001.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-05T10:58:00-05:00",
-   "severity": 0.85,
-   "title": "Flood Warning: DeSoto, FL",
-   "lat": null,
-   "lon": null,
-   "region": "FL",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e96b9a3b5f056374f293a703d5d39936f0441d89.001.1",
-   "raw": {
-    "event": "Flood Warning",
-    "severity": "Severe",
-    "urgency": "Immediate",
-    "expires": "2026-11-06T00:00:00-05:00",
-    "headline": "Flood Warning issued November 5 at 10:58AM EST until November 7 at 1:00AM EST by NWS Tampa Bay Ruskin FL",
-    "states": [
-     "FL"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.e96b9a3b5f056374f293a703d5d39936f0441d89.002.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -6454,6 +6626,28 @@
     "urgency": "Immediate",
     "expires": "2026-11-06T00:00:00-05:00",
     "headline": "Flood Warning issued November 5 at 10:58AM EST by NWS Tampa Bay Ruskin FL",
+    "states": [
+     "FL"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.e96b9a3b5f056374f293a703d5d39936f0441d89.001.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T10:58:00-05:00",
+   "severity": 0.85,
+   "title": "Flood Warning: DeSoto, FL",
+   "lat": null,
+   "lon": null,
+   "region": "FL",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e96b9a3b5f056374f293a703d5d39936f0441d89.001.1",
+   "raw": {
+    "event": "Flood Warning",
+    "severity": "Severe",
+    "urgency": "Immediate",
+    "expires": "2026-11-06T00:00:00-05:00",
+    "headline": "Flood Warning issued November 5 at 10:58AM EST until November 7 at 1:00AM EST by NWS Tampa Bay Ruskin FL",
     "states": [
      "FL"
     ]
@@ -7032,16 +7226,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.f799370791c09e0575b48973e43600db82c321d0.019.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.f799370791c09e0575b48973e43600db82c321d0.017.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-05T03:46:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Wales to Cape Thompson greater than 15 NM",
+   "title": "Small Craft Advisory: Sledge Island to Wales greater than 15 NM",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f799370791c09e0575b48973e43600db82c321d0.019.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f799370791c09e0575b48973e43600db82c321d0.017.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -7054,16 +7248,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.f799370791c09e0575b48973e43600db82c321d0.017.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.f799370791c09e0575b48973e43600db82c321d0.019.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-05T03:46:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Sledge Island to Wales greater than 15 NM",
+   "title": "Small Craft Advisory: Wales to Cape Thompson greater than 15 NM",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f799370791c09e0575b48973e43600db82c321d0.017.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f799370791c09e0575b48973e43600db82c321d0.019.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -7164,28 +7358,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.c1dad34e18f98934e4e22e93a7896e84852d1abf.008.2",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-05T03:45:00-09:00",
-   "severity": 0.3,
-   "title": "Small Craft Advisory: Point Franklin to Cape Halkett from 15 to 75 NM",
-   "lat": null,
-   "lon": null,
-   "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c1dad34e18f98934e4e22e93a7896e84852d1abf.008.2",
-   "raw": {
-    "event": "Small Craft Advisory",
-    "severity": "Minor",
-    "urgency": "Expected",
-    "expires": "2026-11-05T18:00:00-09:00",
-    "headline": "Small Craft Advisory issued November 5 at 3:45AM AKST until November 6 at 5:00AM AKST by NWS Fairbanks AK",
-    "states": [
-     "PK"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.c1dad34e18f98934e4e22e93a7896e84852d1abf.009.2",
    "source": "nws",
    "hazard": "weather_alert",
@@ -7202,6 +7374,28 @@
     "urgency": "Expected",
     "expires": "2026-11-05T18:00:00-09:00",
     "headline": "Heavy Freezing Spray Warning issued November 5 at 3:45AM AKST until November 6 at 5:00AM AKST by NWS Fairbanks AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.c1dad34e18f98934e4e22e93a7896e84852d1abf.008.2",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T03:45:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Point Franklin to Cape Halkett from 15 to 75 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c1dad34e18f98934e4e22e93a7896e84852d1abf.008.2",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-05T18:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 5 at 3:45AM AKST until November 6 at 5:00AM AKST by NWS Fairbanks AK",
     "states": [
      "PK"
     ]
@@ -8088,50 +8282,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.033.2",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-05T03:44:00-09:00",
-   "severity": 0.3,
-   "title": "Small Craft Advisory: Bristol Bay from Cape Chichagof to Cape Pierce out to 15 NM",
-   "lat": null,
-   "lon": null,
-   "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.033.2",
-   "raw": {
-    "event": "Small Craft Advisory",
-    "severity": "Minor",
-    "urgency": "Expected",
-    "expires": "2026-11-05T16:15:00-09:00",
-    "headline": "Small Craft Advisory issued November 5 at 3:44AM AKST until November 6 at 5:00PM AKST by NWS Anchorage AK",
-    "states": [
-     "PK"
-    ]
-   }
-  },
-  {
-   "id": "nws:urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.037.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-05T03:44:00-09:00",
-   "severity": 0.3,
-   "title": "Small Craft Advisory: Saint Matthew Island Waters",
-   "lat": null,
-   "lon": null,
-   "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.037.1",
-   "raw": {
-    "event": "Small Craft Advisory",
-    "severity": "Minor",
-    "urgency": "Expected",
-    "expires": "2026-11-05T16:15:00-09:00",
-    "headline": "Small Craft Advisory issued November 5 at 3:44AM AKST until November 6 at 5:00PM AKST by NWS Anchorage AK",
-    "states": [
-     "PK"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.024.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -8154,6 +8304,28 @@
    }
   },
   {
+   "id": "nws:urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.033.2",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T03:44:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Bristol Bay from Cape Chichagof to Cape Pierce out to 15 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.033.2",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-05T16:15:00-09:00",
+    "headline": "Small Craft Advisory issued November 5 at 3:44AM AKST until November 6 at 5:00PM AKST by NWS Anchorage AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
    "id": "nws:urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.017.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -8170,6 +8342,28 @@
     "urgency": "Expected",
     "expires": "2026-11-05T16:15:00-09:00",
     "headline": "Small Craft Advisory issued November 5 at 3:44AM AKST until November 5 at 5:00PM AKST by NWS Anchorage AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.037.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-05T03:44:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Saint Matthew Island Waters",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8bd5abef0fc294d43f4152767a244711810baba4.037.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-05T16:15:00-09:00",
+    "headline": "Small Craft Advisory issued November 5 at 3:44AM AKST until November 6 at 5:00PM AKST by NWS Anchorage AK",
     "states": [
      "PK"
     ]
@@ -9166,16 +9360,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.a9924e39621228cb9f057f4bfe4d02c3eb322b25.011.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.a9924e39621228cb9f057f4bfe4d02c3eb322b25.007.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-05T02:39:00-09:00",
    "severity": 0.55,
-   "title": "Gale Warning: Sumner Strait",
+   "title": "Gale Warning: Stephens Passage",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a9924e39621228cb9f057f4bfe4d02c3eb322b25.011.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a9924e39621228cb9f057f4bfe4d02c3eb322b25.007.1",
    "raw": {
     "event": "Gale Warning",
     "severity": "Moderate",
@@ -9210,16 +9404,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.a9924e39621228cb9f057f4bfe4d02c3eb322b25.007.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.a9924e39621228cb9f057f4bfe4d02c3eb322b25.011.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-05T02:39:00-09:00",
    "severity": 0.55,
-   "title": "Gale Warning: Stephens Passage",
+   "title": "Gale Warning: Sumner Strait",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a9924e39621228cb9f057f4bfe4d02c3eb322b25.007.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a9924e39621228cb9f057f4bfe4d02c3eb322b25.011.1",
    "raw": {
     "event": "Gale Warning",
     "severity": "Moderate",
@@ -9342,28 +9536,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.1703e1f51ee0a5ee5a121fa73cd49e57ad575175.001.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-04T18:55:00-07:00",
-   "severity": 0.8,
-   "title": "Flood Warning: Coconino, AZ",
-   "lat": null,
-   "lon": null,
-   "region": "AZ",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1703e1f51ee0a5ee5a121fa73cd49e57ad575175.001.1",
-   "raw": {
-    "event": "Flood Warning",
-    "severity": "Severe",
-    "urgency": "Expected",
-    "expires": "2026-11-05T19:00:00-07:00",
-    "headline": "Flood Warning issued November 4 at 6:55PM MST until November 5 at 7:00PM MST by NWS Flagstaff AZ",
-    "states": [
-     "AZ"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.9254c37953e12a12d25d6954a9efc362edefea3f.012.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -9386,16 +9558,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.9254c37953e12a12d25d6954a9efc362edefea3f.014.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.9254c37953e12a12d25d6954a9efc362edefea3f.010.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-04T15:49:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Southwest of Saint Lawrence Island from 15 to 100 NM",
+   "title": "Small Craft Advisory: Cape Krusenstern to Cape Thompson out to 15 NM",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9254c37953e12a12d25d6954a9efc362edefea3f.014.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9254c37953e12a12d25d6954a9efc362edefea3f.010.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -9408,16 +9580,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.9254c37953e12a12d25d6954a9efc362edefea3f.010.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.9254c37953e12a12d25d6954a9efc362edefea3f.014.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-04T15:49:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Cape Krusenstern to Cape Thompson out to 15 NM",
+   "title": "Small Craft Advisory: Southwest of Saint Lawrence Island from 15 to 100 NM",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9254c37953e12a12d25d6954a9efc362edefea3f.010.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9254c37953e12a12d25d6954a9efc362edefea3f.014.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -9848,28 +10020,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.4c5ac3875853a7e89af8dd7c6c9a547fc5bb50ce.004.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-04T14:19:00-09:00",
-   "severity": 0.85,
-   "title": "Storm Warning: Cape Decision to Cape Edgecumbe out to 15 NM",
-   "lat": null,
-   "lon": null,
-   "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4c5ac3875853a7e89af8dd7c6c9a547fc5bb50ce.004.1",
-   "raw": {
-    "event": "Storm Warning",
-    "severity": "Severe",
-    "urgency": "Immediate",
-    "expires": "2026-11-05T08:30:00-09:00",
-    "headline": "Storm Warning issued November 4 at 2:19PM AKST until November 5 at 5:00PM AKST by NWS Juneau AK",
-    "states": [
-     "PK"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.4c5ac3875853a7e89af8dd7c6c9a547fc5bb50ce.011.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -9886,6 +10036,28 @@
     "urgency": "Expected",
     "expires": "2026-11-05T08:30:00-09:00",
     "headline": "Gale Warning issued November 4 at 2:19PM AKST until November 6 at 5:00AM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.4c5ac3875853a7e89af8dd7c6c9a547fc5bb50ce.004.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-04T14:19:00-09:00",
+   "severity": 0.85,
+   "title": "Storm Warning: Cape Decision to Cape Edgecumbe out to 15 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4c5ac3875853a7e89af8dd7c6c9a547fc5bb50ce.004.1",
+   "raw": {
+    "event": "Storm Warning",
+    "severity": "Severe",
+    "urgency": "Immediate",
+    "expires": "2026-11-05T08:30:00-09:00",
+    "headline": "Storm Warning issued November 4 at 2:19PM AKST until November 5 at 5:00PM AKST by NWS Juneau AK",
     "states": [
      "PK"
     ]
@@ -10354,28 +10526,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.021.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-04T13:54:00-09:00",
-   "severity": 0.55,
-   "title": "Gale Warning: Nikolski to Seguam Pacific Side from 15 to 75 NM",
-   "lat": null,
-   "lon": null,
-   "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.021.1",
-   "raw": {
-    "event": "Gale Warning",
-    "severity": "Moderate",
-    "urgency": "Expected",
-    "expires": "2026-11-05T02:30:00-09:00",
-    "headline": "Gale Warning issued November 4 at 1:54PM AKST until November 6 at 5:00AM AKST by NWS Anchorage AK",
-    "states": [
-     "PK"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.014.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -10392,6 +10542,28 @@
     "urgency": "Expected",
     "expires": "2026-11-05T02:30:00-09:00",
     "headline": "Small Craft Advisory issued November 4 at 1:54PM AKST until November 6 at 5:00AM AKST by NWS Anchorage AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.021.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-04T13:54:00-09:00",
+   "severity": 0.55,
+   "title": "Gale Warning: Nikolski to Seguam Pacific Side from 15 to 75 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.021.1",
+   "raw": {
+    "event": "Gale Warning",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-05T02:30:00-09:00",
+    "headline": "Gale Warning issued November 4 at 1:54PM AKST until November 6 at 5:00AM AKST by NWS Anchorage AK",
     "states": [
      "PK"
     ]
@@ -10574,16 +10746,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.009.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.017.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-04T13:54:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Port Heiden to Nelson Lagoon from 15 to 60 NM",
+   "title": "Small Craft Advisory: Unalga Pass to Nikolski Pacific Side from 15 to 85 NM",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.009.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.017.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -10596,16 +10768,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.017.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.009.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-04T13:54:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Unalga Pass to Nikolski Pacific Side from 15 to 85 NM",
+   "title": "Small Craft Advisory: Port Heiden to Nelson Lagoon from 15 to 60 NM",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.017.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63a64ebae2a291ed62481ef746d33e5d7b458cb2.009.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -12334,16 +12506,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.023.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.024.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-04T03:38:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Seguam to Adak Bering Side from 15 to 85 NM",
+   "title": "Small Craft Advisory: Seguam to Adak Pacific Side out to 15 NM",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.023.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.024.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -12356,16 +12528,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.024.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.023.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-04T03:38:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Seguam to Adak Pacific Side out to 15 NM",
+   "title": "Small Craft Advisory: Seguam to Adak Bering Side from 15 to 85 NM",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.024.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.023.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -12818,16 +12990,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.037.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.030.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-04T03:38:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Saint Matthew Island Waters",
+   "title": "Small Craft Advisory: Pribilof Islands Nearshore Waters",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.037.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.030.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -12840,16 +13012,16 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.030.1",
+   "id": "nws:urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.037.1",
    "source": "nws",
    "hazard": "weather_alert",
    "time": "2026-11-04T03:38:00-09:00",
    "severity": 0.3,
-   "title": "Small Craft Advisory: Pribilof Islands Nearshore Waters",
+   "title": "Small Craft Advisory: Saint Matthew Island Waters",
    "lat": null,
    "lon": null,
    "region": "PK",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.030.1",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5b3cec89b852cae0a6d5bca5dcb0a04167449b27.037.1",
    "raw": {
     "event": "Small Craft Advisory",
     "severity": "Minor",
@@ -13231,22 +13403,22 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "aircraft": 33,
-    "airborne": 33,
+    "aircraft": 19,
+    "airborne": 19,
     "max_alt_ft": 47000,
     "types": {
-     "E75L": 4,
-     "C172": 4,
-     "BE58": 2,
-     "CRJ7": 2,
-     "B738": 2,
-     "B737": 2,
-     "A320": 2,
-     "HDJT": 1
+     "E75L": 3,
+     "B38M": 2,
+     "PC12": 1,
+     "P46T": 1,
+     "CL60": 1,
+     "M20P": 1,
+     "CRJ7": 1,
+     "C172": 1
     },
     "squawk_7x00": []
    },
-   "elapsed_s": 0.62,
+   "elapsed_s": 0.52,
    "name": "adsb.lol",
    "category": "Aviation/Maritime",
    "url": "https://adsb.lol/",
@@ -13268,7 +13440,7 @@
     "services": 0,
     "version": 11.5
    },
-   "elapsed_s": 0.33,
+   "elapsed_s": 0.37,
    "name": "Arkansas GIS Office (ArcGIS REST index)",
    "category": "Local AR",
    "url": "https://gis.arkansas.gov/",
@@ -13280,32 +13452,32 @@
    "summary": {
     "stations": {
      "KFSM": {
-      "obs_time": "2026-11-05T22:00:00.000Z",
-      "temp_c": 23.9,
-      "wind_kt": 4,
+      "obs_time": "2026-11-05T23:00:00.000Z",
+      "temp_c": 21.7,
+      "wind_kt": 3,
       "vis": "10+",
       "flt_cat": "VFR",
-      "raw": "METAR KFSM 052153Z 16004KT 10SM CLR 24/09 A2991 RMK AO2 SLP125 T02390089"
+      "raw": "METAR KFSM 052253Z 19003KT 10SM CLR 22/09 A2992 RMK AO2 SLP130 T02170089"
      },
      "KROG": {
-      "obs_time": "2026-11-05T22:00:00.000Z",
-      "temp_c": 20.6,
-      "wind_kt": 6,
+      "obs_time": "2026-11-05T23:00:00.000Z",
+      "temp_c": 18.3,
+      "wind_kt": 7,
       "vis": "10+",
       "flt_cat": "VFR",
-      "raw": "METAR KROG 052158Z 32006KT 10SM CLR 21/08 A2996 RMK AO2 SLP139 T02060078"
+      "raw": "METAR KROG 052258Z 33007KT 10SM CLR 18/07 A2997 RMK AO2 SLP145 T01830067"
      },
      "KXNA": {
-      "obs_time": "2026-11-05T22:00:00.000Z",
-      "temp_c": 21.1,
-      "wind_kt": 6,
+      "obs_time": "2026-11-05T23:00:00.000Z",
+      "temp_c": 17.8,
+      "wind_kt": 7,
       "vis": "10+",
       "flt_cat": "VFR",
-      "raw": "METAR KXNA 052153Z 30006KT 10SM CLR 21/07 A2995 RMK AO2 SLP137 T02110067"
+      "raw": "METAR KXNA 052253Z 34007KT 10SM CLR 18/07 A2996 RMK AO2 SLP142 T01780067"
      }
     }
    },
-   "elapsed_s": 3.8,
+   "elapsed_s": 0.04,
    "name": "AviationWeather.gov API",
    "category": "Aviation/Maritime",
    "url": "https://aviationweather.gov/data/api/",
@@ -13410,7 +13582,7 @@
     ],
     "note": "CDC NWSS SARS-CoV-2 wastewater metrics; sewershed-level aggregates"
    },
-   "elapsed_s": 0.53,
+   "elapsed_s": 0.75,
    "name": "CDC NWSS wastewater surveillance (Arkansas)",
    "category": "Health",
    "url": "https://data.cdc.gov/d/2ew6-ywp6",
@@ -13438,7 +13610,7 @@
      "HMU-SAT2"
     ]
    },
-   "elapsed_s": 4.47,
+   "elapsed_s": 0.15,
    "name": "CelesTrak GP (stations group)",
    "category": "Space",
    "url": "https://celestrak.org/",
@@ -13464,7 +13636,7 @@
      }
     ]
    },
-   "elapsed_s": 1.19,
+   "elapsed_s": 2.25,
    "name": "Copernicus Data Space (STAC metadata)",
    "category": "Space",
    "url": "https://dataspace.copernicus.eu/",
@@ -13474,10 +13646,10 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "round": 6616269,
-    "randomness_prefix": "b59a4340070dcd05410dc9caebfffdf0"
+    "round": 6616359,
+    "randomness_prefix": "a92d65c636c13fffbf786f7e97114106"
    },
-   "elapsed_s": 0.16,
+   "elapsed_s": 0.15,
    "name": "drand (League of Entropy)",
    "category": "Entropy",
    "url": "https://drand.love/",
@@ -13487,7 +13659,7 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "count": 19,
+    "count": 20,
     "max_mag": 6.2,
     "top": [
      {
@@ -13516,9 +13688,14 @@
       "place": "SEA OF OKHOTSK"
      },
      {
-      "time": "2026-11-04T23:30:23.63Z",
-      "mag": 4.7,
-      "place": "LOYALTY ISLANDS"
+      "time": "2026-11-05T23:04:58.923235Z",
+      "mag": 4.6,
+      "place": "SOUTH OF ALASKA"
+     },
+     {
+      "time": "2026-11-05T22:34:48.173Z",
+      "mag": 4.6,
+      "place": "SOUTH OF FIJI ISLANDS"
      },
      {
       "time": "2026-11-05T18:05:43.367Z",
@@ -13534,15 +13711,10 @@
       "time": "2026-11-05T18:59:01.729Z",
       "mag": 4.4,
       "place": "WESTERN IRAN"
-     },
-     {
-      "time": "2026-11-05T06:20:25.0Z",
-      "mag": 4.4,
-      "place": "MINDANAO, PHILIPPINES"
      }
     ]
    },
-   "elapsed_s": 1.39,
+   "elapsed_s": 2.09,
    "name": "EMSC Seismic Portal",
    "category": "Seismic",
    "url": "https://www.seismicportal.eu/",
@@ -13555,33 +13727,33 @@
     "datasets_total": 100,
     "recent": [
      {
+      "name": "Internet Issues Associated with Complaints",
+      "updated": "2026-11-05T06:18:02.000Z",
+      "link": "https://opendata.fcc.gov/d/9buh-z8y3"
+     },
+     {
+      "name": "CGB - Unwanted Calls 2018YTD",
+      "updated": "2026-11-05T06:18:02.000Z",
+      "link": "https://opendata.fcc.gov/d/tzfc-cje9"
+     },
+     {
+      "name": "CGB - Consumer Complaints Data (Unwanted Calls by Year)",
+      "updated": "2026-11-05T06:18:02.000Z",
+      "link": "https://opendata.fcc.gov/d/pcda-jsgu"
+     },
+     {
+      "name": "CGB - Map of All Complaints by State 2017YTD",
+      "updated": "2026-11-05T06:18:02.000Z",
+      "link": "https://opendata.fcc.gov/d/jp2k-hpmb"
+     },
+     {
       "name": "Internet Issues Associated with Complaints Current YTD",
       "updated": "2026-11-05T06:18:02.000Z",
       "link": "https://opendata.fcc.gov/d/3jay-prd4"
-     },
-     {
-      "name": "Phone Issues Current YTD: Unwanted Calls category excluded",
-      "updated": "2026-11-05T06:18:02.000Z",
-      "link": "https://opendata.fcc.gov/d/82wr-ws6e"
-     },
-     {
-      "name": "CGB - Radio Issues Associated with Complaints 2018YTD",
-      "updated": "2026-11-05T06:18:02.000Z",
-      "link": "https://opendata.fcc.gov/d/wfej-eu5e"
-     },
-     {
-      "name": "CGB - Form Issue Method Count",
-      "updated": "2026-11-05T06:18:02.000Z",
-      "link": "https://opendata.fcc.gov/d/n85v-gyfh"
-     },
-     {
-      "name": "CGB - TV Issues Associated with Complaints 2018YTD",
-      "updated": "2026-11-05T06:18:02.000Z",
-      "link": "https://opendata.fcc.gov/d/fqdp-jjfa"
      }
     ]
    },
-   "elapsed_s": 0.41,
+   "elapsed_s": 1.24,
    "name": "FCC open data (Socrata)",
    "category": "RF/SDR",
    "url": "https://opendata.fcc.gov/",
@@ -13648,7 +13820,7 @@
      }
     ]
    },
-   "elapsed_s": 1.24,
+   "elapsed_s": 0.86,
    "name": "GDACS",
    "category": "Hazards",
    "url": "https://www.gdacs.org/",
@@ -13687,14 +13859,14 @@
       "place": "Off Coast of Northern California"
      },
      {
+      "time": "2026-11-05T23:05:01.36",
+      "mag": 4.94,
+      "place": "South of Alaska"
+     },
+     {
       "time": "2026-11-05T18:05:41.47",
       "mag": 4.78,
       "place": "Near East Coast of Honshu, Japan"
-     },
-     {
-      "time": "2026-11-04T23:30:23.63",
-      "mag": 4.68,
-      "place": "Loyalty Islands"
      },
      {
       "time": "2026-11-05T16:44:44.4",
@@ -13713,7 +13885,7 @@
      }
     ]
    },
-   "elapsed_s": 1.74,
+   "elapsed_s": 1.37,
    "name": "GEOFON (GFZ)",
    "category": "Seismic",
    "url": "https://geofon.gfz.de/",
@@ -13797,7 +13969,7 @@
      }
     ]
    },
-   "elapsed_s": 0.39,
+   "elapsed_s": 0.51,
    "name": "Global CMT (quick CMT)",
    "category": "Seismic",
    "url": "https://www.globalcmt.org/",
@@ -13807,14 +13979,14 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "updated": "05 Nov 2026 2251 GMT",
+    "updated": "05 Nov 2026 2336 GMT",
     "sfi": "124",
     "a": "6",
     "k": "2",
-    "xray": "B8.1",
+    "xray": "B8.4",
     "sunspots": "89",
-    "solarwind": "339.8",
-    "bz": "-3.2",
+    "solarwind": "335.6",
+    "bz": "2.4",
     "geomagfield": "QUIET",
     "signalnoise": "S1-S2",
     "bands": {
@@ -13829,7 +14001,7 @@
     },
     "source": "N0NBH hamqsl.com"
    },
-   "elapsed_s": 0.31,
+   "elapsed_s": 0.36,
    "name": "HamQSL solar-terrestrial XML (N0NBH)",
    "category": "RF/SDR",
    "url": "https://www.hamqsl.com/solar.html",
@@ -13840,11 +14012,11 @@
    "degraded": false,
    "summary": {
     "station": "XNA",
-    "utc_valid": "2026-11-05T21:53:00Z",
-    "temp_f": 70.0,
+    "utc_valid": "2026-11-05T22:53:00Z",
+    "temp_f": 64.0,
     "dewpoint_f": 44.0,
-    "wind_kt": 6.0,
-    "raw": "KXNA 052153Z 30006KT 10SM CLR 21/07 A2995 RMK AO2 SLP137 T02110067"
+    "wind_kt": 7.0,
+    "raw": "KXNA 052253Z 34007KT 10SM CLR 18/07 A2996 RMK AO2 SLP142 T01780067"
    },
    "elapsed_s": 0.39,
    "name": "Iowa Environmental Mesonet",
@@ -13857,11 +14029,11 @@
    "degraded": false,
    "summary": {
     "samples": 60,
-    "latest_time": "2026-11-05T20:51Z",
-    "latest_x_nt": 21767.9865,
-    "range_x_nt": 6.77
+    "latest_time": "2026-11-05T21:36Z",
+    "latest_x_nt": 21767.9266,
+    "range_x_nt": 1.58
    },
-   "elapsed_s": 0.71,
+   "elapsed_s": 0.84,
    "name": "INTERMAGNET (BGS GIN HAPI, FRD)",
    "category": "Geomagnetic",
    "url": "https://www.intermagnet.org/",
@@ -13876,7 +14048,7 @@
     "by_datasource": {},
     "top": []
    },
-   "elapsed_s": 0.58,
+   "elapsed_s": 0.49,
    "name": "IODA (Georgia Tech)",
    "category": "Network",
    "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -13901,7 +14073,7 @@
      "BROM"
     ]
    },
-   "elapsed_s": 0.53,
+   "elapsed_s": 0.51,
    "name": "EarthScope/IRIS FDSN web services",
    "category": "Seismic",
    "url": "https://service.iris.edu/fdsnws/",
@@ -13991,11 +14163,11 @@
       "type": "ionosonde",
       "code": "IF843",
       "name": "Idaho Natl Lab, ID, USA",
-      "fof2": 8.107,
-      "mufd": 27.347,
-      "time": "2026-11-05T22:30:00",
-      "from": "2026-11-05T22:30:00",
-      "cs": 80.0
+      "fof2": 7.775,
+      "mufd": 26.741,
+      "time": "2026-11-05T23:15:00",
+      "from": "2026-11-05T23:15:00",
+      "cs": 95.0
      },
      {
       "lat": 42.6,
@@ -14003,11 +14175,11 @@
       "type": "ionosonde",
       "code": "MHJ45",
       "name": "Millstone Hill, MA, USA",
-      "fof2": 6.55,
-      "mufd": 21.212,
-      "time": "2026-11-05T22:37:30",
-      "from": "2026-11-05T22:37:30",
-      "cs": 70.0
+      "fof2": 5.95,
+      "mufd": 19.258,
+      "time": "2026-11-05T23:22:30",
+      "from": "2026-11-05T23:22:30",
+      "cs": 90.0
      },
      {
       "lat": 42.45,
@@ -14036,7 +14208,7 @@
     ],
     "source": "prop.kc2g.com (GIRO/DIDBase-derived)"
    },
-   "elapsed_s": 0.3,
+   "elapsed_s": 0.44,
    "name": "KC2G ionosonde foF2/MUF (GIRO-derived)",
    "category": "RF/SDR",
    "url": "https://prop.kc2g.com/",
@@ -14046,12 +14218,12 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "hours": 119,
+    "hours": 120,
     "latest_dst_nt": 4,
     "min_dst_nt": -49,
     "note": "quicklook, not definitive"
    },
-   "elapsed_s": 1.08,
+   "elapsed_s": 0.64,
    "name": "Kyoto WDC real-time Dst",
    "category": "Geomagnetic",
    "url": "https://wdc.kugi.kyoto-u.ac.jp/",
@@ -14061,7 +14233,7 @@
    "ok": false,
    "degraded": true,
    "error": "URLError: <urlopen error [Errno 101] Network is unreachable>",
-   "elapsed_s": 25.09,
+   "elapsed_s": 25.07,
    "name": "NASA DONKI (CCMC, keyless)",
    "category": "Space",
    "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI/",
@@ -14071,7 +14243,7 @@
    "ok": false,
    "degraded": true,
    "error": "KeyedFetchError: TimeoutError: The read operation timed out",
-   "elapsed_s": 25.23,
+   "elapsed_s": 25.16,
    "name": "NASA DONKI via api.nasa.gov (keyed: NASA_API_KEY)",
    "category": "Space",
    "url": "https://api.nasa.gov/",
@@ -14097,7 +14269,7 @@
      }
     ]
    },
-   "elapsed_s": 0.29,
+   "elapsed_s": 0.37,
    "name": "NASA Earthdata CMR (metadata)",
    "category": "Space",
    "url": "https://earthdata.nasa.gov/",
@@ -14188,7 +14360,7 @@
      }
     ]
    },
-   "elapsed_s": 0.43,
+   "elapsed_s": 0.72,
    "name": "NASA EONET",
    "category": "Hazards",
    "url": "https://eonet.gsfc.nasa.gov/",
@@ -14203,7 +14375,7 @@
     "high_confidence": 0,
     "top": []
    },
-   "elapsed_s": 0.31,
+   "elapsed_s": 0.36,
    "name": "NASA FIRMS VIIRS active fire (keyed: FIRMS_MAP_KEY)",
    "category": "Hazards",
    "url": "https://firms.modaps.eosdis.nasa.gov/api/",
@@ -14233,7 +14405,7 @@
     "rows": 0,
     "latest": []
    },
-   "elapsed_s": 3.42,
+   "elapsed_s": 2.46,
    "name": "NASA HEASARC TAP (Fermi GBM bursts)",
    "category": "Space",
    "url": "https://heasarc.gsfc.nasa.gov/",
@@ -14243,13 +14415,13 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "utc": "22:52:01",
+    "utc": "23:36:55",
     "on_air": {
-     "14.100": "JA2IGY",
-     "18.110": "VK6RBP",
-     "21.150": "ZL6B",
-     "24.930": "KH6RS",
-     "28.200": "W6WX"
+     "14.100": "VK6RBP",
+     "18.110": "ZL6B",
+     "21.150": "KH6RS",
+     "24.930": "W6WX",
+     "28.200": "VE8AT"
     },
     "note": "computed from the published NCDXF/IARU schedule; nothing is received"
    },
@@ -14263,7 +14435,7 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "count": 63,
+    "count": 64,
     "max_mag": 4.9,
     "top": [
      {
@@ -14318,7 +14490,7 @@
      }
     ]
    },
-   "elapsed_s": 0.41,
+   "elapsed_s": 0.37,
    "name": "NCEDC",
    "category": "Seismic",
    "url": "https://ncedc.org/",
@@ -14366,7 +14538,7 @@
      }
     ]
    },
-   "elapsed_s": 0.85,
+   "elapsed_s": 0.31,
    "name": "NOAA NDBC DART tsunameter buoys",
    "category": "Ocean",
    "url": "https://www.ndbc.noaa.gov/dart.shtml",
@@ -14376,11 +14548,11 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "pulse_index": 2015068,
-    "time": "2026-11-05T22:50:00.000Z",
-    "output_prefix": "C8EAAA60868590A9DE18951F55235479"
+    "pulse_index": 2015113,
+    "time": "2026-11-05T23:35:00.000Z",
+    "output_prefix": "1657F6695612CB09272E287738FFA643"
    },
-   "elapsed_s": 0.29,
+   "elapsed_s": 0.37,
    "name": "NIST Randomness Beacon",
    "category": "Entropy",
    "url": "https://beacon.nist.gov/",
@@ -14405,7 +14577,7 @@
     ],
     "day": "2026-308"
    },
-   "elapsed_s": 0.45,
+   "elapsed_s": 0.84,
    "name": "NOAA CORS GNSS (index, ARFY)",
    "category": "Geodesy",
    "url": "https://www.ngs.noaa.gov/CORS/",
@@ -14415,13 +14587,13 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "valid_at": "2026-11-05 22:49 UTC",
+    "valid_at": "2026-11-05 23:33 UTC",
     "xray": "Normal X-ray Background",
     "proton": "Normal Proton Background",
-    "peak_haf_mhz": 4.7,
-    "home_haf_mhz": 0.9
+    "peak_haf_mhz": 3.3,
+    "home_haf_mhz": 0.0
    },
-   "elapsed_s": 0.08,
+   "elapsed_s": 0.04,
    "name": "NOAA SWPC D-RAP absorption",
    "category": "RF/SDR",
    "url": "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap",
@@ -14431,11 +14603,11 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "objects": 179,
-    "latest_key": "GLM-L2-LCFA/2026/309/21/OR_GLM-L2-LCFA_G19_s20263092159400_e20263092200000_c20263092200020.nc",
-    "bytes": 107923733
+    "objects": 180,
+    "latest_key": "GLM-L2-LCFA/2026/309/22/OR_GLM-L2-LCFA_G19_s20263092259400_e20263092300000_c20263092300020.nc",
+    "bytes": 107677037
    },
-   "elapsed_s": 0.28,
+   "elapsed_s": 0.37,
    "name": "NOAA GOES on AWS (GLM lightning index)",
    "category": "Space",
    "url": "https://registry.opendata.aws/noaa-goes/",
@@ -14445,13 +14617,13 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "time": "2026-11-05T22:20Z",
+    "time": "2026-11-05T22:50Z",
     "wave_height_m": 0.4,
-    "wind_ms": 1.0,
-    "pressure_hpa": 1011.8,
-    "water_temp_c": 27.7
+    "wind_ms": 2.0,
+    "pressure_hpa": 1012.2,
+    "water_temp_c": null
    },
-   "elapsed_s": 0.27,
+   "elapsed_s": 0.24,
    "name": "NOAA NDBC buoy 42001 (Gulf)",
    "category": "Water",
    "url": "https://www.ndbc.noaa.gov/",
@@ -14461,11 +14633,11 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "objects": 187,
-    "latest_key": "2026/11/05/KSRX/KSRX20261105_224621_V06",
-    "bytes": 1576111832
+    "objects": 196,
+    "latest_key": "2026/11/05/KSRX/KSRX20261105_232923_V06",
+    "bytes": 1640555129
    },
-   "elapsed_s": 0.27,
+   "elapsed_s": 0.33,
    "name": "NOAA NEXRAD on AWS (KSRX index)",
    "category": "Weather",
    "url": "https://registry.opendata.aws/noaa-nexrad/",
@@ -14476,10 +14648,10 @@
    "degraded": false,
    "summary": {
     "station": "Grand Isle",
-    "time": "2026-11-05 22:42",
-    "water_level_m": 0.526
+    "time": "2026-11-05 23:30",
+    "water_level_m": 0.522
    },
-   "elapsed_s": 0.49,
+   "elapsed_s": 0.43,
    "name": "NOAA Tides & Currents (Grand Isle LA)",
    "category": "Water",
    "url": "https://tidesandcurrents.noaa.gov/",
@@ -14492,9 +14664,9 @@
     "active": 0,
     "events": [],
     "heatrisk": "https://www.wpc.ncep.noaa.gov/heatrisk/",
-    "updated": "2026-11-05T22:45:35+00:00"
+    "updated": "2026-11-05T23:35:06+00:00"
    },
-   "elapsed_s": 0.23,
+   "elapsed_s": 0.16,
    "name": "NWS heat alerts (AR/MO/OK/KS) + HeatRisk link",
    "category": "Health",
    "url": "https://www.weather.gov/",
@@ -14504,13 +14676,13 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "time": "2026-11-05T22:45",
-    "temperature_2m": 18.1,
-    "wind_speed_10m": 9.0,
+    "time": "2026-11-05T23:30",
+    "temperature_2m": 16.5,
+    "wind_speed_10m": 12.3,
     "precipitation": 0.0,
-    "surface_pressure": 965.1
+    "surface_pressure": 965.6
    },
-   "elapsed_s": 0.29,
+   "elapsed_s": 0.75,
    "name": "Open-Meteo",
    "category": "Weather",
    "url": "https://open-meteo.com/",
@@ -14540,8 +14712,8 @@
        "temperature",
        "um003"
       ],
-      "last": "2026-11-05T22:00:00Z",
-      "from": "2026-11-05T22:00:00Z",
+      "last": "2026-11-05T23:00:00Z",
+      "from": "2026-11-05T23:00:00Z",
       "type": "air_quality",
       "provider": "AirGradient",
       "owner": "Tingler",
@@ -14558,32 +14730,32 @@
        {
         "parameter": "pm1",
         "unit": "\u00b5g/m\u00b3",
-        "value": 0.0,
-        "time": "2026-11-05T22:00:00Z"
+        "value": 0.1,
+        "time": "2026-11-05T23:00:00Z"
        },
        {
         "parameter": "pm25",
         "unit": "\u00b5g/m\u00b3",
         "value": 0.1,
-        "time": "2026-11-05T22:00:00Z"
+        "time": "2026-11-05T23:00:00Z"
        },
        {
         "parameter": "um003",
         "unit": "particles/cm\u00b3",
-        "value": 72.0,
-        "time": "2026-11-05T22:00:00Z"
+        "value": 68.0,
+        "time": "2026-11-05T23:00:00Z"
        },
        {
         "parameter": "relativehumidity",
         "unit": "%",
-        "value": 45.0,
-        "time": "2026-11-05T22:00:00Z"
+        "value": 44.0,
+        "time": "2026-11-05T23:00:00Z"
        },
        {
         "parameter": "temperature",
         "unit": "c",
-        "value": 21.5,
-        "time": "2026-11-05T22:00:00Z"
+        "value": 21.6,
+        "time": "2026-11-05T23:00:00Z"
        },
        {
         "parameter": "pm10",
@@ -14601,8 +14773,8 @@
        "o3",
        "pm25"
       ],
-      "last": "2026-11-04T23:00:00Z",
-      "from": "2026-11-04T23:00:00Z",
+      "last": "2026-11-05T00:00:00Z",
+      "from": "2026-11-05T00:00:00Z",
       "type": "air_quality",
       "provider": "AirNow",
       "owner": "Unknown Governmental Organization",
@@ -14619,14 +14791,14 @@
        {
         "parameter": "pm25",
         "unit": "\u00b5g/m\u00b3",
-        "value": 2.4,
-        "time": "2026-11-04T23:00:00Z"
+        "value": 4.4,
+        "time": "2026-11-05T00:00:00Z"
        },
        {
         "parameter": "o3",
         "unit": "ppm",
-        "value": 0.036,
-        "time": "2026-11-04T23:00:00Z"
+        "value": 0.032,
+        "time": "2026-11-05T00:00:00Z"
        }
       ]
      },
@@ -14641,8 +14813,8 @@
        "temperature",
        "um003"
       ],
-      "last": "2026-11-05T22:00:00Z",
-      "from": "2026-11-05T22:00:00Z",
+      "last": "2026-11-05T23:00:00Z",
+      "from": "2026-11-05T23:00:00Z",
       "type": "air_quality",
       "provider": "AirGradient",
       "owner": "Encore Cleaning and Maintenance",
@@ -14659,38 +14831,38 @@
        {
         "parameter": "pm1",
         "unit": "\u00b5g/m\u00b3",
-        "value": 0.8,
-        "time": "2026-11-05T22:00:00Z"
+        "value": 0.0,
+        "time": "2026-11-05T23:00:00Z"
        },
        {
         "parameter": "pm25",
         "unit": "\u00b5g/m\u00b3",
-        "value": 1.1,
-        "time": "2026-11-05T22:00:00Z"
+        "value": 0.0,
+        "time": "2026-11-05T23:00:00Z"
        },
        {
         "parameter": "relativehumidity",
         "unit": "%",
-        "value": 35.0,
-        "time": "2026-11-05T22:00:00Z"
+        "value": 34.0,
+        "time": "2026-11-05T23:00:00Z"
        },
        {
         "parameter": "temperature",
         "unit": "c",
-        "value": 23.7,
-        "time": "2026-11-05T22:00:00Z"
+        "value": 22.7,
+        "time": "2026-11-05T23:00:00Z"
        },
        {
         "parameter": "um003",
         "unit": "particles/cm\u00b3",
-        "value": 137.0,
-        "time": "2026-11-05T22:00:00Z"
+        "value": 106.0,
+        "time": "2026-11-05T23:00:00Z"
        }
       ]
      }
     ]
    },
-   "elapsed_s": 1.02,
+   "elapsed_s": 1.2,
    "name": "OpenAQ v3 air quality near Rogers (keyed: OPENAQ_API_KEY)",
    "category": "Air quality",
    "url": "https://openaq.org/",
@@ -14763,7 +14935,7 @@
      }
     ]
    },
-   "elapsed_s": 0.55,
+   "elapsed_s": 0.14,
    "name": "OpenFEMA API",
    "category": "Hazards",
    "url": "https://www.fema.gov/about/openfema/api",
@@ -14773,11 +14945,11 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "aircraft": 14,
+    "aircraft": 11,
     "on_ground": 0,
-    "time": 1793919110
+    "time": 1793921807
    },
-   "elapsed_s": 0.45,
+   "elapsed_s": 0.54,
    "name": "OpenSky Network",
    "category": "Aviation/Maritime",
    "url": "https://opensky-network.org/",
@@ -14801,7 +14973,7 @@
      "North San Juan Channel"
     ]
    },
-   "elapsed_s": 0.33,
+   "elapsed_s": 0.42,
    "name": "Orcasound hydrophones",
    "category": "Seismic",
    "url": "https://www.orcasound.net/",
@@ -14812,13 +14984,13 @@
    "degraded": false,
    "summary": {
     "station": "OULU",
-    "time": "2026-11-05T21:00:00Z",
-    "corr_cpm": 6132,
-    "pressure_mbar": 1018.62,
-    "pct_vs_window_mean": 0.36,
+    "time": "2026-11-05T22:00:00Z",
+    "corr_cpm": 6165,
+    "pressure_mbar": 1018.98,
+    "pct_vs_window_mean": 0.86,
     "n": 36
    },
-   "elapsed_s": 0.76,
+   "elapsed_s": 0.87,
    "name": "Oulu Neutron Monitor (Sodankyla Geophysical Observatory)",
    "category": "Space",
    "url": "https://cosmicrays.oulu.fi/",
@@ -14828,29 +15000,30 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "spots": 1519,
+    "spots": 1512,
     "by_band": {
-     "40m": 451,
-     "20m": 379,
-     "30m": 200,
-     "80m": 113,
-     "160m": 23,
-     "other": 77,
-     "17m": 106,
-     "10m": 26,
-     "15m": 112,
-     "12m": 32
+     "20m": 487,
+     "40m": 535,
+     "80m": 91,
+     "30m": 120,
+     "15m": 187,
+     "17m": 40,
+     "other": 34,
+     "10m": 4,
+     "12m": 9,
+     "6m": 2,
+     "160m": 3
     },
     "modes": {
-     "FT8": 1465,
-     "FT4": 30,
-     "JS8": 15,
-     "CW": 7,
-     "PKT": 1,
-     "VARAC": 1
+     "FT8": 1413,
+     "FT4": 78,
+     "CW": 12,
+     "VARAC": 5,
+     "JS8": 2,
+     "null": 2
     }
    },
-   "elapsed_s": 0.41,
+   "elapsed_s": 0.53,
    "name": "PSKReporter",
    "category": "RF/SDR",
    "url": "https://pskreporter.info/",
@@ -14860,7 +15033,7 @@
    "ok": false,
    "degraded": true,
    "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
-   "elapsed_s": 0.09,
+   "elapsed_s": 0.07,
    "name": "PubDAS (public DAS datasets)",
    "category": "Seismic",
    "url": "https://pubdas.iris.edu/",
@@ -14885,7 +15058,7 @@
      "R183E"
     ]
    },
-   "elapsed_s": 0.64,
+   "elapsed_s": 0.77,
    "name": "Raspberry Shake network (FDSN)",
    "category": "Seismic",
    "url": "https://dataview.raspberryshake.org/",
@@ -14895,10 +15068,10 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "sites": 1238,
-    "receivers": 1256
+    "sites": 1233,
+    "receivers": 1251
    },
-   "elapsed_s": 1.23,
+   "elapsed_s": 1.35,
    "name": "ReceiverBook (OpenWebRX directory)",
    "category": "RF/SDR",
    "url": "https://www.receiverbook.de/",
@@ -14908,9 +15081,9 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "connected_us_probes": 2402
+    "connected_us_probes": 2403
    },
-   "elapsed_s": 0.54,
+   "elapsed_s": 0.71,
    "name": "RIPE Atlas (public probe status)",
    "category": "Network",
    "url": "https://atlas.ripe.net/",
@@ -14936,7 +15109,7 @@
     "v4_peers": 322,
     "time": "2026-11-05T16:00:00"
    },
-   "elapsed_s": 5.42,
+   "elapsed_s": 0.53,
    "name": "RIPEstat (routing status, Comcast AS7922)",
    "category": "Network",
    "url": "https://stat.ripe.net/",
@@ -14952,7 +15125,7 @@
     "latest_unit": "cpm",
     "median_cpm": 1008.0
    },
-   "elapsed_s": 0.43,
+   "elapsed_s": 0.31,
    "name": "Safecast API",
    "category": "Radiation",
    "url": "https://api.safecast.org/",
@@ -14997,7 +15170,7 @@
      437.55
     ]
    },
-   "elapsed_s": 0.97,
+   "elapsed_s": 0.73,
    "name": "SatNOGS DB API",
    "category": "RF/SDR",
    "url": "https://db.satnogs.org/api/",
@@ -15008,14 +15181,14 @@
    "degraded": false,
    "summary": {
     "observations": 25,
-    "satellites": 14,
-    "stations": 24,
+    "satellites": 9,
+    "stations": 23,
     "status": {
-     "future": 1,
-     "good": 24
+     "future": 8,
+     "good": 17
     }
    },
-   "elapsed_s": 1.93,
+   "elapsed_s": 2.21,
    "name": "SatNOGS Network",
    "category": "RF/SDR",
    "url": "https://network.satnogs.org/",
@@ -15035,8 +15208,8 @@
      },
      {
       "time": "2026/11/05 22:39:59.1500",
-      "mag": 2.29,
-      "place": "11.4 km (   7.1 mi) W (az= 276.0) from Alberto Oviedo Mota, B.C., MX"
+      "mag": 2.34,
+      "place": "11.3 km (   7.0 mi) W (az= 277.8) from Alberto Oviedo Mota, B.C., MX"
      },
      {
       "time": "2026/11/05 05:33:15.0600",
@@ -15080,7 +15253,7 @@
      }
     ]
    },
-   "elapsed_s": 0.39,
+   "elapsed_s": 0.34,
    "name": "SCEDC",
    "category": "Seismic",
    "url": "https://scedc.caltech.edu/",
@@ -15104,7 +15277,7 @@
      "IS-54 D-AMPS"
     ]
    },
-   "elapsed_s": 0.22,
+   "elapsed_s": 0.21,
    "name": "Signal Identification Wiki (MediaWiki API)",
    "category": "RF/SDR",
    "url": "https://www.sigidwiki.com/",
@@ -15116,13 +15289,13 @@
    "summary": {
     "samples": 1438,
     "satellite": 19,
-    "latest": "2026-11-05T22:49:00Z",
-    "Hp_nT": 82.57,
-    "total_nT": 87.98,
+    "latest": "2026-11-05T23:34:00Z",
+    "Hp_nT": 75.5,
+    "total_nT": 82.23,
     "Hp_range_nT": 57.51,
     "arcjet_any": false
    },
-   "elapsed_s": 0.28,
+   "elapsed_s": 0.51,
    "name": "NOAA SWPC GOES magnetometer (primary, 1-day)",
    "category": "Geomagnetic",
    "url": "https://services.swpc.noaa.gov/json/goes/primary/",
@@ -15154,7 +15327,7 @@
      }
     ]
    },
-   "elapsed_s": 0.21,
+   "elapsed_s": 0.15,
    "name": "NOAA tsunami.gov bulletins (NTWC + PTWC Atom)",
    "category": "Ocean",
    "url": "https://www.tsunami.gov/",
@@ -15165,12 +15338,12 @@
    "degraded": false,
    "summary": {
     "observatory": "BOU",
-    "samples": 178,
-    "latest_h_nt": 20682.253,
-    "range_h_nt": 15.87,
-    "time": "2026-11-05T22:49:00.000Z"
+    "samples": 177,
+    "latest_h_nt": 20678.273,
+    "range_h_nt": 10.84,
+    "time": "2026-11-05T23:33:00.000Z"
    },
-   "elapsed_s": 0.4,
+   "elapsed_s": 0.59,
    "name": "USGS Geomagnetism web service (BOU)",
    "category": "Geomagnetic",
    "url": "https://geomag.usgs.gov/ws/",
@@ -15183,7 +15356,7 @@
     "count": 0,
     "events": []
    },
-   "elapsed_s": 0.09,
+   "elapsed_s": 0.04,
    "name": "USGS ShakeMap",
    "category": "Seismic",
    "url": "https://earthquake.usgs.gov/data/shakemap/",
@@ -15197,38 +15370,38 @@
     "latest": {
      "Columbia Hollow Ck nr Decatur, AR": {
       "Gage height, ft": {
-       "value": 6.87,
-       "time": "2026-11-05T15:45:00.000-06:00"
+       "value": 6.84,
+       "time": "2026-11-05T16:45:00.000-06:00"
       }
      },
      "Elk Rv at MO-59, Noel, MO": {
       "Gage height, ft": {
        "value": 5.37,
-       "time": "2026-11-05T16:15:00.000-06:00"
+       "time": "2026-11-05T17:15:00.000-06:00"
       }
      },
      "Flint Creek at Springtown, AR": {
       "Gage height, ft": {
        "value": 3.63,
-       "time": "2026-11-05T16:00:00.000-06:00"
+       "time": "2026-11-05T17:00:00.000-06:00"
       }
      },
      "Illinois River South of Siloam Springs, AR": {
       "Gage height, ft": {
-       "value": 2.71,
-       "time": "2026-11-05T16:15:00.000-06:00"
+       "value": 2.7,
+       "time": "2026-11-05T17:15:00.000-06:00"
       }
      },
      "Illinois River at Hwy. 16 near Siloam Springs AR": {
       "Gage height, ft": {
-       "value": 6.23,
-       "time": "2026-11-05T16:00:00.000-06:00"
+       "value": 6.22,
+       "time": "2026-11-05T17:00:00.000-06:00"
       }
      },
      "Illinois River at Savoy, AR": {
       "Gage height, ft": {
-       "value": 2.08,
-       "time": "2026-11-05T16:00:00.000-06:00"
+       "value": 2.07,
+       "time": "2026-11-05T17:00:00.000-06:00"
       }
      },
      "Illinois River near Watts, OK": {
@@ -15239,14 +15412,14 @@
      },
      "Indian Creek near Lanagan, MO": {
       "Gage height, ft": {
-       "value": 0.99,
-       "time": "2026-11-05T16:15:00.000-06:00"
+       "value": 0.98,
+       "time": "2026-11-05T17:15:00.000-06:00"
       }
      },
      "Kings River near Berryville, AR": {
       "Gage height, ft": {
-       "value": 3.05,
-       "time": "2026-11-05T16:15:00.000-06:00"
+       "value": 3.03,
+       "time": "2026-11-05T17:15:00.000-06:00"
       }
      },
      "Lake Frances at Pump Station near Watts, OK": {
@@ -15258,18 +15431,18 @@
      "Little Sugar Creek near Pineville, MO": {
       "Gage height, ft": {
        "value": 2.04,
-       "time": "2026-11-05T16:15:00.000-06:00"
+       "time": "2026-11-05T17:15:00.000-06:00"
       }
      },
      "Mud Creek near Johnson, AR": {
       "Gage height, ft": {
-       "value": 3.35,
-       "time": "2026-11-05T16:25:00.000-06:00"
+       "value": 3.34,
+       "time": "2026-11-05T17:25:00.000-06:00"
       }
      }
     }
    },
-   "elapsed_s": 6.14,
+   "elapsed_s": 4.87,
    "name": "USGS Water Services (NWIS IV)",
    "category": "Water",
    "url": "https://waterservices.usgs.gov/",
@@ -15288,16 +15461,22 @@
       "value": "38.6"
      },
      {
-      "monitoring_location_id": "USGS-07188838",
-      "parameter_code": "00060",
-      "time": "2026-11-05T22:15:00+00:00",
-      "value": "42.8"
-     },
-     {
       "monitoring_location_id": "USGS-07048495",
       "parameter_code": "63680",
       "time": "2023-05-25T14:00:00+00:00",
       "value": "0.4"
+     },
+     {
+      "monitoring_location_id": "USGS-07050500",
+      "parameter_code": "00065",
+      "time": "2026-11-05T23:15:00+00:00",
+      "value": "3.03"
+     },
+     {
+      "monitoring_location_id": "USGS-07048493",
+      "parameter_code": "00045",
+      "time": "2026-11-05T23:15:00+00:00",
+      "value": "0.00"
      },
      {
       "monitoring_location_id": "USGS-071948135",
@@ -15312,38 +15491,32 @@
       "value": null
      },
      {
-      "monitoring_location_id": "USGS-07195430",
-      "parameter_code": "00065",
-      "time": "2026-11-05T22:15:00+00:00",
-      "value": "2.71"
-     },
-     {
       "monitoring_location_id": "USGS-071948095",
-      "parameter_code": "00065",
-      "time": "2026-11-05T22:25:00+00:00",
-      "value": "3.35"
+      "parameter_code": "00095",
+      "time": "2026-11-05T23:15:00+00:00",
+      "value": "380"
      },
      {
-      "monitoring_location_id": "USGS-07194800",
-      "parameter_code": "00060",
-      "time": "2026-11-05T22:00:00+00:00",
-      "value": "28.0"
-     },
-     {
-      "monitoring_location_id": "USGS-07049000",
-      "parameter_code": "00010",
-      "time": "2026-11-05T22:00:00+00:00",
-      "value": "15.4"
+      "monitoring_location_id": "USGS-07194880",
+      "parameter_code": "00095",
+      "time": "2022-06-22T14:00:00+00:00",
+      "value": "442"
      },
      {
       "monitoring_location_id": "MO005-364059093520001",
-      "parameter_code": "72019",
-      "time": "2026-11-05T21:30:00+00:00",
-      "value": "310.55"
+      "parameter_code": "62611",
+      "time": "2026-11-05T22:30:00+00:00",
+      "value": "1014.07"
+     },
+     {
+      "monitoring_location_id": "USGS-07050152",
+      "parameter_code": "00060",
+      "time": "2026-11-05T23:25:00+00:00",
+      "value": "31.5"
      }
     ]
    },
-   "elapsed_s": 0.43,
+   "elapsed_s": 0.28,
    "name": "USGS Water Data OGC API",
    "category": "Water",
    "url": "https://api.waterdata.usgs.gov/",
@@ -15422,7 +15595,7 @@
     ],
     "note": "WHO FluNet national weekly aggregates"
    },
-   "elapsed_s": 1.79,
+   "elapsed_s": 0.48,
    "name": "WHO FluNet (USA weekly aggregates)",
    "category": "Health",
    "url": "https://www.who.int/tools/flunet",
@@ -15432,31 +15605,31 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "spots_last_hour": 388466,
+    "spots_last_hour": 360495,
     "by_band": {
-     "-1": 475,
-     "0": 5585,
-     "1": 5424,
-     "3": 28217,
-     "5": 6287,
-     "7": 113242,
-     "10": 53385,
-     "13": 326,
-     "14": 117148,
-     "18": 21509,
-     "21": 22285,
-     "24": 4772,
-     "28": 9304,
-     "40": 58,
-     "50": 276,
-     "144": 152,
-     "430": 6,
-     "432": 4,
-     "1296": 8,
+     "-1": 434,
+     "0": 6266,
+     "1": 5916,
+     "3": 31996,
+     "5": 7034,
+     "7": 115011,
+     "10": 51635,
+     "13": 211,
+     "14": 103645,
+     "18": 15936,
+     "21": 14713,
+     "24": 2743,
+     "28": 4461,
+     "40": 56,
+     "50": 271,
+     "144": 150,
+     "430": 5,
+     "432": 2,
+     "1296": 7,
      "2301": 3
     }
    },
-   "elapsed_s": 0.99,
+   "elapsed_s": 1.19,
    "name": "WSPRnet (via wspr.live public DB)",
    "category": "RF/SDR",
    "url": "https://www.wsprnet.org/",
@@ -15783,9 +15956,9 @@
   "sites": {
    "07048600": {
     "name": "White River near Fayetteville, AR",
-    "samples": 673,
-    "latest_ft": 1.84,
-    "latest_time": "2026-11-05T16:00:00-06:00",
+    "samples": 674,
+    "latest_ft": 1.83,
+    "latest_time": "2026-11-05T17:00:00-06:00",
     "min_ft": 0.98,
     "max_ft": 2.71,
     "rise_6h_ft": -0.03,
@@ -15793,7 +15966,6 @@
     "dominant_period_h": 256.0,
     "rising": false,
     "history_ft": [
-     0.98,
      0.98,
      0.99,
      0.99,
@@ -15960,22 +16132,22 @@
      1.85,
      1.85,
      1.84,
-     1.84
+     1.83,
+     1.83
     ]
    },
    "07049000": {
     "name": "War Eagle Creek near Hindsville, AR",
-    "samples": 673,
-    "latest_ft": 0.31,
-    "latest_time": "2026-11-05T16:00:00-06:00",
+    "samples": 674,
+    "latest_ft": 0.32,
+    "latest_time": "2026-11-05T17:00:00-06:00",
     "min_ft": -0.03,
     "max_ft": 0.7,
-    "rise_6h_ft": -0.03,
-    "rise_24h_ft": -0.16,
+    "rise_6h_ft": -0.01,
+    "rise_24h_ft": -0.14,
     "dominant_period_h": 256.0,
     "rising": false,
     "history_ft": [
-     -0.03,
      -0.03,
      -0.02,
      -0.02,
@@ -16142,7 +16314,8 @@
      0.32,
      0.31,
      0.32,
-     0.31
+     0.32,
+     0.32
     ]
    }
   },
@@ -16150,19 +16323,19 @@
   "label": "advisory only; not a flood warning"
  },
  "astro": {
-  "time": "2026-11-05T22:51:57.490314+00:00",
-  "moon_age_days": 25.57,
-  "moon_illumination": 0.167,
+  "time": "2026-11-05T23:36:52.140797+00:00",
+  "moon_age_days": 25.6,
+  "moon_illumination": 0.165,
   "moon_phase": "Waning crescent",
-  "moon_distance_km": 382502,
-  "sun_distance_au": 0.9914,
+  "moon_distance_km": 382650,
+  "sun_distance_au": 0.99139,
   "tidal_forcing_proxy": 0.957,
-  "solar_elevation_deg_rogers": 3.7,
+  "solar_elevation_deg_rogers": -4.82,
   "exploratory": {
    "label": "exploratory/non-scientific overlay",
    "sun_sign": "Scorpio",
    "moon_sign": "Libra",
-   "sun_moon_elongation_deg": 321.6,
+   "sun_moon_elongation_deg": 321.9,
    "syzygy": false
   }
  },
@@ -16221,7 +16394,7 @@
   "label": "exploratory/non-scientific overlay"
  },
  "verification": {
-  "generated_at": "2026-11-05T22:51:57.490314+00:00",
+  "generated_at": "2026-11-05T23:36:52.140797+00:00",
   "checks": {
    "astro_syzygy_m5": {
     "source": "exploratory_astro",
@@ -16247,7 +16420,7 @@
       "base_rate": 1.0
      }
     },
-    "pending": 6
+    "pending": 7
    },
    "fusion_elevated": {
     "source": "fusion",
@@ -16277,7 +16450,7 @@
       "base_rate": 0.956
      }
     },
-    "pending": 20
+    "pending": 25
    },
    "gematria_date_m5": {
     "source": "exploratory_gematria",
@@ -16303,7 +16476,7 @@
       "base_rate": 1.0
      }
     },
-    "pending": 6
+    "pending": 7
    },
    "swpc_kp_storm": {
     "source": "noaa_swpc",
@@ -16336,7 +16509,7 @@
       "mae": 0.889
      }
     },
-    "pending": 4
+    "pending": 5
    },
    "usgs_m5_24h": {
     "source": "usgs_eq",
@@ -16361,10 +16534,10 @@
       "base_rate": 1.0
      }
     },
-    "pending": 6
+    "pending": 7
    }
   },
-  "records": 117,
+  "records": 126,
   "history": [
    {
     "check": "swpc_kp_storm",
@@ -17703,6 +17876,96 @@
     "issued": "2026-11-05T22:51:57.490314+00:00",
     "valid_until": "2026-11-06T22:51:57.490314+00:00",
     "resolved": false
+   },
+   {
+    "check": "swpc_kp_storm",
+    "source": "noaa_swpc",
+    "p": 0.02,
+    "value": 2.0,
+    "desc": "P(observed Kp>=5 in next 6h), persistence",
+    "issued": "2026-11-05T23:36:52.140797+00:00",
+    "valid_until": "2026-11-06T05:36:52.140797+00:00",
+    "resolved": false
+   },
+   {
+    "check": "usgs_m5_24h",
+    "source": "usgs_eq",
+    "p": 0.976,
+    "value": 3.7142857142857144,
+    "desc": "P(global M5+ in next 24h), 7-day Poisson rate",
+    "issued": "2026-11-05T23:36:52.140797+00:00",
+    "valid_until": "2026-11-06T23:36:52.140797+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "PK",
+    "p": 0.77,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-05T23:36:52.140797+00:00",
+    "valid_until": "2026-11-06T05:36:52.140797+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "FL",
+    "p": 0.77,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-05T23:36:52.140797+00:00",
+    "valid_until": "2026-11-06T05:36:52.140797+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "MO",
+    "p": 0.77,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-05T23:36:52.140797+00:00",
+    "valid_until": "2026-11-06T05:36:52.140797+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "AZ",
+    "p": 0.757,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-05T23:36:52.140797+00:00",
+    "valid_until": "2026-11-06T05:36:52.140797+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "AK",
+    "p": 0.701,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-05T23:36:52.140797+00:00",
+    "valid_until": "2026-11-06T05:36:52.140797+00:00",
+    "resolved": false
+   },
+   {
+    "check": "astro_syzygy_m5",
+    "source": "exploratory_astro",
+    "label": "exploratory/non-scientific overlay",
+    "p": 0.4,
+    "desc": "Exploratory: syzygy => more M5+ in 24h",
+    "issued": "2026-11-05T23:36:52.140797+00:00",
+    "valid_until": "2026-11-06T23:36:52.140797+00:00",
+    "resolved": false
+   },
+   {
+    "check": "gematria_date_m5",
+    "source": "exploratory_gematria",
+    "label": "exploratory/non-scientific overlay",
+    "p": 0.4,
+    "desc": "Exploratory: 'charged' date number => M5+ in 24h",
+    "issued": "2026-11-05T23:36:52.140797+00:00",
+    "valid_until": "2026-11-06T23:36:52.140797+00:00",
+    "resolved": false
    }
   ]
  },
@@ -17716,14 +17979,14 @@
     "lat": 30.0,
     "lon": -120.0,
     "size_deg": 10.0,
-    "n": 25,
-    "entropy": 0.429,
+    "n": 29,
+    "entropy": 0.4574,
     "components": {
-     "hazard_mix": 0.2131,
-     "severity": 0.6785,
-     "timing": 0.3953
+     "hazard_mix": 0.1927,
+     "severity": 0.6732,
+     "timing": 0.5062
     },
-    "weighted": 0.3217,
+    "weighted": 0.343,
     "skill_conf": 0.5,
     "sources": [
      "nasa_eonet",
@@ -17736,14 +17999,14 @@
     "lat": 30.0,
     "lon": -100.0,
     "size_deg": 10.0,
-    "n": 9,
-    "entropy": 0.5137,
+    "n": 11,
+    "entropy": 0.5471,
     "components": {
-     "hazard_mix": 0.377,
-     "severity": 0.4268,
-     "timing": 0.7372
+     "hazard_mix": 0.3461,
+     "severity": 0.5808,
+     "timing": 0.7143
     },
-    "weighted": 0.3853,
+    "weighted": 0.4103,
     "skill_conf": 0.5,
     "sources": [
      "kc2g_ionosondes",
@@ -17757,13 +18020,13 @@
     "lon": -90.0,
     "size_deg": 10.0,
     "n": 12,
-    "entropy": 0.388,
+    "entropy": 0.4337,
     "components": {
      "hazard_mix": 0.2278,
      "severity": 0.5516,
-     "timing": 0.3845
+     "timing": 0.5217
     },
-    "weighted": 0.291,
+    "weighted": 0.3253,
     "skill_conf": 0.5,
     "sources": [
      "erddap_oisst",
@@ -17813,22 +18076,61 @@
     "flags": []
    },
    {
+    "lat": 30.0,
+    "lon": -110.0,
+    "size_deg": 10.0,
+    "n": 5,
+    "entropy": 0.2971,
+    "components": {
+     "hazard_mix": 0.0,
+     "severity": 0.3109,
+     "timing": 0.5803
+    },
+    "weighted": 0.2228,
+    "skill_conf": 0.5,
+    "sources": [
+     "nws"
+    ],
+    "flags": []
+   },
+   {
     "lat": -20.0,
     "lon": 160.0,
     "size_deg": 10.0,
-    "n": 16,
-    "entropy": 0.1791,
+    "n": 15,
+    "entropy": 0.1827,
     "components": {
      "hazard_mix": 0.0,
-     "severity": 0.5373,
+     "severity": 0.5482,
      "timing": 0.0
     },
-    "weighted": 0.1343,
+    "weighted": 0.137,
     "skill_conf": 0.5,
     "sources": [
      "usgs_eq"
     ],
     "flags": []
+   },
+   {
+    "lat": 50.0,
+    "lon": -170.0,
+    "size_deg": 10.0,
+    "n": 2,
+    "entropy": 0.3655,
+    "components": {
+     "hazard_mix": 0.2789,
+     "severity": 0.4307,
+     "timing": 0.3869
+    },
+    "weighted": 0.2741,
+    "skill_conf": 0.5,
+    "sources": [
+     "ndbc_dart",
+     "usgs_eq"
+    ],
+    "flags": [
+     "entropy_spike"
+    ]
    },
    {
     "lat": 40.0,
@@ -17961,24 +18263,6 @@
    },
    {
     "lat": 30.0,
-    "lon": -110.0,
-    "size_deg": 10.0,
-    "n": 4,
-    "entropy": 0.1165,
-    "components": {
-     "hazard_mix": 0.0,
-     "severity": 0.3494,
-     "timing": 0.0
-    },
-    "weighted": 0.0874,
-    "skill_conf": 0.5,
-    "sources": [
-     "nws"
-    ],
-    "flags": []
-   },
-   {
-    "lat": 30.0,
     "lon": 70.0,
     "size_deg": 10.0,
     "n": 3,
@@ -18010,6 +18294,24 @@
     "skill_conf": 0.5,
     "sources": [
      "usgs_eq"
+    ],
+    "flags": []
+   },
+   {
+    "lat": 40.0,
+    "lon": -100.0,
+    "size_deg": 10.0,
+    "n": 3,
+    "entropy": 0.1184,
+    "components": {
+     "hazard_mix": 0.0,
+     "severity": 0.0,
+     "timing": 0.3552
+    },
+    "weighted": 0.0888,
+    "skill_conf": 0.5,
+    "sources": [
+     "nws"
     ],
     "flags": []
    },
@@ -18124,6 +18426,24 @@
     "flags": []
    },
    {
+    "lat": -30.0,
+    "lon": 170.0,
+    "size_deg": 10.0,
+    "n": 4,
+    "entropy": 0.0,
+    "components": {
+     "hazard_mix": 0.0,
+     "severity": 0.0,
+     "timing": 0.0
+    },
+    "weighted": 0.0,
+    "skill_conf": 0.5,
+    "sources": [
+     "usgs_eq"
+    ],
+    "flags": []
+   },
+   {
     "lat": 30.0,
     "lon": 140.0,
     "size_deg": 10.0,
@@ -18164,24 +18484,6 @@
     "lon": 30.0,
     "size_deg": 10.0,
     "n": 1,
-    "entropy": 0.0,
-    "components": {
-     "hazard_mix": 0.0,
-     "severity": 0.0,
-     "timing": 0.0
-    },
-    "weighted": 0.0,
-    "skill_conf": 0.5,
-    "sources": [
-     "usgs_eq"
-    ],
-    "flags": []
-   },
-   {
-    "lat": -30.0,
-    "lon": 170.0,
-    "size_deg": 10.0,
-    "n": 3,
     "entropy": 0.0,
     "components": {
      "hazard_mix": 0.0,
@@ -18610,24 +18912,6 @@
     "flags": []
    },
    {
-    "lat": 40.0,
-    "lon": -100.0,
-    "size_deg": 10.0,
-    "n": 3,
-    "entropy": 0.0,
-    "components": {
-     "hazard_mix": 0.0,
-     "severity": 0.0,
-     "timing": 0.0
-    },
-    "weighted": 0.0,
-    "skill_conf": 0.5,
-    "sources": [
-     "nws"
-    ],
-    "flags": []
-   },
-   {
     "lat": 20.0,
     "lon": -160.0,
     "size_deg": 10.0,
@@ -18880,24 +19164,6 @@
     "flags": []
    },
    {
-    "lat": 50.0,
-    "lon": -170.0,
-    "size_deg": 10.0,
-    "n": 1,
-    "entropy": 0.0,
-    "components": {
-     "hazard_mix": 0.0,
-     "severity": 0.0,
-     "timing": 0.0
-    },
-    "weighted": 0.0,
-    "skill_conf": 0.5,
-    "sources": [
-     "ndbc_dart"
-    ],
-    "flags": []
-   },
-   {
     "lat": 20.0,
     "lon": 130.0,
     "size_deg": 10.0,
@@ -18916,6 +19182,6 @@
     "flags": []
    }
   ],
-  "flagged": 0
+  "flagged": 1
  }
 }
