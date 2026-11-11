@@ -1,0 +1,50 @@
+{
+  "name": "GeoSentinel",
+  "description": "Empty base layer; attach triage results via layer_from_triage.",
+  "domain": "enterprise-attack",
+  "versions": {
+    "attack": "16",
+    "navigator": "5.3.2",
+    "layer": "4.5"
+  },
+  "filters": {
+    "platforms": []
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": true,
+    "showName": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "none"
+  },
+  "hideDisabled": false,
+  "techniques": [],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#ff6666"
+    ],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "legendItems": [],
+  "metadata": [
+    {
+      "name": "generator",
+      "value": "geosentinel.tools.attack_layer"
+    },
+    {
+      "name": "advisory",
+      "value": "heuristic associations only; not confirmed detections"
+    }
+  ],
+  "links": [],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": false,
+  "selectVisibleTechniques": false
+}
