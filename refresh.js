@@ -161,3 +161,59 @@ function renderTools(el, d) {
     }).catch(() => { nEl.textContent = "technique count unavailable"; });
   }
 }
+
+function renderSpaceWeather(panel) {
+  if (!panel) return;
+  const el = panel.querySelector("#space-weather") || panel;
+  const href = "data/space-weather.json";
+  gsGet(href).then(doc => {
+    if (!doc || typeof doc !== "object") return;
+    const kp = (doc.kp && doc.kp.latest) || {};
+    const wind = (doc.solar_wind && doc.solar_wind.latest) || {};
+    const alerts = (doc.alerts && doc.alerts.items) || [];
+    const seeds = doc.seeds || {};
+    const fmt = v => (v == null || v === "") ? "–" : gsEsc(v);
+    const nfmt = (v, d) => (v == null || v === "") ? "–" : gsEsc(Number(v).toFixed(d));
+    let html = '<p class="muted">experimental correlation input, not predictive</p>';
+    html += "<table><tr><th>Kp</th><th>solar wind</th><th>Bz / Bt</th></tr>";
+    html += `<tr><td>${nfmt(kp.kp, 2)}<br><span class="muted">${fmt(kp.time)}</span></td>`;
+    html += `<td>${kp.kp == null && wind.speed == null ? "–" : nfmt(wind.speed, 0) + " km/s"}<br><span class="muted">${fmt(wind.time)}</span></td>`;
+    html += `<td>Bz ${nfmt(wind.bz_gsm, 1)} nT · Bt ${nfmt(wind.bt, 1)} nT</td></tr></table>`;
+    html += "<div><b>SWPC alerts</b></div>";
+    if (!(doc.alerts && doc.alerts.ok)) {
+      html += `<div class="muted">${gsEsc((doc.alerts && doc.alerts.error) || "alerts unavailable")}</div>`;
+    } else if (!alerts.length) {
+      html += '<div class="muted">no current alerts</div>';
+    } else {
+      html += "<table><tr><th>time</th><th>alert</th></tr>";
+      for (const a of alerts.slice(0, 5)) {
+        html += `<tr><td class="muted">${fmt(a.time)}</td><td>${gsEsc(a.title || a.product_id || "")}</td></tr>`;
+      }
+      html += "</table>";
+    }
+    const portal = gsUrl(seeds.portal || "http://spaceweather.gmu.edu/seeds/") || "http://spaceweather.gmu.edu/seeds/";
+    const live = gsUrl(seeds.source || "http://spaceweather.gmu.edu/seeds/realtime.php") || "http://spaceweather.gmu.edu/seeds/realtime.php";
+    html += `<div><b>SEEDS CMEs</b> · <a href="${gsEsc(live)}">realtime</a> · <a href="${gsEsc(portal)}">portal</a></div>`;
+    const dets = seeds.detections || [];
+    if (!seeds.ok) {
+      html += `<div class="muted">SEEDS catalog unavailable${seeds.error ? ": " + gsEsc(seeds.error) : ""}. Linked above.</div>`;
+    } else if (!dets.length) {
+      html += '<div class="muted">no recent detections</div>';
+    } else {
+      html += "<table><tr><th>time</th><th>PA</th><th>width</th><th>velocity</th><th>instrument</th></tr>";
+      for (const c of dets.slice(0, 8)) {
+        html += `<tr><td class="muted">${fmt(c.time)}</td><td>${fmt(c.position_angle)}</td><td>${fmt(c.angular_width)}</td><td>${c.velocity == null ? "–" : gsEsc(c.velocity) + " km/s"}</td><td class="muted">${fmt(c.instrument)}</td></tr>`;
+      }
+      html += "</table>";
+    }
+    const attr = doc.attribution || {};
+    html += `<div class="muted">${gsEsc(attr.swpc || "NOAA SWPC")} · <a href="https://www.swpc.noaa.gov/">SWPC</a>`;
+    if (attr.seeds) html += ` · ${gsEsc(attr.seeds)}`;
+    html += "</div>";
+    el.innerHTML = html;
+    panel.hidden = false;
+  }).catch(() => {
+    panel.hidden = true;
+    el.innerHTML = "";
+  });
+}
