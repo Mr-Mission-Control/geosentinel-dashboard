@@ -77,3 +77,87 @@ function renderAir(el, d, fmt) {
   table += `</table><div class="muted">${gsEsc(sum.attribution || "")}${providers ? " Providers in this run: " + providers + "." : ""} <a href="https://openaq.org/">OpenAQ</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> when the location license requires it.</div>`;
   el.innerHTML = table;
 }
+
+function usgsEventHref(id) {
+  const raw = String(id ?? "");
+  const page = raw.replace(/^usgs:/i, "");
+  if (!page) return "";
+  return "https://earthquake.usgs.gov/earthquakes/eventpage/" + encodeURIComponent(page);
+}
+
+function renderTools(el, d) {
+  if (!el) return;
+  const t = d && d.tools;
+  if (!t || typeof t !== "object") {
+    el.innerHTML = '<div class="muted">not in this snapshot (flags off or older data)</div>';
+    return;
+  }
+  const flags = t.flags || {};
+  const pill = (name, on) => `<span class="tag">${gsEsc(name)} ${on ? "on" : "off"}</span>`;
+  const qpuBadge = t.qpu === true
+    ? '<span class="tag bad">QPU on</span>'
+    : '<span class="tag ok">QPU off</span>';
+  const head = `<div>${pill("qubo", !!flags.qubo)} ${pill("grib2", !!flags.grib2)} ${pill("attack_layer", !!flags.attack_layer)} ${qpuBadge}</div>`;
+
+  const sel = (t.qubo && t.qubo.selection) || {};
+  const solver = sel.solver || (t.qubo && t.qubo.solver) || "–";
+  const ver = sel.dimod_version ? ` · dimod ${sel.dimod_version}` : "";
+  const energy = sel.ground_energy == null ? "–" : Number(sel.ground_energy).toFixed(4);
+  const budget = sel.budget == null ? "–" : String(sel.budget);
+  let qubo = `<p>solver ${gsEsc(solver)}${gsEsc(ver)} · ground energy ${gsEsc(energy)} · budget ${gsEsc(budget)}</p>`;
+  const rows = sel.selected || [];
+  if (rows.length) {
+    qubo += "<table><tr><th>event</th><th>weight</th></tr>";
+    for (const r of rows) {
+      const href = usgsEventHref(r.id);
+      const label = gsEsc(r.id);
+      const link = href ? `<a href="${gsEsc(href)}">${label}</a>` : label;
+      const w = r.weight == null ? "–" : Number(r.weight).toFixed(3);
+      qubo += `<tr><td>${link}</td><td>${gsEsc(w)}</td></tr>`;
+    }
+    qubo += "</table>";
+  } else if (flags.qubo) {
+    qubo += '<div class="muted">no events selected</div>';
+  } else {
+    qubo += '<div class="muted">QUBO flag off</div>';
+  }
+
+  const a = t.attack_layer || {};
+  const layerHref = "data/attack-layer.json";
+  let attack;
+  if (flags.attack_layer || a.enabled || a.ok) {
+    const lv = a.layer_version || "–";
+    const nv = a.navigator_version || "–";
+    attack = `<p><a href="${layerHref}">ATT&amp;CK Navigator layer</a> · layer ${gsEsc(lv)} · navigator ${gsEsc(nv)} · <span class="tools-layer-n muted">techniques …</span></p>`;
+  } else {
+    attack = '<div class="muted">ATT&amp;CK layer flag off</div>';
+  }
+
+  const g = t.grib2;
+  const dec = g && g.decode;
+  let grib;
+  if (dec && dec.parked) {
+    grib = `<div class="muted">GRIB2 parked: ${gsEsc(dec.reason || "parked")}</div>`;
+  } else if (dec && dec.ok) {
+    const m = (dec.messages || [])[0] || {};
+    const shape = (m.shape || []).join("×");
+    grib = `<div>GRIB2 ${gsEsc(dec.grib2io_version || "")} · ${gsEsc(m.shortName || "")} ${gsEsc(m.units || "")}${shape ? " · shape " + gsEsc(shape) : ""}</div>`;
+  } else if (g && g.available === false) {
+    grib = `<div class="muted">GRIB2 parked: ${gsEsc((dec && dec.reason) || "grib2io not installed")}</div>`;
+  } else if (!flags.grib2) {
+    grib = '<div class="muted">GRIB2 off</div>';
+  } else {
+    grib = `<div class="muted">GRIB2: ${gsEsc((dec && dec.reason) || "no decode")}</div>`;
+  }
+
+  el.innerHTML = head + qubo + attack + grib;
+
+  const nEl = el.querySelector(".tools-layer-n");
+  if (nEl) {
+    gsGet(layerHref).then(layer => {
+      const n = Array.isArray(layer && layer.techniques) ? layer.techniques.length : 0;
+      nEl.textContent = n + " technique" + (n === 1 ? "" : "s");
+      nEl.classList.remove("muted");
+    }).catch(() => { nEl.textContent = "technique count unavailable"; });
+  }
+}

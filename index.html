@@ -4,14 +4,15 @@
 main{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;padding:16px}section{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px}
 h2{font-size:15px;margin:0 0 8px}table{width:100%;border-collapse:collapse}td,th{padding:4px 6px;border-bottom:1px solid #21262d;text-align:left;vertical-align:top}
 #air{overflow-x:auto;-webkit-overflow-scrolling:touch}#air table{min-width:28rem}
-.bar{height:8px;background:#f0883e;border-radius:4px}.muted{color:#8b949e}a{color:#58a6ff}</style></head><body>
+.bar{height:8px;background:#f0883e;border-radius:4px}.muted{color:#8b949e}.ok{color:#3fb950}.bad{color:#f85149}.tag{font-size:11px;background:#30363d;border-radius:3px;padding:1px 4px}a{color:#58a6ff}</style></head><body>
 <header><b>GeoSentinel</b> fused hazard snapshot · <span id="gen" class="muted"></span>· <a href="fused.html">fused view</a> · <a href="hub.html">Mission Hub</a></header>
 <main><section><h2>Regional multi-hazard index (0–10)</h2><table id="reg"></table></section>
 <section><h2>Space weather</h2><table id="sw"></table></section>
 <section><h2>Earthquakes M4.5+ (7 days, newest)</h2><table id="eq"></table></section>
 <section><h2>Flood alerts (NWS)</h2><table id="fl"></table></section>
 <section><h2>Volcanoes (USGS HANS) & SST</h2><table id="vs"></table></section>
-<section><h2>Air quality timeline (OpenAQ)</h2><div id="air"></div></section></main>
+<section><h2>Air quality timeline (OpenAQ)</h2><div id="air"></div></section>
+<section><h2>Optimizer &amp; threat layer</h2><div id="tools"></div></section></main>
 <script src="refresh.js"></script>
 <script>
 const tz="America/Chicago",fmt=t=>new Date(t).toLocaleString("en-US",{timeZone:tz,dateStyle:"medium",timeStyle:"short"})+" CT";
@@ -26,5 +27,6 @@ loadSnapshot().then(d=>{
  rows("fl",E.filter(e=>e.hazard=="weather_alert"&&/Flood/.test(e.raw.event)).sort((a,b)=>b.severity-a.severity).slice(0,25).map(e=>`<tr><td>${esc(e.raw.event)}</td><td>${esc(e.region)}</td><td class=muted>${esc(e.title.split(": ")[1])}</td></tr>`));
  rows("vs",E.filter(e=>e.hazard=="volcano"||e.hazard=="sst").map(e=>`<tr><td>${esc(e.title)}</td><td class=muted>${fmt(e.time)}</td></tr>`));
  renderAir(document.getElementById("air"), d, fmt);
+ renderTools(document.getElementById("tools"), d);
 }).catch(e=>{document.getElementById("gen").textContent="load failed: "+e;});
 </script></body></html>

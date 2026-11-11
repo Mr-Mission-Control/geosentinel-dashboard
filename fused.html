@@ -12,6 +12,7 @@ section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;marg
 <section><h2>Source health</h2><div id="health" class="scroll"></div></section>
 <section><h2>Air quality timeline <span class="tag">OpenAQ</span></h2><div id="air" class="scroll"></div></section>
 <section><h2>Hydro gauges <span class="tag">advisory only</span></h2><div id="hydro"></div></section>
+<section><h2>Optimizer &amp; threat layer <span class="tag">local ExactSolver</span></h2><div id="tools"></div></section>
 <section><h2>Astro context</h2><div id="astro"></div>
 <h2>Exploratory overlays <span class="tag">exploratory/non-scientific overlay</span></h2><div id="expl" class="muted"></div></section>
 </main>
@@ -41,6 +42,7 @@ function render(d){
  m.innerHTML=s;
  const NM=(d.catalog&&d.catalog.names)||{},nm=(k,v)=>NM[k]||(v&&v.name)||k,lab=(k,v)=>{const n=nm(k,v);return n===k?esc(k):`${esc(n)} <span class="muted">${esc(k)}</span>`;};
  renderHydro(d.hydro);
+ renderTools(document.getElementById("tools"), d);
  renderAir(document.getElementById("air"), d, t => t);
  let h="<table><tr><th>source</th><th>status</th><th>detail</th></tr>";
  for(const [k,v] of Object.entries(d.sources||{}))h+=`<tr><td>${lab(k,v)} <span class="tag">core</span></td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?v.count+" events":v.error)}</td></tr>`;
