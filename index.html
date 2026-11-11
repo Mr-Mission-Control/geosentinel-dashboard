@@ -6,7 +6,8 @@ h2{font-size:15px;margin:0 0 8px}table{width:100%;border-collapse:collapse}td,th
 #air{overflow-x:auto;-webkit-overflow-scrolling:touch}#air table{min-width:28rem}
 .bar{height:8px;background:#f0883e;border-radius:4px}.muted{color:#8b949e}.ok{color:#3fb950}.bad{color:#f85149}.tag{font-size:11px;background:#30363d;border-radius:3px;padding:1px 4px}a{color:#58a6ff}</style></head><body>
 <header><b>GeoSentinel</b> fused hazard snapshot · <span id="gen" class="muted"></span>· <a href="fused.html">fused view</a> · <a href="hub.html">Mission Hub</a></header>
-<main><section><h2>Regional multi-hazard index (0–10)</h2><table id="reg"></table></section>
+<main><section id="known-events-panel"><h2>Known events</h2><div id="known-events"></div></section>
+<section><h2>Regional multi-hazard index (0–10)</h2><table id="reg"></table></section>
 <section><h2>Space weather</h2><table id="sw"></table></section>
 <section><h2>Earthquakes M4.5+ (7 days, newest)</h2><table id="eq"></table></section>
 <section><h2>Flood alerts (NWS)</h2><table id="fl"></table></section>
@@ -23,10 +24,11 @@ loadSnapshot().then(d=>{
  document.getElementById("gen").textContent="generated "+fmt(d.generated_at)+(d._refresh?" · "+d._refresh:"");
  const E=d.events||[];
  rows("reg",(d.fusion&&d.fusion.regions||[]).map(r=>`<tr><td>${esc(r.region)}${r.marine?' <span class=muted>(marine)</span>':''}</td><td style="width:45%"><div class=bar style="width:${r.index*10}%"></div></td><td>${r.index}</td><td class=muted>${r.n} ev${r.floods?`, ${r.floods} flood`:""}</td></tr>`));
- rows("sw",E.filter(e=>e.hazard=="space_weather").slice(0,8).map(e=>`<tr><td>${esc(e.title)}</td><td class=muted>${fmt(e.time)}</td></tr>`));
+ rows("sw",E.filter(e=>e.hazard=="space_weather").slice(0,8).map(e=>`<tr><td>${esc(e.title)}${e.known?` <span class=tag>${esc(e.known.label)}</span>`:""}</td><td class=muted>${fmt(e.time)}</td></tr>`));
  rows("eq",E.filter(e=>e.hazard=="earthquake").sort((a,b)=>b.time.localeCompare(a.time)).slice(0,15).map(e=>`<tr><td><a href="${esc(e.url)}">${esc(e.title)}</a></td><td class=muted>${fmt(e.time)}</td></tr>`));
- rows("fl",E.filter(e=>e.hazard=="weather_alert"&&/Flood/.test(e.raw.event)).sort((a,b)=>b.severity-a.severity).slice(0,25).map(e=>`<tr><td>${esc(e.raw.event)}</td><td>${esc(e.region)}</td><td class=muted>${esc(e.title.split(": ")[1])}</td></tr>`));
+ rows("fl",E.filter(e=>e.hazard=="weather_alert"&&/Flood/.test(e.raw.event)).sort((a,b)=>b.severity-a.severity).slice(0,25).map(e=>`<tr><td>${esc(e.raw.event)}${e.known?` <span class=tag>${esc(e.known.label)}</span>`:""}</td><td>${esc(e.region)}</td><td class=muted>${esc(e.title.split(": ")[1])}</td></tr>`));
  rows("vs",E.filter(e=>e.hazard=="volcano"||e.hazard=="sst").map(e=>`<tr><td>${esc(e.title)}</td><td class=muted>${fmt(e.time)}</td></tr>`));
+ renderKnownEvents(document.getElementById("known-events"), d);
  renderAir(document.getElementById("air"), d, fmt);
  renderTools(document.getElementById("tools"), d);
  renderSpaceWeather(document.getElementById("space-weather-panel"));

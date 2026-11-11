@@ -217,3 +217,58 @@ function renderSpaceWeather(panel) {
     el.innerHTML = "";
   });
 }
+
+function renderKnownEvents(el, d) {
+  if (!el) return;
+  const doc = d && d.known_events;
+  if (!doc || !Array.isArray(doc.items) || !doc.items.length) {
+    el.innerHTML = "";
+    const panel = el.closest ? el.closest("#known-events-panel") : null;
+    if (panel) panel.hidden = true;
+    return;
+  }
+  const panel = el.closest ? el.closest("#known-events-panel") : null;
+  if (panel) panel.hidden = false;
+  let html = "";
+  for (const item of doc.items) {
+    const typ = item.type === "watch" ? "watch" : "scheduled";
+    const st = item.status || "";
+    html += `<div><span class="tag">${gsEsc(typ)}</span> <span class="tag">${gsEsc(st)}</span> `;
+    html += `<b>${gsEsc(item.title || item.label || item.id)}</b></div>`;
+    const wins = item.windows || [];
+    if (wins.length) {
+      html += '<div class="muted">' + wins.map(w => {
+        const role = w.role ? gsEsc(w.role) + ": " : "";
+        return role + gsEsc(w.start) + " – " + gsEsc(w.end);
+      }).join("<br>") + (item.local_window ? "<br>" + gsEsc(item.local_window) : "") + "</div>";
+    }
+    if (typ === "scheduled") {
+      const ch = (item.channels || []).join(", ");
+      const ex = (item.excludes || []).join(", ");
+      html += `<div class="muted">${gsEsc(item.label || "known: scheduled EAS test")}`;
+      if (ch) html += " · " + gsEsc(ch);
+      if (ex) html += " · no " + gsEsc(ex);
+      html += ". Matching alerts are labeled, not dropped, and are not scored as anomalies.</div>";
+    } else {
+      html += `<div class="muted">${gsEsc(item.purpose || "Timeline marker only. Does not suppress or relabel anomalies.")}</div>`;
+    }
+    const links = (item.sources || []).filter(s => s && (s.url || s.name));
+    if (links.length) {
+      html += "<div>" + links.map(s => {
+        const href = gsUrl(s.url);
+        const name = gsEsc(s.name || s.url || "source");
+        return href ? `<a href="${gsEsc(href)}">${name}</a>` : name;
+      }).join(" · ") + "</div>";
+    }
+  }
+  const watches = ((d.verification || {}).watches) || [];
+  if (watches.length) {
+    html += '<table><tr><th>watch</th><th>pre</th><th>during</th><th>post</th></tr>';
+    for (const w of watches) {
+      const cell = b => (b && b.n != null) ? gsEsc(b.n) : "–";
+      html += `<tr><td>${gsEsc(w.label || w.id)}</td><td>${cell(w.pre)}</td><td>${cell(w.during)}</td><td>${cell(w.post)}</td></tr>`;
+    }
+    html += "</table>";
+  }
+  el.innerHTML = html;
+}

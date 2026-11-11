@@ -8,6 +8,7 @@ section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;marg
 <main>
 <section><h2>Entropy grid (normalized 0–1) &amp; active alerts</h2><svg id="map" viewBox="-180 -90 360 180" preserveAspectRatio="xMidYMid meet"></svg>
 <div class="muted">Cell colour = normalized entropy · red outline = flagged (entropy_high / entropy_spike / low_skill) · dots = events with severity ≥ 0.5</div></section>
+<section id="known-events-panel"><h2>Known events</h2><div id="known-events" class="scroll"></div></section>
 <section><h2>Accuracy back-checks</h2><div id="acc" class="scroll"></div></section>
 <section><h2>Source health</h2><div id="health" class="scroll"></div></section>
 <section><h2>Air quality timeline <span class="tag">OpenAQ</span></h2><div id="air" class="scroll"></div></section>
@@ -44,6 +45,7 @@ function render(d){
  const NM=(d.catalog&&d.catalog.names)||{},nm=(k,v)=>NM[k]||(v&&v.name)||k,lab=(k,v)=>{const n=nm(k,v);return n===k?esc(k):`${esc(n)} <span class="muted">${esc(k)}</span>`;};
  renderHydro(d.hydro);
  renderTools(document.getElementById("tools"), d);
+ renderKnownEvents(document.getElementById("known-events"), d);
  renderSpaceWeather(document.getElementById("space-weather-panel"));
  renderAir(document.getElementById("air"), d, t => t);
  let h="<table><tr><th>source</th><th>status</th><th>detail</th></tr>";
