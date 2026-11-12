@@ -310,6 +310,56 @@ function renderGmn(panel, d) {
   );
 }
 
+
+function renderWban(panel) {
+  if (!panel) return;
+  const el = panel.querySelector("#wban") || panel;
+  const href = "data/wban.json";
+  gsGet(href).then(doc => {
+    if (!doc || typeof doc !== "object") {
+      panel.hidden = true;
+      el.innerHTML = "";
+      return;
+    }
+    const bands = doc.bands || {};
+    const chans = doc.wifi_channels || {};
+    const nfmt = (v, d) => (v == null || v === "") ? "–" : gsEsc(Number(v).toFixed(d));
+    const count = name => {
+      const rec = bands[name] || {};
+      return rec.devices == null ? "–" : gsEsc(rec.devices);
+    };
+    const rssi = name => {
+      const s = (bands[name] && bands[name].rssi) || {};
+      if (s.min == null && s.median == null && s.max == null) return "–";
+      return nfmt(s.min, 0) + " / " + nfmt(s.median, 1) + " / " + nfmt(s.max, 0) + " dBm";
+    };
+    let html = '<p class="muted">experimental electromagnetic-environment correlation input, not predictive</p>';
+    if (doc.parked) {
+      html += `<div class="muted">${gsEsc(doc.reason || "parked")}</div>`;
+    } else if (!doc.ok) {
+      html += `<div class="muted">${gsEsc(doc.error || "unavailable")}</div>`;
+    } else {
+      html += "<table><tr><th>band</th><th>devices</th><th>RSSI min / median / max</th></tr>";
+      for (const name of ["2.4", "5", "6", "ble"]) {
+        const rec = bands[name] || {};
+        if (name === "6" && !rec.devices) continue;
+        html += `<tr><td>${gsEsc(name === "ble" ? "BLE" : name + " GHz")}</td><td>${count(name)}</td><td class="muted">${rssi(name)}</td></tr>`;
+      }
+      html += "</table>";
+      const parts = Object.keys(chans).map(k => gsEsc(k) + " " + gsEsc(chans[k]));
+      if (parts.length) {
+        html += `<div class="muted">channels: ${parts.join(", ")}</div>`;
+      }
+    }
+    html += '<div class="muted">own sensor · not used in the hazard index · broadcast beacons only, no identifiers</div>';
+    el.innerHTML = html;
+    panel.hidden = false;
+  }).catch(() => {
+    panel.hidden = true;
+    el.innerHTML = "";
+  });
+}
+
 function renderKnownEvents(el, d) {
   if (!el) return;
   const doc = d && d.known_events;

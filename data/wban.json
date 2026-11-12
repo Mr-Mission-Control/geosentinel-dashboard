@@ -1,0 +1,9 @@
+{
+ "ok": false,
+ "label": "experimental electromagnetic-environment correlation input, not predictive",
+ "used_in_index": false,
+ "own_sensor": true,
+ "parked": true,
+ "degraded": true,
+ "reason": "set GEOSENTINEL_WBAN_SOURCE to a local wban.json path or a localhost/LAN URL"
+}
