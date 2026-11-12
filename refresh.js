@@ -446,7 +446,7 @@ function renderKnownEvents(el, d) {
   if (panel) panel.hidden = false;
   let html = "";
   for (const item of doc.items) {
-    const typ = item.type === "watch" ? "watch" : "scheduled";
+    const typ = item.type || "scheduled";
     const st = item.status || "";
     html += `<div><span class="tag">${gsEsc(typ)}</span> <span class="tag">${gsEsc(st)}</span> `;
     html += `<b>${gsEsc(item.title || item.label || item.id)}</b></div>`;
@@ -457,15 +457,17 @@ function renderKnownEvents(el, d) {
         return role + gsEsc(w.start) + " – " + gsEsc(w.end);
       }).join("<br>") + (item.local_window ? "<br>" + gsEsc(item.local_window) : "") + "</div>";
     }
-    if (typ === "scheduled") {
+    if (typ === "watch") {
+      html += `<div class="muted">${gsEsc(item.purpose || "Timeline marker only. Does not suppress or relabel anomalies.")}</div>`;
+    } else {
       const ch = (item.channels || []).join(", ");
       const ex = (item.excludes || []).join(", ");
-      html += `<div class="muted">${gsEsc(item.label || "known: scheduled EAS test")}`;
+      const fallback = typ === "outage" ? "known: service outage" : "known: scheduled EAS test";
+      html += `<div class="muted">${gsEsc(item.label || fallback)}`;
       if (ch) html += " · " + gsEsc(ch);
       if (ex) html += " · no " + gsEsc(ex);
       html += ". Matching alerts are labeled, not dropped, and are not scored as anomalies.</div>";
-    } else {
-      html += `<div class="muted">${gsEsc(item.purpose || "Timeline marker only. Does not suppress or relabel anomalies.")}</div>`;
+      if (item.purpose) html += `<div class="muted">${gsEsc(item.purpose)}</div>`;
     }
     const links = (item.sources || []).filter(s => s && (s.url || s.name));
     if (links.length) {
