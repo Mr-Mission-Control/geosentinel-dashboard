@@ -14,7 +14,11 @@ h2{font-size:15px;margin:0 0 8px}table{width:100%;border-collapse:collapse}td,th
 <section><h2>Volcanoes (USGS HANS) & SST</h2><table id="vs"></table></section>
 <section><h2>Air quality timeline (OpenAQ)</h2><div id="air"></div></section>
 <section><h2>Optimizer &amp; threat layer</h2><div id="tools"></div></section>
-<section id="space-weather-panel" hidden><h2>Space weather layer <span class="tag">experimental</span></h2><div id="space-weather"></div></section></main>
+<section id="space-weather-panel" hidden><h2>Space weather layer <span class="tag">experimental</span></h2><div id="space-weather"></div></section>
+<section id="mil-flight-counts-panel" hidden><h2>Military flight counts <span class="tag">experimental</span></h2><div id="mil-flight-counts"></div></section>
+<section id="local-adsb-panel" hidden><h2>Local ADS-B receiver <span class="tag">experimental</span></h2><div id="local-adsb"></div></section>
+<section id="regional-adsb-panel" hidden><h2>Regional ADS-B counts <span class="tag">experimental</span></h2><div id="regional-adsb"></div></section>
+<section id="gmn-panel" hidden><h2>Global Meteor Network <span class="tag">experimental</span></h2><div id="gmn"></div></section></main>
 <script src="refresh.js"></script>
 <script>
 const tz="America/Chicago",fmt=t=>new Date(t).toLocaleString("en-US",{timeZone:tz,dateStyle:"medium",timeStyle:"short"})+" CT";
@@ -32,5 +36,9 @@ loadSnapshot().then(d=>{
  renderAir(document.getElementById("air"), d, fmt);
  renderTools(document.getElementById("tools"), d);
  renderSpaceWeather(document.getElementById("space-weather-panel"));
+ renderMilFlightCounts(document.getElementById("mil-flight-counts-panel"), d);
+ renderLocalAdsb(document.getElementById("local-adsb-panel"), d);
+ renderRegionalAdsb(document.getElementById("regional-adsb-panel"), d);
+ renderGmn(document.getElementById("gmn-panel"), d);
 }).catch(e=>{document.getElementById("gen").textContent="load failed: "+e;});
 </script></body></html>

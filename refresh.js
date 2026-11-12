@@ -218,6 +218,98 @@ function renderSpaceWeather(panel) {
   });
 }
 
+
+function renderMilFlightCounts(panel, d) {
+  if (!panel) return;
+  const el = panel.querySelector("#mil-flight-counts") || panel;
+  const doc = d && d.tools && d.tools.mil_flight_counts;
+  const hasData = !!(doc && doc.ok && typeof doc.aircraft === "number");
+  if (!hasData) {
+    panel.hidden = true;
+    el.innerHTML = "";
+    return;
+  }
+  const types = doc.types || {};
+  const parts = Object.keys(types).map(k => gsEsc(k) + " " + gsEsc(types[k]));
+  const hist = parts.length ? parts.join(", ") : "no type codes";
+  const attr = (doc.attribution && doc.attribution.attribution) || "Contains information from adsb.lol, ODbL 1.0.";
+  const license = (doc.attribution && doc.attribution.license_url) || "https://opendatacommons.org/licenses/odbl/1-0/";
+  const src = (doc.attribution && doc.attribution.url) || "https://adsb.lol/";
+  el.innerHTML = `<p>${gsEsc(doc.aircraft)} military-registered aircraft · ${hist}</p>`
+    + `<div class="muted">${gsEsc(doc.label || "experimental context, non-predictive")} · not used in the hazard index · `
+    + `${gsEsc(attr)} <a href="${gsEsc(src)}">adsb.lol</a> · <a href="${gsEsc(license)}">ODbL 1.0</a></div>`;
+  panel.hidden = false;
+}
+
+
+function renderFlaggedAggregate(panel, elId, doc, bodyHtml, attrFallback, srcFallback, licenseFallback) {
+  if (!panel) return;
+  const el = panel.querySelector(elId) || panel;
+  const hasData = !!(doc && doc.ok);
+  if (!hasData) {
+    panel.hidden = true;
+    el.innerHTML = "";
+    return;
+  }
+  const attr = (doc.attribution && doc.attribution.attribution) || attrFallback;
+  const license = (doc.attribution && doc.attribution.license_url) || licenseFallback;
+  const src = (doc.attribution && doc.attribution.url) || srcFallback;
+  const licenseName = (doc.attribution && doc.attribution.license) || "";
+  let credit = "";
+  if (attr || src || license) {
+    credit = `${gsEsc(attr)}`;
+    if (src) credit += ` <a href="${gsEsc(src)}">${gsEsc(src)}</a>`;
+    if (license) credit += ` · <a href="${gsEsc(license)}">${gsEsc(licenseName || license)}</a>`;
+  }
+  el.innerHTML = bodyHtml
+    + `<div class="muted">${gsEsc(doc.label || "experimental context, non-predictive")} · not used in the hazard index`
+    + (credit ? " · " + credit : "")
+    + "</div>";
+  panel.hidden = false;
+}
+
+function renderLocalAdsb(panel, d) {
+  const doc = d && d.tools && d.tools.local_adsb;
+  const ok = !!(doc && doc.ok && typeof doc.aircraft === "number");
+  const cats = (doc && doc.categories) || {};
+  const parts = Object.keys(cats).map(k => gsEsc(k) + " " + gsEsc(cats[k]));
+  const hist = parts.length ? parts.join(", ") : "no categories";
+  const body = ok
+    ? `<p>${gsEsc(doc.aircraft)} aircraft · ${gsEsc(doc.with_position)} with position · ${hist}</p>`
+    : "";
+  renderFlaggedAggregate(panel, "#local-adsb", ok ? doc : null, body, "own receiver", "", "");
+}
+
+function renderRegionalAdsb(panel, d) {
+  const doc = d && d.tools && d.tools.regional_adsb;
+  const ok = !!(doc && doc.ok && typeof doc.aircraft === "number");
+  const cats = (doc && doc.categories) || {};
+  const parts = Object.keys(cats).map(k => gsEsc(k) + " " + gsEsc(cats[k]));
+  const hist = parts.length ? parts.join(", ") : "no categories";
+  const r = (doc && doc.query && doc.query.radius_nm) || 100;
+  const body = ok
+    ? `<p>${gsEsc(doc.aircraft)} aircraft within ${gsEsc(r)} nm of Rogers, AR · ${gsEsc(doc.with_position)} with position · ${hist}</p>`
+    : "";
+  renderFlaggedAggregate(
+    panel, "#regional-adsb", ok ? doc : null, body,
+    "Contains information from adsb.lol, ODbL 1.0.",
+    "https://adsb.lol/",
+    "https://opendatacommons.org/licenses/odbl/1-0/",
+  );
+}
+
+function renderGmn(panel, d) {
+  const doc = d && d.tools && d.tools.gmn;
+  const ok = !!(doc && doc.ok && typeof doc.stations === "number");
+  const body = ok ? `<p>${gsEsc(doc.stations)} contributing stations (count only)</p>` : "";
+  renderFlaggedAggregate(
+    panel, "#gmn", ok ? doc : null, body,
+    "Station-count aggregate from the Global Meteor Network, licensed under CC BY 4.0.",
+    "https://globalmeteornetwork.org/",
+    "https://creativecommons.org/licenses/by/4.0/",
+  );
+}
+
 function renderKnownEvents(el, d) {
   if (!el) return;
   const doc = d && d.known_events;

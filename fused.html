@@ -15,6 +15,10 @@ section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;marg
 <section><h2>Hydro gauges <span class="tag">advisory only</span></h2><div id="hydro"></div></section>
 <section><h2>Optimizer &amp; threat layer <span class="tag">local ExactSolver</span></h2><div id="tools"></div></section>
 <section id="space-weather-panel" hidden><h2>Space weather layer <span class="tag">experimental</span></h2><div id="space-weather"></div></section>
+<section id="mil-flight-counts-panel" hidden><h2>Military flight counts <span class="tag">experimental</span></h2><div id="mil-flight-counts"></div></section>
+<section id="local-adsb-panel" hidden><h2>Local ADS-B receiver <span class="tag">experimental</span></h2><div id="local-adsb"></div></section>
+<section id="regional-adsb-panel" hidden><h2>Regional ADS-B counts <span class="tag">experimental</span></h2><div id="regional-adsb"></div></section>
+<section id="gmn-panel" hidden><h2>Global Meteor Network <span class="tag">experimental</span></h2><div id="gmn"></div></section>
 <section><h2>Astro context</h2><div id="astro"></div>
 <h2>Exploratory overlays <span class="tag">exploratory/non-scientific overlay</span></h2><div id="expl" class="muted"></div></section>
 </main>
@@ -47,6 +51,10 @@ function render(d){
  renderTools(document.getElementById("tools"), d);
  renderKnownEvents(document.getElementById("known-events"), d);
  renderSpaceWeather(document.getElementById("space-weather-panel"));
+ renderMilFlightCounts(document.getElementById("mil-flight-counts-panel"), d);
+ renderLocalAdsb(document.getElementById("local-adsb-panel"), d);
+ renderRegionalAdsb(document.getElementById("regional-adsb-panel"), d);
+ renderGmn(document.getElementById("gmn-panel"), d);
  renderAir(document.getElementById("air"), d, t => t);
  let h="<table><tr><th>source</th><th>status</th><th>detail</th></tr>";
  for(const [k,v] of Object.entries(d.sources||{}))h+=`<tr><td>${lab(k,v)} <span class="tag">core</span></td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?v.count+" events":v.error)}</td></tr>`;
