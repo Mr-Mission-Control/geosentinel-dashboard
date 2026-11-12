@@ -19,7 +19,8 @@ h2{font-size:15px;margin:0 0 8px}table{width:100%;border-collapse:collapse}td,th
 <section id="local-adsb-panel" hidden><h2>Local ADS-B receiver <span class="tag">experimental</span></h2><div id="local-adsb"></div></section>
 <section id="regional-adsb-panel" hidden><h2>Regional ADS-B counts <span class="tag">experimental</span></h2><div id="regional-adsb"></div></section>
 <section id="gmn-panel" hidden><h2>Global Meteor Network <span class="tag">experimental</span></h2><div id="gmn"></div></section>
-<section id="wban-panel" hidden><h2>Band activity <span class="tag">experimental</span></h2><div id="wban"></div></section></main>
+<section id="wban-panel" hidden><h2>Band activity <span class="tag">experimental</span></h2><div id="wban"></div></section>
+<section id="usgs-water-panel" hidden><h2>Stream gauges <span class="tag">experimental</span></h2><div id="usgs-water"></div></section></main>
 <script src="refresh.js"></script>
 <script>
 const tz="America/Chicago",fmt=t=>new Date(t).toLocaleString("en-US",{timeZone:tz,dateStyle:"medium",timeStyle:"short"})+" CT";
@@ -42,5 +43,6 @@ loadSnapshot().then(d=>{
  renderRegionalAdsb(document.getElementById("regional-adsb-panel"), d);
  renderGmn(document.getElementById("gmn-panel"), d);
  renderWban(document.getElementById("wban-panel"));
+ renderUsgsWater(document.getElementById("usgs-water-panel"));
 }).catch(e=>{document.getElementById("gen").textContent="load failed: "+e;});
 </script></body></html>

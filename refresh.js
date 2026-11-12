@@ -360,6 +360,79 @@ function renderWban(panel) {
   });
 }
 
+function renderUsgsWater(panel) {
+  if (!panel) return;
+  const el = panel.querySelector("#usgs-water") || panel;
+  const href = "data/usgs_water.json";
+  gsGet(href).then(doc => {
+    if (!doc || typeof doc !== "object") {
+      panel.hidden = true;
+      el.innerHTML = "";
+      return;
+    }
+    const fmt = v => (v == null || v === "") ? "–" : gsEsc(v);
+    const nfmt = (v, d) => (v == null || v === "") ? "–" : gsEsc(Number(v).toFixed(d));
+    const locHref = id => "https://waterdata.usgs.gov/monitoring-location/" + encodeURIComponent(id) + "/";
+    const siteCell = s => {
+      const id = s && s.id ? String(s.id) : "";
+      const name = s && s.name ? gsEsc(s.name) : gsEsc(id || "site");
+      if (!id) return name;
+      return `${name}<br><a class="muted" href="${gsEsc(locHref(id))}">${gsEsc(id)}</a>`;
+    };
+    let html = '<p class="muted">experimental correlation input, not predictive</p>';
+    if (doc.parked) {
+      html += `<div class="muted">${gsEsc(doc.reason || "parked")}</div>`;
+    } else if (!doc.ok) {
+      html += `<div class="muted">${gsEsc(doc.error || "unavailable")}</div>`;
+    } else {
+      const rogers = ((doc.rogers_area && doc.rogers_area.sites) || []).slice(0, 12);
+      const arkansas = ((doc.arkansas && doc.arkansas.sites) || []).slice(0, 16);
+      const unusual = ((doc.national && doc.national.unusual_rises) || []).slice(0, 12);
+      const shown = rogers.length ? rogers : arkansas;
+      const heading = rogers.length ? "Rogers, AR area" : "Arkansas";
+      html += `<div><b>${heading}</b> · ${gsEsc((doc.rogers_area && doc.rogers_area.count) || 0)} nearby · ${gsEsc((doc.arkansas && doc.arkansas.count) || 0)} in Arkansas</div>`;
+      if (shown.length) {
+        html += "<table><tr><th>gauge</th><th>discharge</th><th>gage height</th></tr>";
+        for (const s of shown) {
+          const cfs = s.discharge_cfs == null ? "–" : nfmt(s.discharge_cfs, 2) + " ft³/s";
+          const ft = s.gage_height_ft == null ? "–" : nfmt(s.gage_height_ft, 2) + " ft";
+          html += `<tr><td>${siteCell(s)}</td><td>${cfs}<br><span class="muted">${fmt(s.discharge_time)}</span></td><td>${ft}<br><span class="muted">${fmt(s.gage_height_time)}</span></td></tr>`;
+        }
+        html += "</table>";
+      } else {
+        html += '<div class="muted">no regional gauges in this snapshot</div>';
+      }
+      const nRise = (doc.national && doc.national.unusual_rise_count) || unusual.length;
+      const considered = (doc.national && doc.national.sites_considered) || 0;
+      html += `<div><b>National unusual rises</b> · ${gsEsc(nRise)} of ${gsEsc(considered)} sites (latest discharge vs prior daily mean)</div>`;
+      if (unusual.length) {
+        html += "<table><tr><th>gauge</th><th>latest</th><th>prior daily mean</th><th>rise</th></tr>";
+        for (const s of unusual) {
+          const ratio = s.rise_ratio == null ? "–" : nfmt(s.rise_ratio, 2) + "×";
+          const delta = s.rise_cfs == null ? "–" : ((s.rise_cfs > 0 ? "+" : "") + nfmt(s.rise_cfs, 0) + " ft³/s");
+          html += `<tr><td>${siteCell(s)}</td><td>${s.latest_cfs == null ? "–" : nfmt(s.latest_cfs, 2) + " ft³/s"}<br><span class="muted">${fmt(s.latest_time)}</span></td>`;
+          html += `<td>${s.prior_daily_mean_cfs == null ? "–" : nfmt(s.prior_daily_mean_cfs, 2) + " ft³/s"}<br><span class="muted">${fmt(s.prior_daily_date)}</span></td>`;
+          html += `<td>${ratio} · ${delta}</td></tr>`;
+        }
+        html += "</table>";
+      } else {
+        html += '<div class="muted">no unusual day-over-day rises in this snapshot</div>';
+      }
+    }
+    const attr = doc.attribution || {};
+    const credit = attr.attribution || "USGS Water Data";
+    const src = attr.url || "https://api.waterdata.usgs.gov/";
+    const license = attr.license_url || "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits";
+    html += `<div class="muted">${gsEsc(doc.label || "experimental correlation input, not predictive")} · not used in the hazard index · ${gsEsc(credit)} · <a href="${gsEsc(src)}">USGS Water Data</a> · <a href="${gsEsc(license)}">${gsEsc(attr.license || "U.S. Public Domain")}</a></div>`;
+    el.innerHTML = html;
+    panel.hidden = false;
+  }).catch(() => {
+    panel.hidden = true;
+    el.innerHTML = "";
+  });
+}
+
+
 function renderKnownEvents(el, d) {
   if (!el) return;
   const doc = d && d.known_events;
