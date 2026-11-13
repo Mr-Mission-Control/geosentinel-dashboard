@@ -716,11 +716,14 @@ function renderLoosh(panel) {
     }
     html += `<div class="muted">${gnote} · Wikipedia ${(fear.wikipedia && fear.wikipedia.ok) ? "ok" : "missing"} · collected ${num(doc.collected_at)}</div>`;
     const adv = (doc.official_feeds || {}).cisa_advisories || {};
-    html += "<div><b>CISA advisories</b> (public RSS, aggregates only)</div>";
+    html += "<div><b>CISA advisories</b> (aggregates only)</div>";
     if (!adv.ok) {
       html += `<div class="muted">${gsEsc(adv.error || "missing")}</div>`;
     } else {
-      html += `<div class="muted">${gsEsc(adv.count_7d)} in the last 7 days · ${gsEsc(adv.count_30d)} in the last 30 days (feed window ${gsEsc(adv.feed_items || 0)} items)</div>`;
+      const srcNote = adv.source === "cisa_csaf_github"
+        ? ' · source <a href="https://github.com/cisagov/CSAF">cisagov/CSAF</a> (RSS unreachable)'
+        : " · source CISA advisories RSS";
+      html += `<div class="muted">${gsEsc(adv.count_7d)} in the last 7 days · ${gsEsc(adv.count_30d)} in the last 30 days (feed window ${gsEsc(adv.feed_items || 0)} items)${srcNote}</div>`;
       const recent = adv.recent || [];
       if (recent.length) {
         html += "<table><tr><th>published</th><th>advisory</th><th>type</th></tr>";
@@ -732,7 +735,7 @@ function renderLoosh(panel) {
         html += "</table>";
       }
     }
-    html += '<div class="muted">Sources: NWS · USGS · NOAA SWPC · <a href="https://www.gdeltproject.org/">GDELT Project</a> · Wikimedia pageviews (CC0) · FDIC · <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV</a> · <a href="https://www.cisa.gov/cybersecurity-advisories/all.xml">CISA advisories RSS</a> · <a href="https://www.cisa.gov/terms-use">CISA terms</a> · weights in docs/LOOSH.md</div>';
+    html += '<div class="muted">Sources: NWS · USGS · NOAA SWPC · <a href="https://www.gdeltproject.org/">GDELT Project</a> · Wikimedia pageviews (CC0) · FDIC · <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV</a> · <a href="https://www.cisa.gov/cybersecurity-advisories/all.xml">CISA advisories RSS</a> · <a href="https://github.com/cisagov/CSAF">cisagov/CSAF</a> · <a href="https://www.cisa.gov/terms-use">CISA terms</a> · weights in docs/LOOSH.md</div>';
     el.innerHTML = html;
     panel.hidden = false;
   }).catch(() => {
