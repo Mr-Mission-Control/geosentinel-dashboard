@@ -433,6 +433,100 @@ function renderUsgsWater(panel) {
 }
 
 
+
+function renderKarst(panel) {
+  if (!panel) return;
+  const el = panel.querySelector("#karst") || panel;
+  const href = "data/karst.json";
+  gsGet(href).then(doc => {
+    if (!doc || typeof doc !== "object") {
+      panel.hidden = true;
+      el.innerHTML = "";
+      return;
+    }
+    const fmt = v => (v == null || v === "") ? "missing" : gsEsc(v);
+    const nfmt = (v, d) => (v == null || v === "") ? "missing" : gsEsc(Number(v).toFixed(d));
+    const locHref = id => "https://waterdata.usgs.gov/monitoring-location/" + encodeURIComponent(id) + "/";
+    const siteCell = s => {
+      const id = s && s.id ? String(s.id) : "";
+      const name = s && s.name ? gsEsc(s.name) : gsEsc(id || "site");
+      const typ = s && s.site_type_label ? ` <span class="muted">${gsEsc(s.site_type_label)}</span>` : "";
+      if (!id) return name + typ;
+      return `${name}${typ}<br><a class="muted" href="${gsEsc(locHref(id))}">${gsEsc(id)}</a>`;
+    };
+    const paramLabels = { "00060": "discharge", "00065": "gage height", "72019": "groundwater", "00095": "conductance", "00010": "temp" };
+    const paramOrder = ["00060", "00065", "72019", "00095", "00010"];
+    const paramCell = (s, code) => {
+      const p = (s.parameters || {})[code];
+      if (!p) return '<span class="muted">missing</span>';
+      if (p.status === "missing" || p.value == null || p.value === "") {
+        const why = p.missing_reason && p.missing_reason !== "no_value" ? ` (${gsEsc(p.missing_reason)})` : "";
+        return `<span class="muted">missing${why}</span>`;
+      }
+      const unit = p.unit ? " " + gsEsc(p.unit) : "";
+      const z = p.z == null ? "missing" : "z " + Number(p.z).toFixed(2);
+      const klass = p.status === "anomaly" ? "bad" : (p.status === "known_excluded" ? "muted" : "");
+      const tag = p.status === "anomaly" ? " · anomaly" : (p.status === "known_excluded" ? " · known event" : "");
+      return `<span class="${klass}">${nfmt(p.value, 2)}${unit}${tag}</span><br><span class="muted">${gsEsc(z)}</span>`;
+    };
+    let html = '<p class="muted">experimental correlation input, not predictive</p>';
+    if (doc.parked) {
+      html += `<div class="muted">${gsEsc(doc.reason || "parked")}</div>`;
+    } else if (!doc.ok) {
+      html += `<div class="muted">${gsEsc(doc.error || "unavailable")}</div>`;
+    } else {
+      const counts = doc.counts || {};
+      const scope = doc.scope || {};
+      html += `<div>Ozark Plateau · home focus ${gsEsc(scope.home_focus || "NW Arkansas corridor")} · ${gsEsc(counts.sites || 0)} sites`;
+      html += ` · ${gsEsc(counts.springs || 0)} springs · ${gsEsc(counts.groundwater || 0)} groundwater · ${gsEsc(counts.streams || 0)} streams`;
+      html += ` · ${gsEsc(counts.anomalies || 0)} anomalies vs prior 7–30 day baseline</div>`;
+      const anomalies = (doc.anomalies || []).slice(0, 12);
+      if (anomalies.length) {
+        html += '<div><b>Anomalies</b> (|z| ≥ 2 vs prior daily mean; missing baselines are not flagged)</div>';
+        html += "<table><tr><th>site</th><th>region</th><th>parameter</th><th>value</th><th>z</th></tr>";
+        for (const a of anomalies) {
+          html += `<tr><td>${siteCell(a)}</td><td>${gsEsc(a.region_label || a.region || "")}</td>`;
+          html += `<td>${gsEsc(a.parameter_label || a.parameter || "")}</td>`;
+          html += `<td class="bad">${a.value == null ? "missing" : nfmt(a.value, 2)}${a.unit ? " " + gsEsc(a.unit) : ""}</td>`;
+          html += `<td class="bad">${a.z == null ? "missing" : nfmt(a.z, 2)}</td></tr>`;
+        }
+        html += "</table>";
+      }
+      const regions = doc.regions || {};
+      const order = ["nwa_corridor", "sw_missouri", "ne_oklahoma", "rest_of_plateau"];
+      for (const key of order) {
+        const group = regions[key] || {};
+        const sites = group.sites || [];
+        const label = group.label || key;
+        html += `<div><b>${gsEsc(label)}</b> · ${gsEsc(group.count || sites.length || 0)}</div>`;
+        if (!sites.length) {
+          html += '<div class="muted">no sites in this snapshot</div>';
+          continue;
+        }
+        html += "<table><tr><th>site</th>";
+        for (const code of paramOrder) html += `<th>${gsEsc(paramLabels[code])}</th>`;
+        html += "</tr>";
+        for (const s of sites) {
+          html += `<tr><td>${siteCell(s)}</td>`;
+          for (const code of paramOrder) html += `<td>${paramCell(s, code)}</td>`;
+          html += "</tr>";
+        }
+        html += "</table>";
+      }
+    }
+    const attr = doc.attribution || {};
+    const credit = attr.attribution || "USGS Water Data";
+    const src = attr.url || "https://api.waterdata.usgs.gov/";
+    const license = attr.license_url || "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits";
+    html += `<div class="muted">${gsEsc(doc.label || "experimental correlation input, not predictive")} · not used in the hazard index · ${gsEsc(credit)} · <a href="${gsEsc(src)}">USGS Water Data</a> · <a href="${gsEsc(license)}">${gsEsc(attr.license || "U.S. Public Domain")}</a></div>`;
+    el.innerHTML = html;
+    panel.hidden = false;
+  }).catch(() => {
+    panel.hidden = true;
+    el.innerHTML = "";
+  });
+}
+
 function renderKnownEvents(el, d) {
   if (!el) return;
   const doc = d && d.known_events;

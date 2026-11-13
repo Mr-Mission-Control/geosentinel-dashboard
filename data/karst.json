@@ -1,0 +1,2919 @@
+{
+ "ok": true,
+ "degraded": false,
+ "qpu": false,
+ "label": "experimental correlation input, not predictive",
+ "used_in_index": false,
+ "collected_at": "2026-11-13T07:47:04Z",
+ "attribution": {
+  "attribution": "USGS Water Data",
+  "source": "U.S. Geological Survey",
+  "url": "https://api.waterdata.usgs.gov/",
+  "license": "U.S. Public Domain",
+  "license_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+ },
+ "scope": {
+  "region": "Ozark Plateau (Springfield and Salem Plateaus, Boston Mountains edge)",
+  "home_focus": "NW Arkansas corridor",
+  "bbox": [
+   -95.2,
+   35.6,
+   -91.0,
+   37.6
+  ],
+  "site_types": [
+   "GW",
+   "SP",
+   "ST"
+  ],
+  "parameters": {
+   "00060": "discharge",
+   "00065": "gage height",
+   "72019": "groundwater level",
+   "00095": "specific conductance",
+   "00010": "water temperature"
+  },
+  "baseline_days": 30,
+  "min_baseline_n": 7,
+  "z_threshold": 2.0,
+  "site_cap": 80
+ },
+ "counts": {
+  "sites": 80,
+  "considered": 240,
+  "truncated": true,
+  "springs": 8,
+  "groundwater": 64,
+  "streams": 8,
+  "anomalies": 15,
+  "missing_parameters": 44
+ },
+ "regions": {
+  "nwa_corridor": {
+   "id": "nwa_corridor",
+   "label": "NW Arkansas corridor",
+   "count": 12,
+   "sites": [
+    {
+     "id": "USGS-071948215",
+     "name": "Copperhead Spring at U of A Exp Farm near Savoy",
+     "lon": -94.3452138888889,
+     "lat": 36.1147444444444,
+     "site_type": "SP",
+     "site_type_label": "spring",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 0.89,
+       "unit": "ft^3/s",
+       "time": "1999-01-05T05:40:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-071948218",
+     "name": "Langle Spring at U of A Exp Farm near Savoy",
+     "lon": -94.345488707858,
+     "lat": 36.1189688566802,
+     "site_type": "SP",
+     "site_type_label": "spring",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 0.45,
+       "unit": "ft^3/s",
+       "time": "1999-01-05T05:40:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "AR008-362155094254801",
+     "name": "20N32W31CAD1",
+     "lon": -94.43,
+     "lat": 36.3652777777778,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 77.38,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 1.877,
+       "baseline_mean": 77.042759,
+       "baseline_stdev": 0.17964,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-360536094105701",
+     "name": "UA WREC 6",
+     "lon": -94.1826666666667,
+     "lat": 36.0935277777778,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": null,
+       "unit": "ft",
+       "time": "2026-11-13T06:45:00+00:00",
+       "status": "missing",
+       "missing_reason": "no_value",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07196900",
+     "name": "Baron Fork at Dutch Mills, AR",
+     "lon": -94.4863888888889,
+     "lat": 35.88,
+     "site_type": "ST",
+     "site_type_label": "stream",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 2.04,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.154,
+       "baseline_mean": 1.876207,
+       "baseline_stdev": 1.066759,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": 1.52,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07055660",
+     "name": "Buffalo River at Ponca, AR",
+     "lon": -93.3547222222222,
+     "lat": 36.0225,
+     "site_type": "ST",
+     "site_type_label": "stream",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 35.9,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.182,
+       "baseline_mean": 32.359655,
+       "baseline_stdev": 19.433976,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": 3.38,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07055680",
+     "name": "Buffalo River at Pruitt, AR",
+     "lon": -93.13777777777779,
+     "lat": 36.05916666666666,
+     "site_type": "ST",
+     "site_type_label": "stream",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 17.0,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.291,
+       "baseline_mean": 21.924828,
+       "baseline_stdev": 16.91687,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": 3.01,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07055646",
+     "name": "Buffalo River near Boxley, AR",
+     "lon": -93.405,
+     "lat": 35.9388888888889,
+     "site_type": "ST",
+     "site_type_label": "stream",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 13.2,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.77,
+       "baseline_mean": 7.337586,
+       "baseline_stdev": 7.61107,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": 1.94,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00010": {
+       "code": "00010",
+       "label": "water temperature",
+       "value": 12.6,
+       "unit": "degC",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07194880",
+     "name": "Osage Creek near Cave Springs, AR",
+     "lon": -94.22799705217525,
+     "lat": 36.28145921831012,
+     "site_type": "ST",
+     "site_type_label": "stream",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 29.0,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T06:45:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.177,
+       "baseline_mean": 31.372414,
+       "baseline_stdev": 13.417709,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": 1.33,
+       "unit": "ft",
+       "time": "2026-11-13T06:45:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00095": {
+       "code": "00095",
+       "label": "specific conductance",
+       "value": 442.0,
+       "unit": "uS/cm",
+       "time": "2022-06-22T14:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00010": {
+       "code": "00010",
+       "label": "water temperature",
+       "value": 20.4,
+       "unit": "degC",
+       "time": "2022-06-22T14:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07049000",
+     "name": "War Eagle Creek near Hindsville, AR",
+     "lon": -93.855,
+     "lat": 36.2,
+     "site_type": "ST",
+     "site_type_label": "stream",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 33.5,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.026,
+       "baseline_mean": 33.12069,
+       "baseline_stdev": 14.713317,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": 0.21,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00095": {
+       "code": "00095",
+       "label": "specific conductance",
+       "value": 285.0,
+       "unit": "uS/cm",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00010": {
+       "code": "00010",
+       "label": "water temperature",
+       "value": 10.8,
+       "unit": "degC",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07048550",
+     "name": "West Fork White River east of Fayetteville, AR",
+     "lon": -94.08305555555555,
+     "lat": 36.053888888888885,
+     "site_type": "ST",
+     "site_type_label": "stream",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": true,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 8.43,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.447,
+       "baseline_mean": 20.382414,
+       "baseline_stdev": 26.730418,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": 1.49,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00095": {
+       "code": "00095",
+       "label": "specific conductance",
+       "value": null,
+       "unit": "uS/cm",
+       "time": "2026-11-12T10:15:00+00:00",
+       "status": "missing",
+       "missing_reason": "no_value",
+       "z": null,
+       "baseline_mean": 299.0,
+       "baseline_stdev": null,
+       "baseline_n": 5,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00010": {
+       "code": "00010",
+       "label": "water temperature",
+       "value": 5.5,
+       "unit": "degC",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": -5.11,
+       "baseline_mean": 15.277778,
+       "baseline_stdev": 1.913621,
+       "baseline_n": 9,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07048600",
+     "name": "White River near Fayetteville, AR",
+     "lon": -94.08111111111111,
+     "lat": 36.073055555555555,
+     "site_type": "ST",
+     "site_type_label": "stream",
+     "state": "AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "any_anomaly": true,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 28.8,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.15,
+       "baseline_mean": 34.377241,
+       "baseline_stdev": 37.226155,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": 1.37,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00095": {
+       "code": "00095",
+       "label": "specific conductance",
+       "value": 191.0,
+       "unit": "uS/cm",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.289,
+       "baseline_mean": 242.241379,
+       "baseline_stdev": 39.740817,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00010": {
+       "code": "00010",
+       "label": "water temperature",
+       "value": 13.0,
+       "unit": "degC",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": -2.548,
+       "baseline_mean": 17.831034,
+       "baseline_stdev": 1.896068,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    }
+   ]
+  },
+  "sw_missouri": {
+   "id": "sw_missouri",
+   "label": "SW Missouri",
+   "count": 46,
+   "sites": [
+    {
+     "id": "USGS-07071000",
+     "name": "Greer Spring at Greer, MO",
+     "lon": -91.3475277777778,
+     "lat": 36.7866111111111,
+     "site_type": "SP",
+     "site_type_label": "spring",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 186.0,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T07:15:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.646,
+       "baseline_mean": 191.793103,
+       "baseline_stdev": 3.519124,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": 0.45,
+       "unit": "ft",
+       "time": "2026-11-13T07:15:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-372153091322301",
+     "name": "Akers",
+     "lon": -91.540083,
+     "lat": 37.364611,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 67.32,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": 3.009,
+       "baseline_mean": 67.102069,
+       "baseline_stdev": 0.072426,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-372202094370202",
+     "name": "Asbury Ozark Aquifer",
+     "lon": -94.617361,
+     "lat": 37.36725,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 266.55,
+       "unit": "ft",
+       "time": "2026-11-13T06:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.716,
+       "baseline_mean": 269.231724,
+       "baseline_stdev": 1.56269,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-372202094370201",
+     "name": "Asbury Springfield Plateau Aquifer",
+     "lon": -94.617389,
+     "lat": 37.367222,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 243.79,
+       "unit": "ft",
+       "time": "2026-11-13T06:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.337,
+       "baseline_mean": 243.849655,
+       "baseline_stdev": 0.17725,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370600094223501",
+     "name": "Atlas Powder",
+     "lon": -94.376333,
+     "lat": 37.100083,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 20.98,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": 2.899,
+       "baseline_mean": 20.692069,
+       "baseline_stdev": 0.099333,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-365645093431601",
+     "name": "Aurora",
+     "lon": -93.720167,
+     "lat": 36.943694,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 102.77,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": 2.054,
+       "baseline_mean": 101.068966,
+       "baseline_stdev": 0.828033,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-365602092395101",
+     "name": "Ava",
+     "lon": -92.664278,
+     "lat": 36.934028,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 310.94,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 1.792,
+       "baseline_mean": 309.100345,
+       "baseline_stdev": 1.02664,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-365654091001301",
+     "name": "Big Spring MODNR Well",
+     "lon": -91.003722,
+     "lat": 36.948417,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 23.82,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 1.79,
+       "baseline_mean": 23.402759,
+       "baseline_stdev": 0.233129,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370354093325901",
+     "name": "Billings",
+     "lon": -93.549806,
+     "lat": 37.064833,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 199.5,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": 2.013,
+       "baseline_mean": 198.465517,
+       "baseline_stdev": 0.514022,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-363855093134701",
+     "name": "Branson",
+     "lon": -93.229667,
+     "lat": 36.648861,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 216.75,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.968,
+       "baseline_mean": 223.57037,
+       "baseline_stdev": 3.465201,
+       "baseline_n": 27,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-364453093543602",
+     "name": "Butterfield Ozark Aquifer",
+     "lon": -93.910111,
+     "lat": 36.748083,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 329.78,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.152,
+       "baseline_mean": 329.658276,
+       "baseline_stdev": 0.801249,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-364453093543601",
+     "name": "Butterfield Springfield Plateau Aquifer",
+     "lon": -93.910056,
+     "lat": 36.748083,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 40.65,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 1.017,
+       "baseline_mean": 40.644828,
+       "baseline_stdev": 0.005085,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-371036094171301",
+     "name": "Carthage",
+     "lon": -94.287028,
+     "lat": 37.176528,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 268.87,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": -2.241,
+       "baseline_mean": 290.141724,
+       "baseline_stdev": 9.490908,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-364059093520001",
+     "name": "Cassville",
+     "lon": -93.869333,
+     "lat": 36.679556,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 308.2,
+       "unit": "ft",
+       "time": "2026-11-13T06:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.75,
+       "baseline_mean": 317.072069,
+       "baseline_stdev": 5.070083,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-363728093150401",
+     "name": "Cooper Creek MODNR Well",
+     "lon": -93.251694,
+     "lat": 36.624528,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 216.07,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": -3.004,
+       "baseline_mean": 227.182759,
+       "baseline_stdev": 3.699337,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-365415093342301",
+     "name": "Crane",
+     "lon": -93.573,
+     "lat": 36.904167,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 40.61,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": 3.283,
+       "baseline_mean": 39.952414,
+       "baseline_stdev": 0.200297,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-371800092094801",
+     "name": "Fairview",
+     "lon": -92.1635,
+     "lat": 37.300056,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 283.66,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": 2.313,
+       "baseline_mean": 281.912,
+       "baseline_stdev": 0.755825,
+       "baseline_n": 30,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-372338094052801",
+     "name": "Golden City",
+     "lon": -94.091333,
+     "lat": 37.393944,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 437.62,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.411,
+       "baseline_mean": 445.766207,
+       "baseline_stdev": 5.774083,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370224094320201",
+     "name": "Joplin",
+     "lon": -94.533472,
+     "lat": 37.039389,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 98.86,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.876,
+       "baseline_mean": 98.09931,
+       "baseline_stdev": 0.868344,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-372958094161001",
+     "name": "Lamar",
+     "lon": -94.269444,
+     "lat": 37.499833,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 327.28,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.413,
+       "baseline_mean": 336.73,
+       "baseline_stdev": 6.686505,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-364313094121101",
+     "name": "Longview",
+     "lon": -94.205167,
+     "lat": 36.720583,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 196.25,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.137,
+       "baseline_mean": 196.275517,
+       "baseline_stdev": 0.186616,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-372022092542201",
+     "name": "Marshfield",
+     "lon": -92.9064166666667,
+     "lat": 37.3397777777778,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 235.24,
+       "unit": "ft",
+       "time": "2017-02-08T15:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-365451093555501",
+     "name": "Monett 10",
+     "lon": -93.931972,
+     "lat": 36.914083,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 243.62,
+       "unit": "ft",
+       "time": "2026-11-13T06:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.823,
+       "baseline_mean": 250.629655,
+       "baseline_stdev": 3.844356,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-365634093542701",
+     "name": "Monett Well 16",
+     "lon": -93.9075,
+     "lat": 36.9427777777778,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 123.32,
+       "unit": "ft",
+       "time": "2017-07-11T05:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-365949091421401",
+     "name": "Mountain View MODNR Well",
+     "lon": -91.703417,
+     "lat": 36.996889,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 349.81,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.053,
+       "baseline_mean": 350.25931,
+       "baseline_stdev": 8.443504,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370539093494001",
+     "name": "Mt. Vernon Ozark Aquifer",
+     "lon": -93.827833,
+     "lat": 37.094222,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 234.65,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": -2.217,
+       "baseline_mean": 236.227241,
+       "baseline_stdev": 0.711487,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370539093494002",
+     "name": "Mt. Vernon Springfield Plateau Aquifer",
+     "lon": -93.827889,
+     "lat": 37.094194,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 72.73,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.614,
+       "baseline_mean": 72.737931,
+       "baseline_stdev": 0.004913,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-364818094185302",
+     "name": "Neosho Ozark Aquifer",
+     "lon": -94.31475,
+     "lat": 36.804917,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 337.38,
+       "unit": "ft",
+       "time": "2026-11-13T06:30:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": 2.744,
+       "baseline_mean": 336.835862,
+       "baseline_stdev": 0.198306,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-364818094185301",
+     "name": "Neosho Springfield Plateau Aquifer",
+     "lon": -94.314806,
+     "lat": 36.804917,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 107.29,
+       "unit": "ft",
+       "time": "2026-11-13T06:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 1.502,
+       "baseline_mean": 106.983793,
+       "baseline_stdev": 0.203828,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370236093174401",
+     "name": "Nixa",
+     "lon": -93.2950833333333,
+     "lat": 37.0431111111111,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 370.72,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.758,
+       "baseline_mean": 374.446552,
+       "baseline_stdev": 2.119842,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-365559092030001",
+     "name": "Noblett Lake",
+     "lon": -92.05,
+     "lat": 36.9330833333333,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 209.64,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": 2.189,
+       "baseline_mean": 209.187931,
+       "baseline_stdev": 0.206473,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-363236094290301",
+     "name": "Noel",
+     "lon": -94.48466666666667,
+     "lat": 36.54269444444444,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 276.87,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.137,
+       "baseline_mean": 277.036552,
+       "baseline_stdev": 1.216594,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370624092244701",
+     "name": "Norwood Well",
+     "lon": -92.4131666666667,
+     "lat": 37.1066111111111,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 626.47,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 1.601,
+       "baseline_mean": 617.991034,
+       "baseline_stdev": 5.296733,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370005093122401",
+     "name": "Ozark",
+     "lon": -93.20738888888889,
+     "lat": 37.00069444444444,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 290.57,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.503,
+       "baseline_mean": 290.833103,
+       "baseline_stdev": 0.522993,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-365644094001301",
+     "name": "Pierce City",
+     "lon": -94.0035277777778,
+     "lat": 36.9455277777778,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 91.5,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.171,
+       "baseline_mean": 91.354828,
+       "baseline_stdev": 0.848724,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-363550094232601",
+     "name": "Pineville",
+     "lon": -94.39062777777778,
+     "lat": 36.59727222222222,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 332.63,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.311,
+       "baseline_mean": 332.345172,
+       "baseline_stdev": 0.915211,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370655093035301",
+     "name": "Rogersville",
+     "lon": -93.0650833333333,
+     "lat": 37.1154166666667,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 226.08,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.35,
+       "baseline_mean": 225.293448,
+       "baseline_stdev": 2.247714,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-364006093200301",
+     "name": "Silver Dollar City",
+     "lon": -93.3339166666667,
+     "lat": 36.6681666666667,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 362.28,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": -2.52,
+       "baseline_mean": 378.125172,
+       "baseline_stdev": 6.287725,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-371435093134701",
+     "name": "Springfield",
+     "lon": -93.2317777777778,
+     "lat": 37.2414166666667,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 361.34,
+       "unit": "ft",
+       "time": "2026-11-13T06:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -1.607,
+       "baseline_mean": 364.032069,
+       "baseline_stdev": 1.675275,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370907093144101",
+     "name": "Springfield-Valley Park",
+     "lon": -93.24461111111111,
+     "lat": 37.15188888888889,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 297.38,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.058,
+       "baseline_mean": 297.401034,
+       "baseline_stdev": 0.360856,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-363436092391001",
+     "name": "Theodosia",
+     "lon": -92.6530277777778,
+     "lat": 36.5756388888889,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 46.06,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 1.398,
+       "baseline_mean": 45.535517,
+       "baseline_stdev": 0.375286,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-372853091061801",
+     "name": "Viburnum Trend Well 6",
+     "lon": -91.10563888888888,
+     "lat": 37.48133333333333,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 151.93,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 1.746,
+       "baseline_mean": 151.106552,
+       "baseline_stdev": 0.47155,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-370828094274101",
+     "name": "Webb City 6",
+     "lon": -94.4611944444444,
+     "lat": 37.1411111111111,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": true,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 623.15,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "anomaly",
+       "missing_reason": null,
+       "z": -3.761,
+       "baseline_mean": 641.926897,
+       "baseline_stdev": 4.991995,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-364324091515001",
+     "name": "West Plains",
+     "lon": -91.8785,
+     "lat": 36.7464444444444,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 234.63,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": -0.924,
+       "baseline_mean": 236.797931,
+       "baseline_stdev": 2.34676,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "MO005-371801093260401",
+     "name": "Willard MODNR Well",
+     "lon": -93.43433333333334,
+     "lat": 37.30038888888889,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 206.82,
+       "unit": "ft",
+       "time": "2026-11-13T07:30:00+00:00",
+       "status": "ok",
+       "missing_reason": null,
+       "z": 0.175,
+       "baseline_mean": 206.708276,
+       "baseline_stdev": 0.637932,
+       "baseline_n": 29,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-370003091205301",
+     "name": "Winona",
+     "lon": -91.3481111111111,
+     "lat": 37.0009722222222,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "MO",
+     "region": "sw_missouri",
+     "region_label": "SW Missouri",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 410.69,
+       "unit": "ft",
+       "time": "2014-06-30T04:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    }
+   ]
+  },
+  "ne_oklahoma": {
+   "id": "ne_oklahoma",
+   "label": "NE Oklahoma",
+   "count": 16,
+   "sites": [
+    {
+     "id": "USGS-354852094442501",
+     "name": "16N-24E-34 DDB 1 Boone10",
+     "lon": -94.7402138888889,
+     "lat": 35.8144944444444,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 113.21,
+       "unit": "ft",
+       "time": "2020-11-09T18:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-355600094503501",
+     "name": "17N-23E-22 CDA 1 Roubidoux4",
+     "lon": -94.8431111111111,
+     "lat": 35.9334388888889,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 153.74,
+       "unit": "ft",
+       "time": "2020-11-09T20:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-355741094461001",
+     "name": "17N-24E-08 DCB 1 Boone9",
+     "lon": -94.7695777777778,
+     "lat": 35.9612583333333,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 23.28,
+       "unit": "ft",
+       "time": "2020-11-09T19:31:56+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-360425094573101",
+     "name": "18N-22E-04 AAD 1 Boone7",
+     "lon": -94.9586555555556,
+     "lat": 36.0736222222222,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 19.68,
+       "unit": "ft",
+       "time": "2020-11-10T16:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-361104095081801",
+     "name": "20N-20E-26 ADD 1 Boone11",
+     "lon": -95.1383666666667,
+     "lat": 36.1845944444444,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 71.74,
+       "unit": "ft",
+       "time": "2019-06-11T19:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-361317094594101",
+     "name": "20N-22E-07 DDA 1 Boone5",
+     "lon": -94.9947222222222,
+     "lat": 36.2213555555556,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 41.86,
+       "unit": "ft",
+       "time": "2020-11-10T18:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-361126094551801",
+     "name": "20N-22E-24 CCC 1 Roubidoux6",
+     "lon": -94.9216527777778,
+     "lat": 36.1906805555556,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 344.37,
+       "unit": "ft",
+       "time": "2020-11-10T16:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-362004094591601",
+     "name": "21N-22E-05 BBC 1 Boone8",
+     "lon": -94.9879111111111,
+     "lat": 36.3343277777778,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 27.69,
+       "unit": "ft",
+       "time": "2020-11-10T18:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-361854094575101",
+     "name": "21N-22E-09 BD  1",
+     "lon": -94.96416666666667,
+     "lat": 36.315,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 18.62,
+       "unit": "ft",
+       "time": "2026-11-13T07:15:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-363230095054901",
+     "name": "24N-21E-19 DDA 1 Roubidoux2",
+     "lon": -95.0969777777778,
+     "lat": 36.5415416666667,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 58.61,
+       "unit": "ft",
+       "time": "2020-11-10T20:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-364328094532701",
+     "name": "26N-23E-19 BCB 1 Boone1",
+     "lon": -94.8908444444445,
+     "lat": 36.7244194444444,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 16.08,
+       "unit": "ft",
+       "time": "2020-11-16T15:30:05+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-364859094552401",
+     "name": "27N-22E-14 CCD 1 Roubidoux3",
+     "lon": -94.9232138888889,
+     "lat": 36.8165138888889,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 92.82,
+       "unit": "ft",
+       "time": "2020-11-16T16:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-365258095013401",
+     "name": "28N-21E-26 ACB 1 Boone3",
+     "lon": -95.0261888888889,
+     "lat": 36.8828305555556,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 16.16,
+       "unit": "ft",
+       "time": "2020-11-16T17:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-365402094522201",
+     "name": "28N-23E-18 CDC 1  Miami Well No 9",
+     "lon": -94.8716212528598,
+     "lat": 36.9000696004223,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 356.69,
+       "unit": "ft",
+       "time": "2013-02-04T05:30:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-365151094470801",
+     "name": "28N-23E-36 BCD 1 Boone6",
+     "lon": -94.785475,
+     "lat": 36.8641333333333,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 46.91,
+       "unit": "ft",
+       "time": "2020-11-16T18:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-365942094504203",
+     "name": "29N-23E-17 BCA 1 (SLIM JIM WELL)",
+     "lon": -94.845,
+     "lat": 36.995,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "OK",
+     "region": "ne_oklahoma",
+     "region_label": "NE Oklahoma",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 34.04,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    }
+   ]
+  },
+  "rest_of_plateau": {
+   "id": "rest_of_plateau",
+   "label": "Rest of Ozark Plateau",
+   "count": 6,
+   "sites": [
+    {
+     "id": "USGS-07073595",
+     "name": "Evening Shade Spring near Evening Shade",
+     "lon": -91.6086111111111,
+     "lat": 36.0569444444444,
+     "site_type": "SP",
+     "site_type_label": "spring",
+     "state": "AR",
+     "region": "rest_of_plateau",
+     "region_label": "Rest of Ozark Plateau",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 0.91,
+       "unit": "ft^3/s",
+       "time": "2002-10-09T04:45:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07056545",
+     "name": "Hughes Spring near Zack",
+     "lon": -92.6768310949192,
+     "lat": 35.975907912273,
+     "site_type": "SP",
+     "site_type_label": "spring",
+     "state": "AR",
+     "region": "rest_of_plateau",
+     "region_label": "Rest of Ozark Plateau",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 0.0,
+       "unit": "ft^3/s",
+       "time": "2002-12-19T05:45:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07069190",
+     "name": "Mammoth Spring at Mammoth Spring",
+     "lon": -91.53569237354537,
+     "lat": 36.498125857859684,
+     "site_type": "SP",
+     "site_type_label": "spring",
+     "state": "AR",
+     "region": "rest_of_plateau",
+     "region_label": "Rest of Ozark Plateau",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": null,
+       "unit": "ft^3/s",
+       "time": "2026-11-13T07:15:00+00:00",
+       "status": "missing",
+       "missing_reason": "no_value",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      },
+      "00065": {
+       "code": "00065",
+       "label": "gage height",
+       "value": null,
+       "unit": "ft",
+       "time": "2026-11-13T07:15:00+00:00",
+       "status": "missing",
+       "missing_reason": "no_value",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07069297",
+     "name": "Roaring Spring near Cherokee Village",
+     "lon": -91.5752777777778,
+     "lat": 36.3188888888889,
+     "site_type": "SP",
+     "site_type_label": "spring",
+     "state": "AR",
+     "region": "rest_of_plateau",
+     "region_label": "Rest of Ozark Plateau",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 3.9,
+       "unit": "ft^3/s",
+       "time": "2002-10-09T04:45:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-07060896",
+     "name": "Stark Spring near Batesville",
+     "lon": -91.6665290059125,
+     "lat": 35.8303532021833,
+     "site_type": "SP",
+     "site_type_label": "spring",
+     "state": "AR",
+     "region": "rest_of_plateau",
+     "region_label": "Rest of Ozark Plateau",
+     "any_anomaly": false,
+     "parameters": {
+      "00060": {
+       "code": "00060",
+       "label": "discharge",
+       "value": 0.0,
+       "unit": "ft^3/s",
+       "time": "2002-10-09T04:45:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    },
+    {
+     "id": "USGS-355927092122401",
+     "name": "16N12W25DCB1 Webb Cabin",
+     "lon": -92.20633055555555,
+     "lat": 35.99013055555556,
+     "site_type": "GW",
+     "site_type_label": "groundwater",
+     "state": "AR",
+     "region": "rest_of_plateau",
+     "region_label": "Rest of Ozark Plateau",
+     "any_anomaly": false,
+     "parameters": {
+      "72019": {
+       "code": "72019",
+       "label": "groundwater level",
+       "value": 67.09,
+       "unit": "ft",
+       "time": "2026-11-13T07:00:00+00:00",
+       "status": "missing",
+       "missing_reason": "insufficient_baseline",
+       "z": null,
+       "baseline_mean": null,
+       "baseline_stdev": null,
+       "baseline_n": 0,
+       "baseline_days": 30,
+       "known_excluded": false
+      }
+     }
+    }
+   ]
+  }
+ },
+ "anomalies": [
+  {
+   "id": "USGS-07048550",
+   "name": "West Fork White River east of Fayetteville, AR",
+   "region": "nwa_corridor",
+   "region_label": "NW Arkansas corridor",
+   "site_type": "ST",
+   "parameter": "00010",
+   "parameter_label": "water temperature",
+   "value": 5.5,
+   "unit": "degC",
+   "time": "2026-11-13T07:30:00+00:00",
+   "z": -5.11,
+   "baseline_mean": 15.277778,
+   "baseline_n": 9
+  },
+  {
+   "id": "MO005-370828094274101",
+   "name": "Webb City 6",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 623.15,
+   "unit": "ft",
+   "time": "2026-11-13T07:30:00+00:00",
+   "z": -3.761,
+   "baseline_mean": 641.926897,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-365415093342301",
+   "name": "Crane",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 40.61,
+   "unit": "ft",
+   "time": "2026-11-13T07:30:00+00:00",
+   "z": 3.283,
+   "baseline_mean": 39.952414,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-372153091322301",
+   "name": "Akers",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 67.32,
+   "unit": "ft",
+   "time": "2026-11-13T07:00:00+00:00",
+   "z": 3.009,
+   "baseline_mean": 67.102069,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-363728093150401",
+   "name": "Cooper Creek MODNR Well",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 216.07,
+   "unit": "ft",
+   "time": "2026-11-13T07:00:00+00:00",
+   "z": -3.004,
+   "baseline_mean": 227.182759,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-370600094223501",
+   "name": "Atlas Powder",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 20.98,
+   "unit": "ft",
+   "time": "2026-11-13T07:00:00+00:00",
+   "z": 2.899,
+   "baseline_mean": 20.692069,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-364818094185302",
+   "name": "Neosho Ozark Aquifer",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 337.38,
+   "unit": "ft",
+   "time": "2026-11-13T06:30:00+00:00",
+   "z": 2.744,
+   "baseline_mean": 336.835862,
+   "baseline_n": 29
+  },
+  {
+   "id": "USGS-07048600",
+   "name": "White River near Fayetteville, AR",
+   "region": "nwa_corridor",
+   "region_label": "NW Arkansas corridor",
+   "site_type": "ST",
+   "parameter": "00010",
+   "parameter_label": "water temperature",
+   "value": 13.0,
+   "unit": "degC",
+   "time": "2026-11-13T07:00:00+00:00",
+   "z": -2.548,
+   "baseline_mean": 17.831034,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-364006093200301",
+   "name": "Silver Dollar City",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 362.28,
+   "unit": "ft",
+   "time": "2026-11-13T07:00:00+00:00",
+   "z": -2.52,
+   "baseline_mean": 378.125172,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-371800092094801",
+   "name": "Fairview",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 283.66,
+   "unit": "ft",
+   "time": "2026-11-13T07:00:00+00:00",
+   "z": 2.313,
+   "baseline_mean": 281.912,
+   "baseline_n": 30
+  },
+  {
+   "id": "MO005-371036094171301",
+   "name": "Carthage",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 268.87,
+   "unit": "ft",
+   "time": "2026-11-13T07:30:00+00:00",
+   "z": -2.241,
+   "baseline_mean": 290.141724,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-370539093494001",
+   "name": "Mt. Vernon Ozark Aquifer",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 234.65,
+   "unit": "ft",
+   "time": "2026-11-13T07:00:00+00:00",
+   "z": -2.217,
+   "baseline_mean": 236.227241,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-365559092030001",
+   "name": "Noblett Lake",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 209.64,
+   "unit": "ft",
+   "time": "2026-11-13T07:00:00+00:00",
+   "z": 2.189,
+   "baseline_mean": 209.187931,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-365645093431601",
+   "name": "Aurora",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 102.77,
+   "unit": "ft",
+   "time": "2026-11-13T07:00:00+00:00",
+   "z": 2.054,
+   "baseline_mean": 101.068966,
+   "baseline_n": 29
+  },
+  {
+   "id": "MO005-370354093325901",
+   "name": "Billings",
+   "region": "sw_missouri",
+   "region_label": "SW Missouri",
+   "site_type": "GW",
+   "parameter": "72019",
+   "parameter_label": "groundwater level",
+   "value": 199.5,
+   "unit": "ft",
+   "time": "2026-11-13T07:30:00+00:00",
+   "z": 2.013,
+   "baseline_mean": 198.465517,
+   "baseline_n": 29
+  }
+ ],
+ "requests": {
+  "attempted": 3,
+  "ok": 3,
+  "failed": 0,
+  "used_api_key": true
+ }
+}
