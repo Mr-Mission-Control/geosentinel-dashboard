@@ -583,3 +583,70 @@ function renderKnownEvents(el, d) {
   }
   el.innerHTML = html;
 }
+
+function renderLoosh(panel) {
+  if (!panel) return;
+  const el = panel.querySelector("#loosh") || panel;
+  gsGet("data/loosh.json").then(doc => {
+    if (!doc || typeof doc !== "object") {
+      panel.hidden = true;
+      el.innerHTML = "";
+      return;
+    }
+    const num = v => (v == null || v === "") ? "missing" : gsEsc(v);
+    const km = v => v == null ? "–" : gsEsc(Number(v).toFixed(0)) + " km";
+    const bar = (v, color) => v == null ? '<span class="muted">missing</span>'
+      : `<div style="background:#21262d;border-radius:4px;height:8px"><div style="width:${Math.max(0, Math.min(100, Number(v)))}%;height:8px;border-radius:4px;background:${color}"></div></div>`;
+    const real = doc.real_hazard || {};
+    const fear = doc.fear || {};
+    const gap = doc.gap || {};
+    const gapClass = /act/.test(gap.label || "") ? "bad" : (/exceeds local/.test(gap.label || "") ? "muted" : "ok");
+    let html = '<p class="muted">Real = official, local, verified hazards. Loosh = collective fear pressure in news and attention. Aggregate only; not predictive; not used in the hazard index.</p>';
+    if (!doc.ok) {
+      html += `<div class="muted">${gsEsc(doc.error || "unavailable")}</div>`;
+    }
+    html += "<table>";
+    html += `<tr><td><b>Real Hazard Level</b><br><span class="muted">${gsEsc((real.home && real.home.name) || "Rogers, AR")} + ${gsEsc(real.region || "NW Arkansas / Ozark")}</span></td><td style="width:45%">${bar(real.level, "#f85149")}</td><td><b>${num(real.level)}</b> ${gsEsc(real.label || "")}</td></tr>`;
+    html += `<tr><td><b>Fear Pressure Index</b><br><span class="muted">global ${num(fear.global_index)} · US ${num(fear.us_index)}</span></td><td>${bar(fear.index, "#a371f7")}</td><td><b>${num(fear.index)}</b></td></tr>`;
+    html += `<tr><td><b>Gap</b> (fear − real)</td><td colspan="2"><b class="${gapClass}">${gsEsc(gap.label || "missing")}</b> · ${num(gap.value)}</td></tr>`;
+    html += "</table>";
+    const items = (real.items || []).filter(i => i.score > 0 || i.actionable).slice(0, 10);
+    html += `<div><b>Real hazards</b> · ${gsEsc(real.actionable_count || 0)} actionable</div>`;
+    if (items.length) {
+      html += "<table><tr><th>item</th><th>source</th><th>distance</th><th>severity</th><th>score</th><th>act?</th></tr>";
+      for (const i of items) {
+        const title = i.url ? `<a href="${gsEsc(i.url)}">${gsEsc(i.title)}</a>` : gsEsc(i.title);
+        html += `<tr><td>${title}${i.area ? `<br><span class="muted">${gsEsc(i.area)}</span>` : ""}</td><td>${gsEsc(i.source)}${i.official ? "" : ' <span class="tag">statistical</span>'}</td>`;
+        html += `<td>${km(i.distance_km)}</td><td>${gsEsc([i.severity, i.urgency, i.certainty].filter(Boolean).join(" / "))}</td>`;
+        html += `<td>${gsEsc(Number(i.score).toFixed(2))}</td><td class="${i.actionable ? "bad" : "muted"}">${i.actionable ? "yes" : "no"}</td></tr>`;
+      }
+      html += "</table>";
+    } else {
+      html += '<div class="muted">no scored real hazards near home in this snapshot</div>';
+    }
+    if ((real.missing || []).length) html += `<div class="muted">missing: ${gsEsc(real.missing.join("; "))}</div>`;
+    const themes = (fear.themes || []).slice().sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+    html += "<div><b>Fear themes</b> (50 = normal vs 30-day baseline)</div>";
+    html += "<table><tr><th>theme</th><th>score</th><th>GDELT global / US</th><th>Wikipedia</th><th>official signal</th></tr>";
+    for (const t of themes) {
+      const c = t.components || {};
+      const sig = t.official_signal || {};
+      const sigClass = sig.status === "match" ? "bad" : "muted";
+      const sigText = sig.status === "match" ? "match" : (sig.status === "none_active" ? "none active" : (sig.status === "no_open_source" ? "no open source" : (sig.status || "missing")));
+      html += `<tr><td>${gsEsc(t.label)}</td><td><b>${num(t.score)}</b></td><td>${num(c.gdelt_global)} / ${num(c.gdelt_us)}</td><td>${num(c.wikipedia)}</td>`;
+      html += `<td class="${sigClass}">${gsEsc(sigText)}${sig.detail ? `<br><span class="muted">${gsEsc(sig.detail)}</span>` : ""}</td></tr>`;
+    }
+    html += "</table>";
+    const g = fear.gdelt || {};
+    const req = g.requests || {};
+    let gnote = g.ok ? (g.cached ? "GDELT cached " + gsEsc(g.fetched_at || "") : "GDELT ok") : "GDELT missing";
+    if (req.rate_limited) gnote += " (rate-limited)";
+    html += `<div class="muted">${gnote} · Wikipedia ${(fear.wikipedia && fear.wikipedia.ok) ? "ok" : "missing"} · collected ${num(doc.collected_at)}</div>`;
+    html += '<div class="muted">Sources: NWS · USGS · NOAA SWPC · <a href="https://www.gdeltproject.org/">GDELT Project</a> · Wikimedia pageviews (CC0) · FDIC · CISA KEV · weights in docs/LOOSH.md</div>';
+    el.innerHTML = html;
+    panel.hidden = false;
+  }).catch(() => {
+    panel.hidden = true;
+    el.innerHTML = "";
+  });
+}

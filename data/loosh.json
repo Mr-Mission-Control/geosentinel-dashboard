@@ -1,0 +1,926 @@
+{
+ "ok": true,
+ "label": "real hazards vs. media fear pressure; aggregate, not predictive",
+ "used_in_index": false,
+ "qpu": false,
+ "aggregate_only": true,
+ "collected_at": "2026-11-13T12:38:28Z",
+ "real_hazard": {
+  "level": 52,
+  "label": "Elevated",
+  "home": {
+   "name": "Rogers, AR",
+   "lat": 36.33,
+   "lon": -94.12
+  },
+  "region": "NW Arkansas / Ozark Plateau",
+  "actionable_count": 1,
+  "actionable_local": true,
+  "items": [
+   {
+    "source": "nws",
+    "kind": "weather_alert",
+    "title": "Freeze Warning",
+    "detail": "Freeze Warning issued November 12 at 10:34PM CST until November 13 at 8:00AM CST by NWS Tulsa OK",
+    "area": "Benton; Carroll; Washington; Madison; Washington; Nowata; Craig; Ottawa; Rogers; Mayes; Delaware; Cherokee; Adair; Western Osage; Northeast Osage",
+    "severity": "Severe",
+    "urgency": "Expected",
+    "certainty": "Likely",
+    "distance_km": 0.0,
+    "points": [
+     "Rogers, AR (home)",
+     "Fayetteville, AR",
+     "Eureka Springs, AR",
+     "Tahlequah, OK"
+    ],
+    "score": 0.48,
+    "actionable": true,
+    "expires": "2026-11-13T08:00:00-06:00",
+    "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0d76d4497557e226cbe55c50693a30f89a50d311.001.1",
+    "official": true
+   },
+   {
+    "source": "nws",
+    "kind": "weather_alert",
+    "title": "Freeze Warning",
+    "detail": "Freeze Warning issued November 12 at 11:26PM CST until November 13 at 8:00AM CST by NWS Little Rock AR",
+    "area": "Marion; Baxter; Fulton; Sharp; Randolph; Stone; Izard; Independence; Lawrence; Cleburne; Boone County Except Southwest; Newton County Higher Elevations; Searcy ",
+    "severity": "Severe",
+    "urgency": "Expected",
+    "certainty": "Likely",
+    "distance_km": 91.2,
+    "points": [
+     "Harrison, AR"
+    ],
+    "score": 0.1928,
+    "actionable": false,
+    "expires": "2026-11-13T08:00:00-06:00",
+    "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0d64742cbbfed9f7d0de85cb729268070073f9e9.001.1",
+    "official": true
+   },
+   {
+    "source": "nws",
+    "kind": "weather_alert",
+    "title": "Frost Advisory",
+    "detail": "Frost Advisory issued November 12 at 10:34PM CST until November 13 at 8:00AM CST by NWS Tulsa OK",
+    "area": "Northern Crawford; Northern Franklin; North and Central Sebastian; Southern Crawford; Central and Southern Franklin; Southern Sebastian; Pawnee; Tulsa; Creek; O",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "certainty": "Likely",
+    "distance_km": 107.5,
+    "points": [
+     "Fort Smith, AR"
+    ],
+    "score": 0.0546,
+    "actionable": false,
+    "expires": "2026-11-13T08:00:00-06:00",
+    "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0d76d4497557e226cbe55c50693a30f89a50d311.002.1",
+    "official": true
+   },
+   {
+    "source": "usgs_eq",
+    "kind": "earthquake",
+    "title": "M3.38 6 km E of Calumet, Oklahoma",
+    "magnitude": 3.38,
+    "severity": "felt",
+    "distance_km": 362.0,
+    "score": 0.0175,
+    "actionable": false,
+    "time": "2026-11-07T11:53:43Z",
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ok2026vvhm",
+    "official": true
+   },
+   {
+    "source": "usgs_eq",
+    "kind": "earthquake",
+    "title": "M2.09 13 km E of South Lead Hill, Arkansas",
+    "magnitude": 2.09,
+    "severity": "none",
+    "distance_km": 122.2,
+    "score": 0.0,
+    "actionable": false,
+    "time": "2026-11-09T09:38:52Z",
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nm60506533",
+    "official": true
+   },
+   {
+    "source": "noaa_swpc",
+    "kind": "space_weather",
+    "title": "NOAA G0",
+    "severity": "G0",
+    "distance_km": null,
+    "score": 0.0,
+    "actionable": false,
+    "official": true,
+    "url": "https://www.swpc.noaa.gov/noaa-scales-explanation"
+   },
+   {
+    "source": "noaa_swpc",
+    "kind": "space_weather",
+    "title": "NOAA R0",
+    "severity": "R0",
+    "distance_km": null,
+    "score": 0.0,
+    "actionable": false,
+    "official": true,
+    "url": "https://www.swpc.noaa.gov/noaa-scales-explanation"
+   },
+   {
+    "source": "noaa_swpc",
+    "kind": "space_weather",
+    "title": "NOAA S0",
+    "severity": "S0",
+    "distance_km": null,
+    "score": 0.0,
+    "actionable": false,
+    "official": true,
+    "url": "https://www.swpc.noaa.gov/noaa-scales-explanation"
+   }
+  ],
+  "components": {
+   "nws": {
+    "items": 3,
+    "level_alone": 51
+   },
+   "usgs_eq": {
+    "items": 2,
+    "level_alone": 2
+   },
+   "noaa_swpc": {
+    "items": 3,
+    "level_alone": 0
+   },
+   "karst": {
+    "items": 0,
+    "level_alone": 0
+   },
+   "outage": {
+    "items": 0,
+    "level_alone": 0
+   }
+  },
+  "missing": [
+   "power_outages (no open feed passes the license rule)"
+  ],
+  "meta": {
+   "nws": {
+    "ok": true,
+    "requests": 8,
+    "requests_ok": 8,
+    "errors": []
+   },
+   "usgs_eq": {
+    "ok": true,
+    "count": 2,
+    "radius_km": 500,
+    "days": 7,
+    "min_magnitude": 2.0
+   },
+   "noaa_swpc": {
+    "ok": true,
+    "G": 0,
+    "R": 0,
+    "S": 0,
+    "kp": 1.0,
+    "time": "2026-11-13T12:36:00Z"
+   },
+   "karst": {
+    "ok": true,
+    "nwa_rising_anomalies": 0,
+    "all_anomalies": 18
+   },
+   "outage": {
+    "ok": true,
+    "active_outages": 0,
+    "power_outages": "missing: no open power-outage feed whose terms allow automated use"
+   }
+  },
+  "method": "level = 100 * (1 - prod(1 - score_i)); see docs/LOOSH.md for each score"
+ },
+ "fear": {
+  "index": 67,
+  "global_index": 67,
+  "us_index": null,
+  "themes": [
+   {
+    "id": "war",
+    "label": "War / WW3",
+    "score": 47.5,
+    "global_score": 47.5,
+    "us_score": null,
+    "components": {
+     "gdelt_global": null,
+     "gdelt_us": null,
+     "wikipedia": 47.5
+    },
+    "tone_adjustment": null,
+    "gdelt_global": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_us": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_tone": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "wikipedia": {
+     "status": "ok",
+     "current_day": "20261112",
+     "current": 2323,
+     "mean_72h": 2321.6667,
+     "baseline_mean": 2425.4,
+     "baseline_sd": 702.4903,
+     "baseline_n": 30,
+     "z": -0.15,
+     "z_72h": -0.15,
+     "days": 34,
+     "unit": "daily en.wikipedia pageviews (user agents)",
+     "articles": [
+      "World_War_III",
+      "Nuclear_warfare"
+     ]
+    },
+    "status": "ok",
+    "official_signal": {
+     "status": "none_active",
+     "sources": [
+      "NWS regional alerts"
+     ],
+     "detail": null
+    }
+   },
+   {
+    "id": "blackout",
+    "label": "Blackout / grid / black sky",
+    "score": 39.8,
+    "global_score": 39.8,
+    "us_score": null,
+    "components": {
+     "gdelt_global": null,
+     "gdelt_us": null,
+     "wikipedia": 39.8
+    },
+    "tone_adjustment": null,
+    "gdelt_global": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_us": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_tone": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "wikipedia": {
+     "status": "ok",
+     "current_day": "20261112",
+     "current": 947,
+     "mean_72h": 951.0,
+     "baseline_mean": 1093.0333,
+     "baseline_sd": 234.8538,
+     "baseline_n": 30,
+     "z": -0.62,
+     "z_72h": -0.6,
+     "days": 34,
+     "unit": "daily en.wikipedia pageviews (user agents)",
+     "articles": [
+      "Power_outage",
+      "Electromagnetic_pulse"
+     ]
+    },
+    "status": "ok",
+    "official_signal": {
+     "status": "none_active",
+     "sources": [
+      "NWS regional alerts",
+      "NOAA SWPC G-scale"
+     ],
+     "detail": null,
+     "note": "no open power-outage feed is wired (license rule)"
+    }
+   },
+   {
+    "id": "financial",
+    "label": "Bank freeze / financial collapse",
+    "score": 51.7,
+    "global_score": 51.7,
+    "us_score": null,
+    "components": {
+     "gdelt_global": null,
+     "gdelt_us": null,
+     "wikipedia": 51.7
+    },
+    "tone_adjustment": null,
+    "gdelt_global": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_us": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_tone": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "wikipedia": {
+     "status": "ok",
+     "current_day": "20261112",
+     "current": 425,
+     "mean_72h": 411.0,
+     "baseline_mean": 416.0333,
+     "baseline_sd": 91.2822,
+     "baseline_n": 30,
+     "z": 0.1,
+     "z_72h": -0.06,
+     "days": 34,
+     "unit": "daily en.wikipedia pageviews (user agents)",
+     "articles": [
+      "Bank_run",
+      "Financial_crisis"
+     ]
+    },
+    "status": "ok",
+    "official_signal": {
+     "status": "none_active",
+     "sources": [
+      "FDIC bank failures"
+     ],
+     "detail": "no FDIC failures in 30 days (latest 2026-07-17)"
+    }
+   },
+   {
+    "id": "food",
+    "label": "Food shortage",
+    "score": 45.2,
+    "global_score": 45.2,
+    "us_score": null,
+    "components": {
+     "gdelt_global": null,
+     "gdelt_us": null,
+     "wikipedia": 45.2
+    },
+    "tone_adjustment": null,
+    "gdelt_global": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_us": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_tone": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "wikipedia": {
+     "status": "ok",
+     "current_day": "20261112",
+     "current": 511,
+     "mean_72h": 487.0,
+     "baseline_mean": 526.8667,
+     "baseline_sd": 53.8323,
+     "baseline_n": 30,
+     "z": -0.29,
+     "z_72h": -0.74,
+     "days": 34,
+     "unit": "daily en.wikipedia pageviews (user agents)",
+     "articles": [
+      "Food_security",
+      "Famine"
+     ]
+    },
+    "status": "ok",
+    "official_signal": {
+     "status": "no_open_source",
+     "sources": [],
+     "detail": "no official open feed with automated-use terms is wired for this theme"
+    }
+   },
+   {
+    "id": "cyber",
+    "label": "Cyberattack / AI hack",
+    "score": 53.3,
+    "global_score": 53.3,
+    "us_score": null,
+    "components": {
+     "gdelt_global": null,
+     "gdelt_us": null,
+     "wikipedia": 53.3
+    },
+    "tone_adjustment": null,
+    "gdelt_global": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_us": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_tone": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "wikipedia": {
+     "status": "ok",
+     "current_day": "20261112",
+     "current": 720,
+     "mean_72h": 721.0,
+     "baseline_mean": 680.9667,
+     "baseline_sd": 195.5573,
+     "baseline_n": 30,
+     "z": 0.2,
+     "z_72h": 0.2,
+     "days": 34,
+     "unit": "daily en.wikipedia pageviews (user agents)",
+     "articles": [
+      "Cyberattack",
+      "Ransomware"
+     ]
+    },
+    "status": "ok",
+    "official_signal": {
+     "status": "none_active",
+     "sources": [
+      "CISA KEV additions"
+     ],
+     "detail": "10 KEV additions in 7 days (13-week avg 8.77/wk)"
+    }
+   },
+   {
+    "id": "terrorism",
+    "label": "Terrorism",
+    "score": 79.6,
+    "global_score": 79.6,
+    "us_score": null,
+    "components": {
+     "gdelt_global": null,
+     "gdelt_us": null,
+     "wikipedia": 79.6
+    },
+    "tone_adjustment": null,
+    "gdelt_global": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_us": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_tone": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "wikipedia": {
+     "status": "ok",
+     "current_day": "20261112",
+     "current": 846,
+     "mean_72h": 823.3333,
+     "baseline_mean": 702.6667,
+     "baseline_sd": 70.4118,
+     "baseline_n": 30,
+     "z": 2.04,
+     "z_72h": 1.71,
+     "days": 34,
+     "unit": "daily en.wikipedia pageviews (user agents)",
+     "articles": [
+      "Terrorism"
+     ]
+    },
+    "status": "ok",
+    "official_signal": {
+     "status": "none_active",
+     "sources": [
+      "NWS regional alerts"
+     ],
+     "detail": null
+    }
+   },
+   {
+    "id": "uap",
+    "label": "Aliens / UAP",
+    "score": 75.8,
+    "global_score": 75.8,
+    "us_score": null,
+    "components": {
+     "gdelt_global": null,
+     "gdelt_us": null,
+     "wikipedia": 75.8
+    },
+    "tone_adjustment": null,
+    "gdelt_global": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_us": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_tone": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "wikipedia": {
+     "status": "ok",
+     "current_day": "20261112",
+     "current": 976,
+     "mean_72h": 931.3333,
+     "baseline_mean": 833.4,
+     "baseline_sd": 75.6551,
+     "baseline_n": 30,
+     "z": 1.71,
+     "z_72h": 1.18,
+     "days": 34,
+     "unit": "daily en.wikipedia pageviews (user agents)",
+     "articles": [
+      "Unidentified_flying_object",
+      "Unidentified_anomalous_phenomena"
+     ]
+    },
+    "status": "ok",
+    "official_signal": {
+     "status": "no_open_source",
+     "sources": [],
+     "detail": "no official open feed with automated-use terms is wired for this theme"
+    }
+   },
+   {
+    "id": "pandemic",
+    "label": "Pandemic",
+    "score": 60.2,
+    "global_score": 60.2,
+    "us_score": null,
+    "components": {
+     "gdelt_global": null,
+     "gdelt_us": null,
+     "wikipedia": 60.2
+    },
+    "tone_adjustment": null,
+    "gdelt_global": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_us": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_tone": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "wikipedia": {
+     "status": "ok",
+     "current_day": "20261112",
+     "current": 508,
+     "mean_72h": 492.3333,
+     "baseline_mean": 478.4,
+     "baseline_sd": 44.9748,
+     "baseline_n": 30,
+     "z": 0.62,
+     "z_72h": 0.29,
+     "days": 34,
+     "unit": "daily en.wikipedia pageviews (user agents)",
+     "articles": [
+      "Pandemic",
+      "Influenza_A_virus_subtype_H5N1"
+     ]
+    },
+    "status": "ok",
+    "official_signal": {
+     "status": "no_open_source",
+     "sources": [],
+     "detail": "no official open feed with automated-use terms is wired for this theme"
+    }
+   },
+   {
+    "id": "unrest",
+    "label": "Civil unrest",
+    "score": 33.5,
+    "global_score": 33.5,
+    "us_score": null,
+    "components": {
+     "gdelt_global": null,
+     "gdelt_us": null,
+     "wikipedia": 33.5
+    },
+    "tone_adjustment": null,
+    "gdelt_global": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_us": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "gdelt_tone": {
+     "status": "missing",
+     "missing_reason": "rate_limited"
+    },
+    "wikipedia": {
+     "status": "ok",
+     "current_day": "20261112",
+     "current": 738,
+     "mean_72h": 722.0,
+     "baseline_mean": 935.7333,
+     "baseline_sd": 191.7371,
+     "baseline_n": 30,
+     "z": -1.03,
+     "z_72h": -1.11,
+     "days": 34,
+     "unit": "daily en.wikipedia pageviews (user agents)",
+     "articles": [
+      "Civil_disorder",
+      "Martial_law"
+     ]
+    },
+    "status": "ok",
+    "official_signal": {
+     "status": "none_active",
+     "sources": [
+      "NWS regional alerts"
+     ],
+     "detail": null
+    }
+   }
+  ],
+  "top_themes": [
+   {
+    "id": "terrorism",
+    "label": "Terrorism",
+    "score": 79.6
+   },
+   {
+    "id": "uap",
+    "label": "Aliens / UAP",
+    "score": 75.8
+   },
+   {
+    "id": "pandemic",
+    "label": "Pandemic",
+    "score": 60.2
+   }
+  ],
+  "gdelt": {
+   "ok": false,
+   "cached": false,
+   "fetched_at": "2026-11-13T12:38:28Z",
+   "themes": {
+    "war": {
+     "global": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "us": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "tone": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     }
+    },
+    "blackout": {
+     "global": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "us": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "tone": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     }
+    },
+    "financial": {
+     "global": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "us": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "tone": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     }
+    },
+    "food": {
+     "global": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "us": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "tone": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     }
+    },
+    "cyber": {
+     "global": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "us": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "tone": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     }
+    },
+    "terrorism": {
+     "global": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "us": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "tone": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     }
+    },
+    "uap": {
+     "global": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "us": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "tone": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     }
+    },
+    "pandemic": {
+     "global": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "us": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "tone": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     }
+    },
+    "unrest": {
+     "global": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "us": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     },
+     "tone": {
+      "status": "missing",
+      "missing_reason": "rate_limited"
+     }
+    }
+   },
+   "requests": {
+    "attempted": 1,
+    "ok": 0,
+    "failed": 1,
+    "rate_limited": true,
+    "budget_exhausted": false,
+    "low_coverage_days_skipped": 0,
+    "errors": [
+     "war/global: RateLimited: HTTP 429"
+    ],
+    "retried": true
+   }
+  },
+  "wikipedia": {
+   "ok": true,
+   "fetched_at": "2026-11-13T12:38:28Z",
+   "requests": {
+    "attempted": 17,
+    "ok": 17,
+    "failed": 0,
+    "errors": []
+   }
+  },
+  "method": "theme source score = 50 + 50*tanh(z/3), z = latest day vs prior 30-day daily baseline; theme = weighted mean (GDELT global 0.5, GDELT US 0.3, Wikipedia 0.2) over available sources; index = 0.5*mean(themes) + 0.5*max(themes); 50 = normal",
+  "missing_themes": []
+ },
+ "gap": {
+  "value": 15,
+  "label": "Real hazard elevated \u2014 act",
+  "thresholds": {
+   "act_real_level": 40,
+   "fear_exceeds": 25,
+   "real_exceeds": -25
+  },
+  "themes_with_official_match": []
+ },
+ "official_feeds": {
+  "fdic": {
+   "ok": true,
+   "failures_30d": 0,
+   "recent": [],
+   "latest": {
+    "name": "SMALL BUSINESS BANK",
+    "city": "LENEXA, KS",
+    "date": "2026-07-17"
+   }
+  },
+  "cisa_kev": {
+   "ok": true,
+   "added_7d": 10,
+   "weekly_avg_13w": 8.77,
+   "elevated": false,
+   "catalog_released": "2026-11-10T19:03:29.8375Z"
+  }
+ },
+ "licensing": {
+  "rule": "No source whose terms require a written license for automated or live-system use.",
+  "decision": "GDELT passes; used as the primary fear source, with Wikimedia pageviews as a second, independent attention source.",
+  "sources": [
+   {
+    "name": "GDELT 2.0 DOC API",
+    "url": "https://www.gdeltproject.org/about.html#termsofuse",
+    "terms": "All GDELT datasets are available for unlimited and unrestricted use for any academic, commercial, or governmental use of any kind without fee. Rate limit: one request every 5 s.",
+    "passes": true
+   },
+   {
+    "name": "Wikimedia Pageviews REST API",
+    "url": "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews",
+    "terms": "Public REST API; pageview data CC0; requires a descriptive User-Agent.",
+    "passes": true
+   },
+   {
+    "name": "NWS api.weather.gov",
+    "url": "https://www.weather.gov/disclaimer",
+    "terms": "U.S. Government public domain; User-Agent with contact.",
+    "passes": true
+   },
+   {
+    "name": "USGS Earthquake Catalog",
+    "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "terms": "U.S. Public Domain.",
+    "passes": true
+   },
+   {
+    "name": "NOAA SWPC",
+    "url": "https://www.swpc.noaa.gov/",
+    "terms": "U.S. Government public domain.",
+    "passes": true
+   },
+   {
+    "name": "FDIC BankFind failures API",
+    "url": "https://api.fdic.gov/banks/docs/",
+    "terms": "Public, keyless U.S. Government open data API.",
+    "passes": true
+   },
+   {
+    "name": "CISA KEV catalog",
+    "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+    "terms": "Public machine-readable feed; CC0 on cisagov/kev-data.",
+    "passes": true
+   },
+   {
+    "name": "Google Trends",
+    "url": "https://policies.google.com/terms",
+    "terms": "No official public API; automated access to Google services is not permitted by the terms.",
+    "passes": false,
+    "used": false
+   },
+   {
+    "name": "Power outage aggregators (e.g. poweroutage.us)",
+    "url": "https://poweroutage.us/",
+    "terms": "Commercial data; automated use needs a paid/written license.",
+    "passes": false,
+    "used": false
+   }
+  ]
+ },
+ "attribution": [
+  "NWS api.weather.gov",
+  "USGS Earthquake Hazards Program",
+  "NOAA SWPC",
+  "GDELT Project (gdeltproject.org)",
+  "Wikimedia pageviews (CC0)",
+  "FDIC BankFind",
+  "CISA Known Exploited Vulnerabilities"
+ ]
+}

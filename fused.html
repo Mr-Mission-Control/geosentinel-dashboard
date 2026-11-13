@@ -22,6 +22,7 @@ section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;marg
 <section id="wban-panel" hidden><h2>Band activity <span class="tag">experimental</span></h2><div id="wban"></div></section>
 <section id="usgs-water-panel" hidden><h2>Stream gauges <span class="tag">experimental</span></h2><div id="usgs-water"></div></section>
 <section id="karst-panel" hidden><h2>Ozark Karst &amp; Springs <span class="tag">experimental</span></h2><div id="karst"></div></section>
+<section id="loosh-panel" hidden><h2>Real vs. Loosh <span class="tag">experimental</span></h2><div id="loosh"></div></section>
 <section><h2>Astro context</h2><div id="astro"></div>
 <h2>Exploratory overlays <span class="tag">exploratory/non-scientific overlay</span></h2><div id="expl" class="muted"></div></section>
 </main>
@@ -61,6 +62,7 @@ function render(d){
  renderWban(document.getElementById("wban-panel"));
  renderUsgsWater(document.getElementById("usgs-water-panel"));
  renderKarst(document.getElementById("karst-panel"));
+ renderLoosh(document.getElementById("loosh-panel"));
  renderAir(document.getElementById("air"), d, t => t);
  let h="<table><tr><th>source</th><th>status</th><th>detail</th></tr>";
  for(const [k,v] of Object.entries(d.sources||{}))h+=`<tr><td>${lab(k,v)} <span class="tag">core</span></td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?v.count+" events":v.error)}</td></tr>`;
