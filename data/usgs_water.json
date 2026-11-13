@@ -4,7 +4,7 @@
  "qpu": false,
  "label": "experimental correlation input, not predictive",
  "used_in_index": false,
- "collected_at": "2026-11-13T12:50:32Z",
+ "collected_at": "2026-11-13T12:56:54Z",
  "attribution": {
   "attribution": "USGS Water Data",
   "source": "U.S. Geological Survey",
@@ -101,8 +101,8 @@
     "lat": 34.74933055555556,
     "discharge_cfs": null,
     "discharge_time": null,
-    "gage_height_ft": 7.47,
-    "gage_height_time": "2026-11-13T11:00:00+00:00"
+    "gage_height_ft": 7.43,
+    "gage_height_time": "2026-11-13T12:00:00+00:00"
    },
    {
     "id": "USGS-07263450",
@@ -219,10 +219,10 @@
     "name": "Bayou Macon at Eudora, AR",
     "lon": -91.2544444444444,
     "lat": 33.1002777777778,
-    "discharge_cfs": 7.78,
-    "discharge_time": "2026-11-13T11:45:00+00:00",
-    "gage_height_ft": 2.59,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "discharge_cfs": 7.58,
+    "discharge_time": "2026-11-13T12:45:00+00:00",
+    "gage_height_ft": 2.58,
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07264000",
@@ -230,9 +230,9 @@
     "lon": -91.91583333333334,
     "lat": 34.736666666666665,
     "discharge_cfs": null,
-    "discharge_time": "2026-11-13T11:45:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": null,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07264500",
@@ -450,9 +450,9 @@
     "lon": -91.3477777777778,
     "lat": 33.1241666666667,
     "discharge_cfs": 0.0,
-    "discharge_time": "2026-11-13T11:45:00+00:00",
-    "gage_height_ft": 0.22,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "discharge_time": "2026-11-13T12:45:00+00:00",
+    "gage_height_ft": 0.2,
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-072632962",
@@ -540,19 +540,19 @@
     "lon": -93.3547222222222,
     "lat": 36.0225,
     "discharge_cfs": 35.9,
-    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": 3.38,
-    "gage_height_time": "2026-11-13T12:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07055680",
     "name": "Buffalo River at Pruitt, AR",
     "lon": -93.13777777777779,
     "lat": 36.05916666666666,
-    "discharge_cfs": 17.0,
-    "discharge_time": "2026-11-13T12:30:00+00:00",
-    "gage_height_ft": 3.01,
-    "gage_height_time": "2026-11-13T12:30:00+00:00"
+    "discharge_cfs": 16.3,
+    "discharge_time": "2026-11-13T12:45:00+00:00",
+    "gage_height_ft": 3.0,
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07055646",
@@ -591,8 +591,8 @@
     "lat": 35.8575,
     "discharge_cfs": 0.0,
     "discharge_time": "2026-11-13T11:45:00+00:00",
-    "gage_height_ft": 1.92,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_ft": 1.93,
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07077500",
@@ -720,9 +720,9 @@
     "lon": -94.501669,
     "lat": 36.34195,
     "discharge_cfs": 8.41,
-    "discharge_time": "2026-11-13T11:45:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": 6.89,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07369654",
@@ -760,9 +760,9 @@
     "lon": -94.2363888888889,
     "lat": 34.38,
     "discharge_cfs": 11.6,
-    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": 1.88,
-    "gage_height_time": "2026-11-13T12:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07055607",
@@ -1052,7 +1052,7 @@
     "discharge_cfs": null,
     "discharge_time": "2025-12-03T05:55:00+00:00",
     "gage_height_ft": 2.87,
-    "gage_height_time": "2026-11-13T11:50:00+00:00"
+    "gage_height_time": "2026-11-13T12:50:00+00:00"
    },
    {
     "id": "USGS-07358550",
@@ -1361,8 +1361,8 @@
     "lat": 36.38944444444444,
     "discharge_cfs": null,
     "discharge_time": null,
-    "gage_height_ft": 2.45,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_ft": 2.44,
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07077652",
@@ -1462,7 +1462,7 @@
     "discharge_cfs": null,
     "discharge_time": null,
     "gage_height_ft": 17.51,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07257460",
@@ -1880,9 +1880,9 @@
     "lon": -92.35888888888888,
     "lat": 34.72416666666667,
     "discharge_cfs": 0.71,
-    "discharge_time": "2026-11-13T11:45:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": 1.95,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07339500",
@@ -2140,9 +2140,9 @@
     "lon": -91.48277777777778,
     "lat": 36.31361111111111,
     "discharge_cfs": 322.0,
-    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": 2.85,
-    "gage_height_time": "2026-11-13T12:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07069220",
@@ -2412,7 +2412,7 @@
     "discharge_cfs": null,
     "discharge_time": null,
     "gage_height_ft": 252.6,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-072632968",
@@ -2520,9 +2520,9 @@
     "lon": -92.8730555555556,
     "lat": 35.3247222222222,
     "discharge_cfs": 21.1,
-    "discharge_time": "2026-11-13T11:45:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": 3.03,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07260672",
@@ -2562,7 +2562,7 @@
     "discharge_cfs": null,
     "discharge_time": null,
     "gage_height_ft": 290.1,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07061000",
@@ -2745,9 +2745,9 @@
     "lon": -94.501669,
     "lat": 36.34195,
     "discharge_cfs": 8.41,
-    "discharge_time": "2026-11-13T11:45:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": 6.89,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07195800",
@@ -3122,7 +3122,7 @@
   ]
  },
  "national": {
-  "sites_considered": 13546,
+  "sites_considered": 13547,
   "unusual_rise_count": 25,
   "unusual_rises": [
    {
@@ -3282,6 +3282,18 @@
     "rise_ratio": 9.107
    },
    {
+    "id": "USGS-01431500",
+    "name": null,
+    "lon": -75.1721185686371,
+    "lat": 41.476200225754,
+    "latest_cfs": 1690.0,
+    "latest_time": "2026-11-13T12:45:00+00:00",
+    "prior_daily_mean_cfs": 206.0,
+    "prior_daily_date": "2026-11-12",
+    "rise_cfs": 1484.0,
+    "rise_ratio": 8.204
+   },
+   {
     "id": "USGS-01553850",
     "name": null,
     "lon": -76.8,
@@ -3294,16 +3306,16 @@
     "rise_ratio": 8.128
    },
    {
-    "id": "USGS-01431500",
+    "id": "USGS-04196000",
     "name": null,
-    "lon": -75.1721185686371,
-    "lat": 41.476200225754,
-    "latest_cfs": 1670.0,
-    "latest_time": "2026-11-13T12:30:00+00:00",
-    "prior_daily_mean_cfs": 206.0,
+    "lon": -83.005743689715,
+    "lat": 40.8036687452186,
+    "latest_cfs": 436.0,
+    "latest_time": "2026-11-13T12:45:00+00:00",
+    "prior_daily_mean_cfs": 57.5,
     "prior_daily_date": "2026-11-12",
-    "rise_cfs": 1464.0,
-    "rise_ratio": 8.107
+    "rise_cfs": 378.5,
+    "rise_ratio": 7.583
    },
    {
     "id": "USGS-14211820",
@@ -3346,12 +3358,12 @@
     "name": null,
     "lon": -75.0362809642223,
     "lat": 41.4759228189641,
-    "latest_cfs": 1700.0,
-    "latest_time": "2026-11-13T12:30:00+00:00",
+    "latest_cfs": 1710.0,
+    "latest_time": "2026-11-13T12:45:00+00:00",
     "prior_daily_mean_cfs": 242.0,
     "prior_daily_date": "2026-11-12",
-    "rise_cfs": 1458.0,
-    "rise_ratio": 7.025
+    "rise_cfs": 1468.0,
+    "rise_ratio": 7.066
    },
    {
     "id": "USGS-01429000",
@@ -3364,18 +3376,6 @@
     "prior_daily_date": "2026-11-12",
     "rise_cfs": 252.7,
     "rise_ratio": 6.578
-   },
-   {
-    "id": "USGS-04196000",
-    "name": null,
-    "lon": -83.005743689715,
-    "lat": 40.8036687452186,
-    "latest_cfs": 367.0,
-    "latest_time": "2026-11-13T11:45:00+00:00",
-    "prior_daily_mean_cfs": 57.5,
-    "prior_daily_date": "2026-11-12",
-    "rise_cfs": 309.5,
-    "rise_ratio": 6.383
    },
    {
     "id": "USGS-01427207",
