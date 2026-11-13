@@ -12,6 +12,7 @@ h2{font-size:15px;margin:0 0 8px}table{width:100%;border-collapse:collapse}td,th
 <section><h2>Earthquakes M4.5+ (7 days, newest)</h2><table id="eq"></table></section>
 <section><h2>Flood alerts (NWS)</h2><table id="fl"></table></section>
 <section><h2>Volcanoes (USGS HANS) & SST</h2><table id="vs"></table></section>
+<section id="natural-hazards-panel"><h2>Natural hazards</h2><div id="natural-hazards"></div></section>
 <section><h2>Air quality timeline (OpenAQ)</h2><div id="air"></div></section>
 <section><h2>Optimizer &amp; threat layer</h2><div id="tools"></div></section>
 <section id="space-weather-panel" hidden><h2>Space weather layer <span class="tag">experimental</span></h2><div id="space-weather"></div></section>
@@ -47,6 +48,7 @@ loadSnapshot().then(d=>{
  renderWban(document.getElementById("wban-panel"));
  renderUsgsWater(document.getElementById("usgs-water-panel"));
  renderKarst(document.getElementById("karst-panel"));
+ renderNaturalHazards(document.getElementById("natural-hazards-panel"), d);
  renderLoosh(document.getElementById("loosh-panel"));
 }).catch(e=>{document.getElementById("gen").textContent="load failed: "+e;});
 </script></body></html>

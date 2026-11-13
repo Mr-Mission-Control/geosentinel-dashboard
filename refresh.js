@@ -584,6 +584,71 @@ function renderKnownEvents(el, d) {
   el.innerHTML = html;
 }
 
+
+function renderNaturalHazards(panel, d) {
+  if (!panel) return;
+  const el = panel.querySelector("#natural-hazards") || panel;
+  const ctx = (d && d.context) || {};
+  const eonet = ctx.nasa_eonet;
+  const gdacs = ctx.gdacs;
+  if (!eonet && !gdacs) {
+    el.innerHTML = '<div class="muted">NASA EONET and GDACS are not in this snapshot.</div>';
+    panel.hidden = false;
+    return;
+  }
+  const priority = ["Severe Storms", "Sea and Lake Ice", "Floods", "Volcanoes", "Drought", "Landslides", "Wildfires"];
+  const gdacsType = {EQ: "Earthquake", TC: "Tropical cyclone", FL: "Flood", VO: "Volcano", DR: "Drought", WF: "Wildfire"};
+  let html = "";
+  if (eonet) {
+    const sum = eonet.summary || {};
+    const stale = eonet.stale ? ' <span class="tag">stale</span>' : "";
+    html += `<div><b>NASA EONET</b> open events: ${gsEsc(sum.open_events != null ? sum.open_events : "–")}${stale}</div>`;
+    if (!eonet.ok && !sum.open_events && !sum.top) {
+      html += `<div class="muted">${gsEsc(eonet.error || "degraded")}</div>`;
+    } else {
+      const cats = sum.by_category || {};
+      const names = priority.concat(Object.keys(cats).filter(k => !priority.includes(k)));
+      const bits = names.filter(n => (cats[n] || 0) > 0 || priority.includes(n)).map(n => `${gsEsc(n)} ${gsEsc(cats[n] || 0)}`);
+      if (bits.length) html += `<div class="muted">${bits.join(" · ")}</div>`;
+      const top = sum.top || [];
+      html += "<table><tr><th>event</th><th>category</th></tr>";
+      if (!top.length) html += '<tr><td colspan="2" class="muted">no open events in this window</td></tr>';
+      for (const ev of top.slice(0, 12)) {
+        const href = gsUrl(ev.link);
+        const title = ev.title ? (href ? `<a href="${gsEsc(href)}">${gsEsc(ev.title)}</a>` : gsEsc(ev.title)) : "–";
+        html += `<tr><td>${title}</td><td class="muted">${gsEsc(ev.category || "")}</td></tr>`;
+      }
+      html += "</table>";
+    }
+  }
+  if (gdacs) {
+    const sum = gdacs.summary || {};
+    const stale = gdacs.stale ? ' <span class="tag">stale</span>' : "";
+    const fb = (sum.fallback || sum.endpoint) ? ` · ${gsEsc(sum.endpoint || "fallback")}` : "";
+    html += `<div><b>GDACS</b> Orange/Red events: ${gsEsc(sum.events != null ? sum.events : "–")}${stale}<span class="muted">${fb}</span></div>`;
+    if (!gdacs.ok && !(sum.top || []).length && sum.events == null) {
+      html += `<div class="muted">${gsEsc(gdacs.error || "degraded")}</div>`;
+    } else {
+      if (gdacs.degraded && gdacs.error) html += `<div class="muted">${gsEsc(gdacs.error)}</div>`;
+      const types = sum.by_type || {}, alerts = sum.by_alert || {};
+      const tbits = Object.keys(types).map(k => `${gsEsc(gdacsType[k] || k)} ${gsEsc(types[k])}`);
+      const abits = Object.keys(alerts).map(k => `${gsEsc(k)} ${gsEsc(alerts[k])}`);
+      if (tbits.length || abits.length) html += `<div class="muted">${tbits.join(" · ")}${tbits.length && abits.length ? " · " : ""}${abits.join(" · ")}</div>`;
+      const top = sum.top || [];
+      html += "<table><tr><th>event</th><th>alert</th><th>where</th></tr>";
+      if (!top.length) html += '<tr><td colspan="3" class="muted">no Orange or Red events in this window</td></tr>';
+      for (const ev of top.slice(0, 12)) {
+        const typ = gdacsType[ev.type] || ev.type || "";
+        html += `<tr><td>${gsEsc(ev.name || typ)}</td><td>${gsEsc(ev.alert || "")}</td><td class="muted">${gsEsc(ev.country || typ)}</td></tr>`;
+      }
+      html += "</table>";
+    }
+  }
+  html += '<div class="muted">Credit: <a href="https://eonet.gsfc.nasa.gov/">NASA EONET</a> (public domain) · <a href="https://www.gdacs.org/">EC JRC / GDACS</a></div>';
+  el.innerHTML = html;
+  panel.hidden = false;
+}
+
 function renderLoosh(panel) {
   if (!panel) return;
   const el = panel.querySelector("#loosh") || panel;
@@ -650,7 +715,24 @@ function renderLoosh(panel) {
       if (req.rate_limited) gnote += " (rate-limited)";
     }
     html += `<div class="muted">${gnote} · Wikipedia ${(fear.wikipedia && fear.wikipedia.ok) ? "ok" : "missing"} · collected ${num(doc.collected_at)}</div>`;
-    html += '<div class="muted">Sources: NWS · USGS · NOAA SWPC · <a href="https://www.gdeltproject.org/">GDELT Project</a> · Wikimedia pageviews (CC0) · FDIC · CISA KEV · weights in docs/LOOSH.md</div>';
+    const adv = (doc.official_feeds || {}).cisa_advisories || {};
+    html += "<div><b>CISA advisories</b> (public RSS, aggregates only)</div>";
+    if (!adv.ok) {
+      html += `<div class="muted">${gsEsc(adv.error || "missing")}</div>`;
+    } else {
+      html += `<div class="muted">${gsEsc(adv.count_7d)} in the last 7 days · ${gsEsc(adv.count_30d)} in the last 30 days (feed window ${gsEsc(adv.feed_items || 0)} items)</div>`;
+      const recent = adv.recent || [];
+      if (recent.length) {
+        html += "<table><tr><th>published</th><th>advisory</th><th>type</th></tr>";
+        for (const a of recent.slice(0, 8)) {
+          const href = gsUrl(a.url);
+          const title = a.title ? (href ? `<a href="${gsEsc(href)}">${gsEsc(a.title)}</a>` : gsEsc(a.title)) : "–";
+          html += `<tr><td class="muted">${gsEsc(a.published || "")}</td><td>${title}</td><td class="muted">${gsEsc(a.type || "")}</td></tr>`;
+        }
+        html += "</table>";
+      }
+    }
+    html += '<div class="muted">Sources: NWS · USGS · NOAA SWPC · <a href="https://www.gdeltproject.org/">GDELT Project</a> · Wikimedia pageviews (CC0) · FDIC · <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA KEV</a> · <a href="https://www.cisa.gov/cybersecurity-advisories/all.xml">CISA advisories RSS</a> · <a href="https://www.cisa.gov/terms-use">CISA terms</a> · weights in docs/LOOSH.md</div>';
     el.innerHTML = html;
     panel.hidden = false;
   }).catch(() => {

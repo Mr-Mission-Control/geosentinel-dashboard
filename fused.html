@@ -11,6 +11,7 @@ section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;marg
 <section id="known-events-panel"><h2>Known events</h2><div id="known-events" class="scroll"></div></section>
 <section><h2>Accuracy back-checks</h2><div id="acc" class="scroll"></div></section>
 <section><h2>Source health</h2><div id="health" class="scroll"></div></section>
+<section id="natural-hazards-panel"><h2>Natural hazards</h2><div id="natural-hazards" class="scroll"></div></section>
 <section><h2>Air quality timeline <span class="tag">OpenAQ</span></h2><div id="air" class="scroll"></div></section>
 <section><h2>Hydro gauges <span class="tag">advisory only</span></h2><div id="hydro"></div></section>
 <section><h2>Optimizer &amp; threat layer <span class="tag">local ExactSolver</span></h2><div id="tools"></div></section>
@@ -63,6 +64,7 @@ function render(d){
  renderWban(document.getElementById("wban-panel"));
  renderUsgsWater(document.getElementById("usgs-water-panel"));
  renderKarst(document.getElementById("karst-panel"));
+ renderNaturalHazards(document.getElementById("natural-hazards-panel"), d);
  renderLoosh(document.getElementById("loosh-panel"));
  renderAir(document.getElementById("air"), d, t => t);
  let h="<table><tr><th>source</th><th>status</th><th>detail</th></tr>";
