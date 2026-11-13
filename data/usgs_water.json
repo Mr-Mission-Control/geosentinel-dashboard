@@ -4,7 +4,7 @@
  "qpu": false,
  "label": "experimental correlation input, not predictive",
  "used_in_index": false,
- "collected_at": "2026-11-13T12:38:24Z",
+ "collected_at": "2026-11-13T12:50:32Z",
  "attribution": {
   "attribution": "USGS Water Data",
   "source": "U.S. Geological Survey",
@@ -81,8 +81,8 @@
     "lat": 35.2261111111111,
     "discharge_cfs": null,
     "discharge_time": null,
-    "gage_height_ft": 6.29,
-    "gage_height_time": "2026-11-13T11:00:00+00:00"
+    "gage_height_ft": 6.5,
+    "gage_height_time": "2026-11-13T12:00:00+00:00"
    },
    {
     "id": "USGS-07249455",
@@ -272,7 +272,7 @@
     "discharge_cfs": null,
     "discharge_time": null,
     "gage_height_ft": 0.02,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07056515",
@@ -560,7 +560,7 @@
     "lon": -93.405,
     "lat": 35.9388888888889,
     "discharge_cfs": 13.2,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
+    "discharge_time": "2026-11-13T12:30:00+00:00",
     "gage_height_ft": 1.94,
     "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
@@ -569,10 +569,10 @@
     "name": "Buffalo River near Harriet, AR",
     "lon": -92.5775,
     "lat": 36.06777777777778,
-    "discharge_cfs": 141.0,
-    "discharge_time": "2026-11-13T11:45:00+00:00",
-    "gage_height_ft": 3.37,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "discharge_cfs": 149.0,
+    "discharge_time": "2026-11-13T12:45:00+00:00",
+    "gage_height_ft": 3.39,
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07056000",
@@ -629,10 +629,10 @@
     "name": "Caddo River near Caddo Gap, AR",
     "lon": -93.6061111111111,
     "lat": 34.3827777777778,
-    "discharge_cfs": 32.6,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
-    "gage_height_ft": 4.84,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "discharge_cfs": 33.6,
+    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "gage_height_ft": 4.85,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07261000",
@@ -949,10 +949,10 @@
     "name": "Fourche La Fave River near Houston, AR",
     "lon": -92.7234984401607,
     "lat": 35.0120319208137,
-    "discharge_cfs": 20.8,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
+    "discharge_cfs": 33.4,
+    "discharge_time": "2026-11-13T12:30:00+00:00",
     "gage_height_ft": 9.17,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07263012",
@@ -1092,7 +1092,7 @@
     "discharge_cfs": 0.26,
     "discharge_time": "2024-10-01T05:55:00+00:00",
     "gage_height_ft": 0.16,
-    "gage_height_time": "2026-11-13T11:40:00+00:00"
+    "gage_height_time": "2026-11-13T12:40:00+00:00"
    },
    {
     "id": "USGS-07257693",
@@ -1139,10 +1139,10 @@
     "name": "Illinois Bayou near Scottsville, AR",
     "lon": -93.0411111111111,
     "lat": 35.4663888888889,
-    "discharge_cfs": 26.6,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
-    "gage_height_ft": 4.88,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "discharge_cfs": 25.8,
+    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "gage_height_ft": 4.87,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07195400",
@@ -1189,8 +1189,8 @@
     "name": "James Fork near Hackett, AR",
     "lon": -94.4069444444444,
     "lat": 35.1625,
-    "discharge_cfs": 1.56,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
+    "discharge_cfs": 1.65,
+    "discharge_time": "2026-11-13T12:30:00+00:00",
     "gage_height_ft": 2.43,
     "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
@@ -1220,9 +1220,9 @@
     "lon": -90.79039007864996,
     "lat": 35.47370200176932,
     "discharge_cfs": null,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
+    "discharge_time": "2026-11-13T12:30:00+00:00",
     "gage_height_ft": null,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-072632966",
@@ -1240,9 +1240,9 @@
     "lon": -90.8855555555556,
     "lat": 34.9727777777778,
     "discharge_cfs": 4.03,
-    "discharge_time": "2026-11-13T11:00:00+00:00",
+    "discharge_time": "2026-11-13T12:00:00+00:00",
     "gage_height_ft": 13.8,
-    "gage_height_time": "2026-11-13T11:00:00+00:00"
+    "gage_height_time": "2026-11-13T12:00:00+00:00"
    },
    {
     "id": "USGS-07047942",
@@ -1292,7 +1292,7 @@
     "discharge_cfs": null,
     "discharge_time": null,
     "gage_height_ft": 2.38,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07076634",
@@ -1551,8 +1551,8 @@
     "lat": 34.646055555555556,
     "discharge_cfs": null,
     "discharge_time": null,
-    "gage_height_ft": 230.74,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_ft": 230.73,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-071948095",
@@ -1570,9 +1570,9 @@
     "lon": -94.0152777777778,
     "lat": 35.5769444444445,
     "discharge_cfs": 24.9,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
+    "discharge_time": "2026-11-13T12:30:00+00:00",
     "gage_height_ft": 1.07,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07064060",
@@ -1669,20 +1669,20 @@
     "name": "Ouachita River at Camden, AR",
     "lon": -92.8180555555555,
     "lat": 33.5963888888889,
-    "discharge_cfs": 2630.0,
-    "discharge_time": "2026-11-13T11:45:00+00:00",
-    "gage_height_ft": 7.65,
-    "gage_height_time": "2026-11-13T11:45:00+00:00"
+    "discharge_cfs": 2680.0,
+    "discharge_time": "2026-11-13T12:45:00+00:00",
+    "gage_height_ft": 7.71,
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07364078",
     "name": "Ouachita River at Felsenthal L&D (lower)",
     "lon": -92.1208333333333,
     "lat": 33.0561111111111,
-    "discharge_cfs": 2590.0,
-    "discharge_time": "2026-11-13T11:00:00+00:00",
-    "gage_height_ft": 49.49,
-    "gage_height_time": "2026-11-13T11:00:00+00:00"
+    "discharge_cfs": 2510.0,
+    "discharge_time": "2026-11-13T12:00:00+00:00",
+    "gage_height_ft": 49.48,
+    "gage_height_time": "2026-11-13T12:00:00+00:00"
    },
    {
     "id": "USGS-07359002",
@@ -1690,9 +1690,9 @@
     "lon": -92.890833,
     "lat": 34.426111,
     "discharge_cfs": 4100.0,
-    "discharge_time": "2026-11-13T12:15:00+00:00",
+    "discharge_time": "2026-11-13T12:30:00+00:00",
     "gage_height_ft": 6.66,
-    "gage_height_time": "2026-11-13T12:15:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07359001",
@@ -1730,9 +1730,9 @@
     "lon": -93.6975,
     "lat": 34.61,
     "discharge_cfs": 26.2,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
+    "discharge_time": "2026-11-13T12:30:00+00:00",
     "gage_height_ft": 2.22,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07260500",
@@ -1762,7 +1762,7 @@
     "discharge_cfs": null,
     "discharge_time": null,
     "gage_height_ft": 0.81,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07259500",
@@ -1819,10 +1819,10 @@
     "name": "Red River at Spring Bank, AR",
     "lon": -93.8594444444444,
     "lat": 33.0894444444444,
-    "discharge_cfs": 3150.0,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
-    "gage_height_ft": 10.5,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "discharge_cfs": 3160.0,
+    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "gage_height_ft": 10.51,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-072632982",
@@ -1919,10 +1919,10 @@
     "name": "Saline River at Benton, AR",
     "lon": -92.6102777777778,
     "lat": 34.5677777777778,
-    "discharge_cfs": 19.5,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
-    "gage_height_ft": 3.24,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "discharge_cfs": 20.6,
+    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "gage_height_ft": 3.25,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07341000",
@@ -2010,9 +2010,9 @@
     "lon": -92.77666666666667,
     "lat": 33.375277777777775,
     "discharge_cfs": 14.2,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
+    "discharge_time": "2026-11-13T12:30:00+00:00",
     "gage_height_ft": 2.45,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07362579",
@@ -2050,9 +2050,9 @@
     "lon": -91.63361111111112,
     "lat": 36.352222222222224,
     "discharge_cfs": 5.28,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
+    "discharge_time": "2026-11-13T12:30:00+00:00",
     "gage_height_ft": 2.12,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07263000",
@@ -2082,7 +2082,7 @@
     "discharge_cfs": null,
     "discharge_time": null,
     "gage_height_ft": 2.24,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07191179",
@@ -2090,19 +2090,19 @@
     "lon": -94.5877200848544,
     "lat": 36.3420235344013,
     "discharge_cfs": 25.9,
-    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": 5.37,
-    "gage_height_time": "2026-11-13T12:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07191160",
     "name": "Spavinaw Creek near Maysville, AR",
     "lon": -94.5513298668107,
     "lat": 36.3645225860714,
-    "discharge_cfs": 17.7,
-    "discharge_time": "2026-11-13T12:30:00+00:00",
-    "gage_height_ft": 6.64,
-    "gage_height_time": "2026-11-13T12:30:00+00:00"
+    "discharge_cfs": 18.2,
+    "discharge_time": "2026-11-13T12:45:00+00:00",
+    "gage_height_ft": 6.65,
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07194933",
@@ -2152,7 +2152,7 @@
     "discharge_cfs": 295.0,
     "discharge_time": "2016-10-05T22:15:00+00:00",
     "gage_height_ft": 5.88,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07040450",
@@ -2451,8 +2451,8 @@
     "lat": 34.4444638888889,
     "discharge_cfs": null,
     "discharge_time": null,
-    "gage_height_ft": 397.55,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_ft": 397.53,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07359000",
@@ -2539,10 +2539,10 @@
     "name": "West Fork White River east of Fayetteville, AR",
     "lon": -94.08305555555555,
     "lat": 36.053888888888885,
-    "discharge_cfs": 8.79,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
-    "gage_height_ft": 1.5,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "discharge_cfs": 9.17,
+    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "gage_height_ft": 1.51,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-071948150",
@@ -2641,8 +2641,8 @@
     "lat": 36.4495555555556,
     "discharge_cfs": null,
     "discharge_time": null,
-    "gage_height_ft": 1.6,
-    "gage_height_time": "2026-11-13T12:15:00+00:00"
+    "gage_height_ft": 1.62,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07048600",
@@ -2905,19 +2905,19 @@
     "lon": -94.5877200848544,
     "lat": 36.3420235344013,
     "discharge_cfs": 25.9,
-    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "discharge_time": "2026-11-13T12:45:00+00:00",
     "gage_height_ft": 5.37,
-    "gage_height_time": "2026-11-13T12:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07191160",
     "name": "Spavinaw Creek near Maysville, AR",
     "lon": -94.5513298668107,
     "lat": 36.3645225860714,
-    "discharge_cfs": 17.7,
-    "discharge_time": "2026-11-13T12:30:00+00:00",
-    "gage_height_ft": 6.64,
-    "gage_height_time": "2026-11-13T12:30:00+00:00"
+    "discharge_cfs": 18.2,
+    "discharge_time": "2026-11-13T12:45:00+00:00",
+    "gage_height_ft": 6.65,
+    "gage_height_time": "2026-11-13T12:45:00+00:00"
    },
    {
     "id": "USGS-07194933",
@@ -2975,9 +2975,9 @@
     "lon": -93.8336944444444,
     "lat": 36.5809722222222,
     "discharge_cfs": 41.6,
-    "discharge_time": "2026-11-13T12:25:00+00:00",
+    "discharge_time": "2026-11-13T12:40:00+00:00",
     "gage_height_ft": 0.53,
-    "gage_height_time": "2026-11-13T12:25:00+00:00"
+    "gage_height_time": "2026-11-13T12:40:00+00:00"
    },
    {
     "id": "USGS-07188838",
@@ -3037,7 +3037,7 @@
     "discharge_cfs": null,
     "discharge_time": null,
     "gage_height_ft": 910.47,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07195500",
@@ -3064,10 +3064,10 @@
     "name": "West Fork White River east of Fayetteville, AR",
     "lon": -94.08305555555555,
     "lat": 36.053888888888885,
-    "discharge_cfs": 8.79,
-    "discharge_time": "2026-11-13T11:30:00+00:00",
-    "gage_height_ft": 1.5,
-    "gage_height_time": "2026-11-13T11:30:00+00:00"
+    "discharge_cfs": 9.17,
+    "discharge_time": "2026-11-13T12:30:00+00:00",
+    "gage_height_ft": 1.51,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-071948150",
@@ -3096,8 +3096,8 @@
     "lat": 36.4495555555556,
     "discharge_cfs": null,
     "discharge_time": null,
-    "gage_height_ft": 1.6,
-    "gage_height_time": "2026-11-13T12:15:00+00:00"
+    "gage_height_ft": 1.62,
+    "gage_height_time": "2026-11-13T12:30:00+00:00"
    },
    {
     "id": "USGS-07048600",
@@ -3122,7 +3122,7 @@
   ]
  },
  "national": {
-  "sites_considered": 13545,
+  "sites_considered": 13546,
   "unusual_rise_count": 25,
   "unusual_rises": [
    {
@@ -3142,12 +3142,12 @@
     "name": null,
     "lon": -81.1647222222222,
     "lat": 25.5555555555556,
-    "latest_cfs": 13300.0,
-    "latest_time": "2026-11-13T11:30:00+00:00",
+    "latest_cfs": 13200.0,
+    "latest_time": "2026-11-13T12:30:00+00:00",
     "prior_daily_mean_cfs": 313.0,
     "prior_daily_date": "2026-11-12",
-    "rise_cfs": 12987.0,
-    "rise_ratio": 42.492
+    "rise_cfs": 12887.0,
+    "rise_ratio": 42.173
    },
    {
     "id": "USGS-02310308",
@@ -3186,6 +3186,18 @@
     "rise_ratio": 22.992
    },
    {
+    "id": "USGS-02290878",
+    "name": null,
+    "lon": -81.0769444444444,
+    "lat": 25.5013888888889,
+    "latest_cfs": 3700.0,
+    "latest_time": "2026-11-13T12:30:00+00:00",
+    "prior_daily_mean_cfs": 188.0,
+    "prior_daily_date": "2026-11-12",
+    "rise_cfs": 3512.0,
+    "rise_ratio": 19.681
+   },
+   {
     "id": "USGS-02310700",
     "name": null,
     "lon": -82.61792626701906,
@@ -3196,18 +3208,6 @@
     "prior_daily_date": "2026-11-12",
     "rise_cfs": 618.1,
     "rise_ratio": 14.179
-   },
-   {
-    "id": "USGS-05536890",
-    "name": null,
-    "lon": -87.9637777777778,
-    "lat": 41.6911666666667,
-    "latest_cfs": 12500.0,
-    "latest_time": "2016-07-24T05:50:00+00:00",
-    "prior_daily_mean_cfs": 922.0,
-    "prior_daily_date": "2026-11-12",
-    "rise_cfs": 11578.0,
-    "rise_ratio": 13.557
    },
    {
     "id": "USGS-255432081303900",
@@ -3222,18 +3222,6 @@
     "rise_ratio": 13.287
    },
    {
-    "id": "USGS-02290878",
-    "name": null,
-    "lon": -81.0769444444444,
-    "lat": 25.5013888888889,
-    "latest_cfs": 2360.0,
-    "latest_time": "2026-11-13T11:30:00+00:00",
-    "prior_daily_mean_cfs": 188.0,
-    "prior_daily_date": "2026-11-12",
-    "rise_cfs": 2172.0,
-    "rise_ratio": 12.553
-   },
-   {
     "id": "USGS-255327081275900",
     "name": null,
     "lon": -81.4555,
@@ -3244,6 +3232,18 @@
     "prior_daily_date": "2026-11-12",
     "rise_cfs": 321.2,
     "rise_ratio": 12.153
+   },
+   {
+    "id": "USGS-02310740",
+    "name": null,
+    "lon": -82.59570327959321,
+    "lat": 28.890551481787185,
+    "latest_cfs": 260.0,
+    "latest_time": "2026-11-13T12:30:00+00:00",
+    "prior_daily_mean_cfs": 25.2,
+    "prior_daily_date": "2026-11-12",
+    "rise_cfs": 234.8,
+    "rise_ratio": 10.317
    },
    {
     "id": "USGS-01432055",
@@ -3258,40 +3258,28 @@
     "rise_ratio": 10.118
    },
    {
-    "id": "USGS-02310740",
-    "name": null,
-    "lon": -82.59570327959321,
-    "lat": 28.890551481787185,
-    "latest_cfs": 254.0,
-    "latest_time": "2026-11-13T12:15:00+00:00",
-    "prior_daily_mean_cfs": 25.2,
-    "prior_daily_date": "2026-11-12",
-    "rise_cfs": 228.8,
-    "rise_ratio": 10.079
-   },
-   {
     "id": "USGS-01552000",
     "name": null,
     "lon": -76.91243810723414,
     "lat": 41.3250037829467,
-    "latest_cfs": 2350.0,
-    "latest_time": "2026-11-13T11:30:00+00:00",
+    "latest_cfs": 2260.0,
+    "latest_time": "2026-11-13T12:30:00+00:00",
     "prior_daily_mean_cfs": 235.0,
     "prior_daily_date": "2026-11-12",
-    "rise_cfs": 2115.0,
-    "rise_ratio": 10.0
+    "rise_cfs": 2025.0,
+    "rise_ratio": 9.617
    },
    {
     "id": "USGS-03052120",
     "name": null,
     "lon": -80.2138888888889,
     "lat": 38.8196388888889,
-    "latest_cfs": 516.0,
-    "latest_time": "2026-11-13T12:30:00+00:00",
+    "latest_cfs": 530.0,
+    "latest_time": "2026-11-13T12:45:00+00:00",
     "prior_daily_mean_cfs": 58.2,
     "prior_daily_date": "2026-11-12",
-    "rise_cfs": 457.8,
-    "rise_ratio": 8.866
+    "rise_cfs": 471.8,
+    "rise_ratio": 9.107
    },
    {
     "id": "USGS-01553850",
@@ -3311,7 +3299,7 @@
     "lon": -75.1721185686371,
     "lat": 41.476200225754,
     "latest_cfs": 1670.0,
-    "latest_time": "2026-11-13T12:15:00+00:00",
+    "latest_time": "2026-11-13T12:30:00+00:00",
     "prior_daily_mean_cfs": 206.0,
     "prior_daily_date": "2026-11-12",
     "rise_cfs": 1464.0,
@@ -3358,12 +3346,12 @@
     "name": null,
     "lon": -75.0362809642223,
     "lat": 41.4759228189641,
-    "latest_cfs": 1680.0,
-    "latest_time": "2026-11-13T12:15:00+00:00",
+    "latest_cfs": 1700.0,
+    "latest_time": "2026-11-13T12:30:00+00:00",
     "prior_daily_mean_cfs": 242.0,
     "prior_daily_date": "2026-11-12",
-    "rise_cfs": 1438.0,
-    "rise_ratio": 6.942
+    "rise_cfs": 1458.0,
+    "rise_ratio": 7.025
    },
    {
     "id": "USGS-01429000",
@@ -3424,6 +3412,18 @@
     "prior_daily_date": "2026-11-12",
     "rise_cfs": 295.1,
     "rise_ratio": 5.846
+   },
+   {
+    "id": "USGS-01534000",
+    "name": null,
+    "lon": -75.8946416803412,
+    "lat": 41.558410075001,
+    "latest_cfs": 2370.0,
+    "latest_time": "2026-11-13T12:15:00+00:00",
+    "prior_daily_mean_cfs": 420.0,
+    "prior_daily_date": "2026-11-12",
+    "rise_cfs": 1950.0,
+    "rise_ratio": 5.643
    }
   ]
  },

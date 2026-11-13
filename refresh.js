@@ -639,8 +639,16 @@ function renderLoosh(panel) {
     html += "</table>";
     const g = fear.gdelt || {};
     const req = g.requests || {};
-    let gnote = g.ok ? (g.cached ? "GDELT cached " + gsEsc(g.fetched_at || "") : "GDELT ok") : "GDELT missing";
-    if (req.rate_limited) gnote += " (rate-limited)";
+    const gk = g.gkg || {};
+    let gnote;
+    if (g.source === "gkg_files") {
+      gnote = g.ok ? "GDELT GKG raw files" : "GDELT GKG files missing";
+      gnote += ` (${gsEsc(gk.cached_files || 0)} sampled files, ${gsEsc(gk.cached_days || 0)} days; this run ${gsEsc(Math.round((gk.downloaded_bytes || 0) / 1e6))} MB)`;
+      if (req.rate_limited) gnote += " · DOC API rate-limited";
+    } else {
+      gnote = g.ok ? (g.cached ? "GDELT DOC API cached " + gsEsc(g.fetched_at || "") : "GDELT DOC API ok") : "GDELT missing";
+      if (req.rate_limited) gnote += " (rate-limited)";
+    }
     html += `<div class="muted">${gnote} · Wikipedia ${(fear.wikipedia && fear.wikipedia.ok) ? "ok" : "missing"} · collected ${num(doc.collected_at)}</div>`;
     html += '<div class="muted">Sources: NWS · USGS · NOAA SWPC · <a href="https://www.gdeltproject.org/">GDELT Project</a> · Wikimedia pageviews (CC0) · FDIC · CISA KEV · weights in docs/LOOSH.md</div>';
     el.innerHTML = html;
