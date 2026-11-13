@@ -4,7 +4,7 @@
  "used_in_index": false,
  "qpu": false,
  "aggregate_only": true,
- "collected_at": "2026-11-13T12:56:59Z",
+ "collected_at": "2026-11-13T13:03:50Z",
  "real_hazard": {
   "level": 52,
   "label": "Elevated",
@@ -182,7 +182,7 @@
     "R": 0,
     "S": 0,
     "kp": 1.0,
-    "time": "2026-11-13T12:54:00Z"
+    "time": "2026-11-13T13:02:00Z"
    },
    "karst": {
     "ok": true,
@@ -198,43 +198,59 @@
   "method": "level = 100 * (1 - prod(1 - score_i)); see docs/LOOSH.md for each score"
  },
  "fear": {
-  "index": 69,
-  "global_index": 69,
-  "us_index": null,
+  "index": 57,
+  "global_index": 56,
+  "us_index": 57,
   "themes": [
    {
     "id": "war",
     "label": "War / WW3",
-    "score": 79.3,
-    "global_score": 79.3,
-    "us_score": null,
+    "score": 36.7,
+    "global_score": 36.9,
+    "us_score": 36.2,
     "components": {
-     "gdelt_global": 92.1,
-     "gdelt_us": null,
+     "gdelt_global": 40.1,
+     "gdelt_us": 36.2,
      "wikipedia": 47.5
     },
-    "tone_adjustment": null,
+    "tone_adjustment": -7.5,
     "gdelt_global": {
      "status": "ok",
-     "current_day": "20261112",
-     "current": 506.749,
-     "mean_72h": 264.9231,
-     "baseline_mean": 245.6659,
-     "baseline_sd": 70.9255,
-     "baseline_n": 15,
-     "z": 3.68,
-     "z_72h": 0.27,
-     "days": 18,
-     "unit": "articles per million monitored",
-     "low_coverage_days_skipped": 5
+     "current": 114142.6124,
+     "baseline_mean": 124481.1292,
+     "baseline_sd": 17276.5861,
+     "baseline_n": 30,
+     "z": -0.6,
+     "mean_72h": 118037.6611,
+     "z_72h": -0.37,
+     "unit": "articles per million GKG docs",
+     "current_docs": 7587,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_us": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 147744.9456,
+     "baseline_mean": 170511.792,
+     "baseline_sd": 26686.708,
+     "baseline_n": 30,
+     "z": -0.85,
+     "mean_72h": 156876.6218,
+     "z_72h": -0.51,
+     "unit": "articles per million US-located GKG docs",
+     "current_docs": 3215,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_tone": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": -1.87,
+     "baseline_mean": -2.6586,
+     "baseline_sd": 0.5263,
+     "baseline_n": 30,
+     "z": 1.5,
+     "unit": "mean GKG tone",
+     "source": "gkg_files"
     },
     "wikipedia": {
      "status": "ok",
@@ -265,26 +281,52 @@
    {
     "id": "blackout",
     "label": "Blackout / grid / black sky",
-    "score": 39.8,
-    "global_score": 39.8,
-    "us_score": null,
+    "score": 31.2,
+    "global_score": 30.3,
+    "us_score": 33.5,
     "components": {
-     "gdelt_global": null,
-     "gdelt_us": null,
+     "gdelt_global": 35.4,
+     "gdelt_us": 33.5,
      "wikipedia": 39.8
     },
-    "tone_adjustment": null,
+    "tone_adjustment": -9.0,
     "gdelt_global": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 3690.5233,
+     "baseline_mean": 10209.9734,
+     "baseline_sd": 7237.1237,
+     "baseline_n": 30,
+     "z": -0.9,
+     "mean_72h": 5550.0496,
+     "z_72h": -0.64,
+     "unit": "articles per million GKG docs",
+     "current_docs": 7587,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_us": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 4043.5459,
+     "baseline_mean": 11576.1299,
+     "baseline_sd": 7330.8415,
+     "baseline_n": 30,
+     "z": -1.03,
+     "mean_72h": 8492.569,
+     "z_72h": -0.42,
+     "unit": "articles per million US-located GKG docs",
+     "current_docs": 3215,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_tone": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": -0.9767,
+     "baseline_mean": -2.7617,
+     "baseline_sd": 0.9896,
+     "baseline_n": 21,
+     "z": 1.8,
+     "unit": "mean GKG tone",
+     "source": "gkg_files"
     },
     "wikipedia": {
      "status": "ok",
@@ -317,26 +359,52 @@
    {
     "id": "financial",
     "label": "Bank freeze / financial collapse",
-    "score": 51.7,
-    "global_score": 51.7,
-    "us_score": null,
+    "score": 46.5,
+    "global_score": 44.6,
+    "us_score": 51.0,
     "components": {
-     "gdelt_global": null,
-     "gdelt_us": null,
+     "gdelt_global": 44.9,
+     "gdelt_us": 51.0,
      "wikipedia": 51.7
     },
-    "tone_adjustment": null,
+    "tone_adjustment": -3.0,
     "gdelt_global": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 45208.91,
+     "baseline_mean": 48535.9369,
+     "baseline_sd": 10583.9996,
+     "baseline_n": 30,
+     "z": -0.31,
+     "mean_72h": 48265.6095,
+     "z_72h": -0.03,
+     "unit": "articles per million GKG docs",
+     "current_docs": 7587,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_us": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 53810.2644,
+     "baseline_mean": 53012.5273,
+     "baseline_sd": 13429.4319,
+     "baseline_n": 30,
+     "z": 0.06,
+     "mean_72h": 56617.1267,
+     "z_72h": 0.27,
+     "unit": "articles per million US-located GKG docs",
+     "current_docs": 3215,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_tone": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": -0.5373,
+     "baseline_mean": -0.8857,
+     "baseline_sd": 0.5732,
+     "baseline_n": 30,
+     "z": 0.61,
+     "unit": "mean GKG tone",
+     "source": "gkg_files"
     },
     "wikipedia": {
      "status": "ok",
@@ -367,26 +435,52 @@
    {
     "id": "food",
     "label": "Food shortage",
-    "score": 45.2,
-    "global_score": 45.2,
-    "us_score": null,
+    "score": 32.6,
+    "global_score": 30.1,
+    "us_score": 38.5,
     "components": {
-     "gdelt_global": null,
-     "gdelt_us": null,
+     "gdelt_global": 30.7,
+     "gdelt_us": 38.5,
      "wikipedia": 45.2
     },
-    "tone_adjustment": null,
+    "tone_adjustment": -6.7,
     "gdelt_global": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 7249.2421,
+     "baseline_mean": 12069.1152,
+     "baseline_sd": 3948.3631,
+     "baseline_n": 30,
+     "z": -1.22,
+     "mean_72h": 7829.5342,
+     "z_72h": -1.07,
+     "unit": "articles per million GKG docs",
+     "current_docs": 7587,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_us": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 8087.0918,
+     "baseline_mean": 11759.5179,
+     "baseline_sd": 5222.8894,
+     "baseline_n": 30,
+     "z": -0.7,
+     "mean_72h": 8964.3784,
+     "z_72h": -0.54,
+     "unit": "articles per million US-located GKG docs",
+     "current_docs": 3215,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_tone": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": -0.2979,
+     "baseline_mean": -1.5544,
+     "baseline_sd": 0.948,
+     "baseline_n": 23,
+     "z": 1.33,
+     "unit": "mean GKG tone",
+     "source": "gkg_files"
     },
     "wikipedia": {
      "status": "ok",
@@ -415,26 +509,52 @@
    {
     "id": "cyber",
     "label": "Cyberattack / AI hack",
-    "score": 53.3,
-    "global_score": 53.3,
-    "us_score": null,
+    "score": 70.2,
+    "global_score": 69.8,
+    "us_score": 71.1,
     "components": {
-     "gdelt_global": null,
-     "gdelt_us": null,
+     "gdelt_global": 76.0,
+     "gdelt_us": 71.1,
      "wikipedia": 53.3
     },
-    "tone_adjustment": null,
+    "tone_adjustment": 0.4,
     "gdelt_global": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 23329.3792,
+     "baseline_mean": 16057.247,
+     "baseline_sd": 4191.9422,
+     "baseline_n": 30,
+     "z": 1.73,
+     "mean_72h": 21308.226,
+     "z_72h": 1.25,
+     "unit": "articles per million GKG docs",
+     "current_docs": 7587,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_us": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 24572.3173,
+     "baseline_mean": 16383.7087,
+     "baseline_sd": 6070.1409,
+     "baseline_n": 30,
+     "z": 1.35,
+     "mean_72h": 21939.1366,
+     "z_72h": 0.92,
+     "unit": "articles per million US-located GKG docs",
+     "current_docs": 3215,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_tone": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": -2.1762,
+     "baseline_mean": -2.1054,
+     "baseline_sd": 1.0499,
+     "baseline_n": 26,
+     "z": -0.07,
+     "unit": "mean GKG tone",
+     "source": "gkg_files"
     },
     "wikipedia": {
      "status": "ok",
@@ -465,26 +585,52 @@
    {
     "id": "terrorism",
     "label": "Terrorism",
-    "score": 79.6,
-    "global_score": 79.6,
-    "us_score": null,
+    "score": 55.6,
+    "global_score": 57.9,
+    "us_score": 50.3,
     "components": {
-     "gdelt_global": null,
-     "gdelt_us": null,
+     "gdelt_global": 47.0,
+     "gdelt_us": 50.3,
      "wikipedia": 79.6
     },
-    "tone_adjustment": null,
+    "tone_adjustment": 2.2,
     "gdelt_global": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 32028.4698,
+     "baseline_mean": 34374.7041,
+     "baseline_sd": 12697.3165,
+     "baseline_n": 30,
+     "z": -0.18,
+     "mean_72h": 31417.2448,
+     "z_72h": -0.23,
+     "unit": "articles per million GKG docs",
+     "current_docs": 7587,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_us": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 41679.6267,
+     "baseline_mean": 41340.8706,
+     "baseline_sd": 17609.7255,
+     "baseline_n": 30,
+     "z": 0.02,
+     "mean_72h": 40811.5121,
+     "z_72h": -0.03,
+     "unit": "articles per million US-located GKG docs",
+     "current_docs": 3215,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_tone": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": -4.1806,
+     "baseline_mean": -3.9715,
+     "baseline_sd": 0.4753,
+     "baseline_n": 30,
+     "z": -0.44,
+     "unit": "mean GKG tone",
+     "source": "gkg_files"
     },
     "wikipedia": {
      "status": "ok",
@@ -514,26 +660,50 @@
    {
     "id": "uap",
     "label": "Aliens / UAP",
-    "score": 75.8,
-    "global_score": 75.8,
-    "us_score": null,
+    "score": 55.4,
+    "global_score": 57.2,
+    "us_score": 51.0,
     "components": {
-     "gdelt_global": null,
-     "gdelt_us": null,
+     "gdelt_global": 49.8,
+     "gdelt_us": 51.0,
      "wikipedia": 75.8
     },
     "tone_adjustment": null,
     "gdelt_global": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 659.022,
+     "baseline_mean": 673.3745,
+     "baseline_sd": 1229.7405,
+     "baseline_n": 30,
+     "z": -0.01,
+     "mean_72h": 495.5401,
+     "z_72h": -0.14,
+     "unit": "articles per million GKG docs",
+     "current_docs": 7587,
+     "current_files": 7,
+     "source": "gkg_files",
+     "match": "URL-slug tokens (no GKG theme exists)"
     },
     "gdelt_us": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 1555.21,
+     "baseline_mean": 1390.6424,
+     "baseline_sd": 2809.0075,
+     "baseline_n": 30,
+     "z": 0.06,
+     "mean_72h": 1179.5235,
+     "z_72h": -0.08,
+     "unit": "articles per million US-located GKG docs",
+     "current_docs": 3215,
+     "current_files": 7,
+     "source": "gkg_files",
+     "match": "URL-slug tokens (no GKG theme exists)"
     },
     "gdelt_tone": {
      "status": "missing",
-     "missing_reason": "rate_limited"
+     "missing_reason": "no_current_window",
+     "unit": "mean GKG tone",
+     "source": "gkg_files"
     },
     "wikipedia": {
      "status": "ok",
@@ -562,26 +732,52 @@
    {
     "id": "pandemic",
     "label": "Pandemic",
-    "score": 60.2,
-    "global_score": 60.2,
-    "us_score": null,
+    "score": 37.4,
+    "global_score": 39.0,
+    "us_score": 33.8,
     "components": {
-     "gdelt_global": null,
-     "gdelt_us": null,
+     "gdelt_global": 35.1,
+     "gdelt_us": 33.8,
      "wikipedia": 60.2
     },
-    "tone_adjustment": null,
+    "tone_adjustment": -4.6,
     "gdelt_global": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 13312.2446,
+     "baseline_mean": 17354.5116,
+     "baseline_sd": 4406.6774,
+     "baseline_n": 30,
+     "z": -0.92,
+     "mean_72h": 16253.7166,
+     "z_72h": -0.25,
+     "unit": "articles per million GKG docs",
+     "current_docs": 7587,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_us": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 15863.1415,
+     "baseline_mean": 22568.58,
+     "baseline_sd": 6631.6852,
+     "baseline_n": 30,
+     "z": -1.01,
+     "mean_72h": 22410.946,
+     "z_72h": -0.02,
+     "unit": "articles per million US-located GKG docs",
+     "current_docs": 3215,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_tone": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": -1.3767,
+     "baseline_mean": -2.0306,
+     "baseline_sd": 0.712,
+     "baseline_n": 28,
+     "z": 0.92,
+     "unit": "mean GKG tone",
+     "source": "gkg_files"
     },
     "wikipedia": {
      "status": "ok",
@@ -610,26 +806,52 @@
    {
     "id": "unrest",
     "label": "Civil unrest",
-    "score": 33.5,
-    "global_score": 33.5,
-    "us_score": null,
+    "score": 24.7,
+    "global_score": 22.6,
+    "us_score": 29.6,
     "components": {
-     "gdelt_global": null,
-     "gdelt_us": null,
+     "gdelt_global": 24.2,
+     "gdelt_us": 29.6,
      "wikipedia": 33.5
     },
-    "tone_adjustment": null,
+    "tone_adjustment": -6.0,
     "gdelt_global": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 45340.7144,
+     "baseline_mean": 65729.8488,
+     "baseline_sd": 11918.0602,
+     "baseline_n": 30,
+     "z": -1.71,
+     "mean_72h": 46283.449,
+     "z_72h": -1.63,
+     "unit": "articles per million GKG docs",
+     "current_docs": 7587,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_us": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": 55987.5583,
+     "baseline_mean": 71428.7144,
+     "baseline_sd": 11867.7153,
+     "baseline_n": 30,
+     "z": -1.3,
+     "mean_72h": 56853.0314,
+     "z_72h": -1.23,
+     "unit": "articles per million US-located GKG docs",
+     "current_docs": 3215,
+     "current_files": 7,
+     "source": "gkg_files"
     },
     "gdelt_tone": {
-     "status": "missing",
-     "missing_reason": "rate_limited"
+     "status": "ok",
+     "current": -1.5796,
+     "baseline_mean": -2.4011,
+     "baseline_sd": 0.6798,
+     "baseline_n": 30,
+     "z": 1.21,
+     "unit": "mean GKG tone",
+     "source": "gkg_files"
     },
     "wikipedia": {
      "status": "ok",
@@ -660,197 +882,437 @@
   ],
   "top_themes": [
    {
-    "id": "terrorism",
-    "label": "Terrorism",
-    "score": 79.6
+    "id": "cyber",
+    "label": "Cyberattack / AI hack",
+    "score": 70.2
    },
    {
-    "id": "war",
-    "label": "War / WW3",
-    "score": 79.3
+    "id": "terrorism",
+    "label": "Terrorism",
+    "score": 55.6
    },
    {
     "id": "uap",
     "label": "Aliens / UAP",
-    "score": 75.8
+    "score": 55.4
    }
   ],
   "gdelt": {
    "ok": true,
-   "source": "doc_api",
+   "source": "gkg_files",
    "cached": false,
-   "fetched_at": "2026-11-13T12:56:59Z",
+   "fetched_at": "2026-11-13T13:03:50Z",
    "themes": {
     "war": {
      "global": {
       "status": "ok",
-      "current_day": "20261112",
-      "current": 506.749,
-      "mean_72h": 264.9231,
-      "baseline_mean": 245.6659,
-      "baseline_sd": 70.9255,
-      "baseline_n": 15,
-      "z": 3.68,
-      "z_72h": 0.27,
-      "days": 18,
-      "unit": "articles per million monitored",
-      "low_coverage_days_skipped": 5
+      "current": 114142.6124,
+      "baseline_mean": 124481.1292,
+      "baseline_sd": 17276.5861,
+      "baseline_n": 30,
+      "z": -0.6,
+      "mean_72h": 118037.6611,
+      "z_72h": -0.37,
+      "unit": "articles per million GKG docs",
+      "current_docs": 7587,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "us": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 147744.9456,
+      "baseline_mean": 170511.792,
+      "baseline_sd": 26686.708,
+      "baseline_n": 30,
+      "z": -0.85,
+      "mean_72h": 156876.6218,
+      "z_72h": -0.51,
+      "unit": "articles per million US-located GKG docs",
+      "current_docs": 3215,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "tone": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": -1.87,
+      "baseline_mean": -2.6586,
+      "baseline_sd": 0.5263,
+      "baseline_n": 30,
+      "z": 1.5,
+      "unit": "mean GKG tone",
+      "source": "gkg_files"
      }
     },
     "blackout": {
      "global": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 3690.5233,
+      "baseline_mean": 10209.9734,
+      "baseline_sd": 7237.1237,
+      "baseline_n": 30,
+      "z": -0.9,
+      "mean_72h": 5550.0496,
+      "z_72h": -0.64,
+      "unit": "articles per million GKG docs",
+      "current_docs": 7587,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "us": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 4043.5459,
+      "baseline_mean": 11576.1299,
+      "baseline_sd": 7330.8415,
+      "baseline_n": 30,
+      "z": -1.03,
+      "mean_72h": 8492.569,
+      "z_72h": -0.42,
+      "unit": "articles per million US-located GKG docs",
+      "current_docs": 3215,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "tone": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": -0.9767,
+      "baseline_mean": -2.7617,
+      "baseline_sd": 0.9896,
+      "baseline_n": 21,
+      "z": 1.8,
+      "unit": "mean GKG tone",
+      "source": "gkg_files"
      }
     },
     "financial": {
      "global": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 45208.91,
+      "baseline_mean": 48535.9369,
+      "baseline_sd": 10583.9996,
+      "baseline_n": 30,
+      "z": -0.31,
+      "mean_72h": 48265.6095,
+      "z_72h": -0.03,
+      "unit": "articles per million GKG docs",
+      "current_docs": 7587,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "us": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 53810.2644,
+      "baseline_mean": 53012.5273,
+      "baseline_sd": 13429.4319,
+      "baseline_n": 30,
+      "z": 0.06,
+      "mean_72h": 56617.1267,
+      "z_72h": 0.27,
+      "unit": "articles per million US-located GKG docs",
+      "current_docs": 3215,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "tone": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": -0.5373,
+      "baseline_mean": -0.8857,
+      "baseline_sd": 0.5732,
+      "baseline_n": 30,
+      "z": 0.61,
+      "unit": "mean GKG tone",
+      "source": "gkg_files"
      }
     },
     "food": {
      "global": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 7249.2421,
+      "baseline_mean": 12069.1152,
+      "baseline_sd": 3948.3631,
+      "baseline_n": 30,
+      "z": -1.22,
+      "mean_72h": 7829.5342,
+      "z_72h": -1.07,
+      "unit": "articles per million GKG docs",
+      "current_docs": 7587,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "us": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 8087.0918,
+      "baseline_mean": 11759.5179,
+      "baseline_sd": 5222.8894,
+      "baseline_n": 30,
+      "z": -0.7,
+      "mean_72h": 8964.3784,
+      "z_72h": -0.54,
+      "unit": "articles per million US-located GKG docs",
+      "current_docs": 3215,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "tone": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": -0.2979,
+      "baseline_mean": -1.5544,
+      "baseline_sd": 0.948,
+      "baseline_n": 23,
+      "z": 1.33,
+      "unit": "mean GKG tone",
+      "source": "gkg_files"
      }
     },
     "cyber": {
      "global": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 23329.3792,
+      "baseline_mean": 16057.247,
+      "baseline_sd": 4191.9422,
+      "baseline_n": 30,
+      "z": 1.73,
+      "mean_72h": 21308.226,
+      "z_72h": 1.25,
+      "unit": "articles per million GKG docs",
+      "current_docs": 7587,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "us": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 24572.3173,
+      "baseline_mean": 16383.7087,
+      "baseline_sd": 6070.1409,
+      "baseline_n": 30,
+      "z": 1.35,
+      "mean_72h": 21939.1366,
+      "z_72h": 0.92,
+      "unit": "articles per million US-located GKG docs",
+      "current_docs": 3215,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "tone": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": -2.1762,
+      "baseline_mean": -2.1054,
+      "baseline_sd": 1.0499,
+      "baseline_n": 26,
+      "z": -0.07,
+      "unit": "mean GKG tone",
+      "source": "gkg_files"
      }
     },
     "terrorism": {
      "global": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 32028.4698,
+      "baseline_mean": 34374.7041,
+      "baseline_sd": 12697.3165,
+      "baseline_n": 30,
+      "z": -0.18,
+      "mean_72h": 31417.2448,
+      "z_72h": -0.23,
+      "unit": "articles per million GKG docs",
+      "current_docs": 7587,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "us": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 41679.6267,
+      "baseline_mean": 41340.8706,
+      "baseline_sd": 17609.7255,
+      "baseline_n": 30,
+      "z": 0.02,
+      "mean_72h": 40811.5121,
+      "z_72h": -0.03,
+      "unit": "articles per million US-located GKG docs",
+      "current_docs": 3215,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "tone": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": -4.1806,
+      "baseline_mean": -3.9715,
+      "baseline_sd": 0.4753,
+      "baseline_n": 30,
+      "z": -0.44,
+      "unit": "mean GKG tone",
+      "source": "gkg_files"
      }
     },
     "uap": {
      "global": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 659.022,
+      "baseline_mean": 673.3745,
+      "baseline_sd": 1229.7405,
+      "baseline_n": 30,
+      "z": -0.01,
+      "mean_72h": 495.5401,
+      "z_72h": -0.14,
+      "unit": "articles per million GKG docs",
+      "current_docs": 7587,
+      "current_files": 7,
+      "source": "gkg_files",
+      "match": "URL-slug tokens (no GKG theme exists)"
      },
      "us": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 1555.21,
+      "baseline_mean": 1390.6424,
+      "baseline_sd": 2809.0075,
+      "baseline_n": 30,
+      "z": 0.06,
+      "mean_72h": 1179.5235,
+      "z_72h": -0.08,
+      "unit": "articles per million US-located GKG docs",
+      "current_docs": 3215,
+      "current_files": 7,
+      "source": "gkg_files",
+      "match": "URL-slug tokens (no GKG theme exists)"
      },
      "tone": {
       "status": "missing",
-      "missing_reason": "rate_limited"
+      "missing_reason": "no_current_window",
+      "unit": "mean GKG tone",
+      "source": "gkg_files"
      }
     },
     "pandemic": {
      "global": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 13312.2446,
+      "baseline_mean": 17354.5116,
+      "baseline_sd": 4406.6774,
+      "baseline_n": 30,
+      "z": -0.92,
+      "mean_72h": 16253.7166,
+      "z_72h": -0.25,
+      "unit": "articles per million GKG docs",
+      "current_docs": 7587,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "us": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 15863.1415,
+      "baseline_mean": 22568.58,
+      "baseline_sd": 6631.6852,
+      "baseline_n": 30,
+      "z": -1.01,
+      "mean_72h": 22410.946,
+      "z_72h": -0.02,
+      "unit": "articles per million US-located GKG docs",
+      "current_docs": 3215,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "tone": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": -1.3767,
+      "baseline_mean": -2.0306,
+      "baseline_sd": 0.712,
+      "baseline_n": 28,
+      "z": 0.92,
+      "unit": "mean GKG tone",
+      "source": "gkg_files"
      }
     },
     "unrest": {
      "global": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 45340.7144,
+      "baseline_mean": 65729.8488,
+      "baseline_sd": 11918.0602,
+      "baseline_n": 30,
+      "z": -1.71,
+      "mean_72h": 46283.449,
+      "z_72h": -1.63,
+      "unit": "articles per million GKG docs",
+      "current_docs": 7587,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "us": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": 55987.5583,
+      "baseline_mean": 71428.7144,
+      "baseline_sd": 11867.7153,
+      "baseline_n": 30,
+      "z": -1.3,
+      "mean_72h": 56853.0314,
+      "z_72h": -1.23,
+      "unit": "articles per million US-located GKG docs",
+      "current_docs": 3215,
+      "current_files": 7,
+      "source": "gkg_files"
      },
      "tone": {
-      "status": "missing",
-      "missing_reason": "rate_limited"
+      "status": "ok",
+      "current": -1.5796,
+      "baseline_mean": -2.4011,
+      "baseline_sd": 0.6798,
+      "baseline_n": 30,
+      "z": 1.21,
+      "unit": "mean GKG tone",
+      "source": "gkg_files"
      }
     }
    },
    "requests": {
-    "attempted": 2,
-    "ok": 1,
+    "attempted": 1,
+    "ok": 0,
     "failed": 1,
     "rate_limited": true,
     "budget_exhausted": false,
-    "low_coverage_days_skipped": 5,
+    "low_coverage_days_skipped": 0,
     "errors": [
-     "blackout/global: RateLimited: HTTP 429"
+     "war/global: RateLimited: HTTP 429"
     ],
     "retried": true
+   },
+   "doc_api": {
+    "ok": false,
+    "source": "doc_api",
+    "cached": false,
+    "fetched_at": "2026-11-13T13:03:50Z",
+    "requests": {
+     "attempted": 1,
+     "ok": 0,
+     "failed": 1,
+     "rate_limited": true,
+     "budget_exhausted": false,
+     "low_coverage_days_skipped": 0,
+     "errors": [
+      "war/global: RateLimited: HTTP 429"
+     ],
+     "retried": true
+    }
    },
    "gkg": {
     "latest_file": "20261113130000",
     "lastupdate_ok": true,
     "downloaded_files": 34,
-    "downloaded_bytes": 146444225,
+    "downloaded_bytes": 149187937,
     "missing_slots": 0,
     "errors": [],
     "cap_bytes": 150000000,
     "cap_reached": true,
     "time_budget_reached": false,
-    "cached_files": 67,
+    "cached_files": 101,
     "ok": true,
-    "cached_days": 32,
-    "oldest_file": "20261012000000",
+    "cached_days": 33,
+    "oldest_file": "20261011000000",
     "newest_file": "20261113100000",
     "label": "GDELT 2.0 GKG raw files, sampled hourly or sparser"
    }
   },
   "wikipedia": {
    "ok": true,
-   "fetched_at": "2026-11-13T12:56:59Z",
+   "fetched_at": "2026-11-13T13:03:50Z",
    "requests": {
     "attempted": 17,
     "ok": 17,
@@ -862,7 +1324,7 @@
   "missing_themes": []
  },
  "gap": {
-  "value": 17,
+  "value": 5,
   "label": "Real hazard elevated \u2014 act",
   "thresholds": {
    "act_real_level": 40,

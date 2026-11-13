@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T12:56:12.973338+00:00",
+ "generated_at": "2026-11-13T13:02:57.713684+00:00",
  "sources": {
   "usgs_eq": {
    "ok": true,
@@ -11,7 +11,7 @@
   },
   "nws": {
    "ok": true,
-   "count": 520
+   "count": 533
   },
   "usgs_hans": {
    "ok": true,
@@ -48,7 +48,7 @@
    {
     "region": "PK",
     "index": 7.48,
-    "n": 238,
+    "n": 253,
     "floods": 0,
     "hazards": [
      "weather_alert"
@@ -58,8 +58,8 @@
    {
     "region": "CA",
     "index": 7.48,
-    "n": 48,
-    "floods": 4,
+    "n": 47,
+    "floods": 3,
     "hazards": [
      "weather_alert"
     ],
@@ -183,10 +183,10 @@
    "used_in_index": false,
    "kp": 1.0,
    "kp_time": "2026-11-13T09:00:00+00:00",
-   "solar_wind_speed_kms": 374.0,
-   "solar_wind_bz_gsm_nt": 1.0,
+   "solar_wind_speed_kms": 376.0,
+   "solar_wind_bz_gsm_nt": 0.0,
    "solar_wind_bt_nt": 5.0,
-   "solar_wind_time": "2026-11-13T12:52:00Z",
+   "solar_wind_time": "2026-11-13T12:59:00Z",
    "alert_count": 10,
    "latest_alert": "CONTINUED ALERT: Electron 2MeV Integral Flux exceeded 1,000pfu",
    "seeds_cme_count": 15,
@@ -2302,18 +2302,18 @@
    }
   },
   {
-   "id": "swpc:wind:2026-11-13T12:50:00Z",
+   "id": "swpc:wind:2026-11-13T12:57:00Z",
    "source": "noaa_swpc",
    "hazard": "space_weather",
-   "time": "2026-11-13T12:50:00Z",
-   "severity": 0.12833333333333333,
-   "title": "Solar wind 377 km/s",
+   "time": "2026-11-13T12:57:00Z",
+   "severity": 0.125,
+   "title": "Solar wind 375 km/s",
    "lat": null,
    "lon": null,
    "region": "global",
    "url": "https://www.swpc.noaa.gov/products/real-time-solar-wind",
    "raw": {
-    "speed": 377.0,
+    "speed": 375.0,
     "density": null
    }
   },
@@ -2465,6 +2465,358 @@
    "url": "https://www.swpc.noaa.gov/products/alerts-watches-and-warnings",
    "raw": {
     "product_id": "K05A"
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.1e270005ed11c37ca5b81bd6ee34a75aacfd96c4.001.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T06:58:00-06:00",
+   "severity": 0.55,
+   "title": "Special Weather Statement: Divide; Burke; Williams; Mountrail; McKenzie; Dunn; Golden Valley; Billings; Stark; Hettinger; Adams",
+   "lat": null,
+   "lon": null,
+   "region": "ND",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1e270005ed11c37ca5b81bd6ee34a75aacfd96c4.001.1",
+   "raw": {
+    "event": "Special Weather Statement",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-13T09:00:00-06:00",
+    "headline": "Special Weather Statement issued November 13 at 6:58AM CST by NWS Bismarck ND",
+    "states": [
+     "ND"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.87517c93bb26f9f1a008b3ae0847c5020334e65a.012.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:56:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Clarence Strait",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.87517c93bb26f9f1a008b3ae0847c5020334e65a.012.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T18:30:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:56AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.87517c93bb26f9f1a008b3ae0847c5020334e65a.006.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:56:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cross Sound",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.87517c93bb26f9f1a008b3ae0847c5020334e65a.006.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T18:30:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:56AM AKST until November 14 at 5:00AM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.877d55b1183880212b8a85adefe8f30d1b6a7310.001.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Yakutat Bay",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.877d55b1183880212b8a85adefe8f30d1b6a7310.001.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.008.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cape Spencer to Cape Fairweather out to 15 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.008.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.009.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cape Spencer to Cape Fairweather from 15 to 85 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.009.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.004.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cape Decision to Cape Edgecumbe out to 15 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.004.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.013.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Icy Cape to Cape Suckling from 15 to 80 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.013.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.011.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cape Fairweather to Icy Cape from 15 to 80 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.011.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.007.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cape Edgecumbe to Cape Spencer from 15 to 80 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.007.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.012.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Icy Cape to Cape Suckling out to 15 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.012.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.005.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cape Decision to Cape Edgecumbe from 15 to 80 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.005.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.010.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cape Fairweather to Icy Cape out to 15 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.010.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.003.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.55,
+   "title": "Gale Warning: Dixon Entrance to Cape Decision from 15 to 90 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.003.1",
+   "raw": {
+    "event": "Gale Warning",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Gale Warning issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.002.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.55,
+   "title": "Gale Warning: Dixon Entrance to Cape Decision out to 15 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.002.1",
+   "raw": {
+    "event": "Gale Warning",
+    "severity": "Moderate",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Gale Warning issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
+   }
+  },
+  {
+   "id": "nws:urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.006.1",
+   "source": "nws",
+   "hazard": "weather_alert",
+   "time": "2026-11-13T03:55:00-09:00",
+   "severity": 0.3,
+   "title": "Small Craft Advisory: Cape Edgecumbe to Cape Spencer out to 15 NM",
+   "lat": null,
+   "lon": null,
+   "region": "PK",
+   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.525e9ef1e18d729eef9f20de35a270a95a55db8b.006.1",
+   "raw": {
+    "event": "Small Craft Advisory",
+    "severity": "Minor",
+    "urgency": "Expected",
+    "expires": "2026-11-13T22:00:00-09:00",
+    "headline": "Small Craft Advisory issued November 13 at 3:55AM AKST until November 14 at 5:00PM AKST by NWS Juneau AK",
+    "states": [
+     "PK"
+    ]
    }
   },
   {
@@ -4651,28 +5003,6 @@
    }
   },
   {
-   "id": "nws:urn:oid:2.49.0.1.840.0.f66c69d6e6991de31c52c4a11f7f111dc5cea410.001.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-13T03:46:00-08:00",
-   "severity": 0.3,
-   "title": "Flood Advisory: Los Angeles, CA",
-   "lat": null,
-   "lon": null,
-   "region": "CA",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f66c69d6e6991de31c52c4a11f7f111dc5cea410.001.1",
-   "raw": {
-    "event": "Flood Advisory",
-    "severity": "Minor",
-    "urgency": "Expected",
-    "expires": "2026-11-13T05:45:00-08:00",
-    "headline": "Flood Advisory issued November 13 at 3:46AM PST until November 13 at 5:45AM PST by NWS Los Angeles/Oxnard CA",
-    "states": [
-     "CA"
-    ]
-   }
-  },
-  {
    "id": "nws:urn:oid:2.49.0.1.840.0.26095a92fb825cd61cdeef2bee2f822ff85e688d.002.1",
    "source": "nws",
    "hazard": "weather_alert",
@@ -5242,28 +5572,6 @@
     "headline": "Gale Warning issued November 13 at 2:56AM PST until November 13 at 4:00PM PST by NWS Eureka CA",
     "states": [
      "PZ"
-    ]
-   }
-  },
-  {
-   "id": "nws:urn:oid:2.49.0.1.840.0.715719cd605747732c1d6e0da2a480f109044766.001.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-13T04:55:00-06:00",
-   "severity": 0.55,
-   "title": "Special Weather Statement: Divide; Burke; Williams; Mountrail; McKenzie; Dunn; Golden Valley; Billings; Stark; Slope; Hettinger; Bowman; Adams",
-   "lat": null,
-   "lon": null,
-   "region": "ND",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.715719cd605747732c1d6e0da2a480f109044766.001.1",
-   "raw": {
-    "event": "Special Weather Statement",
-    "severity": "Moderate",
-    "urgency": "Expected",
-    "expires": "2026-11-13T07:00:00-06:00",
-    "headline": "Special Weather Statement issued November 13 at 4:55AM CST by NWS Bismarck ND",
-    "states": [
-     "ND"
     ]
    }
   },
@@ -6941,28 +7249,6 @@
     "headline": "Small Craft Advisory issued November 12 at 11:59PM AKST until November 13 at 12:00PM AKST by NWS Juneau AK",
     "states": [
      "PK"
-    ]
-   }
-  },
-  {
-   "id": "nws:urn:oid:2.49.0.1.840.0.181a935eadc6cacea939f9417a4c22afc7bb15fe.001.1",
-   "source": "nws",
-   "hazard": "weather_alert",
-   "time": "2026-11-13T03:58:00-05:00",
-   "severity": 0.55,
-   "title": "Special Weather Statement: Southeast Webster; Northwest Pocahontas; Southeast Randolph",
-   "lat": null,
-   "lon": null,
-   "region": "WV",
-   "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.181a935eadc6cacea939f9417a4c22afc7bb15fe.001.1",
-   "raw": {
-    "event": "Special Weather Statement",
-    "severity": "Moderate",
-    "urgency": "Expected",
-    "expires": "2026-11-13T08:00:00-05:00",
-    "headline": "Special Weather Statement issued November 13 at 3:58AM EST by NWS Charleston WV",
-    "states": [
-     "WV"
     ]
    }
   },
@@ -14033,7 +14319,7 @@
  ],
  "known_events": {
   "ok": true,
-  "generated_at": "2026-11-13T12:56:12.984884+00:00",
+  "generated_at": "2026-11-13T13:02:57.722251+00:00",
   "items": [
    {
     "id": "eas-nationwide-test-2026-11-17",
@@ -14143,22 +14429,21 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "aircraft": 10,
-    "airborne": 10,
-    "max_alt_ft": 38000,
+    "aircraft": 9,
+    "airborne": 9,
+    "max_alt_ft": 38025,
     "types": {
-     "B737": 1,
-     "M700": 1,
-     "B738": 1,
-     "A321": 1,
-     "CRJ7": 1,
-     "GL5T": 1,
+     "B738": 2,
+     "E75L": 1,
+     "B38M": 1,
+     "C25A": 1,
      "C172": 1,
-     "B38M": 1
+     "A321": 1,
+     "GL5T": 1
     },
     "squawk_7x00": []
    },
-   "elapsed_s": 0.34,
+   "elapsed_s": 6.75,
    "name": "adsb.lol",
    "category": "Aviation/Maritime",
    "url": "https://adsb.lol/",
@@ -14180,7 +14465,7 @@
     "services": 0,
     "version": 11.5
    },
-   "elapsed_s": 0.06,
+   "elapsed_s": 0.27,
    "name": "Arkansas GIS Office (ArcGIS REST index)",
    "category": "Local AR",
    "url": "https://gis.arkansas.gov/",
@@ -14192,32 +14477,32 @@
    "summary": {
     "stations": {
      "KFSM": {
-      "obs_time": "2026-11-13T12:00:00.000Z",
-      "temp_c": 3.9,
-      "wind_kt": 0,
+      "obs_time": "2026-11-13T07:00:00.000Z",
+      "temp_c": 8.9,
+      "wind_kt": 9,
       "vis": "10+",
       "flt_cat": "VFR",
-      "raw": "METAR KFSM 131153Z 00000KT 10SM CLR 04/M01 A3011 RMK AO2 SLP197 T00391006 10106 20033 53002 $"
+      "raw": "METAR KFSM 130653Z AUTO 03009KT 10SM SCT085 09/01 A3009 RMK AO2 SLP188 T00890006 $"
      },
      "KROG": {
-      "obs_time": "2026-11-13T12:00:00.000Z",
-      "temp_c": -3.3,
+      "obs_time": "2026-11-13T07:00:00.000Z",
+      "temp_c": 1.1,
       "wind_kt": 0,
       "vis": "10+",
       "flt_cat": "VFR",
-      "raw": "METAR KROG 131158Z 00000KT 10SM CLR M03/M04 A3013 RMK AO2 SLP208 T10331044 10028 21033 53003"
+      "raw": "METAR KROG 130658Z AUTO 00000KT 10SM CLR 01/M02 A3011 RMK AO2 SLP198 T00111022"
      },
      "KXNA": {
-      "obs_time": "2026-11-13T13:00:00.000Z",
-      "temp_c": -1.1,
-      "wind_kt": 4,
+      "obs_time": "2026-11-13T07:00:00.000Z",
+      "temp_c": 1.7,
+      "wind_kt": 5,
       "vis": "10+",
       "flt_cat": "VFR",
-      "raw": "METAR KXNA 131253Z 36004KT 10SM CLR M01/M03 A3013 RMK AO2 SLP207 T10111033"
+      "raw": "METAR KXNA 130653Z AUTO 01005KT 10SM CLR 02/M03 A3010 RMK AO2 SLP192 T00171028"
      }
     }
    },
-   "elapsed_s": 0.05,
+   "elapsed_s": 20.11,
    "name": "AviationWeather.gov API",
    "category": "Aviation/Maritime",
    "url": "https://aviationweather.gov/data/api/",
@@ -14322,7 +14607,7 @@
     ],
     "note": "CDC NWSS SARS-CoV-2 wastewater metrics; sewershed-level aggregates"
    },
-   "elapsed_s": 2.08,
+   "elapsed_s": 0.51,
    "name": "CDC NWSS wastewater surveillance (Arkansas)",
    "category": "Health",
    "url": "https://data.cdc.gov/d/2ew6-ywp6",
@@ -14350,7 +14635,7 @@
      "HMU-SAT2"
     ]
    },
-   "elapsed_s": 0.32,
+   "elapsed_s": 0.75,
    "name": "CelesTrak GP (stations group)",
    "category": "Space",
    "url": "https://celestrak.org/",
@@ -14380,7 +14665,7 @@
      }
     ]
    },
-   "elapsed_s": 3.88,
+   "elapsed_s": 11.15,
    "name": "Copernicus Data Space (STAC metadata)",
    "category": "Space",
    "url": "https://dataspace.copernicus.eu/",
@@ -14390,10 +14675,10 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "round": 6638118,
-    "randomness_prefix": "d36ad9214298952e1d41517239aa0e31"
+    "round": 6638131,
+    "randomness_prefix": "ba81061b23b0b8b7b8027413ea983e2d"
    },
-   "elapsed_s": 0.46,
+   "elapsed_s": 0.2,
    "name": "drand (League of Entropy)",
    "category": "Entropy",
    "url": "https://drand.love/",
@@ -14458,7 +14743,7 @@
      }
     ]
    },
-   "elapsed_s": 1.16,
+   "elapsed_s": 1.88,
    "name": "EMSC Seismic Portal",
    "category": "Seismic",
    "url": "https://www.seismicportal.eu/",
@@ -14471,6 +14756,21 @@
     "datasets_total": 100,
     "recent": [
      {
+      "name": "Consumer Complaints - Most Common Issues",
+      "updated": "2026-11-13T06:21:13.000Z",
+      "link": "https://opendata.fcc.gov/d/845q-3wwu"
+     },
+     {
+      "name": "CGB - Radio Issues Associated with Complaints Current YTD",
+      "updated": "2026-11-13T06:21:13.000Z",
+      "link": "https://opendata.fcc.gov/d/vktc-czbt"
+     },
+     {
+      "name": "Internet Issues Associated with Complaints Current YTD",
+      "updated": "2026-11-13T06:21:13.000Z",
+      "link": "https://opendata.fcc.gov/d/3jay-prd4"
+     },
+     {
       "name": "Phone Issues Current YTD: Unwanted Calls category excluded",
       "updated": "2026-11-13T06:21:13.000Z",
       "link": "https://opendata.fcc.gov/d/82wr-ws6e"
@@ -14479,25 +14779,10 @@
       "name": "CGB - Form Issue Method Count",
       "updated": "2026-11-13T06:21:13.000Z",
       "link": "https://opendata.fcc.gov/d/n85v-gyfh"
-     },
-     {
-      "name": "CGB - TV Issues Associated with Complaints 2018YTD",
-      "updated": "2026-11-13T06:21:13.000Z",
-      "link": "https://opendata.fcc.gov/d/fqdp-jjfa"
-     },
-     {
-      "name": "CGB - Radio Issues Associated with Complaints 2018YTD",
-      "updated": "2026-11-13T06:21:13.000Z",
-      "link": "https://opendata.fcc.gov/d/wfej-eu5e"
-     },
-     {
-      "name": "Is Between 1/1/2017-12/31/2017",
-      "updated": "2026-11-13T06:21:13.000Z",
-      "link": "https://opendata.fcc.gov/d/bse2-yfic"
      }
     ]
    },
-   "elapsed_s": 0.41,
+   "elapsed_s": 0.44,
    "name": "FCC open data (Socrata)",
    "category": "RF/SDR",
    "url": "https://opendata.fcc.gov/",
@@ -14564,7 +14849,7 @@
      }
     ]
    },
-   "elapsed_s": 1.31,
+   "elapsed_s": 2.5,
    "name": "GDACS",
    "category": "Hazards",
    "url": "https://www.gdacs.org/",
@@ -14574,7 +14859,7 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "count": 25,
+    "count": 26,
     "max_mag": 5.83,
     "top": [
      {
@@ -14629,7 +14914,7 @@
      }
     ]
    },
-   "elapsed_s": 0.82,
+   "elapsed_s": 1.3,
    "name": "GEOFON (GFZ)",
    "category": "Seismic",
    "url": "https://geofon.gfz.de/",
@@ -14713,7 +14998,7 @@
      }
     ]
    },
-   "elapsed_s": 0.09,
+   "elapsed_s": 0.26,
    "name": "Global CMT (quick CMT)",
    "category": "Seismic",
    "url": "https://www.globalcmt.org/",
@@ -14723,14 +15008,14 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "updated": "13 Nov 2026 1256 GMT",
+    "updated": "13 Nov 2026 1302 GMT",
     "sfi": "116",
     "a": "4",
     "k": "1",
-    "xray": "B5.8",
+    "xray": "B6.4",
     "sunspots": "99",
-    "solarwind": "390.4",
-    "bz": "2.4",
+    "solarwind": "389.1",
+    "bz": "0.7",
     "geomagfield": "VR QUIET",
     "signalnoise": "S0-S1",
     "bands": {
@@ -14745,7 +15030,7 @@
     },
     "source": "N0NBH hamqsl.com"
    },
-   "elapsed_s": 0.39,
+   "elapsed_s": 0.23,
    "name": "HamQSL solar-terrestrial XML (N0NBH)",
    "category": "RF/SDR",
    "url": "https://www.hamqsl.com/solar.html",
@@ -14756,13 +15041,13 @@
    "degraded": false,
    "summary": {
     "station": "XNA",
-    "utc_valid": "2026-11-13T11:53:00Z",
+    "utc_valid": "2026-11-13T12:53:00Z",
     "temp_f": 30.0,
     "dewpoint_f": 26.0,
     "wind_kt": 4.0,
-    "raw": "KXNA 131153Z 36004KT 10SM CLR M01/M03 A3013 RMK AO2 SLP206 T10111033 10028 21017 53005"
+    "raw": "KXNA 131253Z 36004KT 10SM CLR M01/M03 A3013 RMK AO2 SLP207 T10111033"
    },
-   "elapsed_s": 0.25,
+   "elapsed_s": 0.11,
    "name": "Iowa Environmental Mesonet",
    "category": "Weather",
    "url": "https://mesonet.agron.iastate.edu/",
@@ -14772,14 +15057,12 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "alerts": 1,
+    "alerts": 0,
     "critical": 0,
-    "by_datasource": {
-     "bgp": 1
-    },
+    "by_datasource": {},
     "top": []
    },
-   "elapsed_s": 0.1,
+   "elapsed_s": 0.34,
    "name": "IODA (Georgia Tech)",
    "category": "Network",
    "url": "https://ioda.inetintel.cc.gatech.edu/",
@@ -14804,7 +15087,7 @@
      "BROM"
     ]
    },
-   "elapsed_s": 0.22,
+   "elapsed_s": 0.26,
    "name": "EarthScope/IRIS FDSN web services",
    "category": "Seismic",
    "url": "https://service.iris.edu/fdsnws/",
@@ -14906,10 +15189,10 @@
       "type": "ionosonde",
       "code": "MHJ45",
       "name": "Millstone Hill, MA, USA",
-      "fof2": 7.45,
-      "mufd": 28.146,
-      "time": "2026-11-13T12:45:00",
-      "from": "2026-11-13T12:45:00",
+      "fof2": 7.525,
+      "mufd": 27.367,
+      "time": "2026-11-13T12:52:30",
+      "from": "2026-11-13T12:52:30",
       "cs": 70.0
      },
      {
@@ -14939,7 +15222,7 @@
     ],
     "source": "prop.kc2g.com (GIRO/DIDBase-derived)"
    },
-   "elapsed_s": 3.32,
+   "elapsed_s": 0.27,
    "name": "KC2G ionosonde foF2/MUF (GIRO-derived)",
    "category": "RF/SDR",
    "url": "https://prop.kc2g.com/",
@@ -14950,11 +15233,11 @@
    "degraded": false,
    "summary": {
     "hours": 301,
-    "latest_dst_nt": 7,
+    "latest_dst_nt": 4,
     "min_dst_nt": -50,
     "note": "quicklook, not definitive"
    },
-   "elapsed_s": 1.06,
+   "elapsed_s": 1.03,
    "name": "Kyoto WDC real-time Dst",
    "category": "Geomagnetic",
    "url": "https://wdc.kugi.kyoto-u.ac.jp/",
@@ -14964,7 +15247,7 @@
    "ok": false,
    "degraded": true,
    "error": "URLError: <urlopen error [Errno 101] Network is unreachable>",
-   "elapsed_s": 25.05,
+   "elapsed_s": 25.07,
    "name": "NASA DONKI (CCMC, keyless)",
    "category": "Space",
    "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI/",
@@ -15008,7 +15291,7 @@
      }
     ]
    },
-   "elapsed_s": 0.82,
+   "elapsed_s": 0.56,
    "name": "NASA DONKI via api.nasa.gov (keyed: NASA_API_KEY)",
    "category": "Space",
    "url": "https://api.nasa.gov/",
@@ -15021,7 +15304,7 @@
     "granules": 0,
     "latest": []
    },
-   "elapsed_s": 0.23,
+   "elapsed_s": 0.3,
    "name": "NASA Earthdata CMR (metadata)",
    "category": "Space",
    "url": "https://earthdata.nasa.gov/",
@@ -15112,7 +15395,7 @@
      }
     ]
    },
-   "elapsed_s": 0.19,
+   "elapsed_s": 2.28,
    "name": "NASA EONET",
    "category": "Hazards",
    "url": "https://eonet.gsfc.nasa.gov/",
@@ -15127,7 +15410,7 @@
     "high_confidence": 0,
     "top": []
    },
-   "elapsed_s": 0.11,
+   "elapsed_s": 0.28,
    "name": "NASA FIRMS VIIRS active fire (keyed: FIRMS_MAP_KEY)",
    "category": "Hazards",
    "url": "https://firms.modaps.eosdis.nasa.gov/api/",
@@ -15157,7 +15440,7 @@
     "rows": 0,
     "latest": []
    },
-   "elapsed_s": 2.52,
+   "elapsed_s": 3.4,
    "name": "NASA HEASARC TAP (Fermi GBM bursts)",
    "category": "Space",
    "url": "https://heasarc.gsfc.nasa.gov/",
@@ -15167,13 +15450,13 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "utc": "12:56:15",
+    "utc": "13:03:01",
     "on_air": {
-     "14.100": "OH2B",
-     "18.110": "4X6TU",
-     "21.150": "5Z4B",
-     "24.930": "ZS6DN",
-     "28.200": "4S7B"
+     "14.100": "4U1UN",
+     "18.110": "YV5B",
+     "21.150": "OA4B",
+     "24.930": "LU4AA",
+     "28.200": "CS3B"
     },
     "note": "computed from the published NCDXF/IARU schedule; nothing is received"
    },
@@ -15187,7 +15470,7 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "count": 47,
+    "count": 46,
     "max_mag": 2.6,
     "top": [
      {
@@ -15242,7 +15525,7 @@
      }
     ]
    },
-   "elapsed_s": 0.55,
+   "elapsed_s": 0.41,
    "name": "NCEDC",
    "category": "Seismic",
    "url": "https://ncedc.org/",
@@ -15290,7 +15573,7 @@
      }
     ]
    },
-   "elapsed_s": 0.15,
+   "elapsed_s": 0.56,
    "name": "NOAA NDBC DART tsunameter buoys",
    "category": "Ocean",
    "url": "https://www.ndbc.noaa.gov/dart.shtml",
@@ -15300,11 +15583,11 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "pulse_index": 2025973,
-    "time": "2026-11-13T12:54:00.000Z",
-    "output_prefix": "744DDDE8DF0C7B774A7E3D130D29DE1E"
+    "pulse_index": 2025980,
+    "time": "2026-11-13T13:01:00.000Z",
+    "output_prefix": "616DDB6535182F598ADB3586E1CFF368"
    },
-   "elapsed_s": 0.08,
+   "elapsed_s": 0.26,
    "name": "NIST Randomness Beacon",
    "category": "Entropy",
    "url": "https://beacon.nist.gov/",
@@ -15314,7 +15597,7 @@
    "ok": false,
    "degraded": true,
    "error": "HTTPError: HTTP Error 410: Gone",
-   "elapsed_s": 0.34,
+   "elapsed_s": 0.37,
    "name": "NOAA CORS GNSS (index, ARFY)",
    "category": "Geodesy",
    "url": "https://www.ngs.noaa.gov/CORS/",
@@ -15324,13 +15607,13 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "valid_at": "2026-11-13 12:52 UTC",
+    "valid_at": "2026-11-13 12:59 UTC",
     "xray": "Normal X-ray Background",
     "proton": "Normal Proton Background",
-    "peak_haf_mhz": 3.2,
+    "peak_haf_mhz": 3.1,
     "home_haf_mhz": 0.0
    },
-   "elapsed_s": 0.02,
+   "elapsed_s": 0.04,
    "name": "NOAA SWPC D-RAP absorption",
    "category": "RF/SDR",
    "url": "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap",
@@ -15340,11 +15623,11 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "objects": 179,
-    "latest_key": "GLM-L2-LCFA/2026/317/11/OR_GLM-L2-LCFA_G19_s20263171159400_e20263171200000_c20263171200019.nc",
-    "bytes": 53183391
+    "objects": 180,
+    "latest_key": "GLM-L2-LCFA/2026/317/12/OR_GLM-L2-LCFA_G19_s20263171259400_e20263171300000_c20263171300015.nc",
+    "bytes": 46420615
    },
-   "elapsed_s": 0.07,
+   "elapsed_s": 0.15,
    "name": "NOAA GOES on AWS (GLM lightning index)",
    "category": "Space",
    "url": "https://registry.opendata.aws/noaa-goes/",
@@ -15360,7 +15643,7 @@
     "pressure_hpa": 1012.6,
     "water_temp_c": null
    },
-   "elapsed_s": 0.24,
+   "elapsed_s": 0.27,
    "name": "NOAA NDBC buoy 42001 (Gulf)",
    "category": "Water",
    "url": "https://www.ndbc.noaa.gov/",
@@ -15370,11 +15653,11 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "objects": 100,
-    "latest_key": "2026/11/13/KSRX/KSRX20261113_123959_V06",
-    "bytes": 759452309
+    "objects": 101,
+    "latest_key": "2026/11/13/KSRX/KSRX20261113_124835_V06",
+    "bytes": 765263270
    },
-   "elapsed_s": 0.07,
+   "elapsed_s": 0.2,
    "name": "NOAA NEXRAD on AWS (KSRX index)",
    "category": "Weather",
    "url": "https://registry.opendata.aws/noaa-nexrad/",
@@ -15385,10 +15668,10 @@
    "degraded": false,
    "summary": {
     "station": "Grand Isle",
-    "time": "2026-11-13 12:48",
-    "water_level_m": 0.171
+    "time": "2026-11-13 12:54",
+    "water_level_m": 0.165
    },
-   "elapsed_s": 0.26,
+   "elapsed_s": 0.31,
    "name": "NOAA Tides & Currents (Grand Isle LA)",
    "category": "Water",
    "url": "https://tidesandcurrents.noaa.gov/",
@@ -15401,9 +15684,9 @@
     "active": 0,
     "events": [],
     "heatrisk": "https://www.wpc.ncep.noaa.gov/heatrisk/",
-    "updated": "2026-11-13T12:55:15+00:00"
+    "updated": "2026-11-13T13:00:57+00:00"
    },
-   "elapsed_s": 0.13,
+   "elapsed_s": 0.22,
    "name": "NWS heat alerts (AR/MO/OK/KS) + HeatRisk link",
    "category": "Health",
    "url": "https://www.weather.gov/",
@@ -15413,13 +15696,13 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "time": "2026-11-13T12:45",
+    "time": "2026-11-13T13:00",
     "temperature_2m": -1.8,
-    "wind_speed_10m": 6.6,
+    "wind_speed_10m": 7.2,
     "precipitation": 0.0,
-    "surface_pressure": 967.9
+    "surface_pressure": 968.1
    },
-   "elapsed_s": 0.23,
+   "elapsed_s": 0.16,
    "name": "Open-Meteo",
    "category": "Weather",
    "url": "https://open-meteo.com/",
@@ -15599,7 +15882,7 @@
      }
     ]
    },
-   "elapsed_s": 0.55,
+   "elapsed_s": 0.95,
    "name": "OpenAQ v3 air quality near Rogers (keyed: OPENAQ_API_KEY)",
    "category": "Air quality",
    "url": "https://openaq.org/",
@@ -15672,7 +15955,7 @@
      }
     ]
    },
-   "elapsed_s": 0.27,
+   "elapsed_s": 0.33,
    "name": "OpenFEMA API",
    "category": "Hazards",
    "url": "https://www.fema.gov/about/openfema/api",
@@ -15696,7 +15979,7 @@
      "Statsraad Lehmkuhl"
     ]
    },
-   "elapsed_s": 0.15,
+   "elapsed_s": 0.26,
    "name": "Orcasound hydrophones",
    "category": "Seismic",
    "url": "https://www.orcasound.net/",
@@ -15707,13 +15990,13 @@
    "degraded": false,
    "summary": {
     "station": "OULU",
-    "time": "2026-11-13T11:00:00Z",
-    "corr_cpm": 6158,
-    "pressure_mbar": 991.05,
-    "pct_vs_window_mean": 0.81,
+    "time": "2026-11-13T12:00:00Z",
+    "corr_cpm": 6178,
+    "pressure_mbar": 990.45,
+    "pct_vs_window_mean": 1.08,
     "n": 36
    },
-   "elapsed_s": 0.66,
+   "elapsed_s": 0.88,
    "name": "Oulu Neutron Monitor (Sodankyla Geophysical Observatory)",
    "category": "Space",
    "url": "https://cosmicrays.oulu.fi/",
@@ -15723,29 +16006,29 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "spots": 1517,
+    "spots": 1510,
     "by_band": {
-     "10m": 241,
-     "20m": 356,
-     "15m": 186,
-     "40m": 245,
-     "12m": 127,
-     "30m": 92,
-     "other": 26,
-     "17m": 212,
-     "80m": 27,
-     "160m": 5
+     "20m": 297,
+     "30m": 132,
+     "10m": 237,
+     "15m": 174,
+     "17m": 149,
+     "12m": 99,
+     "40m": 359,
+     "80m": 49,
+     "other": 6,
+     "160m": 8
     },
     "modes": {
-     "FT8": 1428,
-     "FT4": 69,
-     "CW": 15,
-     "JTTY": 2,
-     "LQ8": 1,
-     "WSPR": 1
+     "FT8": 1449,
+     "FT4": 39,
+     "CW": 16,
+     "VARAC": 3,
+     "JS8": 2,
+     "LQ8": 1
     }
    },
-   "elapsed_s": 0.13,
+   "elapsed_s": 0.18,
    "name": "PSKReporter",
    "category": "RF/SDR",
    "url": "https://pskreporter.info/",
@@ -15755,7 +16038,7 @@
    "ok": false,
    "degraded": true,
    "error": "URLError: <urlopen error [Errno -2] Name or service not known>",
-   "elapsed_s": 0.04,
+   "elapsed_s": 0.09,
    "name": "PubDAS (public DAS datasets)",
    "category": "Seismic",
    "url": "https://pubdas.iris.edu/",
@@ -15780,7 +16063,7 @@
      "R183E"
     ]
    },
-   "elapsed_s": 1.03,
+   "elapsed_s": 0.58,
    "name": "Raspberry Shake network (FDSN)",
    "category": "Seismic",
    "url": "https://dataview.raspberryshake.org/",
@@ -15793,7 +16076,7 @@
     "sites": 1235,
     "receivers": 1255
    },
-   "elapsed_s": 0.84,
+   "elapsed_s": 1.02,
    "name": "ReceiverBook (OpenWebRX directory)",
    "category": "RF/SDR",
    "url": "https://www.receiverbook.de/",
@@ -15803,9 +16086,9 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "connected_us_probes": 2427
+    "connected_us_probes": 2428
    },
-   "elapsed_s": 0.56,
+   "elapsed_s": 0.43,
    "name": "RIPE Atlas (public probe status)",
    "category": "Network",
    "url": "https://atlas.ripe.net/",
@@ -15831,7 +16114,7 @@
     "v4_peers": 318,
     "time": "2026-11-13T08:00:00"
    },
-   "elapsed_s": 0.36,
+   "elapsed_s": 0.37,
    "name": "RIPEstat (routing status, Comcast AS7922)",
    "category": "Network",
    "url": "https://stat.ripe.net/",
@@ -15847,7 +16130,7 @@
     "latest_unit": "cpm",
     "median_cpm": 1008.0
    },
-   "elapsed_s": 0.86,
+   "elapsed_s": 0.25,
    "name": "Safecast API",
    "category": "Radiation",
    "url": "https://api.safecast.org/",
@@ -15892,7 +16175,7 @@
      437.55
     ]
    },
-   "elapsed_s": 0.66,
+   "elapsed_s": 0.88,
    "name": "SatNOGS DB API",
    "category": "RF/SDR",
    "url": "https://db.satnogs.org/api/",
@@ -15903,13 +16186,14 @@
    "degraded": false,
    "summary": {
     "observations": 25,
-    "satellites": 13,
-    "stations": 18,
+    "satellites": 17,
+    "stations": 16,
     "status": {
-     "good": 25
+     "future": 2,
+     "good": 23
     }
    },
-   "elapsed_s": 1.65,
+   "elapsed_s": 1.68,
    "name": "SatNOGS Network",
    "category": "RF/SDR",
    "url": "https://network.satnogs.org/",
@@ -15974,7 +16258,7 @@
      }
     ]
    },
-   "elapsed_s": 0.43,
+   "elapsed_s": 0.4,
    "name": "SCEDC",
    "category": "Seismic",
    "url": "https://scedc.caltech.edu/",
@@ -15998,7 +16282,7 @@
      "IS-54 D-AMPS"
     ]
    },
-   "elapsed_s": 0.14,
+   "elapsed_s": 0.24,
    "name": "Signal Identification Wiki (MediaWiki API)",
    "category": "RF/SDR",
    "url": "https://www.sigidwiki.com/",
@@ -16010,13 +16294,13 @@
    "summary": {
     "samples": 1438,
     "satellite": 19,
-    "latest": "2026-11-13T12:53:00Z",
-    "Hp_nT": 109.75,
-    "total_nT": 114.08,
-    "Hp_range_nT": 37.67,
+    "latest": "2026-11-13T13:00:00Z",
+    "Hp_nT": 110.39,
+    "total_nT": 114.6,
+    "Hp_range_nT": 38.41,
     "arcjet_any": true
    },
-   "elapsed_s": 0.03,
+   "elapsed_s": 0.08,
    "name": "NOAA SWPC GOES magnetometer (primary, 1-day)",
    "category": "Geomagnetic",
    "url": "https://services.swpc.noaa.gov/json/goes/primary/",
@@ -16048,23 +16332,17 @@
      }
     ]
    },
-   "elapsed_s": 0.08,
+   "elapsed_s": 0.26,
    "name": "NOAA tsunami.gov bulletins (NTWC + PTWC Atom)",
    "category": "Ocean",
    "url": "https://www.tsunami.gov/",
    "terms": "Public domain (NOAA)"
   },
   "usgs_geomag": {
-   "ok": true,
-   "degraded": false,
-   "summary": {
-    "observatory": "BOU",
-    "samples": 176,
-    "latest_h_nt": 20691.607,
-    "range_h_nt": 2.78,
-    "time": "2026-11-13T12:52:00.000Z"
-   },
-   "elapsed_s": 0.75,
+   "ok": false,
+   "degraded": true,
+   "error": "TimeoutError: The read operation timed out",
+   "elapsed_s": 30.15,
    "name": "USGS Geomagnetism web service (BOU)",
    "category": "Geomagnetic",
    "url": "https://geomag.usgs.gov/ws/",
@@ -16085,7 +16363,7 @@
      }
     ]
    },
-   "elapsed_s": 0.02,
+   "elapsed_s": 0.05,
    "name": "USGS ShakeMap",
    "category": "Seismic",
    "url": "https://earthquake.usgs.gov/data/shakemap/",
@@ -16171,7 +16449,7 @@
      }
     }
    },
-   "elapsed_s": 4.4,
+   "elapsed_s": 9.9,
    "name": "USGS Water Services (NWIS IV)",
    "category": "Water",
    "url": "https://waterservices.usgs.gov/",
@@ -16194,12 +16472,6 @@
       "parameter_code": "63680",
       "time": "2023-05-25T14:00:00+00:00",
       "value": "0.4"
-     },
-     {
-      "monitoring_location_id": "MO005-364818094185302",
-      "parameter_code": "00045",
-      "time": "2026-11-13T11:30:00+00:00",
-      "value": "0.00"
      },
      {
       "monitoring_location_id": "USGS-071948135",
@@ -16226,26 +16498,32 @@
       "value": null
      },
      {
+      "monitoring_location_id": "MO005-364818094185302",
+      "parameter_code": "62846",
+      "time": "2026-11-13T12:30:00+00:00",
+      "value": "46.0"
+     },
+     {
+      "monitoring_location_id": "MO005-364818094185301",
+      "parameter_code": "62611",
+      "time": "2026-11-13T12:30:00+00:00",
+      "value": "1155.61"
+     },
+     {
       "monitoring_location_id": "USGS-07049000",
       "parameter_code": "63680",
       "time": "2026-11-13T12:00:00+00:00",
       "value": "3.6"
      },
      {
-      "monitoring_location_id": "USGS-07194880",
-      "parameter_code": "00095",
-      "time": "2022-06-22T14:00:00+00:00",
-      "value": "442"
-     },
-     {
-      "monitoring_location_id": "USGS-07195400",
+      "monitoring_location_id": "USGS-07050152",
       "parameter_code": "00065",
-      "time": "2026-11-13T12:00:00+00:00",
-      "value": "6.09"
+      "time": "2026-11-13T12:55:00+00:00",
+      "value": "0.53"
      }
     ]
    },
-   "elapsed_s": 0.61,
+   "elapsed_s": 0.44,
    "name": "USGS Water Data OGC API",
    "category": "Water",
    "url": "https://api.waterdata.usgs.gov/",
@@ -16324,7 +16602,7 @@
     ],
     "note": "WHO FluNet national weekly aggregates"
    },
-   "elapsed_s": 0.32,
+   "elapsed_s": 0.31,
    "name": "WHO FluNet (USA weekly aggregates)",
    "category": "Health",
    "url": "https://www.who.int/tools/flunet",
@@ -16334,27 +16612,27 @@
    "ok": true,
    "degraded": false,
    "summary": {
-    "spots_last_hour": 235807,
+    "spots_last_hour": 234748,
     "by_band": {
-     "-1": 58,
-     "0": 3239,
-     "1": 505,
-     "3": 10164,
-     "5": 1067,
-     "7": 68774,
-     "10": 36969,
-     "13": 65,
-     "14": 75464,
-     "18": 14792,
-     "21": 14771,
-     "24": 3081,
-     "28": 6383,
-     "40": 41,
-     "50": 360,
-     "144": 74
+     "-1": 54,
+     "0": 3206,
+     "1": 499,
+     "3": 9218,
+     "5": 1014,
+     "7": 68009,
+     "10": 36761,
+     "13": 78,
+     "14": 74787,
+     "18": 14961,
+     "21": 15544,
+     "24": 3479,
+     "28": 6666,
+     "40": 44,
+     "50": 347,
+     "144": 81
     }
    },
-   "elapsed_s": 0.62,
+   "elapsed_s": 0.89,
    "name": "WSPRnet (via wspr.live public DB)",
    "category": "RF/SDR",
    "url": "https://www.wsprnet.org/",
@@ -16727,7 +17005,7 @@
   "sites": {
    "07048600": {
     "name": "White River near Fayetteville, AR",
-    "samples": 669,
+    "samples": 668,
     "latest_ft": 1.37,
     "latest_time": "2026-11-13T06:00:00-06:00",
     "min_ft": 1.33,
@@ -16909,7 +17187,7 @@
    },
    "07049000": {
     "name": "War Eagle Creek near Hindsville, AR",
-    "samples": 669,
+    "samples": 668,
     "latest_ft": 0.21,
     "latest_time": "2026-11-13T06:00:00-06:00",
     "min_ft": 0.17,
@@ -17094,19 +17372,19 @@
   "label": "advisory only; not a flood warning"
  },
  "astro": {
-  "time": "2026-11-13T12:56:12.984884+00:00",
-  "moon_age_days": 3.62,
-  "moon_illumination": 0.141,
+  "time": "2026-11-13T13:02:57.722251+00:00",
+  "moon_age_days": 3.63,
+  "moon_illumination": 0.142,
   "moon_phase": "Waxing crescent",
-  "moon_distance_km": 405890,
+  "moon_distance_km": 405889,
   "sun_distance_au": 0.98959,
   "tidal_forcing_proxy": 0.812,
-  "solar_elevation_deg_rogers": 0.0,
+  "solar_elevation_deg_rogers": 1.25,
   "exploratory": {
    "label": "exploratory/non-scientific overlay",
    "sun_sign": "Scorpio",
    "moon_sign": "Capricorn",
-   "sun_moon_elongation_deg": 47.4,
+   "sun_moon_elongation_deg": 47.5,
    "syzygy": false
   }
  },
@@ -17165,7 +17443,7 @@
   "label": "exploratory/non-scientific overlay"
  },
  "verification": {
-  "generated_at": "2026-11-13T12:56:12.984884+00:00",
+  "generated_at": "2026-11-13T13:02:57.722251+00:00",
   "checks": {
    "astro_syzygy_m5": {
     "source": "exploratory_astro",
@@ -17191,7 +17469,7 @@
       "base_rate": 1.0
      }
     },
-    "pending": 11
+    "pending": 12
    },
    "fusion_elevated": {
     "source": "fusion",
@@ -17221,7 +17499,7 @@
       "base_rate": 0.93
      }
     },
-    "pending": 25
+    "pending": 30
    },
    "gematria_date_m5": {
     "source": "exploratory_gematria",
@@ -17247,7 +17525,7 @@
       "base_rate": 1.0
      }
     },
-    "pending": 11
+    "pending": 12
    },
    "swpc_kp_storm": {
     "source": "noaa_swpc",
@@ -17280,7 +17558,7 @@
       "mae": 0.992
      }
     },
-    "pending": 5
+    "pending": 6
    },
    "usgs_m5_24h": {
     "source": "usgs_eq",
@@ -17305,121 +17583,11 @@
       "base_rate": 1.0
      }
     },
-    "pending": 11
+    "pending": 12
    }
   },
-  "records": 405,
+  "records": 414,
   "history": [
-   {
-    "check": "fusion_elevated",
-    "source": "fusion",
-    "region": "AK",
-    "p": 0.701,
-    "desc": "P(region still index>=3 next run window), from fused index",
-    "issued": "2026-11-05T19:59:02.578310+00:00",
-    "valid_until": "2026-11-06T01:59:02.578310+00:00",
-    "resolved": true,
-    "outcome": 1,
-    "resolved_at": "2026-11-06T06:35:36.977432+00:00"
-   },
-   {
-    "check": "astro_syzygy_m5",
-    "source": "exploratory_astro",
-    "label": "exploratory/non-scientific overlay",
-    "p": 0.4,
-    "desc": "Exploratory: syzygy => more M5+ in 24h",
-    "issued": "2026-11-05T19:59:02.578310+00:00",
-    "valid_until": "2026-11-06T19:59:02.578310+00:00",
-    "resolved": true,
-    "outcome": 1,
-    "resolved_at": "2026-11-06T21:28:29.133379+00:00"
-   },
-   {
-    "check": "gematria_date_m5",
-    "source": "exploratory_gematria",
-    "label": "exploratory/non-scientific overlay",
-    "p": 0.4,
-    "desc": "Exploratory: 'charged' date number => M5+ in 24h",
-    "issued": "2026-11-05T19:59:02.578310+00:00",
-    "valid_until": "2026-11-06T19:59:02.578310+00:00",
-    "resolved": true,
-    "outcome": 1,
-    "resolved_at": "2026-11-06T21:28:29.133379+00:00"
-   },
-   {
-    "check": "swpc_kp_storm",
-    "source": "noaa_swpc",
-    "p": 0.02,
-    "value": 2.0,
-    "desc": "P(observed Kp>=5 in next 6h), persistence",
-    "issued": "2026-11-05T22:51:57.490314+00:00",
-    "valid_until": "2026-11-06T04:51:57.490314+00:00",
-    "resolved": true,
-    "outcome": 0,
-    "observed": 2.33,
-    "predicted_value": 2.0,
-    "resolved_at": "2026-11-06T06:35:36.977432+00:00"
-   },
-   {
-    "check": "usgs_m5_24h",
-    "source": "usgs_eq",
-    "p": 0.976,
-    "value": 3.7142857142857144,
-    "desc": "P(global M5+ in next 24h), 7-day Poisson rate",
-    "issued": "2026-11-05T22:51:57.490314+00:00",
-    "valid_until": "2026-11-06T22:51:57.490314+00:00",
-    "resolved": true,
-    "outcome": 1,
-    "resolved_at": "2026-11-07T01:54:05.516568+00:00"
-   },
-   {
-    "check": "fusion_elevated",
-    "source": "fusion",
-    "region": "PK",
-    "p": 0.77,
-    "desc": "P(region still index>=3 next run window), from fused index",
-    "issued": "2026-11-05T22:51:57.490314+00:00",
-    "valid_until": "2026-11-06T04:51:57.490314+00:00",
-    "resolved": true,
-    "outcome": 1,
-    "resolved_at": "2026-11-06T06:35:36.977432+00:00"
-   },
-   {
-    "check": "fusion_elevated",
-    "source": "fusion",
-    "region": "FL",
-    "p": 0.77,
-    "desc": "P(region still index>=3 next run window), from fused index",
-    "issued": "2026-11-05T22:51:57.490314+00:00",
-    "valid_until": "2026-11-06T04:51:57.490314+00:00",
-    "resolved": true,
-    "outcome": 1,
-    "resolved_at": "2026-11-06T06:35:36.977432+00:00"
-   },
-   {
-    "check": "fusion_elevated",
-    "source": "fusion",
-    "region": "MO",
-    "p": 0.77,
-    "desc": "P(region still index>=3 next run window), from fused index",
-    "issued": "2026-11-05T22:51:57.490314+00:00",
-    "valid_until": "2026-11-06T04:51:57.490314+00:00",
-    "resolved": true,
-    "outcome": 1,
-    "resolved_at": "2026-11-06T06:35:36.977432+00:00"
-   },
-   {
-    "check": "fusion_elevated",
-    "source": "fusion",
-    "region": "AZ",
-    "p": 0.757,
-    "desc": "P(region still index>=3 next run window), from fused index",
-    "issued": "2026-11-05T22:51:57.490314+00:00",
-    "valid_until": "2026-11-06T04:51:57.490314+00:00",
-    "resolved": true,
-    "outcome": 1,
-    "resolved_at": "2026-11-06T06:35:36.977432+00:00"
-   },
    {
     "check": "fusion_elevated",
     "source": "fusion",
@@ -20839,6 +21007,96 @@
     "issued": "2026-11-13T12:56:12.984884+00:00",
     "valid_until": "2026-11-14T12:56:12.984884+00:00",
     "resolved": false
+   },
+   {
+    "check": "swpc_kp_storm",
+    "source": "noaa_swpc",
+    "p": 0.02,
+    "value": 1.0,
+    "desc": "P(observed Kp>=5 in next 6h), persistence",
+    "issued": "2026-11-13T13:02:57.722251+00:00",
+    "valid_until": "2026-11-13T19:02:57.722251+00:00",
+    "resolved": false
+   },
+   {
+    "check": "usgs_m5_24h",
+    "source": "usgs_eq",
+    "p": 0.982,
+    "value": 4.0,
+    "desc": "P(global M5+ in next 24h), 7-day Poisson rate",
+    "issued": "2026-11-13T13:02:57.722251+00:00",
+    "valid_until": "2026-11-14T13:02:57.722251+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "FL",
+    "p": 0.77,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-13T13:02:57.722251+00:00",
+    "valid_until": "2026-11-13T19:02:57.722251+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "PZ",
+    "p": 0.753,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-13T13:02:57.722251+00:00",
+    "valid_until": "2026-11-13T19:02:57.722251+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "PK",
+    "p": 0.748,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-13T13:02:57.722251+00:00",
+    "valid_until": "2026-11-13T19:02:57.722251+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "CA",
+    "p": 0.748,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-13T13:02:57.722251+00:00",
+    "valid_until": "2026-11-13T19:02:57.722251+00:00",
+    "resolved": false
+   },
+   {
+    "check": "fusion_elevated",
+    "source": "fusion",
+    "region": "AL",
+    "p": 0.744,
+    "desc": "P(region still index>=3 next run window), from fused index",
+    "issued": "2026-11-13T13:02:57.722251+00:00",
+    "valid_until": "2026-11-13T19:02:57.722251+00:00",
+    "resolved": false
+   },
+   {
+    "check": "astro_syzygy_m5",
+    "source": "exploratory_astro",
+    "label": "exploratory/non-scientific overlay",
+    "p": 0.4,
+    "desc": "Exploratory: syzygy => more M5+ in 24h",
+    "issued": "2026-11-13T13:02:57.722251+00:00",
+    "valid_until": "2026-11-14T13:02:57.722251+00:00",
+    "resolved": false
+   },
+   {
+    "check": "gematria_date_m5",
+    "source": "exploratory_gematria",
+    "label": "exploratory/non-scientific overlay",
+    "p": 0.4,
+    "desc": "Exploratory: 'charged' date number => M5+ in 24h",
+    "issued": "2026-11-13T13:02:57.722251+00:00",
+    "valid_until": "2026-11-14T13:02:57.722251+00:00",
+    "resolved": false
    }
   ],
   "watches": [
@@ -20885,14 +21143,14 @@
     "lat": 30.0,
     "lon": -120.0,
     "size_deg": 10.0,
-    "n": 54,
-    "entropy": 0.4474,
+    "n": 53,
+    "entropy": 0.4471,
     "components": {
-     "hazard_mix": 0.0371,
-     "severity": 0.5912,
-     "timing": 0.714
+     "hazard_mix": 0.0377,
+     "severity": 0.5853,
+     "timing": 0.7182
     },
-    "weighted": 0.3356,
+    "weighted": 0.3353,
     "skill_conf": 0.5,
     "sources": [
      "nasa_eonet",
@@ -20904,14 +21162,14 @@
     "lat": 30.0,
     "lon": -90.0,
     "size_deg": 10.0,
-    "n": 20,
-    "entropy": 0.4996,
+    "n": 19,
+    "entropy": 0.4874,
     "components": {
-     "hazard_mix": 0.2466,
-     "severity": 0.6714,
-     "timing": 0.5809
+     "hazard_mix": 0.2548,
+     "severity": 0.6754,
+     "timing": 0.532
     },
-    "weighted": 0.3747,
+    "weighted": 0.3655,
     "skill_conf": 0.5,
     "sources": [
      "kc2g_ionosondes",
@@ -20925,13 +21183,13 @@
     "lon": -100.0,
     "size_deg": 10.0,
     "n": 12,
-    "entropy": 0.5724,
+    "entropy": 0.5363,
     "components": {
      "hazard_mix": 0.3316,
      "severity": 0.5962,
-     "timing": 0.7893
+     "timing": 0.6812
     },
-    "weighted": 0.4293,
+    "weighted": 0.4022,
     "skill_conf": 0.5,
     "sources": [
      "kc2g_ionosondes",
@@ -21005,13 +21263,13 @@
     "lon": -80.0,
     "size_deg": 10.0,
     "n": 9,
-    "entropy": 0.3347,
+    "entropy": 0.411,
     "components": {
      "hazard_mix": 0.2132,
      "severity": 0.791,
-     "timing": 0.0
+     "timing": 0.2289
     },
-    "weighted": 0.251,
+    "weighted": 0.3082,
     "skill_conf": 0.5,
     "sources": [
      "kc2g_ionosondes",
@@ -22391,10 +22649,10 @@
     "used_in_index": false,
     "kp": 1.0,
     "kp_time": "2026-11-13T09:00:00+00:00",
-    "solar_wind_speed_kms": 374.0,
-    "solar_wind_bz_gsm_nt": 1.0,
+    "solar_wind_speed_kms": 376.0,
+    "solar_wind_bz_gsm_nt": 0.0,
     "solar_wind_bt_nt": 5.0,
-    "solar_wind_time": "2026-11-13T12:52:00Z",
+    "solar_wind_time": "2026-11-13T12:59:00Z",
     "alert_count": 10,
     "latest_alert": "CONTINUED ALERT: Electron 2MeV Integral Flux exceeded 1,000pfu",
     "seeds_cme_count": 15,
@@ -22421,23 +22679,23 @@
     "attribution": "Contains information from adsb.lol, which is made available here under the Open Database License (ODbL) v1.0."
    },
    "source": "https://api.adsb.lol/v2/mil",
-   "aircraft": 197,
+   "aircraft": 215,
    "types": {
-    "unknown": 23,
-    "EC35": 11,
-    "C30J": 10,
-    "A400": 9,
-    "EC45": 8,
+    "unknown": 26,
+    "EC35": 13,
+    "EC45": 11,
+    "A400": 10,
+    "C30J": 8,
     "C130": 7,
+    "PC21": 7,
     "G12T": 6,
+    "C295": 5,
     "TUCA": 5,
     "TWR": 5,
-    "PC21": 5,
     "PC7": 5,
-    "B350": 4,
-    "other": 99
+    "other": 107
    },
-   "type_count": 73
+   "type_count": 76
   },
   "local_adsb": {
    "enabled": true,
@@ -22466,11 +22724,11 @@
     "place": "Rogers, AR",
     "radius_nm": 100
    },
-   "aircraft": 20,
-   "with_position": 20,
+   "aircraft": 28,
+   "with_position": 28,
    "categories": {
-    "A3": 10,
-    "A1": 6,
+    "A3": 16,
+    "A1": 8,
     "A2": 2,
     "A7": 1,
     "B4": 1
@@ -22532,7 +22790,7 @@
    },
    "ok": true,
    "degraded": false,
-   "collected_at": "2026-11-13T12:56:54Z",
+   "collected_at": "2026-11-13T13:03:47Z",
    "scope": {
     "arkansas_state_code": "05",
     "rogers_bbox": [
@@ -22823,7 +23081,7 @@
       "discharge_cfs": null,
       "discharge_time": null,
       "gage_height_ft": 3.56,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07055814",
@@ -22852,8 +23110,8 @@
       "lat": 36.3575,
       "discharge_cfs": null,
       "discharge_time": null,
-      "gage_height_ft": 6.24,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_ft": 6.23,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07076530",
@@ -22881,9 +23139,9 @@
       "lon": -93.1813888888889,
       "lat": 35.5058333333333,
       "discharge_cfs": 35.1,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 0.39,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07257000",
@@ -22981,9 +23239,9 @@
       "lon": -92.68111111111112,
       "lat": 34.88111111111111,
       "discharge_cfs": 0.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 1.27,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07260671",
@@ -23031,9 +23289,9 @@
       "lon": -90.93239722222222,
       "lat": 35.32345,
       "discharge_cfs": null,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": null,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07263886",
@@ -23101,9 +23359,9 @@
       "lon": -92.74722222222222,
       "lat": 35.98305555555556,
       "discharge_cfs": 107.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 3.12,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07077380",
@@ -23111,7 +23369,7 @@
       "lon": -90.9330555555556,
       "lat": 35.8575,
       "discharge_cfs": 0.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 1.93,
       "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
@@ -23131,9 +23389,9 @@
       "lon": -91.32249999999999,
       "lat": 35.035555555555554,
       "discharge_cfs": 0.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 2.67,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07359700",
@@ -23291,9 +23549,9 @@
       "lon": -92.70944444444444,
       "lat": 36.23027777777778,
       "discharge_cfs": 44.7,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 9.24,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07265000",
@@ -23381,9 +23639,9 @@
       "lon": -93.720592,
       "lat": 34.956661,
       "discharge_cfs": 0.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
-      "gage_height_ft": 4.85,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "discharge_time": "2026-11-13T12:45:00+00:00",
+      "gage_height_ft": 4.84,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07261200",
@@ -23421,9 +23679,9 @@
       "lon": -91.11416666666666,
       "lat": 36.34638888888889,
       "discharge_cfs": 358.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 2.45,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-072638805",
@@ -23460,10 +23718,10 @@
       "name": "Fourche Creek at Univ. Avenue at Little Rock, AR",
       "lon": -92.34444444444443,
       "lat": 34.706944444444446,
-      "discharge_cfs": 0.1,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
-      "gage_height_ft": 2.01,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "discharge_cfs": 0.07,
+      "discharge_time": "2026-11-13T12:45:00+00:00",
+      "gage_height_ft": 2.0,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07263115",
@@ -23481,9 +23739,9 @@
       "lon": -92.985,
       "lat": 34.9566666666667,
       "discharge_cfs": 18.5,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 5.12,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07261500",
@@ -23491,9 +23749,9 @@
       "lon": -93.65722222222223,
       "lat": 34.8725,
       "discharge_cfs": 19.8,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 1.09,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07068890",
@@ -23601,9 +23859,9 @@
       "lon": -93.0505555555555,
       "lat": 34.5027777777778,
       "discharge_cfs": 3.24,
-      "discharge_time": "2026-11-13T11:50:00+00:00",
+      "discharge_time": "2026-11-13T12:50:00+00:00",
       "gage_height_ft": 0.06,
-      "gage_height_time": "2026-11-13T11:50:00+00:00"
+      "gage_height_time": "2026-11-13T12:50:00+00:00"
      },
      {
       "id": "USGS-07358257",
@@ -23831,9 +24089,9 @@
       "lon": -91.74583333333334,
       "lat": 35.43805555555555,
       "discharge_cfs": 109.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 3.01,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07076000",
@@ -23871,9 +24129,9 @@
       "lon": -90.69908333333333,
       "lat": 36.29716666666666,
       "discharge_cfs": 60.8,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 260.26,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07053207",
@@ -23961,7 +24219,7 @@
       "lon": -92.6745833333333,
       "lat": 34.8748888888889,
       "discharge_cfs": 0.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": null,
       "gage_height_time": null
      },
@@ -23971,9 +24229,9 @@
       "lon": -92.68555555555555,
       "lat": 34.87888888888889,
       "discharge_cfs": 0.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 4.81,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-072632958",
@@ -24160,10 +24418,10 @@
       "name": "Osage Creek near Cave Springs, AR",
       "lon": -94.22799705217525,
       "lat": 36.28145921831012,
-      "discharge_cfs": 30.5,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
-      "gage_height_ft": 1.36,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "discharge_cfs": 30.0,
+      "discharge_time": "2026-11-13T12:45:00+00:00",
+      "gage_height_ft": 1.35,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07195000",
@@ -24210,10 +24468,10 @@
       "name": "Ouachita River at Remmel Dam above Jones Mill, AR",
       "lon": -92.890833,
       "lat": 34.426111,
-      "discharge_cfs": 4100.0,
-      "discharge_time": "2026-11-13T12:30:00+00:00",
-      "gage_height_ft": 6.66,
-      "gage_height_time": "2026-11-13T12:30:00+00:00"
+      "discharge_cfs": 4120.0,
+      "discharge_time": "2026-11-13T12:45:00+00:00",
+      "gage_height_ft": 6.67,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07359001",
@@ -24261,9 +24519,9 @@
       "lon": -93.39555555555556,
       "lat": 35.058611111111105,
       "discharge_cfs": 0.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 9.65,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07258500",
@@ -24271,9 +24529,9 @@
       "lon": -93.9236111111111,
       "lat": 35.1069444444444,
       "discharge_cfs": 0.26,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 1.17,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07260640",
@@ -24511,9 +24769,9 @@
       "lon": -91.72027777777778,
       "lat": 34.39472222222222,
       "discharge_cfs": 0.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 171.66,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07046400",
@@ -24583,7 +24841,7 @@
       "discharge_cfs": null,
       "discharge_time": null,
       "gage_height_ft": 2.14,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-071948140",
@@ -24650,10 +24908,10 @@
       "name": "Spring River at Imboden, AR",
       "lon": -91.1716666666667,
       "lat": 36.2055555555556,
-      "discharge_cfs": 339.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
-      "gage_height_ft": 2.77,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "discharge_cfs": 336.0,
+      "discharge_time": "2026-11-13T12:45:00+00:00",
+      "gage_height_ft": 2.76,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07069305",
@@ -24842,8 +25100,8 @@
       "lat": 34.27675,
       "discharge_cfs": null,
       "discharge_time": null,
-      "gage_height_ft": 172.4,
-      "gage_height_time": "2026-09-18T01:15:00+00:00"
+      "gage_height_ft": 171.92,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07056545",
@@ -24921,9 +25179,9 @@
       "lon": -94.3927777777778,
       "lat": 35.4844444444444,
       "discharge_cfs": 0.0,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
+      "discharge_time": "2026-11-13T12:45:00+00:00",
       "gage_height_ft": 5.67,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07263265",
@@ -25162,8 +25420,8 @@
       "lat": 36.4495555555556,
       "discharge_cfs": null,
       "discharge_time": null,
-      "gage_height_ft": 1.62,
-      "gage_height_time": "2026-11-13T12:30:00+00:00"
+      "gage_height_ft": 1.65,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07048600",
@@ -25355,10 +25613,10 @@
       "name": "Osage Creek near Cave Springs, AR",
       "lon": -94.22799705217525,
       "lat": 36.28145921831012,
-      "discharge_cfs": 30.5,
-      "discharge_time": "2026-11-13T11:45:00+00:00",
-      "gage_height_ft": 1.36,
-      "gage_height_time": "2026-11-13T11:45:00+00:00"
+      "discharge_cfs": 30.0,
+      "discharge_time": "2026-11-13T12:45:00+00:00",
+      "gage_height_ft": 1.35,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07195000",
@@ -25496,9 +25754,9 @@
       "lon": -93.8336944444444,
       "lat": 36.5809722222222,
       "discharge_cfs": 41.6,
-      "discharge_time": "2026-11-13T12:40:00+00:00",
+      "discharge_time": "2026-11-13T12:55:00+00:00",
       "gage_height_ft": 0.53,
-      "gage_height_time": "2026-11-13T12:40:00+00:00"
+      "gage_height_time": "2026-11-13T12:55:00+00:00"
      },
      {
       "id": "USGS-07188838",
@@ -25617,8 +25875,8 @@
       "lat": 36.4495555555556,
       "discharge_cfs": null,
       "discharge_time": null,
-      "gage_height_ft": 1.62,
-      "gage_height_time": "2026-11-13T12:30:00+00:00"
+      "gage_height_ft": 1.65,
+      "gage_height_time": "2026-11-13T12:45:00+00:00"
      },
      {
       "id": "USGS-07048600",
@@ -25759,12 +26017,12 @@
       "name": null,
       "lon": -82.59570327959321,
       "lat": 28.890551481787185,
-      "latest_cfs": 260.0,
-      "latest_time": "2026-11-13T12:30:00+00:00",
+      "latest_cfs": 285.0,
+      "latest_time": "2026-11-13T12:45:00+00:00",
       "prior_daily_mean_cfs": 25.2,
       "prior_daily_date": "2026-11-12",
-      "rise_cfs": 234.8,
-      "rise_ratio": 10.317
+      "rise_cfs": 259.8,
+      "rise_ratio": 11.31
      },
      {
       "id": "USGS-01432055",
@@ -25796,7 +26054,7 @@
       "lon": -80.2138888888889,
       "lat": 38.8196388888889,
       "latest_cfs": 530.0,
-      "latest_time": "2026-11-13T12:45:00+00:00",
+      "latest_time": "2026-11-13T12:55:00+00:00",
       "prior_daily_mean_cfs": 58.2,
       "prior_daily_date": "2026-11-12",
       "rise_cfs": 471.8,
@@ -25815,16 +26073,16 @@
       "rise_ratio": 8.204
      },
      {
-      "id": "USGS-01553850",
+      "id": "USGS-01351500",
       "name": null,
-      "lon": -76.8,
-      "lat": 40.974444444444444,
-      "latest_cfs": 356.0,
-      "latest_time": "2026-11-13T11:45:00+00:00",
-      "prior_daily_mean_cfs": 43.8,
+      "lon": -74.2627777777778,
+      "lat": 42.8000277777778,
+      "latest_cfs": 1230.0,
+      "latest_time": "2026-11-13T12:45:00+00:00",
+      "prior_daily_mean_cfs": 160.0,
       "prior_daily_date": "2026-11-12",
-      "rise_cfs": 312.2,
-      "rise_ratio": 8.128
+      "rise_cfs": 1070.0,
+      "rise_ratio": 7.688
      },
      {
       "id": "USGS-04196000",
@@ -25839,6 +26097,18 @@
       "rise_ratio": 7.583
      },
      {
+      "id": "USGS-01553850",
+      "name": null,
+      "lon": -76.8,
+      "lat": 40.974444444444444,
+      "latest_cfs": 330.0,
+      "latest_time": "2026-11-13T12:45:00+00:00",
+      "prior_daily_mean_cfs": 43.8,
+      "prior_daily_date": "2026-11-12",
+      "rise_cfs": 286.2,
+      "rise_ratio": 7.534
+     },
+     {
       "id": "USGS-14211820",
       "name": null,
       "lon": -122.763154963205,
@@ -25849,18 +26119,6 @@
       "prior_daily_date": "2026-11-12",
       "rise_cfs": 411.4,
       "rise_ratio": 7.469
-     },
-     {
-      "id": "USGS-01351500",
-      "name": null,
-      "lon": -74.2627777777778,
-      "lat": 42.8000277777778,
-      "latest_cfs": 1160.0,
-      "latest_time": "2026-11-13T11:45:00+00:00",
-      "prior_daily_mean_cfs": 160.0,
-      "prior_daily_date": "2026-11-12",
-      "rise_cfs": 1000.0,
-      "rise_ratio": 7.25
      },
      {
       "id": "USGS-03399800",
@@ -25911,6 +26169,18 @@
       "rise_ratio": 6.361
      },
      {
+      "id": "USGS-01428500",
+      "name": null,
+      "lon": -74.9860555555556,
+      "lat": 41.50875,
+      "latest_cfs": 6370.0,
+      "latest_time": "2026-11-13T12:45:00+00:00",
+      "prior_daily_mean_cfs": 1070.0,
+      "prior_daily_date": "2026-11-12",
+      "rise_cfs": 5300.0,
+      "rise_ratio": 5.953
+     },
+     {
       "id": "USGS-01514000",
       "name": null,
       "lon": -76.2705555555556,
@@ -25933,18 +26203,6 @@
       "prior_daily_date": "2026-11-12",
       "rise_cfs": 295.1,
       "rise_ratio": 5.846
-     },
-     {
-      "id": "USGS-01534000",
-      "name": null,
-      "lon": -75.8946416803412,
-      "lat": 41.558410075001,
-      "latest_cfs": 2370.0,
-      "latest_time": "2026-11-13T12:15:00+00:00",
-      "prior_daily_mean_cfs": 420.0,
-      "prior_daily_date": "2026-11-12",
-      "rise_cfs": 1950.0,
-      "rise_ratio": 5.643
      }
     ]
    },
@@ -25982,7 +26240,7 @@
    },
    "ok": true,
    "degraded": false,
-   "collected_at": "2026-11-13T12:56:59Z",
+   "collected_at": "2026-11-13T13:03:50Z",
    "scope": {
     "region": "Ozark Plateau (Springfield and Salem Plateaus, Boston Mountains edge)",
     "home_focus": "NW Arkansas corridor",
@@ -26425,7 +26683,7 @@
          "label": "discharge",
          "value": 107.0,
          "unit": "ft^3/s",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "ok",
          "missing_reason": null,
          "z": 0.031,
@@ -26440,7 +26698,7 @@
          "label": "gage height",
          "value": 3.12,
          "unit": "ft",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "missing",
          "missing_reason": "insufficient_baseline",
          "z": null,
@@ -26716,12 +26974,12 @@
         "00060": {
          "code": "00060",
          "label": "discharge",
-         "value": 30.5,
+         "value": 30.0,
          "unit": "ft^3/s",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "ok",
          "missing_reason": null,
-         "z": -0.06,
+         "z": -0.098,
          "baseline_mean": 31.286667,
          "baseline_stdev": 13.192703,
          "baseline_n": 30,
@@ -26731,9 +26989,9 @@
         "00065": {
          "code": "00065",
          "label": "gage height",
-         "value": 1.36,
+         "value": 1.35,
          "unit": "ft",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "missing",
          "missing_reason": "insufficient_baseline",
          "z": null,
@@ -27261,12 +27519,12 @@
         "00065": {
          "code": "00065",
          "label": "gage height",
-         "value": 1.62,
+         "value": 1.65,
          "unit": "ft",
-         "time": "2026-11-13T12:30:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "anomaly",
          "missing_reason": null,
-         "z": -2.404,
+         "z": -2.309,
          "baseline_mean": 2.379333,
          "baseline_stdev": 0.315823,
          "baseline_n": 30,
@@ -27836,12 +28094,12 @@
         "72019": {
          "code": "72019",
          "label": "groundwater level",
-         "value": 307.31,
+         "value": 307.12,
          "unit": "ft",
-         "time": "2026-11-13T11:30:00+00:00",
+         "time": "2026-11-13T12:30:00+00:00",
          "status": "ok",
          "missing_reason": null,
-         "z": -1.867,
+         "z": -1.904,
          "baseline_mean": 316.859667,
          "baseline_stdev": 5.115934,
          "baseline_n": 30,
@@ -28097,12 +28355,12 @@
         "72019": {
          "code": "72019",
          "label": "groundwater level",
-         "value": 337.3,
+         "value": 337.27,
          "unit": "ft",
-         "time": "2026-11-13T11:30:00+00:00",
+         "time": "2026-11-13T12:30:00+00:00",
          "status": "anomaly",
          "missing_reason": null,
-         "z": 2.187,
+         "z": 2.042,
          "baseline_mean": 336.848333,
          "baseline_stdev": 0.206483,
          "baseline_n": 30,
@@ -28126,12 +28384,12 @@
         "72019": {
          "code": "72019",
          "label": "groundwater level",
-         "value": 107.34,
+         "value": 107.33,
          "unit": "ft",
-         "time": "2026-11-13T11:30:00+00:00",
+         "time": "2026-11-13T12:30:00+00:00",
          "status": "ok",
          "missing_reason": null,
-         "z": 1.68,
+         "z": 1.632,
          "baseline_mean": 106.993,
          "baseline_stdev": 0.206534,
          "baseline_n": 30,
@@ -28626,7 +28884,7 @@
          "label": "discharge",
          "value": 29.3,
          "unit": "ft^3/s",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "ok",
          "missing_reason": null,
          "z": -0.141,
@@ -28641,7 +28899,7 @@
          "label": "gage height",
          "value": 0.62,
          "unit": "ft",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "missing",
          "missing_reason": "insufficient_baseline",
          "z": null,
@@ -28729,7 +28987,7 @@
          "label": "discharge",
          "value": 83.2,
          "unit": "ft^3/s",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "ok",
          "missing_reason": null,
          "z": -0.093,
@@ -28744,7 +29002,7 @@
          "label": "gage height",
          "value": 2.45,
          "unit": "ft",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "missing",
          "missing_reason": "insufficient_baseline",
          "z": null,
@@ -30326,7 +30584,7 @@
          "label": "discharge",
          "value": 44.7,
          "unit": "ft^3/s",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "ok",
          "missing_reason": null,
          "z": -0.455,
@@ -30341,7 +30599,7 @@
          "label": "gage height",
          "value": 9.24,
          "unit": "ft",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "missing",
          "missing_reason": "insufficient_baseline",
          "z": null,
@@ -30370,7 +30628,7 @@
          "label": "discharge",
          "value": 358.0,
          "unit": "ft^3/s",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "ok",
          "missing_reason": null,
          "z": -0.817,
@@ -30385,7 +30643,7 @@
          "label": "gage height",
          "value": 2.45,
          "unit": "ft",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "missing",
          "missing_reason": "insufficient_baseline",
          "z": null,
@@ -30485,12 +30743,12 @@
         "00060": {
          "code": "00060",
          "label": "discharge",
-         "value": 339.0,
+         "value": 336.0,
          "unit": "ft^3/s",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "ok",
          "missing_reason": null,
-         "z": 0.914,
+         "z": 0.754,
          "baseline_mean": 321.866667,
          "baseline_stdev": 18.737264,
          "baseline_n": 30,
@@ -30500,9 +30758,9 @@
         "00065": {
          "code": "00065",
          "label": "gage height",
-         "value": 2.77,
+         "value": 2.76,
          "unit": "ft",
-         "time": "2026-11-13T11:45:00+00:00",
+         "time": "2026-11-13T12:45:00+00:00",
          "status": "missing",
          "missing_reason": "insufficient_baseline",
          "z": null,
@@ -31064,21 +31322,6 @@
      "baseline_n": 30
     },
     {
-     "id": "USGS-07049698",
-     "name": "White River near Busch, AR",
-     "region": "nwa_corridor",
-     "region_label": "NW Arkansas corridor",
-     "site_type": "ST",
-     "parameter": "00065",
-     "parameter_label": "gage height",
-     "value": 1.62,
-     "unit": "ft",
-     "time": "2026-11-13T12:30:00+00:00",
-     "z": -2.404,
-     "baseline_mean": 2.379333,
-     "baseline_n": 30
-    },
-    {
      "id": "MO005-370600094223501",
      "name": "Atlas Powder",
      "region": "sw_missouri",
@@ -31106,6 +31349,21 @@
      "time": "2026-11-13T12:30:00+00:00",
      "z": -2.389,
      "baseline_mean": 144.033333,
+     "baseline_n": 30
+    },
+    {
+     "id": "USGS-07049698",
+     "name": "White River near Busch, AR",
+     "region": "nwa_corridor",
+     "region_label": "NW Arkansas corridor",
+     "site_type": "ST",
+     "parameter": "00065",
+     "parameter_label": "gage height",
+     "value": 1.65,
+     "unit": "ft",
+     "time": "2026-11-13T12:45:00+00:00",
+     "z": -2.309,
+     "baseline_mean": 2.379333,
      "baseline_n": 30
     },
     {
@@ -31146,10 +31404,10 @@
      "site_type": "GW",
      "parameter": "72019",
      "parameter_label": "groundwater level",
-     "value": 337.3,
+     "value": 337.27,
      "unit": "ft",
-     "time": "2026-11-13T11:30:00+00:00",
-     "z": 2.187,
+     "time": "2026-11-13T12:30:00+00:00",
+     "z": 2.042,
      "baseline_mean": 336.848333,
      "baseline_n": 30
     },
@@ -31222,32 +31480,32 @@
     "real_hazard_level": 52,
     "real_hazard_label": "Elevated",
     "actionable_count": 1,
-    "fear_index": 69,
-    "fear_global": 69,
-    "fear_us": null,
-    "gap": 17,
+    "fear_index": 57,
+    "fear_global": 56,
+    "fear_us": 57,
+    "gap": 5,
     "gap_label": "Real hazard elevated \u2014 act",
     "top_themes": [
      {
-      "id": "terrorism",
-      "label": "Terrorism",
-      "score": 79.6
+      "id": "cyber",
+      "label": "Cyberattack / AI hack",
+      "score": 70.2
      },
      {
-      "id": "war",
-      "label": "War / WW3",
-      "score": 79.3
+      "id": "terrorism",
+      "label": "Terrorism",
+      "score": 55.6
      },
      {
       "id": "uap",
       "label": "Aliens / UAP",
-      "score": 75.8
+      "score": 55.4
      }
     ],
     "gdelt_ok": true,
     "gdelt_cached": false,
-    "gdelt_source": "doc_api",
-    "gkg_download_bytes": 146444225
+    "gdelt_source": "gkg_files",
+    "gkg_download_bytes": 149187937
    },
    "ok": true
   }
