@@ -4,7 +4,7 @@
 main{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;padding:16px}section{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px}
 h2{font-size:15px;margin:0 0 8px}table{width:100%;border-collapse:collapse}td,th{padding:4px 6px;border-bottom:1px solid #21262d;text-align:left;vertical-align:top}
 #air{overflow-x:auto;-webkit-overflow-scrolling:touch}#air table{min-width:28rem}
-.bar{height:8px;background:#f0883e;border-radius:4px}.muted{color:#8b949e}.ok{color:#3fb950}.bad{color:#f85149}.tag{font-size:11px;background:#30363d;border-radius:3px;padding:1px 4px}a{color:#58a6ff}</style></head><body>
+.bar{height:8px;background:#f0883e;border-radius:4px}.muted{color:#8b949e}.ok{color:#3fb950}.bad{color:#f85149}.tag{font-size:11px;background:#30363d;border-radius:3px;padding:1px 4px}a{color:#58a6ff}#auxcomm input,#auxcomm select{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;margin:0 6px 8px 0}#auxcomm .scroll{max-height:360px;overflow:auto}#auxcomm .chip{display:inline-block;background:#30363d;border-radius:3px;padding:2px 6px;margin:2px;font-size:12px}#auxcomm-call{border:1px solid #30363d;border-radius:6px;padding:8px;margin:8px 0}</style></head><body>
 <header><b>GeoSentinel</b> fused hazard snapshot · <span id="gen" class="muted"></span>· <a href="fused.html">fused view</a> · <a href="hub.html">Mission Hub</a></header>
 <main><section id="known-events-panel"><h2>Known events</h2><div id="known-events"></div></section>
 <section><h2>Regional multi-hazard index (0–10)</h2><table id="reg"></table></section>
@@ -23,6 +23,7 @@ h2{font-size:15px;margin:0 0 8px}table{width:100%;border-collapse:collapse}td,th
 <section id="wban-panel" hidden><h2>Band activity <span class="tag">experimental</span></h2><div id="wban"></div></section>
 <section id="usgs-water-panel" hidden><h2>Stream gauges <span class="tag">experimental</span></h2><div id="usgs-water"></div></section>
 <section id="karst-panel" hidden><h2>Ozark Karst &amp; Springs <span class="tag">experimental</span></h2><div id="karst"></div></section>
+<section id="auxcomm-panel" hidden><h2>AUXCOMM reference <span class="tag">reference only</span></h2><div id="auxcomm"></div></section>
 <section id="loosh-panel" hidden><h2>Real vs. Loosh <span class="tag">experimental</span></h2><div id="loosh"></div></section></main>
 <script src="refresh.js"></script>
 <script>
@@ -50,5 +51,6 @@ loadSnapshot().then(d=>{
  renderKarst(document.getElementById("karst-panel"));
  renderNaturalHazards(document.getElementById("natural-hazards-panel"), d);
  renderLoosh(document.getElementById("loosh-panel"));
+ renderAuxcomm(document.getElementById("auxcomm-panel"), d);
 }).catch(e=>{document.getElementById("gen").textContent="load failed: "+e;});
 </script></body></html>

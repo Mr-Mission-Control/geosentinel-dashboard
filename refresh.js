@@ -743,3 +743,185 @@ function renderLoosh(panel) {
     el.innerHTML = "";
   });
 }
+
+const AUXCOMM_BENTON_SAME = "005007";
+const AUXCOMM_BENTON_UGC = "ARC007";
+const AUXCOMM_CALLING = ["VCALL10", "UCALL40", "7CALL50", "7CALL70", "8CALL90"];
+const AUXCOMM_CATEGORY_GROUPS = [
+  ["nationwide interop", /nationwide_interop/],
+  ["mutual aid", /mutual_aid/],
+  ["amateur emergency", /amateur/],
+  ["MURS \/ FRS \/ GMRS \/ CB", /^(murs|frs|gmrs|cb)$/],
+  ["NOAA Weather Radio", /noaa_weather_radio/],
+  ["federal interop", /federal_interop/],
+  ["SHARES", /shares/],
+];
+
+function auxcommNormSame(code) {
+  const digits = String(code ?? "").replace(/\D/g, "");
+  if (digits.length === 5) return "0" + digits;
+  return digits.length === 6 ? digits : "";
+}
+
+function auxcommAffectsBenton(ev) {
+  const raw = (ev && ev.raw) || {};
+  const same = raw.same || [];
+  const ugc = raw.ugc || [];
+  if (same.some(c => auxcommNormSame(c) === AUXCOMM_BENTON_SAME)) return true;
+  if (ugc.some(c => String(c).toUpperCase().split(",")[0].trim() === AUXCOMM_BENTON_UGC)) return true;
+  return false;
+}
+
+function auxcommBentonAlerts(doc, snap) {
+  const fromDoc = (doc && doc.benton_county_ar_alerts) || [];
+  const fromSnap = ((snap && snap.events) || []).filter(auxcommAffectsBenton).map(ev => {
+    const raw = ev.raw || {};
+    return {
+      id: ev.id, title: ev.title, event: raw.event, severity: raw.severity || ev.severity,
+      urgency: raw.urgency, headline: raw.headline, expires: raw.expires, url: ev.url,
+      same: raw.same || [], ugc: raw.ugc || [],
+    };
+  });
+  const seen = new Set();
+  const out = [];
+  for (const a of fromSnap.concat(fromDoc)) {
+    const key = a.id || a.title || JSON.stringify(a);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(a);
+  }
+  return out;
+}
+
+function auxcommCallingStrip(channels) {
+  const wanted = new Set(AUXCOMM_CALLING);
+  const byName = {};
+  for (const ch of channels || []) {
+    const n = String(ch.channel_name || "").toUpperCase();
+    if (wanted.has(n) && !byName[n]) byName[n] = ch;
+  }
+  let html = '<div id="auxcomm-call"><b>National calling channels</b> <span class="tag">reference only</span><br>';
+  html += '<span class="muted">Calling / hailing only. A license or served-agency authorization is required to transmit.</span><table>';
+  html += "<tr><th>channel</th><th>RX MHz</th><th>TX MHz</th><th>tone / NAC</th><th>source</th></tr>";
+  for (const name of AUXCOMM_CALLING) {
+    const ch = byName[name];
+    if (!ch) { html += `<tr><td>${gsEsc(name)}</td><td colspan="4" class="muted">not in this extract</td></tr>`; continue; }
+    html += `<tr><td>${gsEsc(ch.channel_name)}</td><td>${gsEsc(ch.rx_mhz)}</td><td>${gsEsc(ch.tx_mhz)}</td>`;
+    html += `<td>${gsEsc(ch.rx_ctcss_nac || "")}${ch.tx_ctcss_nac && ch.tx_ctcss_nac !== ch.rx_ctcss_nac ? " / TX " + gsEsc(ch.tx_ctcss_nac) : ""}</td>`;
+    html += `<td class="muted">${gsEsc(ch.source_page || "")}</td></tr>`;
+  }
+  return html + "</table></div>";
+}
+
+function auxcommNwrBlock(nwr) {
+  const txs = (nwr && nwr.transmitters) || [];
+  let html = `<div><b>Benton County, AR NOAA Weather Radio</b> · SAME ${gsEsc((nwr && nwr.same_fips) || AUXCOMM_BENTON_SAME)} · ${gsEsc((nwr && nwr.wfo) || "NWS Tulsa")}</div>`;
+  html += '<div class="muted">NWR is receive-only. These are official coverage transmitters, not a live audio feed.</div>';
+  html += "<table><tr><th>call</th><th>site</th><th>MHz</th><th>power</th><th>status</th></tr>";
+  for (const t of txs) {
+    html += `<tr><td>${gsEsc(t.callsign)}</td><td>${gsEsc(t.sitename)} <span class="muted">(${gsEsc(t.siteloc)})</span></td>`;
+    html += `<td>${gsEsc(t.frequency_mhz)}</td><td>${gsEsc(t.power_watts || "")} W</td><td class="muted">${gsEsc(t.status || "")}</td></tr>`;
+  }
+  html += "</table>";
+  const disc = (nwr && nwr.source_discrepancy) || {};
+  if (disc.description) {
+    html += `<div class="muted"><b>Frequency discrepancy:</b> ${gsEsc(disc.description)} `;
+    if (disc.wfo_tulsa_url) html += `<a href="${gsEsc(disc.wfo_tulsa_url)}">WFO Tulsa table</a> lists Grove at 162.500; `;
+    if (disc.national_url) html += `the <a href="${gsEsc(disc.national_url)}">national NWR list</a> has WWH38 Grove at 162.525. `;
+    html += "This panel uses the national program data and shows the disagreement.</div>";
+  }
+  return html;
+}
+
+function auxcommCategoryLabel(cat) {
+  for (const [label, re] of AUXCOMM_CATEGORY_GROUPS) if (re.test(cat || "")) return label;
+  return cat || "other";
+}
+
+function renderAuxcomm(panel, snap) {
+  if (!panel) return;
+  const el = panel.querySelector("#auxcomm") || panel;
+  gsGet("data/auxcomm.json").then(doc => {
+    if (!doc || !Array.isArray(doc.channels)) {
+      panel.hidden = true;
+      el.innerHTML = "";
+      return;
+    }
+    const channels = doc.channels;
+    const nwr = doc.local_nwr_benton_county_ar || {};
+    const defaults = doc.defaults || {};
+    const alerts = auxcommBentonAlerts(doc, snap);
+    const ares = doc.local_ares_races_benton_county_ar || {};
+    let html = '<p class="muted"><b>Reference data only.</b> This is a lookup sheet, not a radio. ';
+    html += "No live interception, scanner, or LiveATC feed. Aggregates and published official tables only. ";
+    html += "Transmitting on most of these channels requires an FCC license, NTIA authorization, SHARES registration, and/or served-agency / COML direction. ";
+    html += "Showing a frequency here does not authorize you to transmit. NOAA Weather Radio is receive-only.</p>";
+    html += '<div><span class="chip">CTCSS default 156.7 Hz</span>';
+    html += '<span class="chip">VTAC repeater TX 136.5 Hz</span>';
+    const nac = (defaults.p25_nac || {});
+    html += `<span class="chip">P25 NAC ${gsEsc(nac.default_nac || "$293")} / unsquelch ${gsEsc(nac.receiver_unsquelch_any_nac || "$F7E")}</span>`;
+    html += `<span class="chip">default TGID ${gsEsc(nac.default_talkgroup_id || "$0001")}</span></div>`;
+    html += auxcommNwrBlock(nwr);
+    if (alerts.length) {
+      html += `<div><b>NWS alerts affecting Benton County, AR</b> · ${alerts.length} active in this snapshot</div>`;
+      html += "<table><tr><th>alert</th><th>severity</th><th>expires</th></tr>";
+      for (const a of alerts) {
+        const href = gsUrl(a.url);
+        const title = a.headline || a.title || a.event || "alert";
+        const label = href ? `<a href="${gsEsc(href)}">${gsEsc(title)}</a>` : gsEsc(title);
+        html += `<tr><td>${label}</td><td>${gsEsc(a.severity || "")}${a.urgency ? " / " + gsEsc(a.urgency) : ""}</td><td class="muted">${gsEsc(a.expires || "")}</td></tr>`;
+      }
+      html += "</table>";
+      html += '<div class="muted">Local NWR transmitters and nationwide calling channels for this county context:</div>';
+    }
+    html += auxcommCallingStrip(channels);
+    if (ares && ares.found_on_official_sources === false) {
+      html += '<div class="muted">No official public Benton County ARES/RACES net frequencies were found on .gov sources, so none are listed. An Arkansas Field Operations Guide marked For Official Use Only is not used.</div>';
+    }
+    html += '<div class="muted">SHARES HF program notes are in NIFOG; the unpublished SHARES frequency list is not. See <a href="https://www.cisa.gov/shares">cisa.gov/shares</a>.</div>';
+    const groups = [];
+    const seenG = new Set();
+    for (const ch of channels) {
+      const label = auxcommCategoryLabel(ch.category);
+      if (!seenG.has(label)) { seenG.add(label); groups.push(label); }
+    }
+    html += '<div><input id="auxcomm-q" type="search" placeholder="Search channel, assignment, MHz, page…" aria-label="Search AUXCOMM channels">';
+    html += '<select id="auxcomm-cat" aria-label="Filter by category"><option value="">All categories</option>';
+    for (const g of groups) html += `<option value="${gsEsc(g)}">${gsEsc(g)}</option>`;
+    html += `</select> <span class="muted" id="auxcomm-count">${channels.length} channels</span></div>`;
+    html += '<div class="scroll"><table id="auxcomm-table"><thead><tr><th>channel</th><th>assignment</th><th>RX</th><th>TX</th><th>tone / NAC</th><th>band</th><th>page</th></tr></thead><tbody></tbody></table></div>';
+    const srcs = (doc.sources || []).map(s => `${s.name || ""} ${s.version || ""}`.trim()).filter(Boolean);
+    html += '<div class="muted">Sources: ' + gsEsc(srcs.join(" · ") || "CISA NIFOG 2.02 and AUXFOG 1.1");
+    html += ' · NOAA/NWS NWR · U.S. government works (17 U.S.C. § 105). Attribute CISA and NOAA/NWS. ';
+    html += "Do not use CISA or SAFECOM logos. Verify against the current official PDF before operational use. ";
+    html += 'Guides: <a href="https://www.cisa.gov/safecom/field-operations-guides">CISA field operations guides</a>. See docs/AUXCOMM.md.</div>';
+    el.innerHTML = html;
+
+    const tbody = el.querySelector("#auxcomm-table tbody");
+    const qEl = el.querySelector("#auxcomm-q");
+    const catEl = el.querySelector("#auxcomm-cat");
+    const countEl = el.querySelector("#auxcomm-count");
+    function apply() {
+      const q = (qEl && qEl.value || "").trim().toLowerCase();
+      const cat = (catEl && catEl.value) || "";
+      const rows = [];
+      for (const ch of channels) {
+        const label = auxcommCategoryLabel(ch.category);
+        if (cat && label !== cat) continue;
+        const blob = [ch.channel_name, ch.assignment, ch.rx_mhz, ch.tx_mhz, ch.rx_ctcss_nac, ch.tx_ctcss_nac, ch.band, ch.source_page, ch.notes, ch.category].join(" ").toLowerCase();
+        if (q && !blob.includes(q)) continue;
+        const tone = (ch.rx_ctcss_nac || "") + (ch.tx_ctcss_nac && ch.tx_ctcss_nac !== ch.rx_ctcss_nac ? " / TX " + ch.tx_ctcss_nac : "");
+        rows.push(`<tr><td>${gsEsc(ch.channel_name)}</td><td>${gsEsc(ch.assignment)}</td><td>${gsEsc(ch.rx_mhz)}</td><td>${gsEsc(ch.tx_mhz)}</td><td>${gsEsc(tone)}</td><td class="muted">${gsEsc(ch.band)}</td><td class="muted">${gsEsc(ch.source_page || "")}</td></tr>`);
+      }
+      tbody.innerHTML = rows.join("") || '<tr><td colspan="7" class="muted">no matching channels</td></tr>';
+      if (countEl) countEl.textContent = rows.length + " of " + channels.length + " channels";
+    }
+    if (qEl) qEl.addEventListener("input", apply);
+    if (catEl) catEl.addEventListener("change", apply);
+    apply();
+    panel.hidden = false;
+  }).catch(() => {
+    panel.hidden = true;
+    el.innerHTML = "";
+  });
+}
