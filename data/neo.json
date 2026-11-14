@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-14T15:08:30Z",
+  "collected_at": "2026-11-14T17:59:44Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -622,8 +622,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/sentry.api",
     "cneos": "https://cneos.jpl.nasa.gov/sentry/",
     "signature": {
-      "version": "2.0",
-      "source": "NASA/JPL Sentry Data API"
+      "source": "NASA/JPL Sentry Data API",
+      "version": "2.0"
     },
     "catalog_count": 2251,
     "count": 15,
@@ -907,8 +907,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/fireball.api",
     "cneos": "https://cneos.jpl.nasa.gov/fireballs/",
     "signature": {
-      "version": "1.2",
-      "source": "NASA/JPL Fireball Data API"
+      "source": "NASA/JPL Fireball Data API",
+      "version": "1.2"
     },
     "count": 15,
     "reported_count": "15",
