@@ -97,7 +97,7 @@ function renderTools(el, d) {
   const qpuBadge = t.qpu === true
     ? '<span class="tag bad">QPU on</span>'
     : '<span class="tag ok">QPU off</span>';
-  const head = `<div>${pill("qubo", !!flags.qubo)} ${pill("grib2", !!flags.grib2)} ${pill("attack_layer", !!flags.attack_layer)} ${qpuBadge}</div>`;
+  const head = `<div>${pill("qubo", !!flags.qubo)} ${pill("grib2", !!flags.grib2)} ${pill("attack_layer", !!flags.attack_layer)} ${pill("decision_triage", !!flags.decision_triage)} ${qpuBadge}</div>`;
 
   const sel = (t.qubo && t.qubo.selection) || {};
   const solver = sel.solver || (t.qubo && t.qubo.solver) || "–";
@@ -150,7 +150,33 @@ function renderTools(el, d) {
     grib = `<div class="muted">GRIB2: ${gsEsc((dec && dec.reason) || "no decode")}</div>`;
   }
 
-  el.innerHTML = head + qubo + attack + grib;
+
+  const dt = t.decision_triage;
+  let triage;
+  if (dt && typeof dt === "object") {
+    const cases = dt.cases && typeof dt.cases === "object" ? Object.values(dt.cases) : [];
+    const live = dt.live_requests == null ? "–" : String(dt.live_requests);
+    const note = dt.note ? ` · ${gsEsc(dt.note)}` : (dt.degraded ? " · degraded" : "");
+    triage = `<p>Decision-1 triage · live calls ${gsEsc(live)}${note}</p>`;
+    if (cases.length) {
+      triage += "<table><tr><th>feed</th><th>class</th><th>severity</th><th>needs human</th></tr>";
+      for (const c of cases) {
+        const cls = c.failure_class || (c.skipped ? "skipped" : (c.ok ? "–" : "error"));
+        const sev = c.severity == null ? "–" : Number(c.severity).toFixed(2);
+        const human = c.p_needs_human == null ? "–" : Number(c.p_needs_human).toFixed(2);
+        triage += `<tr><td>${gsEsc(c.feed || "–")}</td><td>${gsEsc(cls)}</td><td>${gsEsc(sev)}</td><td>${gsEsc(human)}</td></tr>`;
+      }
+      triage += "</table>";
+    } else if (flags.decision_triage) {
+      triage += '<div class="muted">no feed failures this run</div>';
+    }
+  } else if (flags.decision_triage) {
+    triage = '<div class="muted">Decision-1 triage on (no result in this snapshot)</div>';
+  } else {
+    triage = '<div class="muted">Decision-1 triage flag off</div>';
+  }
+
+  el.innerHTML = head + qubo + attack + grib + triage;
 
   const nEl = el.querySelector(".tools-layer-n");
   if (nEl) {
