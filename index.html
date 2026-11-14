@@ -4,9 +4,10 @@
 main{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;padding:16px}section{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px}
 h2{font-size:15px;margin:0 0 8px}table{width:100%;border-collapse:collapse}td,th{padding:4px 6px;border-bottom:1px solid #21262d;text-align:left;vertical-align:top}
 #air{overflow-x:auto;-webkit-overflow-scrolling:touch}#air table{min-width:28rem}
-.bar{height:8px;background:#f0883e;border-radius:4px}.muted{color:#8b949e}.ok{color:#3fb950}.bad{color:#f85149}.tag{font-size:11px;background:#30363d;border-radius:3px;padding:1px 4px}a{color:#58a6ff}#auxcomm input,#auxcomm select{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;margin:0 6px 8px 0}#auxcomm .scroll{max-height:360px;overflow:auto}#auxcomm .chip{display:inline-block;background:#30363d;border-radius:3px;padding:2px 6px;margin:2px;font-size:12px}#auxcomm-call{border:1px solid #30363d;border-radius:6px;padding:8px;margin:8px 0}</style></head><body>
+.bar{height:8px;background:#f0883e;border-radius:4px}.muted{color:#8b949e}.ok{color:#3fb950}.bad{color:#f85149}.tag{font-size:11px;background:#30363d;border-radius:3px;padding:1px 4px}a{color:#58a6ff}#auxcomm input,#auxcomm select{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;margin:0 6px 8px 0}#auxcomm .scroll{max-height:360px;overflow:auto}#auxcomm .chip{display:inline-block;background:#30363d;border-radius:3px;padding:2px 6px;margin:2px;font-size:12px}#auxcomm-call{border:1px solid #30363d;border-radius:6px;padding:8px;margin:8px 0}.pv{display:inline-block;font-size:12px;border-radius:10px;padding:2px 8px;margin:2px;border:1px solid #30363d}.pv-verified_live{color:#3fb950;border-color:#238636}.pv-cached{color:#d29922;border-color:#9e6a03}.pv-reference{color:#8b949e}.pv-simulated{color:#f85149;border-color:#da3633}.pv-unverified{color:#f0883e;border-color:#bd561d}#provenance .scroll{max-height:320px;overflow:auto}</style></head><body>
 <header><b>GeoSentinel</b> fused hazard snapshot · <span id="gen" class="muted"></span>· <a href="fused.html">fused view</a> · <a href="hub.html">Mission Hub</a></header>
-<main><section id="known-events-panel"><h2>Known events</h2><div id="known-events"></div></section>
+<main><section id="provenance-panel" hidden><h2>Data provenance <span class="tag">receipts</span></h2><div id="provenance"></div></section>
+<section id="known-events-panel"><h2>Known events</h2><div id="known-events"></div></section>
 <section><h2>Regional multi-hazard index (0–10)</h2><table id="reg"></table></section>
 <section><h2>Space weather</h2><table id="sw"></table><p class="muted"><a href="http://www.vlf.it/sort3.html" target="_blank" rel="noopener">VLF/ELF precursor spectrograms (vlf.it, view on their site)</a></p></section>
 <section><h2>Earthquakes M4.5+ (7 days, newest)</h2><table id="eq"></table></section>
@@ -54,5 +55,6 @@ loadSnapshot().then(d=>{
  renderLoosh(document.getElementById("loosh-panel"));
  renderAuxcomm(document.getElementById("auxcomm-panel"), d);
  renderNeo(document.getElementById("neo-panel"));
+ renderProvenance(document.getElementById("provenance-panel"), d);
 }).catch(e=>{document.getElementById("gen").textContent="load failed: "+e;});
 </script></body></html>

@@ -1044,3 +1044,37 @@ function renderNeo(panel) {
     el.innerHTML = "";
   });
 }
+
+
+// Data provenance panel (GEOSENTINEL_PROVENANCE). Status pills only; no payloads.
+// Receipt idea adapted from tribunal by Kevin Michael Talbert (BleakNarratives), MIT.
+const PROV_LABELS = {
+  verified_live: "verified live",
+  cached: "cached last-good",
+  reference: "reference / computed",
+  simulated: "simulated",
+  unverified: "unverified",
+};
+function renderProvenance(panel, d) {
+  if (!panel) return;
+  const el = panel.querySelector("#provenance") || panel;
+  const p = d && d.provenance;
+  if (!p || typeof p !== "object") { panel.hidden = true; el.innerHTML = ""; return; }
+  panel.hidden = false;
+  if (!p.ok || !Array.isArray(p.records)) {
+    el.innerHTML = `<p class="bad">Provenance check degraded: ${gsEsc(p.error || "no records")}</p>`;
+    return;
+  }
+  const c = p.counts || {};
+  const pills = Object.keys(PROV_LABELS).map(s =>
+    `<span class="pv pv-${s}">${gsEsc(PROV_LABELS[s])}: ${gsEsc(c[s] || 0)}</span>`).join(" ");
+  const notLive = p.records.filter(r => r.status !== "verified_live");
+  const rows = notLive.map(r => `<tr><td>${gsEsc(r.name || r.source)}</td><td class="muted">${gsEsc(r.kind)}</td>` +
+    `<td><span class="pv pv-${gsEsc(r.status)}">${gsEsc(PROV_LABELS[r.status] || r.status)}</span></td>` +
+    `<td class="muted">${gsEsc(r.note || r.error || "")}</td></tr>`).join("");
+  el.innerHTML = `<p>${pills}</p>` +
+    `<p class="muted">${gsEsc(c.verified_live || 0)} of ${gsEsc(p.total)} sources were fetched live this run. ` +
+    `Anything not marked verified live is not evidence on its own. Simulated data is never shown as verified.</p>` +
+    (rows ? `<details><summary>Not verified live (${notLive.length})</summary><div class="scroll"><table>${rows}</table></div></details>` : "") +
+    `<p class="muted">${gsEsc(p.label || "")}. ${gsEsc(p.credit || "")}.</p>`;
+}
