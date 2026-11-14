@@ -4,7 +4,7 @@
  "used_in_index": false,
  "qpu": false,
  "aggregate_only": true,
- "collected_at": "2026-11-14T00:39:19Z",
+ "collected_at": "2026-11-14T00:53:06Z",
  "real_hazard": {
   "level": 37,
   "label": "Guarded",
@@ -163,7 +163,7 @@
     "R": 0,
     "S": 0,
     "kp": 0.67,
-    "time": "2026-11-14T00:36:00Z"
+    "time": "2026-11-14T00:50:00Z"
    },
    "karst": {
     "ok": true,
@@ -885,7 +885,7 @@
    "ok": true,
    "source": "gkg_files",
    "cached": false,
-   "fetched_at": "2026-11-14T00:39:19Z",
+   "fetched_at": "2026-11-14T00:53:06Z",
    "themes": {
     "war": {
      "global": {
@@ -1249,41 +1249,39 @@
     }
    },
    "requests": {
-    "attempted": 1,
-    "ok": 0,
+    "attempted": 2,
+    "ok": 1,
     "failed": 1,
     "rate_limited": true,
     "budget_exhausted": false,
-    "low_coverage_days_skipped": 0,
+    "low_coverage_days_skipped": 5,
     "errors": [
-     "war/global: RateLimited: HTTP 429"
-    ],
-    "retried": true
+     "blackout/global: RateLimited: HTTP 429"
+    ]
    },
    "doc_api": {
-    "ok": false,
+    "ok": true,
     "source": "doc_api",
     "cached": false,
-    "fetched_at": "2026-11-14T00:39:19Z",
+    "fetched_at": "2026-11-14T00:53:06Z",
     "requests": {
-     "attempted": 1,
-     "ok": 0,
+     "attempted": 2,
+     "ok": 1,
      "failed": 1,
      "rate_limited": true,
      "budget_exhausted": false,
-     "low_coverage_days_skipped": 0,
+     "low_coverage_days_skipped": 5,
      "errors": [
-      "war/global: RateLimited: HTTP 429"
-     ],
-     "retried": true
+      "blackout/global: RateLimited: HTTP 429"
+     ]
     }
    },
    "gkg": {
-    "latest_file": "20261114004500",
+    "latest_file": "20261114010000",
     "lastupdate_ok": true,
-    "downloaded_files": 2,
-    "downloaded_bytes": 9153580,
-    "missing_slots": 0,
+    "downloaded_files": 0,
+    "downloaded_bytes": 0,
+    "missing_slots": 1,
     "errors": [],
     "cap_bytes": 150000000,
     "cap_reached": false,
@@ -1298,7 +1296,7 @@
   },
   "wikipedia": {
    "ok": true,
-   "fetched_at": "2026-11-14T00:39:19Z",
+   "fetched_at": "2026-11-14T00:53:06Z",
    "requests": {
     "attempted": 17,
     "ok": 17,

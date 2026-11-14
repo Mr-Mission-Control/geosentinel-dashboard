@@ -23,6 +23,7 @@ h2{font-size:15px;margin:0 0 8px}table{width:100%;border-collapse:collapse}td,th
 <section id="wban-panel" hidden><h2>Band activity <span class="tag">experimental</span></h2><div id="wban"></div></section>
 <section id="usgs-water-panel" hidden><h2>Stream gauges <span class="tag">experimental</span></h2><div id="usgs-water"></div></section>
 <section id="karst-panel" hidden><h2>Ozark Karst &amp; Springs <span class="tag">experimental</span></h2><div id="karst"></div></section>
+<section id="neo-panel" hidden><h2>Near-Earth objects <span class="tag">CNEOS</span></h2><div id="neo"></div></section>
 <section id="auxcomm-panel" hidden><h2>AUXCOMM reference <span class="tag">reference only</span></h2><div id="auxcomm"></div></section>
 <section id="loosh-panel" hidden><h2>Real vs. Loosh <span class="tag">experimental</span></h2><div id="loosh"></div></section></main>
 <script src="refresh.js"></script>
@@ -52,5 +53,6 @@ loadSnapshot().then(d=>{
  renderNaturalHazards(document.getElementById("natural-hazards-panel"), d);
  renderLoosh(document.getElementById("loosh-panel"));
  renderAuxcomm(document.getElementById("auxcomm-panel"), d);
+ renderNeo(document.getElementById("neo-panel"));
 }).catch(e=>{document.getElementById("gen").textContent="load failed: "+e;});
 </script></body></html>

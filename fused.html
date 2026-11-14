@@ -24,6 +24,7 @@ section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;marg
 <section id="wban-panel" hidden><h2>Band activity <span class="tag">experimental</span></h2><div id="wban"></div></section>
 <section id="usgs-water-panel" hidden><h2>Stream gauges <span class="tag">experimental</span></h2><div id="usgs-water"></div></section>
 <section id="karst-panel" hidden><h2>Ozark Karst &amp; Springs <span class="tag">experimental</span></h2><div id="karst"></div></section>
+<section id="neo-panel" hidden><h2>Near-Earth objects <span class="tag">CNEOS</span></h2><div id="neo"></div></section>
 <section id="auxcomm-panel" hidden><h2>AUXCOMM reference <span class="tag">reference only</span></h2><div id="auxcomm"></div></section>
 <section id="loosh-panel" hidden><h2>Real vs. Loosh <span class="tag">experimental</span></h2><div id="loosh"></div></section>
 <section><h2>Astro context</h2><div id="astro"></div>
@@ -68,6 +69,7 @@ function render(d){
  renderNaturalHazards(document.getElementById("natural-hazards-panel"), d);
  renderLoosh(document.getElementById("loosh-panel"));
  renderAuxcomm(document.getElementById("auxcomm-panel"), d);
+ renderNeo(document.getElementById("neo-panel"));
  renderAir(document.getElementById("air"), d, t => t);
  let h="<table><tr><th>source</th><th>status</th><th>detail</th></tr>";
  for(const [k,v] of Object.entries(d.sources||{}))h+=`<tr><td>${lab(k,v)} <span class="tag">core</span></td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?v.count+" events":v.error)}</td></tr>`;

@@ -925,3 +925,118 @@ function renderAuxcomm(panel, snap) {
     el.innerHTML = "";
   });
 }
+
+function neoFmtNum(v, d) {
+  if (v == null || v === "") return "–";
+  const n = Number(v);
+  if (!Number.isFinite(n)) return "–";
+  return n.toFixed(d);
+}
+
+function neoSize(item) {
+  if (!item || item.diameter_km == null) return "–";
+  const km = Number(item.diameter_km);
+  if (!Number.isFinite(km)) return "–";
+  let label;
+  if (km >= 1) label = neoFmtNum(km, 2) + " km";
+  else label = neoFmtNum(km * 1000, 0) + " m";
+  if (item.diameter_source === "h_albedo_0.14") label += " est.";
+  return label;
+}
+
+function renderNeo(panel) {
+  if (!panel) return;
+  const el = panel.querySelector("#neo") || panel;
+  gsGet("data/neo.json").then(doc => {
+    if (!doc || typeof doc !== "object") {
+      panel.hidden = true;
+      el.innerHTML = "";
+      return;
+    }
+    const close = doc.close_approaches || {};
+    const sentry = doc.sentry || {};
+    const fire = doc.fireballs || {};
+    const stel = doc.stellarium || {};
+    const home = doc.home || {};
+    let html = '<p class="muted">Official NASA/JPL CNEOS catalog context, not a forecast, and not used in the hazard index. A close approach is not an impact.</p>';
+    if (!doc.ok) html += `<div class="muted">${gsEsc(doc.error || "CNEOS feeds unavailable")}</div>`;
+    else if (doc.degraded) html += '<div class="muted">One or more CNEOS feeds were unavailable in this refresh; other tables below still use what arrived.</div>';
+    const stelUrl = gsUrl(stel.url || "https://stellarium-web.org/");
+    const place = home.name || "Rogers, AR";
+    html += `<div>Sky view: <a href="${gsEsc(stelUrl)}" target="_blank" rel="noopener">Stellarium Web (${gsEsc(place)})</a>`;
+    html += ' <span class="muted">· outbound link only; nothing from Stellarium is embedded</span></div>';
+
+    html += `<div><b>Upcoming close approaches</b> · next ${gsEsc(close.window_days || 60)} days · ≤ ${gsEsc(close.dist_max_au || 0.05)} au · ${gsEsc(close.count || 0)} objects`;
+    html += ` · <a href="https://cneos.jpl.nasa.gov/ca/">CNEOS CA</a></div>`;
+    const approaches = close.items || [];
+    if (!close.ok) {
+      html += `<div class="muted">${gsEsc(close.error || "close-approach feed unavailable")}</div>`;
+    } else if (!approaches.length) {
+      html += '<div class="muted">no Earth close approaches within 0.05 au in the next 60 days</div>';
+    } else {
+      html += "<table><tr><th>object</th><th>date (CT)</th><th>distance</th><th>velocity</th><th>est. size</th></tr>";
+      for (const a of approaches) {
+        const dist = (a.dist_ld == null ? "–" : neoFmtNum(a.dist_ld, 2) + " LD") +
+          (a.dist_au == null ? "" : " / " + neoFmtNum(a.dist_au, 4) + " au");
+        html += `<tr><td>${gsEsc(a.name || a.des || "")}</td><td class="muted">${gsEsc(a.time_ct || "")}</td>`;
+        html += `<td>${gsEsc(dist)}</td><td>${a.v_rel_km_s == null ? "–" : gsEsc(neoFmtNum(a.v_rel_km_s, 2)) + " km/s"}</td>`;
+        html += `<td>${gsEsc(neoSize(a))}</td></tr>`;
+      }
+      html += "</table>";
+      html += '<div class="muted">Size is the JPL diameter when published, otherwise an estimate from H at albedo 0.14 (CNEOS convention).</div>';
+    }
+
+    html += `<div><b>Sentry top risks</b> · top ${gsEsc((sentry.items || []).length)} of ${gsEsc(sentry.catalog_count == null ? "–" : sentry.catalog_count)}`;
+    html += ` · <a href="https://cneos.jpl.nasa.gov/sentry/">CNEOS Sentry</a></div>`;
+    if (!sentry.ok) {
+      html += `<div class="muted">${gsEsc(sentry.error || "Sentry feed unavailable")}</div>`;
+    } else {
+      if (sentry.note) html += `<div class="muted">${gsEsc(sentry.note)}</div>`;
+      const risks = sentry.items || [];
+      if (!risks.length) {
+        html += '<div class="muted">no Sentry objects in this snapshot</div>';
+      } else {
+        html += "<table><tr><th>object</th><th>impact prob.</th><th>Palermo</th><th>Torino</th><th>est. size</th><th>years</th></tr>";
+        for (const r of risks) {
+          const ip = r.ip == null ? "–" : Number(r.ip).toExponential(2);
+          html += `<tr><td>${gsEsc(r.name || r.des || "")}</td><td>${gsEsc(ip)}</td>`;
+          html += `<td>${r.ps_cum == null ? "–" : gsEsc(neoFmtNum(r.ps_cum, 2))}</td>`;
+          html += `<td>${r.ts_max == null ? "–" : gsEsc(r.ts_max)}</td>`;
+          html += `<td>${gsEsc(neoSize(r))}</td><td class="muted">${gsEsc(r.year_range || "")}</td></tr>`;
+        }
+        html += "</table>";
+      }
+    }
+
+    html += `<div><b>Recent fireballs</b> · ${gsEsc(fire.count || 0)} · <a href="https://cneos.jpl.nasa.gov/fireballs/">CNEOS fireballs</a></div>`;
+    const bolides = fire.items || [];
+    if (!fire.ok) {
+      html += `<div class="muted">${gsEsc(fire.error || "fireball feed unavailable")}</div>`;
+    } else if (!bolides.length) {
+      html += '<div class="muted">no recent fireballs in this snapshot</div>';
+    } else {
+      html += "<table><tr><th>date (CT)</th><th>impact energy</th><th>where</th><th>alt.</th><th>velocity</th></tr>";
+      for (const f of bolides) {
+        const where = (f.lat == null || f.lon == null) ? "–" :
+          `${neoFmtNum(f.lat, 1)}, ${neoFmtNum(f.lon, 1)}`;
+        html += `<tr><td class="muted">${gsEsc(f.time_ct || "")}</td>`;
+        html += `<td>${f.impact_energy_kt == null ? "–" : gsEsc(neoFmtNum(f.impact_energy_kt, 2)) + " kt"}</td>`;
+        html += `<td>${gsEsc(where)}</td>`;
+        html += `<td>${f.altitude_km == null ? "–" : gsEsc(neoFmtNum(f.altitude_km, 1)) + " km"}</td>`;
+        html += `<td>${f.velocity_km_s == null ? "–" : gsEsc(neoFmtNum(f.velocity_km_s, 1)) + " km/s"}</td></tr>`;
+      }
+      html += "</table>";
+    }
+
+    const attr = doc.attribution || {};
+    html += `<div class="muted">${gsEsc(attr.credit || "NASA/JPL Center for Near-Earth Object Studies (CNEOS)")}`;
+    html += ' · <a href="https://cneos.jpl.nasa.gov/">cneos.jpl.nasa.gov</a>';
+    html += ' · <a href="https://ssd-api.jpl.nasa.gov/">SSD/CNEOS API</a>';
+    html += " · U.S. government work. See docs/NEO.md.</div>";
+    el.innerHTML = html;
+    panel.hidden = false;
+  }).catch(() => {
+    panel.hidden = true;
+    el.innerHTML = "";
+  });
+}
