@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-14T00:53:39Z",
+  "collected_at": "2026-11-14T01:23:06Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -15,14 +15,21 @@
     "embed": false,
     "note": "Outbound link only. Stellarium Web Engine is AGPL-3.0, so this dashboard does not embed or vendor the engine or its assets."
   },
+  "livemeteors": {
+    "label": "Listen live: radio meteor echoes (LiveMeteors.com)",
+    "url": "https://www.livemeteors.com/",
+    "youtube": "https://www.youtube.com/channel/UCa14fOybJ4qTosQPa1TJdcw",
+    "embed": false,
+    "note": "Outbound link only. LiveMeteors has no published license or API, so this dashboard does not ingest, scrape, embed, or iframe it. Summer Sporadic E can mask meteor echoes."
+  },
   "close_approaches": {
     "ok": true,
     "source": "NASA/JPL SBDB Close-Approach Data API",
     "api": "https://ssd-api.jpl.nasa.gov/cad.api",
     "cneos": "https://cneos.jpl.nasa.gov/ca/",
     "signature": {
-      "source": "NASA/JPL SBDB Close Approach Data API",
-      "version": "1.5"
+      "version": "1.5",
+      "source": "NASA/JPL SBDB Close Approach Data API"
     },
     "window_days": 60,
     "dist_max_au": 0.05,
@@ -615,8 +622,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/sentry.api",
     "cneos": "https://cneos.jpl.nasa.gov/sentry/",
     "signature": {
-      "version": "2.0",
-      "source": "NASA/JPL Sentry Data API"
+      "source": "NASA/JPL Sentry Data API",
+      "version": "2.0"
     },
     "catalog_count": 2251,
     "count": 15,

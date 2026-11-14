@@ -957,14 +957,18 @@ function renderNeo(panel) {
     const sentry = doc.sentry || {};
     const fire = doc.fireballs || {};
     const stel = doc.stellarium || {};
+    const live = doc.livemeteors || {};
     const home = doc.home || {};
     let html = '<p class="muted">Official NASA/JPL CNEOS catalog context, not a forecast, and not used in the hazard index. A close approach is not an impact.</p>';
     if (!doc.ok) html += `<div class="muted">${gsEsc(doc.error || "CNEOS feeds unavailable")}</div>`;
     else if (doc.degraded) html += '<div class="muted">One or more CNEOS feeds were unavailable in this refresh; other tables below still use what arrived.</div>';
     const stelUrl = gsUrl(stel.url || "https://stellarium-web.org/");
+    const liveUrl = gsUrl(live.url || "https://www.livemeteors.com/");
     const place = home.name || "Rogers, AR";
     html += `<div>Sky view: <a href="${gsEsc(stelUrl)}" target="_blank" rel="noopener">Stellarium Web (${gsEsc(place)})</a>`;
     html += ' <span class="muted">· outbound link only; nothing from Stellarium is embedded</span></div>';
+    html += `<div>Listen live: <a href="${gsEsc(liveUrl)}" target="_blank" rel="noopener">radio meteor echoes (LiveMeteors.com)</a>`;
+    html += ' <span class="muted">· outbound link only; nothing from LiveMeteors is ingested or embedded. Summer Sporadic E can mask meteor echoes.</span></div>';
 
     html += `<div><b>Upcoming close approaches</b> · next ${gsEsc(close.window_days || 60)} days · ≤ ${gsEsc(close.dist_max_au || 0.05)} au · ${gsEsc(close.count || 0)} objects`;
     html += ` · <a href="https://cneos.jpl.nasa.gov/ca/">CNEOS CA</a></div>`;
