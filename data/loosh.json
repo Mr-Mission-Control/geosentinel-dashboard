@@ -4,9 +4,9 @@
  "used_in_index": false,
  "qpu": false,
  "aggregate_only": true,
- "collected_at": "2026-11-14T09:30:22Z",
+ "collected_at": "2026-11-14T09:38:08Z",
  "real_hazard": {
-  "level": 37,
+  "level": 38,
   "label": "Guarded",
   "home": {
    "name": "Rogers, AR",
@@ -116,6 +116,17 @@
     "actionable": false,
     "official": true,
     "url": "https://www.swpc.noaa.gov/noaa-scales-explanation"
+   },
+   {
+    "source": "geosentinel_karst",
+    "kind": "rising_water_statistical",
+    "title": "1 rising-water anomalies in the NW Arkansas corridor",
+    "detail": "20N32W31CAD1",
+    "severity": "statistical (|z|>=2), not an official alert",
+    "distance_km": null,
+    "score": 0.02,
+    "actionable": false,
+    "official": false
    }
   ],
   "components": {
@@ -132,8 +143,8 @@
     "level_alone": 0
    },
    "karst": {
-    "items": 0,
-    "level_alone": 0
+    "items": 1,
+    "level_alone": 2
    },
    "outage": {
     "items": 0,
@@ -163,12 +174,12 @@
     "R": 0,
     "S": 0,
     "kp": 1.0,
-    "time": "2026-11-14T09:27:00Z"
+    "time": "2026-11-14T09:36:00Z"
    },
    "karst": {
     "ok": true,
-    "nwa_rising_anomalies": 0,
-    "all_anomalies": 21
+    "nwa_rising_anomalies": 1,
+    "all_anomalies": 22
    },
    "outage": {
     "ok": true,
@@ -883,7 +894,7 @@
    "ok": true,
    "source": "gkg_files",
    "cached": false,
-   "fetched_at": "2026-11-14T09:30:22Z",
+   "fetched_at": "2026-11-14T09:38:08Z",
    "themes": {
     "war": {
      "global": {
@@ -1260,7 +1271,7 @@
     "ok": false,
     "source": "doc_api",
     "cached": false,
-    "fetched_at": "2026-11-14T09:30:22Z",
+    "fetched_at": "2026-11-14T09:38:08Z",
     "requests": {
      "attempted": 1,
      "ok": 0,
@@ -1275,10 +1286,10 @@
     }
    },
    "gkg": {
-    "latest_file": "20261114093000",
+    "latest_file": "20261114094500",
     "lastupdate_ok": true,
-    "downloaded_files": 7,
-    "downloaded_bytes": 18321290,
+    "downloaded_files": 0,
+    "downloaded_bytes": 0,
     "missing_slots": 0,
     "errors": [],
     "cap_bytes": 150000000,
@@ -1294,7 +1305,7 @@
   },
   "wikipedia": {
    "ok": true,
-   "fetched_at": "2026-11-14T09:30:22Z",
+   "fetched_at": "2026-11-14T09:38:08Z",
    "requests": {
     "attempted": 17,
     "ok": 17,
@@ -1306,7 +1317,7 @@
   "missing_themes": []
  },
  "gap": {
-  "value": 34,
+  "value": 33,
   "label": "Real hazard elevated \u2014 act",
   "thresholds": {
    "act_real_level": 40,
