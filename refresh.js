@@ -1072,6 +1072,231 @@ function renderNeo(panel) {
 }
 
 
+// Clawbot panel (GEOSENTINEL_CLAWBOT). Default on. Reads the committed public
+// snapshot at data/clawbot.json. ActiveGraph is Apache-2.0; this page does not
+// vendor it and does not call it. Owner extras use the same gsOwner claim as
+// the AI assistant (apps/ai-assistant). Email and account names are never read.
+const CLAWBOT_STANCES = ["confirmed", "refuted", "split", "unresolved", "inconclusive"];
+
+function clawbotPanelEnabled() {
+  let v;
+  try { v = window.GEOSENTINEL_CLAWBOT; } catch (e) { v = undefined; }
+  if (v == null || String(v).trim() === "") return true;
+  return ["1", "true", "yes", "on"].indexOf(String(v).trim().toLowerCase()) !== -1;
+}
+
+function gsLooksLikeOwner(auth) {
+  // Client hint only, matching apps/ai-assistant/src/firebase.js looksLikeOwner
+  // and the non-anonymous gsOwner === true check in functions/lib/policy.js.
+  // The server UID allowlist stays on the server. This page never reads email.
+  if (!auth || typeof auth !== "object" || auth.isAnonymous === true) return false;
+  const claims = auth["token"];
+  if (!claims || typeof claims !== "object" || claims.gsOwner !== true) return false;
+  const provider = claims.firebase && claims.firebase.sign_in_provider;
+  if (!provider || provider === "anonymous") return false;
+  return true;
+}
+
+function gsOwnerMode() {
+  try {
+    if (window.gsOwner === true) return true;
+    if (gsLooksLikeOwner(window.gsOwnerAuth)) return true;
+    return localStorage.getItem("gsOwner") === "true";
+  } catch (e) {
+    return false;
+  }
+}
+
+function clawbotVisibleTimeline(doc, full) {
+  const all = doc && Array.isArray(doc.timeline) ? doc.timeline : [];
+  if (full) return all;
+  return all.filter(ev => ev && ev.type === "audit.recorded");
+}
+
+function clawbotStanceCounts(findings) {
+  const stances = {confirmed: 0, refuted: 0, split: 0, unresolved: 0, inconclusive: 0};
+  let met = 0, notMet = 0;
+  for (const f of findings) {
+    const v = (f && f.verdict) || {};
+    if (Object.prototype.hasOwnProperty.call(stances, v.stance)) stances[v.stance] += 1;
+    if (v.meets_three_source) met += 1;
+    else notMet += 1;
+  }
+  return {stances, met, notMet};
+}
+
+function renderClawbot(panel, preloaded) {
+  if (!panel) return;
+  const el = panel.querySelector("#clawbot") || panel;
+  if (!clawbotPanelEnabled()) {
+    panel.hidden = true;
+    el.innerHTML = "";
+    return;
+  }
+  const apply = (doc) => {
+    if (!doc || typeof doc !== "object" || !Array.isArray(doc.findings)) {
+      panel.hidden = true;
+      el.innerHTML = "";
+      return;
+    }
+    const findings = doc.findings;
+    const owner = gsOwnerMode();
+    const counts = clawbotStanceCounts(findings);
+    const stances = counts.stances;
+    const splitN = (stances.split || 0) + (stances.unresolved || 0) + (stances.inconclusive || 0);
+    const audits = Array.isArray(doc.audits) ? doc.audits.length : 0;
+    const attr = doc.attribution || {};
+    const prov = doc.provenance || {};
+    const cats = ["all"].concat(Array.from(new Set(findings.map(f => f.category).filter(Boolean))));
+    let active = "all";
+    let full = false;
+
+    const stat = (n, label, cls) => `<div class="cb-stat"><b class="${cls || ""}">${gsEsc(n)}</b><span class="muted">${gsEsc(label)}</span></div>`;
+    const stats = [
+      stat(findings.length, "Findings", ""),
+      stat(stances.confirmed || 0, "Confirmed", "ok"),
+      stat(stances.refuted || 0, "Refuted", "bad"),
+      stat(splitN, "Split / unresolved", "warn"),
+      stat(counts.met, "3-source met", "ok"),
+      stat(counts.notMet, "3-source not met", "warn"),
+      stat(audits, "Audits", ""),
+      stat(clawbotVisibleTimeline(doc, false).length, "Audit events", ""),
+    ].join("");
+
+    const recs = (Array.isArray(prov.records) ? prov.records : []).map(r =>
+      `<li>${gsEsc(r && r.label)}${r && r.status ? ` <span class="muted">(${gsEsc(r.status)}${r.prepared ? "; " + gsEsc(r.prepared) : ""})</span>` : ""}</li>`
+    ).join("");
+
+    const stanceName = s => CLAWBOT_STANCES.indexOf(s) === -1 ? "unresolved" : s;
+    const sourceItem = s => {
+      if (!s) return "";
+      const href = gsUrl(s.url);
+      const name = href ? `<a href="${gsEsc(href)}">${gsEsc(s.name || href)}</a>` : gsEsc(s.name || "source");
+      const kind = s.kind ? ` <span class="tag">${gsEsc(s.kind)}</span>` : "";
+      return `<li>${name}${kind}</li>`;
+    };
+    const findingHtml = f => {
+      const v = f.verdict || {};
+      const a = f.audit || {};
+      const stance = stanceName(v.stance || "");
+      const met = !!v.meets_three_source;
+      const nSrc = v.source_count != null ? v.source_count : (f.sources || []).length;
+      const ev = (f.evidence || []).map(e => `<li>${gsEsc(e && e.text)}${e && e.location ? ` <span class="muted">(${gsEsc(e.location)})</span>` : ""}</li>`).join("") || `<li class="muted">None recorded</li>`;
+      const src = (f.sources || []).map(sourceItem).join("") || `<li class="muted">None recorded</li>`;
+      const sev = a.severity || "";
+      const sevClass = sev === "info" || sev === "low" || sev === "medium" || sev === "high" ? sev : "info";
+      const audit = a.notes ? `<p><b>Guardrails audit.</b> ${sev ? `<span class="sev sev-${sevClass}">${gsEsc(sev)}</span> ` : ""}<span class="${a.ok ? "ok" : "bad"}">${a.ok ? "ok" : "gap"}</span> — ${gsEsc(a.notes)}</p>` : "";
+      return `<article data-category="${gsEsc(f.category || "")}">
+        <h3>${gsEsc(f.title)}</h3>
+        <p class="meta">
+          <span class="tag">${gsEsc(f.fixture_id || "")}</span>
+          <span class="tag">${gsEsc(f.category || "")}</span>
+          ${f.window ? `<span class="tag">${gsEsc(f.window)}</span>` : ""}
+          ${f.scope ? `<span class="tag">${gsEsc(f.scope)}</span>` : ""}
+          <span class="stance stance-${gsEsc(stance)}">${gsEsc(v.stance || "none")}</span>
+          <span class="srcflag ${met ? "src-met" : "src-not"}">${met ? "3-source met" : "3-source not met"} (${gsEsc(nSrc)})</span>
+        </p>
+        <p>${gsEsc(f.summary || "")}</p>
+        ${f.sentinel_label ? `<p class="muted">Sentinel: ${gsEsc(f.sentinel_label)}</p>` : ""}
+        ${v.summary ? `<p><b>Verdict.</b> ${gsEsc(v.summary)}</p>` : ""}
+        ${audit}
+        <details><summary>Evidence (${(f.evidence || []).length})</summary><ul>${ev}</ul></details>
+        <details><summary>Sources (${(f.sources || []).length})</summary><ul>${src}</ul></details>
+      </article>`;
+    };
+
+    const filtersHtml = cats.map(cat => {
+      const n = cat === "all" ? findings.length : findings.filter(f => f.category === cat).length;
+      const pressed = cat === active ? "true" : "false";
+      return `<button type="button" data-cat="${gsEsc(cat)}" aria-pressed="${pressed}">${gsEsc(cat)} (${n})</button>`;
+    }).join("");
+
+    const visibleFindings = () => active === "all" ? findings : findings.filter(f => f.category === active);
+    const findingsBlock = list => list.map(findingHtml).join("") || `<p class="muted">No findings in this filter.</p>`;
+
+    const verdictRows = findings.map(f => {
+      const v = f.verdict || {};
+      const stance = stanceName(v.stance || "");
+      const met = v.meets_three_source ? "met" : "not met";
+      return `<tr><td>${gsEsc(f.fixture_id || "")}</td><td>${gsEsc(f.title || "")}</td><td><span class="stance stance-${gsEsc(stance)}">${gsEsc(v.stance || "—")}</span></td><td>${gsEsc(v.source_count != null ? v.source_count : "—")} ${met}</td><td>${gsEsc(v.summary || "")}</td></tr>`;
+    }).join("");
+
+    const timelineRows = list => list.map(ev =>
+      `<tr><td>${gsEsc((ev && (ev.timestamp_ct || ev.timestamp)) || "")}</td><td>${gsEsc(ev && ev.type)}</td><td>${gsEsc(ev && ev.summary)}</td><td class="muted">${gsEsc(ev && ev.id)}</td></tr>`
+    ).join("");
+
+    const auditList = clawbotVisibleTimeline(doc, false);
+    const when = doc.exported_at_ct || doc.exported_at || doc.generated_at || "";
+    let ownerBlock = "";
+    if (owner) {
+      const raw = {attribution: attr, provenance: prov, run: doc.run || {}};
+      ownerBlock = `<div id="clawbot-owner"><h3>Run and provenance <span class="tag">owner</span></h3>
+        <p class="muted">Raw snapshot fields from this public file. No extra records are loaded.</p>
+        ${recs ? `<ul>${recs}</ul>` : ""}
+        <pre>${gsEsc(JSON.stringify(raw, null, 2))}</pre>
+        <p><button type="button" id="clawbot-full-timeline" aria-pressed="false">Show full event timeline</button></p></div>`;
+    }
+
+    el.innerHTML = `<p class="cb-banner">Prototype snapshot from an ActiveGraph fixture replay${attr.engine ? " (" + gsEsc(attr.engine) + ")" : ""}, Apache-2.0. Not a live GeoSentinel feed. Public facts only. No people tracking. No LLM or live tools were used.</p>
+      <p class="muted">Exported ${gsEsc(when)}. ${gsEsc(doc.label || "")}</p>
+      <div class="cb-stats">${stats}</div>
+      <div><span class="tag">${gsEsc(attr.engine || "ActiveGraph")}</span><span class="tag">${gsEsc(attr.pack || "")}</span><span class="tag">${gsEsc(attr.mode || "")}</span></div>
+      <p>${gsEsc(prov.label || "")}</p>
+      <p class="muted">${gsEsc(prov.credit || "")}</p>
+      <h3>Findings, evidence, and verdicts</h3>
+      <div id="clawbot-filters" role="toolbar" aria-label="Filter findings by category">${filtersHtml}</div>
+      <div id="clawbot-findings">${findingsBlock(visibleFindings())}</div>
+      <h3>Verdicts</h3>
+      <div class="scroll"><table><thead><tr><th>ID</th><th>Finding</th><th>Stance</th><th>Sources</th><th>Summary</th></tr></thead><tbody>${verdictRows}</tbody></table></div>
+      <h3>Audit timeline</h3>
+      <p class="muted" id="clawbot-timeline-note">${gsEsc(auditList.length)} guardrails audit events in this public snapshot. Times are America/Chicago.</p>
+      <div class="scroll"><table id="clawbot-timeline"><thead><tr><th>Time (CT)</th><th>Event</th><th>Summary</th><th>ID</th></tr></thead><tbody>${timelineRows(auditList)}</tbody></table></div>
+      ${ownerBlock}`;
+
+    const filters = el.querySelector("#clawbot-filters");
+    const findingsEl = el.querySelector("#clawbot-findings");
+    const noteEl = el.querySelector("#clawbot-timeline-note");
+    const bodyEl = el.querySelector("#clawbot-timeline tbody");
+    const paint = () => {
+      if (filters) {
+        const buttons = filters.querySelectorAll("button[data-cat]");
+        for (const b of buttons) b.setAttribute("aria-pressed", b.getAttribute("data-cat") === active ? "true" : "false");
+      }
+      if (findingsEl) findingsEl.innerHTML = findingsBlock(visibleFindings());
+      const rows = clawbotVisibleTimeline(doc, owner && full);
+      if (bodyEl) bodyEl.innerHTML = timelineRows(rows);
+      if (noteEl) {
+        noteEl.textContent = (owner && full)
+          ? `${rows.length} coordination events in this public snapshot (ingest, checks, audits, verdicts). Times are America/Chicago.`
+          : `${auditList.length} guardrails audit events in this public snapshot. Times are America/Chicago.`;
+      }
+    };
+    if (filters) filters.addEventListener("click", (e) => {
+      const t = e.target && e.target.closest ? e.target.closest("button[data-cat]") : null;
+      if (!t) return;
+      active = t.getAttribute("data-cat") || "all";
+      paint();
+    });
+    const fullBtn = el.querySelector("#clawbot-full-timeline");
+    if (owner && fullBtn) fullBtn.addEventListener("click", () => {
+      full = !full;
+      fullBtn.setAttribute("aria-pressed", full ? "true" : "false");
+      fullBtn.textContent = full ? "Show audit timeline" : "Show full event timeline";
+      paint();
+    });
+    panel.hidden = false;
+  };
+  if (arguments.length > 1) {
+    apply(preloaded);
+    return;
+  }
+  gsGet("data/clawbot.json").then(apply).catch(() => {
+    panel.hidden = true;
+    el.innerHTML = "";
+  });
+}
+
+
 // Data provenance panel (GEOSENTINEL_PROVENANCE). Status pills only; no payloads.
 // Receipt idea adapted from tribunal by Kevin Michael Talbert (BleakNarratives), MIT.
 const PROV_LABELS = {

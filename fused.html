@@ -3,7 +3,8 @@
 <style>body{font:14px system-ui;background:#0d1117;color:#c9d1d9;margin:0}header{padding:10px 16px;background:#161b22}main{display:grid;grid-template-columns:2fr 1fr;gap:12px;padding:12px}
 section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;margin:4px 0 8px}table{width:100%;border-collapse:collapse;font-size:12px}td,th{padding:2px 4px;border-bottom:1px solid #21262d;text-align:left}
 .ok{color:#3fb950}.bad{color:#f85149}.muted{color:#8b949e}.tag{font-size:11px;background:#30363d;border-radius:3px;padding:1px 4px}a{color:#58a6ff}svg{width:100%;background:#0b1d2a}
-.scroll{max-height:320px;overflow:auto}@media(max-width:900px){main{grid-template-columns:1fr}}#auxcomm input,#auxcomm select{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;margin:0 6px 8px 0}#auxcomm .scroll{max-height:360px;overflow:auto}#auxcomm .chip{display:inline-block;background:#30363d;border-radius:3px;padding:2px 6px;margin:2px;font-size:12px}#auxcomm-call{border:1px solid #30363d;border-radius:6px;padding:8px;margin:8px 0}</style></head><body>
+.scroll{max-height:320px;overflow:auto}@media(max-width:900px){main{grid-template-columns:1fr}}#auxcomm input,#auxcomm select{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;margin:0 6px 8px 0}#auxcomm .scroll{max-height:360px;overflow:auto}#auxcomm .chip{display:inline-block;background:#30363d;border-radius:3px;padding:2px 6px;margin:2px;font-size:12px}#auxcomm-call{border:1px solid #30363d;border-radius:6px;padding:8px;margin:8px 0}
+#clawbot-panel{grid-column:1/-1}.cb-banner{margin:0 0 10px;padding:8px 10px;border:1px solid #9e6a03;background:#2a1f08;color:#e3b341;border-radius:6px;font-size:13px}.cb-stats{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.cb-stat{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px 10px;min-width:7rem;flex:1}.cb-stat b{display:block;font-size:1.25rem}#clawbot-filters{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}#clawbot-filters button,#clawbot-full-timeline{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:16px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}#clawbot-filters button[aria-pressed="true"]{border-color:#58a6ff;color:#58a6ff}.stance,.srcflag,.sev{display:inline-block;font-size:11px;border-radius:10px;padding:1px 8px;margin:0 4px 0 0;border:1px solid #30363d}.stance-confirmed,.src-met{color:#3fb950;border-color:#238636}.stance-refuted{color:#f85149;border-color:#da3633}.stance-split{color:#d29922;border-color:#9e6a03}.stance-unresolved,.stance-inconclusive,.src-not{color:#f0883e;border-color:#bd561d}.sev-high{color:#f85149;border-color:#da3633}.sev-medium{color:#f0883e;border-color:#bd561d}.sev-low,.sev-info{color:#79c0ff;border-color:#1f6feb}#clawbot details summary{cursor:pointer;color:#8b949e}#clawbot .scroll{max-height:360px;overflow:auto}#clawbot pre{white-space:pre-wrap;font-size:12px;background:#0d1117;padding:8px;border-radius:6px;overflow:auto}#clawbot .meta{font-size:12px;color:#8b949e}#clawbot article{border-top:1px solid #30363d;padding:10px 0}.warn{color:#d29922}</style></head><body>
 <header><b>GeoSentinel</b> fused view · <span id="gen" class="muted"></span> · <a href="index.html">main dashboard</a></header>
 <main>
 <section><h2>Entropy grid (normalized 0–1) &amp; active alerts</h2><svg id="map" viewBox="-180 -90 360 180" preserveAspectRatio="xMidYMid meet"></svg>
@@ -26,6 +27,7 @@ section{background:#161b22;border-radius:6px;padding:10px}h2{font-size:15px;marg
 <section id="neo-panel" hidden><h2>Near-Earth objects <span class="tag">CNEOS</span></h2><div id="neo"></div></section>
 <section id="auxcomm-panel" hidden><h2>AUXCOMM reference <span class="tag">reference only</span></h2><div id="auxcomm"></div></section>
 <section id="loosh-panel" hidden><h2>Real vs. Loosh <span class="tag">experimental</span></h2><div id="loosh"></div></section>
+<section id="clawbot-panel" hidden><h2>Clawbot <span class="tag">prototype</span></h2><div id="clawbot"></div></section>
 <section><h2>Astro context</h2><div id="astro"></div>
 <h2>Exploratory overlays <span class="tag">exploratory/non-scientific overlay</span></h2><div id="expl" class="muted"></div></section>
 </main>
@@ -69,6 +71,7 @@ function render(d){
  renderLoosh(document.getElementById("loosh-panel"));
  renderAuxcomm(document.getElementById("auxcomm-panel"), d);
  renderNeo(document.getElementById("neo-panel"));
+ renderClawbot(document.getElementById("clawbot-panel"));
  renderAir(document.getElementById("air"), d, t => t);
  let h="<table><tr><th>source</th><th>status</th><th>detail</th></tr>";
  for(const [k,v] of Object.entries(d.sources||{}))h+=`<tr><td>${lab(k,v)} <span class="tag">core</span></td><td class="${v.ok?"ok":"bad"}">${v.ok?"ok":"degraded"}</td><td>${esc(v.ok?v.count+" events":v.error)}</td></tr>`;

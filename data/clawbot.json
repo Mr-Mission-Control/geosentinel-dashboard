@@ -1,0 +1,3999 @@
+{
+  "generated_at": "2026-11-15T19:57:33+00:00",
+  "exported_at": "2026-11-15T19:49:46+00:00",
+  "exported_at_ct": "Nov 15, 2026, 1:49 PM CT",
+  "label": "Clawbot ActiveGraph prototype snapshot; fixture replay only, not a live feed",
+  "ok": true,
+  "attribution": {
+    "engine": "ActiveGraph v1.13.0",
+    "pack": "clawbot 0.1.0",
+    "mode": "fixture-backed, no LLM, no tools, no network",
+    "sources": "Recorded markdown under /workspace/rogue-ai-hunt/",
+    "note": "Public facts and local system audits only. No people tracking."
+  },
+  "provenance": {
+    "ok": true,
+    "generated_at": "2026-11-15T19:57:33+00:00",
+    "label": "fixture-backed replay; no live tools; no LLM; not predictive",
+    "credit": "Clawbot Sentinel sweep 1, Verifier second check, and Guardrails Audit 1, plus the Play Devices hidden-text re-inspection. Event times use a deterministic ticking clock starting 1:45 PM CT on Nov 15, 2026. Export time is wall-clock.",
+    "counts": {
+      "findings": 22,
+      "evidence": 34,
+      "sources": 43,
+      "claims": 22,
+      "verdicts": 22,
+      "audits": 22,
+      "events": 489,
+      "three_source_met": 9,
+      "three_source_not_met": 13,
+      "verified_live": 0,
+      "cached": 0,
+      "reference": 22,
+      "simulated": 0,
+      "unverified": 1
+    },
+    "total": 22,
+    "records": [
+      {
+        "source": "/workspace/rogue-ai-hunt/sentinel-sweep-1.md",
+        "kind": "fixture",
+        "status": "reference",
+        "label": "Clawbot Sentinel — Baseline Sweep 1",
+        "prepared": "2026-11-15 morning CT"
+      },
+      {
+        "source": "/workspace/rogue-ai-hunt/verification-results.md",
+        "kind": "fixture",
+        "status": "reference",
+        "label": "Verification Results (including Sentinel sweep 1 second check)",
+        "prepared": "2026-11-15 9:31 AM CT"
+      },
+      {
+        "source": "/workspace/rogue-ai-hunt/guardrails-audit-1.md",
+        "kind": "fixture",
+        "status": "reference",
+        "label": "Guardrails Audit 1 — local agent setups",
+        "prepared": "2026-11-15 morning CT"
+      },
+      {
+        "source": "/workspace/rogue-ai-hunt/play-devices-hidden-text.md",
+        "kind": "fixture",
+        "status": "reference",
+        "label": "Google Play Devices page hidden-text re-inspection",
+        "prepared": "2026-11-15 about 1:10 PM CT"
+      }
+    ]
+  },
+  "run": {
+    "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T",
+    "pack": "clawbot",
+    "pack_version": "0.1.0",
+    "engine": "activegraph",
+    "engine_version": "1.13.0",
+    "state": "idle",
+    "events_processed": 489,
+    "store": "/workspace/activegraph-eval/runs/clawbot_fixture.db",
+    "trace": "/workspace/activegraph-eval/runs/clawbot_trace.jsonl",
+    "clock": "2026-11-15T19:45:00Z",
+    "failures": []
+  },
+  "findings": [
+    {
+      "id": "finding#2",
+      "fixture_id": "A1",
+      "title": "FBI FLASH on the ARTEX agentic intrusion framework",
+      "summary": "The FBI describes ARTEX as an open-source, LLM-driven multi-agent penetration-testing platform, written in Go, used since at least August 2026 to automate intrusion phases. The original repository was taken down on October 8, 2026 after reported abuse; copies, forks, and a commercial variant remain available. Researchers had identified more than 1,600 publicly exposed consoles as of early November 2026. Aggregate official figures include exfiltration of personal information from approximately 67,000 individuals and access to more than 2,250 downstream tenants in a cloud-backup compromise. This finding does not name those organizations.",
+      "category": "hunt",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "VERIFIED",
+      "observed_at": "2026-11-13",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#1",
+          "name": "FBI IC3 FLASH-20261113-001 (TLP:CLEAR)",
+          "url": "https://www.ic3.gov/CSA/2026/261113.pdf",
+          "kind": "official",
+          "published_at": "2026-11-13"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#3",
+          "text": "Official FBI description of ARTEX as an LLM-driven multi-agent platform used to automate intrusion phases, with exposed-console and aggregate-victim figures as stated in the FLASH.",
+          "location": "FLASH-20261113-001, document date 13 November 2026",
+          "source_fixture_id": "A1-S1"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#144",
+        "stance": "confirmed",
+        "summary": "Confirmed as an official FBI TLP:CLEAR FLASH (FLASH-20261113-001). This is a threat overview of agentic attack tooling, not a #StopRansomware family advisory. Only one official primary is recorded here, so the three-source rule is not met.",
+        "source_count": 1,
+        "meets_three_source": false,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#122"
+      },
+      "audit": {
+        "id": "audit#122",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Public official advisory only. No IOCs, payloads, or exploit steps retained. Victim organizations not named. Safe for a defensive public panel.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#8",
+      "fixture_id": "A1-TYPO",
+      "title": "Citation typo T11558.003 in FBI ARTEX FLASH",
+      "summary": "The Privilege Escalation column of FLASH-20261113-001 contains the literal string T11558.003 next to the title “Steal or Forge Kerberos Tickets: Kerberoasting.” That title belongs to T1558.003, which exists. T11558.003 does not exist (MITRE returns 404). This is a checkable official-document citation slip, not a new technique.",
+      "category": "citation",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "VERIFIED citation typo",
+      "observed_at": "2026-11-15",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#5",
+          "name": "FBI IC3 FLASH-20261113-001 PDF (Privilege Escalation column)",
+          "url": "https://www.ic3.gov/CSA/2026/261113.pdf",
+          "kind": "official",
+          "published_at": "2026-11-13"
+        },
+        {
+          "id": "source#6",
+          "name": "MITRE ATT&CK T1558.003 (Kerberoasting)",
+          "url": "https://attack.mitre.org/techniques/T1558/003/",
+          "kind": "official",
+          "published_at": ""
+        },
+        {
+          "id": "source#7",
+          "name": "Verifier second-check visual confirmation (page 5 image, recorded locally)",
+          "url": "",
+          "kind": "local_inspection",
+          "published_at": "2026-11-15"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#9",
+          "text": "Literal string T11558.003 immediately followed by the official Kerberoasting title.",
+          "location": "PDF text run, Privilege Escalation column",
+          "source_fixture_id": "A1-TYPO-S1"
+        },
+        {
+          "id": "evidence#10",
+          "text": "T1558.003 exists with that title; T11558.003 is not a valid technique ID.",
+          "location": "live ATT&CK technique page as checked 2026-11-15",
+          "source_fixture_id": "A1-TYPO-S2"
+        },
+        {
+          "id": "evidence#11",
+          "text": "Verifier confirmed the typo visually on page 5 of the official PDF.",
+          "location": "second-check/artex-p-05.png",
+          "source_fixture_id": "A1-TYPO-S3"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#145",
+        "stance": "confirmed",
+        "summary": "Confirmed. Verifier visually confirmed the typo on page 5 of the official PDF; MITRE T1558.003 matches the printed title; T11558.003 does not exist.",
+        "source_count": 3,
+        "meets_three_source": true,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#123"
+      },
+      "audit": {
+        "id": "audit#123",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Citation-quality check of a public official PDF against MITRE. No exploit content.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#14",
+      "fixture_id": "A2",
+      "title": "Amazon Threat Intelligence on ARTEX campaigns, with unverified outcomes",
+      "summary": "Amazon reported that from October 3 to November 5, 2026, MadPot decoy sensors presenting as LLM inference APIs received requests from agents with operational memory of ARTEX campaigns. Amazon assesses with moderate confidence that ARTEX was used. It describes credential-theft and identity-check abuse campaign types at a high level, and states that it did not observe off-sensor activity as it happened and cannot verify the outcomes the agents reported.",
+      "category": "hunt",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "VERIFIED as to what Amazon published; outcomes unconfirmed even by Amazon",
+      "observed_at": "2026-11-13",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#13",
+          "name": "Amazon Threat Intelligence blog on ARTEX campaigns",
+          "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-observes-threat-actors-running-cybercrime-campaigns-with-artex-ai-agents/",
+          "kind": "vendor",
+          "published_at": "2026-11-13"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#15",
+          "text": "Exact recorded caveat: Amazon “cannot verify the outcomes the agents reported.” No indicators of compromise were retained.",
+          "location": "Amazon Security Blog, November 13, 2026",
+          "source_fixture_id": "A2-S1"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#146",
+        "stance": "confirmed",
+        "summary": "Confirmed as to what Amazon published, including the explicit caveat that Amazon cannot verify agent-reported outcomes. Single vendor primary, so the three-source rule is not met.",
+        "source_count": 1,
+        "meets_three_source": false,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#124"
+      },
+      "audit": {
+        "id": "audit#124",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Vendor primary with the author’s own uncertainty preserved. No IOCs copied.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#20",
+      "fixture_id": "A3",
+      "title": "UK NCSC: AI malware “highly likely” in ransomware against UK CNI (forecast)",
+      "summary": "The NCSC’s 3 November 2026 news release says UK critical national infrastructure should be braced for a ransomware attack involving AI-powered malware by 2028. The Annual Review states it is highly likely AI malware will be used in a ransomware attack on UK CNI, and that AI will mainly accelerate existing techniques rather than invent new attack vectors. This is an official judgment and forecast, not a report that such an attack has already occurred.",
+      "category": "hunt",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "VERIFIED forecast, not an observed event",
+      "observed_at": "2026-11-03",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#17",
+          "name": "NCSC news release on AI-powered attacks on UK CNI",
+          "url": "https://www.ncsc.gov.uk/news/cyber-chief-uk-facing-ai-powered-attacks-on-critical-infrastructure-in-two-years",
+          "kind": "official",
+          "published_at": "2026-11-03"
+        },
+        {
+          "id": "source#18",
+          "name": "NCSC Annual Review 2026 collection",
+          "url": "https://www.ncsc.gov.uk/collection/annual-review-2026",
+          "kind": "official",
+          "published_at": "2026-11-03"
+        },
+        {
+          "id": "source#19",
+          "name": "NCSC: The impact of AI on cyber threat",
+          "url": "https://www.ncsc.gov.uk/collection/annual-review-2026/understanding-threat/ai-impact-cyber-threat",
+          "kind": "official",
+          "published_at": "2026-11-03"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#21",
+          "text": "UK CNI should be braced for a ransomware attack involving AI-powered malware by 2028.",
+          "location": "NCSC news release, 3 November 2026",
+          "source_fixture_id": "A3-S1"
+        },
+        {
+          "id": "evidence#22",
+          "text": "Highly likely AI malware will be used in a ransomware attack on UK CNI. Human operators remain essential; existing techniques are accelerated.",
+          "location": "Annual Review AI-impact page",
+          "source_fixture_id": "A3-S3"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#147",
+        "stance": "confirmed",
+        "summary": "Confirmed as an official NCSC forecast and judgment, corroborated across the news release and Annual Review pages. Not confirmed as a 2026 incident.",
+        "source_count": 3,
+        "meets_three_source": true,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#125"
+      },
+      "audit": {
+        "id": "audit#125",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Official forecast language is preserved and not promoted as a confirmed incident.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#25",
+      "fixture_id": "A4",
+      "title": "UK NCSC pessimistic scenario: an autonomous attacker beyond operator control",
+      "summary": "NCSC published a pessimistic illustrative scenario for 2028 in which it is “a realistic possibility” an automated cyber actor using frontier AI, no longer under its operator’s control, could self-replicate and conduct cyber attacks at will. The page explicitly says the scenario is not a prediction. It is not a confirmed 2026 incident.",
+      "category": "hunt",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "VERIFIED as a scenario, not an observed event",
+      "observed_at": "2026-11-03",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#24",
+          "name": "NCSC Annual Review: autonomous attack scenario",
+          "url": "https://www.ncsc.gov.uk/collection/annual-review-2026/understanding-threat/autonomous-attack",
+          "kind": "official",
+          "published_at": "2026-11-03"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#26",
+          "text": "The page says the scenario is not a prediction, and describes a 2028 pessimistic case of an automated actor no longer under operator control.",
+          "location": "NCSC autonomous-attack page, 3 November 2026",
+          "source_fixture_id": "A4-S1"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#148",
+        "stance": "confirmed",
+        "summary": "Confirmed that NCSC published this as a pessimistic illustrative scenario, not as current confirmed activity. Single official page, so the three-source rule is not met.",
+        "source_count": 1,
+        "meets_three_source": false,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#126"
+      },
+      "audit": {
+        "id": "audit#126",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Do not promote scenario language as a confirmed incident on a public panel.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#29",
+      "fixture_id": "A5",
+      "title": "U.S. Department of Justice Super Intelligence Task Force",
+      "summary": "On November 5, 2026, DOJ announced a Super Intelligence (SI) Task Force to address misuse of SI by foreign state and state-sponsored actors, transnational criminal organizations, and individual or corporate actors engaged in fraud or other unlawful conduct. This is a policy and organizational announcement, not a technical advisory.",
+      "category": "hunt",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "VERIFIED",
+      "observed_at": "2026-11-05",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#28",
+          "name": "DOJ press release: Super Intelligence Task Force",
+          "url": "https://www.justice.gov/opa/pr/department-justice-launches-super-intelligence-task-force",
+          "kind": "official",
+          "published_at": "2026-11-05"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#30",
+          "text": "DOJ launched an SI Task Force addressing misuse of super intelligence, including fraud. Policy announcement, not a technical advisory.",
+          "location": "justice.gov OPA release, updated November 5, 2026",
+          "source_fixture_id": "A5-S1"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#149",
+        "stance": "confirmed",
+        "summary": "Confirmed as an official DOJ announcement. Single official primary, so the three-source rule is not met.",
+        "source_count": 1,
+        "meets_three_source": false,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#127"
+      },
+      "audit": {
+        "id": "audit#127",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Public policy announcement only.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#35",
+      "fixture_id": "A6",
+      "title": "SDNY charges in an alleged SI/AI impersonation fraud (Wayback-confirmed release)",
+      "summary": "A U.S. Attorney’s Office for the Southern District of New York press release describes charges in an alleged scheme to use super intelligence to defraud, with a figure of more than $129 million, covering conduct “Between 2024 and 2026.” These are allegations. The live justice.gov page was blocked by a bot-check interstitial during the sweep; a Wayback snapshot of the official release was retrieved and used for the second check. Victim-organization names are not recorded.",
+      "category": "hunt",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "UNVERIFIED against the live primary page; later VERIFIED via Wayback",
+      "observed_at": "2026-11-05",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#32",
+          "name": "Official SDNY press release URL (live body not retrieved; bot-check interstitial)",
+          "url": "https://www.justice.gov/usao-sdny/pr/three-foreign-nationals-arrested-and-charged-scheme-use-super-intelligence-defraud",
+          "kind": "official",
+          "published_at": "2026-11-05"
+        },
+        {
+          "id": "source#33",
+          "name": "Wayback snapshot of the official SDNY release",
+          "url": "https://web.archive.org/web/20261110224322/https://www.justice.gov/usao-sdny/pr/three-foreign-nationals-arrested-and-charged-scheme-use-super-intelligence-defraud",
+          "kind": "archive",
+          "published_at": "2026-11-10"
+        },
+        {
+          "id": "source#34",
+          "name": "Wayback availability record (14 captures, November 6–10, 2026)",
+          "url": "https://web.archive.org/web/20261110224322/https://www.justice.gov/usao-sdny/pr/three-foreign-nationals-arrested-and-charged-scheme-use-super-intelligence-defraud",
+          "kind": "archive",
+          "published_at": "2026-11-10"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#36",
+          "text": "HTTP 200 returned an Akamai bot-check interstitial (about 2.5 KB), not the release body.",
+          "location": "live justice.gov fetch during the sweep",
+          "source_fixture_id": "A6-S1"
+        },
+        {
+          "id": "evidence#37",
+          "text": "Archived official release dated November 5, 2026; “Between 2024 and 2026”; alleged $129M+ SI/AI impersonation scheme. Allegations only.",
+          "location": "Wayback capture 20261110224322",
+          "source_fixture_id": "A6-S2"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#150",
+        "stance": "confirmed",
+        "summary": "Confirmed from a Wayback snapshot of the official release (capture 2026-11-10 22:43:22 UTC). The live page remained blocked. Allegations only; dollar figure and date range as in the archived official text.",
+        "source_count": 3,
+        "meets_three_source": true,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#128"
+      },
+      "audit": {
+        "id": "audit#128",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Allegations only. No defendant or victim names retained in this fixture. Live page was not fetched in this prototype.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#42",
+      "fixture_id": "A7",
+      "title": "Measurement study of MCP tool poisoning across agent frameworks",
+      "summary": "A paper (arXiv:2611.03555v2, submitted 2 November 2026, revised 9 November 2026, accepted at AISec ’26) reports a 9,720-cell test of MCP tool poisoning across 12 frameworks, 18 models, and 45 scenarios, with an overall attack success rate of 22.9%. The authors argue that MCP carries attacker-controlled tool descriptions, schema fields, and responses into model context without validation. This is a controlled measurement study, not a catalog of real-world breaches.",
+      "category": "hunt",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "VERIFIED as research, not as a field-incident tally",
+      "observed_at": "2026-11-09",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#39",
+          "name": "arXiv:2611.03555 abstract",
+          "url": "https://arxiv.org/abs/2611.03555",
+          "kind": "research",
+          "published_at": "2026-11-02"
+        },
+        {
+          "id": "source#40",
+          "name": "arXiv:2611.03555 HTML full text",
+          "url": "https://arxiv.org/html/2611.03555",
+          "kind": "research",
+          "published_at": "2026-11-09"
+        },
+        {
+          "id": "source#41",
+          "name": "Vendor-hosted abstract (Dynatrace Research)",
+          "url": "https://www.dynatrace.com/research/publications/mcp-tool-poisoning-in-agentic-ai-frameworks-a-cross-framework-measurement-study/",
+          "kind": "vendor",
+          "published_at": "2026-11-09"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#43",
+          "text": "9,720-cell test; 12 frameworks, 18 models, 45 scenarios; overall attack success rate 22.9%.",
+          "location": "arXiv:2611.03555v2",
+          "source_fixture_id": "A7-S1"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#151",
+        "stance": "confirmed",
+        "summary": "Confirmed that the paper exists and states these figures. Treated as research, not as a field-incident tally.",
+        "source_count": 3,
+        "meets_three_source": true,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#129"
+      },
+      "audit": {
+        "id": "audit#129",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Research citation only. No exploit reproduction or payloads.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#48",
+      "fixture_id": "A8",
+      "title": "FBI FaceStealer FLASH: prerecorded replay, with a separate SI deepfake section",
+      "summary": "FBI FLASH AC-111226-MS (12 November 2026) describes a social-engineering scheme called FaceStealer that uses imposter video-meeting sites and a library of secretly recorded webcam videos of prior victims. The FBI says it has identified and seized more than 900 such videos and that the scheme has been used to steal more than $400 million in cryptocurrency over the past 18 months. Pages 1–3 and 6 describe prerecorded webcam replay. Page 4 has a dedicated section, “Emerging Use of SI to Generate Deepfake Videos,” so a generative-AI claim is present even though the scheme still overwhelmingly uses stolen genuine video. No victim names are recorded.",
+      "category": "hunt",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "VERIFIED official FLASH; Sentinel initially missed the page-4 SI section",
+      "observed_at": "2026-11-12",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#45",
+          "name": "FBI IC3 FLASH AC-111226-MS (pages 1–3, 6: prerecorded replay)",
+          "url": "https://www.ic3.gov/CSA/2026/261112.pdf",
+          "kind": "official",
+          "published_at": "2026-11-12"
+        },
+        {
+          "id": "source#46",
+          "name": "Same FLASH, page 4: “Emerging Use of SI to Generate Deepfake Videos”",
+          "url": "https://www.ic3.gov/CSA/2026/261112.pdf",
+          "kind": "official",
+          "published_at": "2026-11-12"
+        },
+        {
+          "id": "source#47",
+          "name": "Verifier second-check of the official PDF",
+          "url": "",
+          "kind": "local_inspection",
+          "published_at": "2026-11-15"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#49",
+          "text": "Scheme described as prerecorded webcam replay against impersonation targets. Aggregate official figures only; no victim names retained.",
+          "location": "FLASH AC-111226-MS, pages 1–3 and 6",
+          "source_fixture_id": "A8-S1"
+        },
+        {
+          "id": "evidence#50",
+          "text": "A dedicated “Emerging Use of SI to Generate Deepfake Videos” section is present in the official PDF.",
+          "location": "page 4 section title",
+          "source_fixture_id": "A8-S2"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#152",
+        "stance": "split",
+        "summary": "Split. The replay core is confirmed. Sentinel’s earlier “no separate AI-generation claim” reading is refuted by page 4 of the same official PDF.",
+        "source_count": 3,
+        "meets_three_source": true,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#130"
+      },
+      "audit": {
+        "id": "audit#130",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "No victim identities recorded. The correction is to Sentinel’s reading, not to the official source.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#54",
+      "fixture_id": "B-NEG",
+      "title": "No new official ransomware-family CSA in the 1–15 November 2026 window",
+      "summary": "No new CISA, FBI, NCSC, or ACSC #StopRansomware (or equivalent family-TTP) advisory was found with a publication date of November 1–15, 2026. CISA’s public alerts list for this period showed KEV additions and unrelated resources, not a new ransomware-family CSA. The most recent fetched #StopRansomware CSA remains AA26-293A (SafePay), October 20, 2026, treated as background.",
+      "category": "hunt",
+      "window": "primary",
+      "scope": "public",
+      "sentinel_label": "VERIFIED negative result",
+      "observed_at": "2026-11-15",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#52",
+          "name": "CISA alerts in the primary window (KEV additions, not a new family CSA)",
+          "url": "https://www.cisa.gov/news-events/alerts/2026/11/13/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+          "kind": "official",
+          "published_at": "2026-11-13"
+        },
+        {
+          "id": "source#53",
+          "name": "CISA/FBI joint CSA AA26-293A (SafePay), October 20, 2026 — most recent fetched family CSA",
+          "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
+          "kind": "official",
+          "published_at": "2026-10-20"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#55",
+          "text": "Alerts in the window included KEV additions (CVE-2026-114713 and CVE-2026-123039), not a new ransomware-family CSA.",
+          "location": "CISA alerts, 13 November 2026",
+          "source_fixture_id": "B-NEG-S1"
+        },
+        {
+          "id": "evidence#56",
+          "text": "Most recent fetched #StopRansomware CSA remains October 20, 2026 (SafePay).",
+          "location": "AA26-293A date",
+          "source_fixture_id": "B-NEG-S2"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#153",
+        "stance": "confirmed",
+        "summary": "Confirmed as a negative result of the recorded sweep. Two recorded points of support, so the three-source rule is not met.",
+        "source_count": 2,
+        "meets_three_source": false,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#131"
+      },
+      "audit": {
+        "id": "audit#131",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Negative results are in scope and should stay visible on the panel.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#61",
+      "fixture_id": "BKG-SAFEPAY",
+      "title": "CISA AA26-293A (SafePay) ATT&CK mapping slips",
+      "summary": "Background official advisory AA26-293A (#StopRansomware: SafePay, October 20, 2026) says SafePay has been highly active since August 2024 and has affected at least 600 victims across multiple critical-infrastructure sectors, using MITRE ATT&CK for Enterprise version 20. Verifier confirmed mapping slips: a T1560.002 row describes Mimikatz password exfiltration (that ID is “Archive via Library”), and Kerberos tickets are tagged T1550.002 (Pass the Hash) rather than T1550.003 (Pass the Ticket) or a T1558 variant.",
+      "category": "citation",
+      "window": "background",
+      "scope": "public",
+      "sentinel_label": "VERIFIED advisory; mapping slips CONFIRMED",
+      "observed_at": "2026-10-20",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#58",
+          "name": "CISA AA26-293A #StopRansomware: SafePay",
+          "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
+          "kind": "official",
+          "published_at": "2026-10-20"
+        },
+        {
+          "id": "source#59",
+          "name": "MITRE ATT&CK T1560.002 Archive via Library",
+          "url": "https://attack.mitre.org/techniques/T1560/002/",
+          "kind": "official",
+          "published_at": ""
+        },
+        {
+          "id": "source#60",
+          "name": "MITRE ATT&CK T1550.002 / T1550.003 (Pass the Hash vs Pass the Ticket)",
+          "url": "https://attack.mitre.org/techniques/T1550/002/",
+          "kind": "official",
+          "published_at": ""
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#62",
+          "text": "T1560.002 row describes Mimikatz password exfiltration; Kerberos tickets tagged T1550.002.",
+          "location": "AA26-293A Use text / technique tags",
+          "source_fixture_id": "BKG-SAFEPAY-S1"
+        },
+        {
+          "id": "evidence#63",
+          "text": "Live MITRE title for T1560.002 is “Archive via Library,” not credential dumping.",
+          "location": "ATT&CK T1560.002 title",
+          "source_fixture_id": "BKG-SAFEPAY-S2"
+        },
+        {
+          "id": "evidence#64",
+          "text": "T1550.002 is Pass the Hash; Pass the Ticket is T1550.003.",
+          "location": "ATT&CK T1550.002 vs T1550.003",
+          "source_fixture_id": "BKG-SAFEPAY-S3"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#154",
+        "stance": "confirmed",
+        "summary": "Confirmed mapping slips against live ATT&CK technique meanings. The advisory itself is a real official CSA.",
+        "source_count": 3,
+        "meets_three_source": true,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#132"
+      },
+      "audit": {
+        "id": "audit#132",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Citation check only. No ransomware TTPs or exploit steps are reproduced.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#69",
+      "fixture_id": "BKG-1",
+      "title": "Wrong MITRE group ID for INC Ransom (G1022 vs G1032)",
+      "summary": "INC Ransom / GOLD IONIC is a real ransomware and data-extortion group in MITRE ATT&CK as G1032. G1022 is ToddyCat, a separate group. An October 19, 2026 generated briefing cited G1022 for INC Ransom. That is a checkable citation slip, not a new official advisory.",
+      "category": "citation",
+      "window": "background",
+      "scope": "public",
+      "sentinel_label": "VERIFIED citation error",
+      "observed_at": "2026-11-15",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#66",
+          "name": "MITRE ATT&CK G1032 (INC Ransom / GOLD IONIC)",
+          "url": "https://attack.mitre.org/groups/G1032/",
+          "kind": "official",
+          "published_at": ""
+        },
+        {
+          "id": "source#67",
+          "name": "MITRE ATT&CK G1022 (ToddyCat)",
+          "url": "https://attack.mitre.org/groups/G1022/",
+          "kind": "official",
+          "published_at": ""
+        },
+        {
+          "id": "source#68",
+          "name": "October 19 generated briefing that cited G1022 for INC Ransom (claim context)",
+          "url": "https://www.youtube.com/watch?v=TcYTyxADcwQ",
+          "kind": "claim_context",
+          "published_at": "2026-10-19"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#70",
+          "text": "G1032 is INC Ransom, associated name GOLD IONIC; created June 6, 2024, last modified July 31, 2026.",
+          "location": "attack.mitre.org/groups/G1032",
+          "source_fixture_id": "BKG-1-S1"
+        },
+        {
+          "id": "evidence#71",
+          "text": "G1022 is ToddyCat, a separate group.",
+          "location": "attack.mitre.org/groups/G1022",
+          "source_fixture_id": "BKG-1-S2"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#155",
+        "stance": "confirmed",
+        "summary": "Confirmed. Live ATT&CK mapping: G1032 = INC Ransom / GOLD IONIC; G1022 = ToddyCat. The G1022 citation for INC Ransom is wrong.",
+        "source_count": 3,
+        "meets_three_source": true,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#133"
+      },
+      "audit": {
+        "id": "audit#133",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Public ATT&CK identifiers only. The livestream is treated as claim context, not as confirmation.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#76",
+      "fixture_id": "BKG-2",
+      "title": "Alleged restricted IR playbook ADHDIR20261013 is not an official publication",
+      "summary": "A generated October 19, 2026 briefing presented a “restricted incident response framework” labeled ADHDIR20261013, attributed to a named grocery retailer. No official retailer, CISA, FBI, or NCSC publication under that ID was found. Company newsroom coverage remained silent on the ID. Stream captions still show only the generated-podcast claim. Verifier judged the playbook likely fabricated. The retailer’s public corporate existence is a separate, previously verified fact and is not restated with a victim narrative here.",
+      "category": "authenticity",
+      "window": "background",
+      "scope": "public",
+      "sentinel_label": "UNVERIFIED as a genuine official playbook; later REFUTED",
+      "observed_at": "2026-10-19",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#73",
+          "name": "October 19 livestream presenting the playbook ID (claim context only)",
+          "url": "https://www.youtube.com/watch?v=TcYTyxADcwQ",
+          "kind": "claim_context",
+          "published_at": "2026-10-19"
+        },
+        {
+          "id": "source#74",
+          "name": "Negative result: no official CISA/FBI/NCSC or retailer publication of ADHDIR20261013",
+          "url": "",
+          "kind": "negative",
+          "published_at": "2026-11-15"
+        },
+        {
+          "id": "source#75",
+          "name": "Verifier second check: newsroom still silent; captions still only the generated-podcast claim",
+          "url": "",
+          "kind": "local_inspection",
+          "published_at": "2026-11-15"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#77",
+          "text": "No official publication of a document under ID ADHDIR20261013 was found.",
+          "location": "public-record search recorded in verification-results.md",
+          "source_fixture_id": "BKG-2-S2"
+        },
+        {
+          "id": "evidence#78",
+          "text": "Confirmed unsustained. Captions still show only the generated-podcast claim.",
+          "location": "Sentinel sweep 1 second-check summary, item 4",
+          "source_fixture_id": "BKG-2-S3"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#156",
+        "stance": "refuted",
+        "summary": "Refuted as a genuine official playbook. No official publication; newsroom silent; the ID appears only in generated-briefing context.",
+        "source_count": 3,
+        "meets_three_source": true,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#134"
+      },
+      "audit": {
+        "id": "audit#134",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Authenticity finding only. Defensive design ideas in the script are not treated as a recipe to run.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#83",
+      "fixture_id": "BKG-3",
+      "title": "“Geo Sentinel Intelligence Directorate” is not a confirmed official issuer",
+      "summary": "A generated October 17, 2026 briefing presented an October 2026 “operational field reference manual” issued by a “Geo Sentinel Intelligence Directorate.” No official government directorate under that name was confirmed. The name collides with the well-known CDC/ISTM GeoSentinel network. Stream captions still present it both as a directorate-issued manual and as Copilot output. Verifier judged the official-issuance claim likely fabricated.",
+      "category": "authenticity",
+      "window": "background",
+      "scope": "public",
+      "sentinel_label": "UNVERIFIED as an official body; later REFUTED",
+      "observed_at": "2026-10-17",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#80",
+          "name": "October 17 livestream presenting the directorate manual (claim context)",
+          "url": "https://www.youtube.com/watch?v=vAtWD3npuFI",
+          "kind": "claim_context",
+          "published_at": "2026-10-17"
+        },
+        {
+          "id": "source#81",
+          "name": "Negative result: no official issuer under that name",
+          "url": "",
+          "kind": "negative",
+          "published_at": "2026-11-15"
+        },
+        {
+          "id": "source#82",
+          "name": "Name-collision context: CDC/ISTM GeoSentinel is a known, unrelated network",
+          "url": "",
+          "kind": "research",
+          "published_at": ""
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#84",
+          "text": "No official issuer found. Confirmed unsustained as an official body or holding.",
+          "location": "verification-results.md second-check item 5",
+          "source_fixture_id": "BKG-3-S2"
+        },
+        {
+          "id": "evidence#85",
+          "text": "The invented directorate name collides with the established CDC/ISTM GeoSentinel travel-health network.",
+          "location": "public name collision",
+          "source_fixture_id": "BKG-3-S3"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#157",
+        "stance": "refuted",
+        "summary": "Refuted as an official issuer. Name collision with CDC/ISTM GeoSentinel; no official body found; captions still mix directorate framing with Copilot output.",
+        "source_count": 3,
+        "meets_three_source": true,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#135"
+      },
+      "audit": {
+        "id": "audit#135",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Identity-correlation / subject-dossier language from that script stays out of scope.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    },
+    {
+      "id": "finding#89",
+      "fixture_id": "BKG-4",
+      "title": "Unified “Argus” production stack is a name-collision conflation",
+      "summary": "A generated October 19, 2026 briefing glued distinct products and projects that share the name Argus into one family with “shared architectural DNA.” Several unrelated public things named Argus are real; the claim that they are one official or production stack is not supported. This is a content-authenticity signal, not evidence of a single deployed system.",
+      "category": "authenticity",
+      "window": "background",
+      "scope": "public",
+      "sentinel_label": "Contradicted / name-collision pattern",
+      "observed_at": "2026-10-19",
+      "public_facts_only": true,
+      "sources": [
+        {
+          "id": "source#87",
+          "name": "October 19 livestream claiming a unified Argus stack (claim context)",
+          "url": "https://www.youtube.com/watch?v=DBHemesMLdo",
+          "kind": "claim_context",
+          "published_at": "2026-10-19"
+        },
+        {
+          "id": "source#88",
+          "name": "Verifier second check: public products remain distinct",
+          "url": "",
+          "kind": "local_inspection",
+          "published_at": "2026-11-15"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence#90",
+          "text": "Confirmed as name-collision, not one stack. Shared-DNA language is still only in the generated briefing.",
+          "location": "verification-results.md second-check item 6",
+          "source_fixture_id": "BKG-4-S2"
+        }
+      ],
+      "verdict": {
+        "id": "verdict#158",
+        "stance": "refuted",
+        "summary": "Refuted as one unified stack. Confirmed as a name-collision pattern. “Shared architectural DNA” language remains only in the generated briefing.",
+        "source_count": 2,
+        "meets_three_source": false,
+        "three_source_rule": "requires_3_independent_sources",
+        "panel_ready": true,
+        "would_change_public_panel": true,
+        "audit_id": "audit#136"
+      },
+      "audit": {
+        "id": "audit#136",
+        "auditor": "guardrails",
+        "ok": true,
+        "scope": "public_facts",
+        "severity": "info",
+        "notes": "Name-collision finding only. Two recorded sources, so the three-source rule is not met.",
+        "people_tracking": false,
+        "secrets_printed": false
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence#3",
+      "type": "evidence",
+      "version": 1,
+      "text": "Official FBI description of ARTEX as an LLM-driven multi-agent platform used to automate intrusion phases, with exposed-console and aggregate-victim figures as stated in the FLASH.",
+      "finding_fixture_id": "A1",
+      "source_fixture_id": "A1-S1",
+      "location": "FLASH-20261113-001, document date 13 November 2026",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:09Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#9",
+      "type": "evidence",
+      "version": 1,
+      "text": "Literal string T11558.003 immediately followed by the official Kerberoasting title.",
+      "finding_fixture_id": "A1-TYPO",
+      "source_fixture_id": "A1-TYPO-S1",
+      "location": "PDF text run, Privilege Escalation column",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:30Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#10",
+      "type": "evidence",
+      "version": 1,
+      "text": "T1558.003 exists with that title; T11558.003 is not a valid technique ID.",
+      "finding_fixture_id": "A1-TYPO",
+      "source_fixture_id": "A1-TYPO-S2",
+      "location": "live ATT&CK technique page as checked 2026-11-15",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:34Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#11",
+      "type": "evidence",
+      "version": 1,
+      "text": "Verifier confirmed the typo visually on page 5 of the official PDF.",
+      "finding_fixture_id": "A1-TYPO",
+      "source_fixture_id": "A1-TYPO-S3",
+      "location": "second-check/artex-p-05.png",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:38Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#15",
+      "type": "evidence",
+      "version": 1,
+      "text": "Exact recorded caveat: Amazon “cannot verify the outcomes the agents reported.” No indicators of compromise were retained.",
+      "finding_fixture_id": "A2",
+      "source_fixture_id": "A2-S1",
+      "location": "Amazon Security Blog, November 13, 2026",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:51Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#21",
+      "type": "evidence",
+      "version": 1,
+      "text": "UK CNI should be braced for a ransomware attack involving AI-powered malware by 2028.",
+      "finding_fixture_id": "A3",
+      "source_fixture_id": "A3-S1",
+      "location": "NCSC news release, 3 November 2026",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:12Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#22",
+      "type": "evidence",
+      "version": 1,
+      "text": "Highly likely AI malware will be used in a ransomware attack on UK CNI. Human operators remain essential; existing techniques are accelerated.",
+      "finding_fixture_id": "A3",
+      "source_fixture_id": "A3-S3",
+      "location": "Annual Review AI-impact page",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:16Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#26",
+      "type": "evidence",
+      "version": 1,
+      "text": "The page says the scenario is not a prediction, and describes a 2028 pessimistic case of an automated actor no longer under operator control.",
+      "finding_fixture_id": "A4",
+      "source_fixture_id": "A4-S1",
+      "location": "NCSC autonomous-attack page, 3 November 2026",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:29Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#30",
+      "type": "evidence",
+      "version": 1,
+      "text": "DOJ launched an SI Task Force addressing misuse of super intelligence, including fraud. Policy announcement, not a technical advisory.",
+      "finding_fixture_id": "A5",
+      "source_fixture_id": "A5-S1",
+      "location": "justice.gov OPA release, updated November 5, 2026",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:42Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#36",
+      "type": "evidence",
+      "version": 1,
+      "text": "HTTP 200 returned an Akamai bot-check interstitial (about 2.5 KB), not the release body.",
+      "finding_fixture_id": "A6",
+      "source_fixture_id": "A6-S1",
+      "location": "live justice.gov fetch during the sweep",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:03Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#37",
+      "type": "evidence",
+      "version": 1,
+      "text": "Archived official release dated November 5, 2026; “Between 2024 and 2026”; alleged $129M+ SI/AI impersonation scheme. Allegations only.",
+      "finding_fixture_id": "A6",
+      "source_fixture_id": "A6-S2",
+      "location": "Wayback capture 20261110224322",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:07Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#43",
+      "type": "evidence",
+      "version": 1,
+      "text": "9,720-cell test; 12 frameworks, 18 models, 45 scenarios; overall attack success rate 22.9%.",
+      "finding_fixture_id": "A7",
+      "source_fixture_id": "A7-S1",
+      "location": "arXiv:2611.03555v2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:28Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#49",
+      "type": "evidence",
+      "version": 1,
+      "text": "Scheme described as prerecorded webcam replay against impersonation targets. Aggregate official figures only; no victim names retained.",
+      "finding_fixture_id": "A8",
+      "source_fixture_id": "A8-S1",
+      "location": "FLASH AC-111226-MS, pages 1–3 and 6",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:49Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#50",
+      "type": "evidence",
+      "version": 1,
+      "text": "A dedicated “Emerging Use of SI to Generate Deepfake Videos” section is present in the official PDF.",
+      "finding_fixture_id": "A8",
+      "source_fixture_id": "A8-S2",
+      "location": "page 4 section title",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:53Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#55",
+      "type": "evidence",
+      "version": 1,
+      "text": "Alerts in the window included KEV additions (CVE-2026-114713 and CVE-2026-123039), not a new ransomware-family CSA.",
+      "finding_fixture_id": "B-NEG",
+      "source_fixture_id": "B-NEG-S1",
+      "location": "CISA alerts, 13 November 2026",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:10Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#56",
+      "type": "evidence",
+      "version": 1,
+      "text": "Most recent fetched #StopRansomware CSA remains October 20, 2026 (SafePay).",
+      "finding_fixture_id": "B-NEG",
+      "source_fixture_id": "B-NEG-S2",
+      "location": "AA26-293A date",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:14Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#62",
+      "type": "evidence",
+      "version": 1,
+      "text": "T1560.002 row describes Mimikatz password exfiltration; Kerberos tickets tagged T1550.002.",
+      "finding_fixture_id": "BKG-SAFEPAY",
+      "source_fixture_id": "BKG-SAFEPAY-S1",
+      "location": "AA26-293A Use text / technique tags",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:35Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#63",
+      "type": "evidence",
+      "version": 1,
+      "text": "Live MITRE title for T1560.002 is “Archive via Library,” not credential dumping.",
+      "finding_fixture_id": "BKG-SAFEPAY",
+      "source_fixture_id": "BKG-SAFEPAY-S2",
+      "location": "ATT&CK T1560.002 title",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:39Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#64",
+      "type": "evidence",
+      "version": 1,
+      "text": "T1550.002 is Pass the Hash; Pass the Ticket is T1550.003.",
+      "finding_fixture_id": "BKG-SAFEPAY",
+      "source_fixture_id": "BKG-SAFEPAY-S3",
+      "location": "ATT&CK T1550.002 vs T1550.003",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:43Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#70",
+      "type": "evidence",
+      "version": 1,
+      "text": "G1032 is INC Ransom, associated name GOLD IONIC; created June 6, 2024, last modified July 31, 2026.",
+      "finding_fixture_id": "BKG-1",
+      "source_fixture_id": "BKG-1-S1",
+      "location": "attack.mitre.org/groups/G1032",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:04Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#71",
+      "type": "evidence",
+      "version": 1,
+      "text": "G1022 is ToddyCat, a separate group.",
+      "finding_fixture_id": "BKG-1",
+      "source_fixture_id": "BKG-1-S2",
+      "location": "attack.mitre.org/groups/G1022",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:08Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#77",
+      "type": "evidence",
+      "version": 1,
+      "text": "No official publication of a document under ID ADHDIR20261013 was found.",
+      "finding_fixture_id": "BKG-2",
+      "source_fixture_id": "BKG-2-S2",
+      "location": "public-record search recorded in verification-results.md",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:29Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#78",
+      "type": "evidence",
+      "version": 1,
+      "text": "Confirmed unsustained. Captions still show only the generated-podcast claim.",
+      "finding_fixture_id": "BKG-2",
+      "source_fixture_id": "BKG-2-S3",
+      "location": "Sentinel sweep 1 second-check summary, item 4",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:33Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#84",
+      "type": "evidence",
+      "version": 1,
+      "text": "No official issuer found. Confirmed unsustained as an official body or holding.",
+      "finding_fixture_id": "BKG-3",
+      "source_fixture_id": "BKG-3-S2",
+      "location": "verification-results.md second-check item 5",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:54Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#85",
+      "type": "evidence",
+      "version": 1,
+      "text": "The invented directorate name collides with the established CDC/ISTM GeoSentinel travel-health network.",
+      "finding_fixture_id": "BKG-3",
+      "source_fixture_id": "BKG-3-S3",
+      "location": "public name collision",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:58Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "evidence#90",
+      "type": "evidence",
+      "version": 1,
+      "text": "Confirmed as name-collision, not one stack. Shared-DNA language is still only in the generated briefing.",
+      "finding_fixture_id": "BKG-4",
+      "source_fixture_id": "BKG-4-S2",
+      "location": "verification-results.md second-check item 6",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:50:15Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "source#1",
+      "type": "source",
+      "version": 1,
+      "name": "FBI IC3 FLASH-20261113-001 (TLP:CLEAR)",
+      "url": "https://www.ic3.gov/CSA/2026/261113.pdf",
+      "kind": "official",
+      "published_at": "2026-11-13",
+      "fixture_id": "A1-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:03Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#5",
+      "type": "source",
+      "version": 1,
+      "name": "FBI IC3 FLASH-20261113-001 PDF (Privilege Escalation column)",
+      "url": "https://www.ic3.gov/CSA/2026/261113.pdf",
+      "kind": "official",
+      "published_at": "2026-11-13",
+      "fixture_id": "A1-TYPO-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:16Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#6",
+      "type": "source",
+      "version": 1,
+      "name": "MITRE ATT&CK T1558.003 (Kerberoasting)",
+      "url": "https://attack.mitre.org/techniques/T1558/003/",
+      "kind": "official",
+      "published_at": "",
+      "fixture_id": "A1-TYPO-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:18Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#7",
+      "type": "source",
+      "version": 1,
+      "name": "Verifier second-check visual confirmation (page 5 image, recorded locally)",
+      "url": "",
+      "kind": "local_inspection",
+      "published_at": "2026-11-15",
+      "fixture_id": "A1-TYPO-S3",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:20Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#13",
+      "type": "source",
+      "version": 1,
+      "name": "Amazon Threat Intelligence blog on ARTEX campaigns",
+      "url": "https://aws.amazon.com/blogs/security/amazon-threat-intelligence-observes-threat-actors-running-cybercrime-campaigns-with-artex-ai-agents/",
+      "kind": "vendor",
+      "published_at": "2026-11-13",
+      "fixture_id": "A2-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:45Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#17",
+      "type": "source",
+      "version": 1,
+      "name": "NCSC news release on AI-powered attacks on UK CNI",
+      "url": "https://www.ncsc.gov.uk/news/cyber-chief-uk-facing-ai-powered-attacks-on-critical-infrastructure-in-two-years",
+      "kind": "official",
+      "published_at": "2026-11-03",
+      "fixture_id": "A3-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:58Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#18",
+      "type": "source",
+      "version": 1,
+      "name": "NCSC Annual Review 2026 collection",
+      "url": "https://www.ncsc.gov.uk/collection/annual-review-2026",
+      "kind": "official",
+      "published_at": "2026-11-03",
+      "fixture_id": "A3-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:00Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#19",
+      "type": "source",
+      "version": 1,
+      "name": "NCSC: The impact of AI on cyber threat",
+      "url": "https://www.ncsc.gov.uk/collection/annual-review-2026/understanding-threat/ai-impact-cyber-threat",
+      "kind": "official",
+      "published_at": "2026-11-03",
+      "fixture_id": "A3-S3",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:02Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#24",
+      "type": "source",
+      "version": 1,
+      "name": "NCSC Annual Review: autonomous attack scenario",
+      "url": "https://www.ncsc.gov.uk/collection/annual-review-2026/understanding-threat/autonomous-attack",
+      "kind": "official",
+      "published_at": "2026-11-03",
+      "fixture_id": "A4-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:23Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#28",
+      "type": "source",
+      "version": 1,
+      "name": "DOJ press release: Super Intelligence Task Force",
+      "url": "https://www.justice.gov/opa/pr/department-justice-launches-super-intelligence-task-force",
+      "kind": "official",
+      "published_at": "2026-11-05",
+      "fixture_id": "A5-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:36Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#32",
+      "type": "source",
+      "version": 1,
+      "name": "Official SDNY press release URL (live body not retrieved; bot-check interstitial)",
+      "url": "https://www.justice.gov/usao-sdny/pr/three-foreign-nationals-arrested-and-charged-scheme-use-super-intelligence-defraud",
+      "kind": "official",
+      "published_at": "2026-11-05",
+      "fixture_id": "A6-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:49Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#33",
+      "type": "source",
+      "version": 1,
+      "name": "Wayback snapshot of the official SDNY release",
+      "url": "https://web.archive.org/web/20261110224322/https://www.justice.gov/usao-sdny/pr/three-foreign-nationals-arrested-and-charged-scheme-use-super-intelligence-defraud",
+      "kind": "archive",
+      "published_at": "2026-11-10",
+      "fixture_id": "A6-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:51Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#34",
+      "type": "source",
+      "version": 1,
+      "name": "Wayback availability record (14 captures, November 6–10, 2026)",
+      "url": "https://web.archive.org/web/20261110224322/https://www.justice.gov/usao-sdny/pr/three-foreign-nationals-arrested-and-charged-scheme-use-super-intelligence-defraud",
+      "kind": "archive",
+      "published_at": "2026-11-10",
+      "fixture_id": "A6-S3",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:53Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#39",
+      "type": "source",
+      "version": 1,
+      "name": "arXiv:2611.03555 abstract",
+      "url": "https://arxiv.org/abs/2611.03555",
+      "kind": "research",
+      "published_at": "2026-11-02",
+      "fixture_id": "A7-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:14Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#40",
+      "type": "source",
+      "version": 1,
+      "name": "arXiv:2611.03555 HTML full text",
+      "url": "https://arxiv.org/html/2611.03555",
+      "kind": "research",
+      "published_at": "2026-11-09",
+      "fixture_id": "A7-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:16Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#41",
+      "type": "source",
+      "version": 1,
+      "name": "Vendor-hosted abstract (Dynatrace Research)",
+      "url": "https://www.dynatrace.com/research/publications/mcp-tool-poisoning-in-agentic-ai-frameworks-a-cross-framework-measurement-study/",
+      "kind": "vendor",
+      "published_at": "2026-11-09",
+      "fixture_id": "A7-S3",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:18Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#45",
+      "type": "source",
+      "version": 1,
+      "name": "FBI IC3 FLASH AC-111226-MS (pages 1–3, 6: prerecorded replay)",
+      "url": "https://www.ic3.gov/CSA/2026/261112.pdf",
+      "kind": "official",
+      "published_at": "2026-11-12",
+      "fixture_id": "A8-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:35Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#46",
+      "type": "source",
+      "version": 1,
+      "name": "Same FLASH, page 4: “Emerging Use of SI to Generate Deepfake Videos”",
+      "url": "https://www.ic3.gov/CSA/2026/261112.pdf",
+      "kind": "official",
+      "published_at": "2026-11-12",
+      "fixture_id": "A8-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:37Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#47",
+      "type": "source",
+      "version": 1,
+      "name": "Verifier second-check of the official PDF",
+      "url": "",
+      "kind": "local_inspection",
+      "published_at": "2026-11-15",
+      "fixture_id": "A8-S3",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:39Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#52",
+      "type": "source",
+      "version": 1,
+      "name": "CISA alerts in the primary window (KEV additions, not a new family CSA)",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/11/13/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+      "kind": "official",
+      "published_at": "2026-11-13",
+      "fixture_id": "B-NEG-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:00Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#53",
+      "type": "source",
+      "version": 1,
+      "name": "CISA/FBI joint CSA AA26-293A (SafePay), October 20, 2026 — most recent fetched family CSA",
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
+      "kind": "official",
+      "published_at": "2026-10-20",
+      "fixture_id": "B-NEG-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:02Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#58",
+      "type": "source",
+      "version": 1,
+      "name": "CISA AA26-293A #StopRansomware: SafePay",
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a",
+      "kind": "official",
+      "published_at": "2026-10-20",
+      "fixture_id": "BKG-SAFEPAY-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:21Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#59",
+      "type": "source",
+      "version": 1,
+      "name": "MITRE ATT&CK T1560.002 Archive via Library",
+      "url": "https://attack.mitre.org/techniques/T1560/002/",
+      "kind": "official",
+      "published_at": "",
+      "fixture_id": "BKG-SAFEPAY-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:23Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#60",
+      "type": "source",
+      "version": 1,
+      "name": "MITRE ATT&CK T1550.002 / T1550.003 (Pass the Hash vs Pass the Ticket)",
+      "url": "https://attack.mitre.org/techniques/T1550/002/",
+      "kind": "official",
+      "published_at": "",
+      "fixture_id": "BKG-SAFEPAY-S3",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:25Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#66",
+      "type": "source",
+      "version": 1,
+      "name": "MITRE ATT&CK G1032 (INC Ransom / GOLD IONIC)",
+      "url": "https://attack.mitre.org/groups/G1032/",
+      "kind": "official",
+      "published_at": "",
+      "fixture_id": "BKG-1-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:50Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#67",
+      "type": "source",
+      "version": 1,
+      "name": "MITRE ATT&CK G1022 (ToddyCat)",
+      "url": "https://attack.mitre.org/groups/G1022/",
+      "kind": "official",
+      "published_at": "",
+      "fixture_id": "BKG-1-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:52Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#68",
+      "type": "source",
+      "version": 1,
+      "name": "October 19 generated briefing that cited G1022 for INC Ransom (claim context)",
+      "url": "https://www.youtube.com/watch?v=TcYTyxADcwQ",
+      "kind": "claim_context",
+      "published_at": "2026-10-19",
+      "fixture_id": "BKG-1-S3",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:54Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#73",
+      "type": "source",
+      "version": 1,
+      "name": "October 19 livestream presenting the playbook ID (claim context only)",
+      "url": "https://www.youtube.com/watch?v=TcYTyxADcwQ",
+      "kind": "claim_context",
+      "published_at": "2026-10-19",
+      "fixture_id": "BKG-2-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:15Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#74",
+      "type": "source",
+      "version": 1,
+      "name": "Negative result: no official CISA/FBI/NCSC or retailer publication of ADHDIR20261013",
+      "url": "",
+      "kind": "negative",
+      "published_at": "2026-11-15",
+      "fixture_id": "BKG-2-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:17Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#75",
+      "type": "source",
+      "version": 1,
+      "name": "Verifier second check: newsroom still silent; captions still only the generated-podcast claim",
+      "url": "",
+      "kind": "local_inspection",
+      "published_at": "2026-11-15",
+      "fixture_id": "BKG-2-S3",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:19Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#80",
+      "type": "source",
+      "version": 1,
+      "name": "October 17 livestream presenting the directorate manual (claim context)",
+      "url": "https://www.youtube.com/watch?v=vAtWD3npuFI",
+      "kind": "claim_context",
+      "published_at": "2026-10-17",
+      "fixture_id": "BKG-3-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:40Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#81",
+      "type": "source",
+      "version": 1,
+      "name": "Negative result: no official issuer under that name",
+      "url": "",
+      "kind": "negative",
+      "published_at": "2026-11-15",
+      "fixture_id": "BKG-3-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:42Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#82",
+      "type": "source",
+      "version": 1,
+      "name": "Name-collision context: CDC/ISTM GeoSentinel is a known, unrelated network",
+      "url": "",
+      "kind": "research",
+      "published_at": "",
+      "fixture_id": "BKG-3-S3",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:44Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#87",
+      "type": "source",
+      "version": 1,
+      "name": "October 19 livestream claiming a unified Argus stack (claim context)",
+      "url": "https://www.youtube.com/watch?v=DBHemesMLdo",
+      "kind": "claim_context",
+      "published_at": "2026-10-19",
+      "fixture_id": "BKG-4-S1",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:50:05Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "source#88",
+      "type": "source",
+      "version": 1,
+      "name": "Verifier second check: public products remain distinct",
+      "url": "",
+      "kind": "local_inspection",
+      "published_at": "2026-11-15",
+      "fixture_id": "BKG-4-S2",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:50:07Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim#4",
+      "type": "claim",
+      "version": 1,
+      "text": "ARTEX is described by the FBI as open-source, LLM-driven, written in Go, and used by threat actors since at least August 2026.",
+      "finding_fixture_id": "A1",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:13Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#12",
+      "type": "claim",
+      "version": 1,
+      "text": "T11558.003 as printed in the FLASH is a typo for T1558.003.",
+      "finding_fixture_id": "A1-TYPO",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:42Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#16",
+      "type": "claim",
+      "version": 1,
+      "text": "Amazon cannot verify the campaign outcomes its sensors’ agent memory reported.",
+      "finding_fixture_id": "A2",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:45:55Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#23",
+      "type": "claim",
+      "version": 1,
+      "text": "NCSC’s 2026 review judges AI-malware ransomware against UK CNI “highly likely” as a forecast, not as a completed 2026 event.",
+      "finding_fixture_id": "A3",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:20Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#27",
+      "type": "claim",
+      "version": 1,
+      "text": "The autonomous-attacker language is an official illustrative scenario, not a 2026 field event.",
+      "finding_fixture_id": "A4",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:33Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#31",
+      "type": "claim",
+      "version": 1,
+      "text": "The Super Intelligence Task Force is a real November 5, 2026 DOJ organizational announcement.",
+      "finding_fixture_id": "A5",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:46:46Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#38",
+      "type": "claim",
+      "version": 1,
+      "text": "An official SDNY release on the alleged scheme exists and was readable from a November 10, 2026 Wayback snapshot.",
+      "finding_fixture_id": "A6",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:11Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#44",
+      "type": "claim",
+      "version": 1,
+      "text": "The MCP tool-poisoning measurement study is a real November 2026 research paper; its figures are laboratory results, not a breach tally.",
+      "finding_fixture_id": "A7",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:32Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#51",
+      "type": "claim",
+      "version": 1,
+      "text": "FaceStealer is an official FBI FLASH; the core technique described is prerecorded replay, but the same PDF also discusses SI-generated deepfake video.",
+      "finding_fixture_id": "A8",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:47:57Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#57",
+      "type": "claim",
+      "version": 1,
+      "text": "The 14-day official-advisory window contained no new ransomware-family CSA.",
+      "finding_fixture_id": "B-NEG",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:18Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#65",
+      "type": "claim",
+      "version": 1,
+      "text": "AA26-293A is a real official CSA that contains checkable ATT&CK mapping slips.",
+      "finding_fixture_id": "BKG-SAFEPAY",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:48:47Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#72",
+      "type": "claim",
+      "version": 1,
+      "text": "Citing G1022 for INC Ransom is a citation error; the live ATT&CK ID is G1032.",
+      "finding_fixture_id": "BKG-1",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:12Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#79",
+      "type": "claim",
+      "version": 1,
+      "text": "ADHDIR20261013 is not a published official IR playbook on the public record reviewed.",
+      "finding_fixture_id": "BKG-2",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:49:37Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#86",
+      "type": "claim",
+      "version": 1,
+      "text": "“Geo Sentinel Intelligence Directorate” is not a confirmed official issuer of an October 2026 field manual.",
+      "finding_fixture_id": "BKG-3",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:50:02Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "claim#91",
+      "type": "claim",
+      "version": 1,
+      "text": "Distinct public Argus-named products are not one official production stack.",
+      "finding_fixture_id": "BKG-4",
+      "status": "reviewed",
+      "provenance": {
+        "created_by": "clawbot.sentinel_ingest",
+        "caused_by_event": "evt_002",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:50:19Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    }
+  ],
+  "verdicts": [
+    {
+      "id": "verdict#144",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#2",
+      "finding_fixture_id": "A1",
+      "stance": "confirmed",
+      "summary": "Confirmed as an official FBI TLP:CLEAR FLASH (FLASH-20261113-001). This is a threat overview of agentic attack tooling, not a #StopRansomware family advisory. Only one official primary is recorded here, so the three-source rule is not met.",
+      "source_count": 1,
+      "meets_three_source": false,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#122",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_294",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:55:43Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#145",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#8",
+      "finding_fixture_id": "A1-TYPO",
+      "stance": "confirmed",
+      "summary": "Confirmed. Verifier visually confirmed the typo on page 5 of the official PDF; MITRE T1558.003 matches the printed title; T11558.003 does not exist.",
+      "source_count": 3,
+      "meets_three_source": true,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#123",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_299",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:55:48Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#146",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#14",
+      "finding_fixture_id": "A2",
+      "stance": "confirmed",
+      "summary": "Confirmed as to what Amazon published, including the explicit caveat that Amazon cannot verify agent-reported outcomes. Single vendor primary, so the three-source rule is not met.",
+      "source_count": 1,
+      "meets_three_source": false,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#124",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_304",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:55:53Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#147",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#20",
+      "finding_fixture_id": "A3",
+      "stance": "confirmed",
+      "summary": "Confirmed as an official NCSC forecast and judgment, corroborated across the news release and Annual Review pages. Not confirmed as a 2026 incident.",
+      "source_count": 3,
+      "meets_three_source": true,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#125",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_309",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:55:58Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#148",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#25",
+      "finding_fixture_id": "A4",
+      "stance": "confirmed",
+      "summary": "Confirmed that NCSC published this as a pessimistic illustrative scenario, not as current confirmed activity. Single official page, so the three-source rule is not met.",
+      "source_count": 1,
+      "meets_three_source": false,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#126",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_314",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:03Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#149",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#29",
+      "finding_fixture_id": "A5",
+      "stance": "confirmed",
+      "summary": "Confirmed as an official DOJ announcement. Single official primary, so the three-source rule is not met.",
+      "source_count": 1,
+      "meets_three_source": false,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#127",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_319",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:08Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#150",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#35",
+      "finding_fixture_id": "A6",
+      "stance": "confirmed",
+      "summary": "Confirmed from a Wayback snapshot of the official release (capture 2026-11-10 22:43:22 UTC). The live page remained blocked. Allegations only; dollar figure and date range as in the archived official text.",
+      "source_count": 3,
+      "meets_three_source": true,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#128",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_324",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:13Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#151",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#42",
+      "finding_fixture_id": "A7",
+      "stance": "confirmed",
+      "summary": "Confirmed that the paper exists and states these figures. Treated as research, not as a field-incident tally.",
+      "source_count": 3,
+      "meets_three_source": true,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#129",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_329",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:18Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#152",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#48",
+      "finding_fixture_id": "A8",
+      "stance": "split",
+      "summary": "Split. The replay core is confirmed. Sentinel’s earlier “no separate AI-generation claim” reading is refuted by page 4 of the same official PDF.",
+      "source_count": 3,
+      "meets_three_source": true,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#130",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_334",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:23Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#153",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#54",
+      "finding_fixture_id": "B-NEG",
+      "stance": "confirmed",
+      "summary": "Confirmed as a negative result of the recorded sweep. Two recorded points of support, so the three-source rule is not met.",
+      "source_count": 2,
+      "meets_three_source": false,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#131",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_339",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:28Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#154",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#61",
+      "finding_fixture_id": "BKG-SAFEPAY",
+      "stance": "confirmed",
+      "summary": "Confirmed mapping slips against live ATT&CK technique meanings. The advisory itself is a real official CSA.",
+      "source_count": 3,
+      "meets_three_source": true,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#132",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_344",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:33Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#155",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#69",
+      "finding_fixture_id": "BKG-1",
+      "stance": "confirmed",
+      "summary": "Confirmed. Live ATT&CK mapping: G1032 = INC Ransom / GOLD IONIC; G1022 = ToddyCat. The G1022 citation for INC Ransom is wrong.",
+      "source_count": 3,
+      "meets_three_source": true,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#133",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_349",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:38Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#156",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#76",
+      "finding_fixture_id": "BKG-2",
+      "stance": "refuted",
+      "summary": "Refuted as a genuine official playbook. No official publication; newsroom silent; the ID appears only in generated-briefing context.",
+      "source_count": 3,
+      "meets_three_source": true,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#134",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_354",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:43Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#157",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#83",
+      "finding_fixture_id": "BKG-3",
+      "stance": "refuted",
+      "summary": "Refuted as an official issuer. Name collision with CDC/ISTM GeoSentinel; no official body found; captions still mix directorate framing with Copilot output.",
+      "source_count": 3,
+      "meets_three_source": true,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#135",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_359",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:48Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "verdict#158",
+      "type": "verdict",
+      "version": 1,
+      "finding_id": "finding#89",
+      "finding_fixture_id": "BKG-4",
+      "stance": "refuted",
+      "summary": "Refuted as one unified stack. Confirmed as a name-collision pattern. “Shared architectural DNA” language remains only in the generated briefing.",
+      "source_count": 2,
+      "meets_three_source": false,
+      "three_source_rule": "requires_3_independent_sources",
+      "audit_id": "audit#136",
+      "panel_ready": true,
+      "would_change_public_panel": true,
+      "provenance": {
+        "created_by": "clawbot.record_verdict",
+        "caused_by_event": "evt_364",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:56:53Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    }
+  ],
+  "audits": [
+    {
+      "id": "audit#122",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#2",
+      "finding_fixture_id": "A1",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Public official advisory only. No IOCs, payloads, or exploit steps retained. Victim organizations not named. Safe for a defensive public panel.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_226",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:53:09Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#123",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#8",
+      "finding_fixture_id": "A1-TYPO",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Citation-quality check of a public official PDF against MITRE. No exploit content.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_229",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:53:16Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#124",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#14",
+      "finding_fixture_id": "A2",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Vendor primary with the author’s own uncertainty preserved. No IOCs copied.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_232",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:53:23Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#125",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#20",
+      "finding_fixture_id": "A3",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Official forecast language is preserved and not promoted as a confirmed incident.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_235",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:53:30Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#126",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#25",
+      "finding_fixture_id": "A4",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Do not promote scenario language as a confirmed incident on a public panel.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_238",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:53:37Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#127",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#29",
+      "finding_fixture_id": "A5",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Public policy announcement only.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_241",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:53:44Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#128",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#35",
+      "finding_fixture_id": "A6",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Allegations only. No defendant or victim names retained in this fixture. Live page was not fetched in this prototype.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_244",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:53:51Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#129",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#42",
+      "finding_fixture_id": "A7",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Research citation only. No exploit reproduction or payloads.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_247",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:53:58Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#130",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#48",
+      "finding_fixture_id": "A8",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "No victim identities recorded. The correction is to Sentinel’s reading, not to the official source.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_250",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:54:05Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#131",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#54",
+      "finding_fixture_id": "B-NEG",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Negative results are in scope and should stay visible on the panel.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_253",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:54:12Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#132",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#61",
+      "finding_fixture_id": "BKG-SAFEPAY",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Citation check only. No ransomware TTPs or exploit steps are reproduced.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_256",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:54:19Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#133",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#69",
+      "finding_fixture_id": "BKG-1",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Public ATT&CK identifiers only. The livestream is treated as claim context, not as confirmation.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_259",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:54:26Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#134",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#76",
+      "finding_fixture_id": "BKG-2",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Authenticity finding only. Defensive design ideas in the script are not treated as a recipe to run.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_262",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:54:33Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#135",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#83",
+      "finding_fixture_id": "BKG-3",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Identity-correlation / subject-dossier language from that script stays out of scope.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_265",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:54:40Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    },
+    {
+      "id": "audit#136",
+      "type": "audit",
+      "version": 1,
+      "finding_id": "finding#89",
+      "finding_fixture_id": "BKG-4",
+      "auditor": "guardrails",
+      "ok": true,
+      "scope": "public_facts",
+      "notes": "Name-collision finding only. Two recorded sources, so the three-source rule is not met.",
+      "people_tracking": false,
+      "secrets_printed": false,
+      "severity": "info",
+      "provenance": {
+        "created_by": "clawbot.guardrails_audit",
+        "caused_by_event": "evt_268",
+        "frame_id": null,
+        "timestamp": "2026-11-15T19:54:47Z",
+        "evidence": [],
+        "run_id": "01M7GC4CVNV5WAES6BCYZ29Z0T"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_001",
+      "type": "cited_by",
+      "source": "finding#2",
+      "target": "source#1"
+    },
+    {
+      "id": "rel_002",
+      "type": "supports",
+      "source": "evidence#3",
+      "target": "finding#2"
+    },
+    {
+      "id": "rel_003",
+      "type": "cited_by",
+      "source": "finding#8",
+      "target": "source#5"
+    },
+    {
+      "id": "rel_004",
+      "type": "cited_by",
+      "source": "finding#8",
+      "target": "source#6"
+    },
+    {
+      "id": "rel_005",
+      "type": "cited_by",
+      "source": "finding#8",
+      "target": "source#7"
+    },
+    {
+      "id": "rel_006",
+      "type": "supports",
+      "source": "evidence#9",
+      "target": "finding#8"
+    },
+    {
+      "id": "rel_007",
+      "type": "supports",
+      "source": "evidence#10",
+      "target": "finding#8"
+    },
+    {
+      "id": "rel_008",
+      "type": "supports",
+      "source": "evidence#11",
+      "target": "finding#8"
+    },
+    {
+      "id": "rel_009",
+      "type": "cited_by",
+      "source": "finding#14",
+      "target": "source#13"
+    },
+    {
+      "id": "rel_010",
+      "type": "supports",
+      "source": "evidence#15",
+      "target": "finding#14"
+    },
+    {
+      "id": "rel_011",
+      "type": "cited_by",
+      "source": "finding#20",
+      "target": "source#17"
+    },
+    {
+      "id": "rel_012",
+      "type": "cited_by",
+      "source": "finding#20",
+      "target": "source#18"
+    },
+    {
+      "id": "rel_013",
+      "type": "cited_by",
+      "source": "finding#20",
+      "target": "source#19"
+    },
+    {
+      "id": "rel_014",
+      "type": "supports",
+      "source": "evidence#21",
+      "target": "finding#20"
+    },
+    {
+      "id": "rel_015",
+      "type": "supports",
+      "source": "evidence#22",
+      "target": "finding#20"
+    },
+    {
+      "id": "rel_016",
+      "type": "cited_by",
+      "source": "finding#25",
+      "target": "source#24"
+    },
+    {
+      "id": "rel_017",
+      "type": "supports",
+      "source": "evidence#26",
+      "target": "finding#25"
+    },
+    {
+      "id": "rel_018",
+      "type": "cited_by",
+      "source": "finding#29",
+      "target": "source#28"
+    },
+    {
+      "id": "rel_019",
+      "type": "supports",
+      "source": "evidence#30",
+      "target": "finding#29"
+    },
+    {
+      "id": "rel_020",
+      "type": "cited_by",
+      "source": "finding#35",
+      "target": "source#32"
+    },
+    {
+      "id": "rel_021",
+      "type": "cited_by",
+      "source": "finding#35",
+      "target": "source#33"
+    },
+    {
+      "id": "rel_022",
+      "type": "cited_by",
+      "source": "finding#35",
+      "target": "source#34"
+    },
+    {
+      "id": "rel_023",
+      "type": "supports",
+      "source": "evidence#36",
+      "target": "finding#35"
+    },
+    {
+      "id": "rel_024",
+      "type": "supports",
+      "source": "evidence#37",
+      "target": "finding#35"
+    },
+    {
+      "id": "rel_025",
+      "type": "cited_by",
+      "source": "finding#42",
+      "target": "source#39"
+    },
+    {
+      "id": "rel_026",
+      "type": "cited_by",
+      "source": "finding#42",
+      "target": "source#40"
+    },
+    {
+      "id": "rel_027",
+      "type": "cited_by",
+      "source": "finding#42",
+      "target": "source#41"
+    },
+    {
+      "id": "rel_028",
+      "type": "supports",
+      "source": "evidence#43",
+      "target": "finding#42"
+    },
+    {
+      "id": "rel_029",
+      "type": "cited_by",
+      "source": "finding#48",
+      "target": "source#45"
+    },
+    {
+      "id": "rel_030",
+      "type": "cited_by",
+      "source": "finding#48",
+      "target": "source#46"
+    },
+    {
+      "id": "rel_031",
+      "type": "cited_by",
+      "source": "finding#48",
+      "target": "source#47"
+    },
+    {
+      "id": "rel_032",
+      "type": "supports",
+      "source": "evidence#49",
+      "target": "finding#48"
+    },
+    {
+      "id": "rel_033",
+      "type": "supports",
+      "source": "evidence#50",
+      "target": "finding#48"
+    },
+    {
+      "id": "rel_034",
+      "type": "cited_by",
+      "source": "finding#54",
+      "target": "source#52"
+    },
+    {
+      "id": "rel_035",
+      "type": "cited_by",
+      "source": "finding#54",
+      "target": "source#53"
+    },
+    {
+      "id": "rel_036",
+      "type": "supports",
+      "source": "evidence#55",
+      "target": "finding#54"
+    },
+    {
+      "id": "rel_037",
+      "type": "supports",
+      "source": "evidence#56",
+      "target": "finding#54"
+    },
+    {
+      "id": "rel_038",
+      "type": "cited_by",
+      "source": "finding#61",
+      "target": "source#58"
+    },
+    {
+      "id": "rel_039",
+      "type": "cited_by",
+      "source": "finding#61",
+      "target": "source#59"
+    },
+    {
+      "id": "rel_040",
+      "type": "cited_by",
+      "source": "finding#61",
+      "target": "source#60"
+    },
+    {
+      "id": "rel_041",
+      "type": "supports",
+      "source": "evidence#62",
+      "target": "finding#61"
+    },
+    {
+      "id": "rel_042",
+      "type": "supports",
+      "source": "evidence#63",
+      "target": "finding#61"
+    },
+    {
+      "id": "rel_043",
+      "type": "supports",
+      "source": "evidence#64",
+      "target": "finding#61"
+    },
+    {
+      "id": "rel_044",
+      "type": "cited_by",
+      "source": "finding#69",
+      "target": "source#66"
+    },
+    {
+      "id": "rel_045",
+      "type": "cited_by",
+      "source": "finding#69",
+      "target": "source#67"
+    },
+    {
+      "id": "rel_046",
+      "type": "cited_by",
+      "source": "finding#69",
+      "target": "source#68"
+    },
+    {
+      "id": "rel_047",
+      "type": "supports",
+      "source": "evidence#70",
+      "target": "finding#69"
+    },
+    {
+      "id": "rel_048",
+      "type": "supports",
+      "source": "evidence#71",
+      "target": "finding#69"
+    },
+    {
+      "id": "rel_049",
+      "type": "cited_by",
+      "source": "finding#76",
+      "target": "source#73"
+    },
+    {
+      "id": "rel_050",
+      "type": "cited_by",
+      "source": "finding#76",
+      "target": "source#74"
+    },
+    {
+      "id": "rel_051",
+      "type": "cited_by",
+      "source": "finding#76",
+      "target": "source#75"
+    },
+    {
+      "id": "rel_052",
+      "type": "supports",
+      "source": "evidence#77",
+      "target": "finding#76"
+    },
+    {
+      "id": "rel_053",
+      "type": "supports",
+      "source": "evidence#78",
+      "target": "finding#76"
+    },
+    {
+      "id": "rel_054",
+      "type": "cited_by",
+      "source": "finding#83",
+      "target": "source#80"
+    },
+    {
+      "id": "rel_055",
+      "type": "cited_by",
+      "source": "finding#83",
+      "target": "source#81"
+    },
+    {
+      "id": "rel_056",
+      "type": "cited_by",
+      "source": "finding#83",
+      "target": "source#82"
+    },
+    {
+      "id": "rel_057",
+      "type": "supports",
+      "source": "evidence#84",
+      "target": "finding#83"
+    },
+    {
+      "id": "rel_058",
+      "type": "supports",
+      "source": "evidence#85",
+      "target": "finding#83"
+    },
+    {
+      "id": "rel_059",
+      "type": "cited_by",
+      "source": "finding#89",
+      "target": "source#87"
+    },
+    {
+      "id": "rel_060",
+      "type": "cited_by",
+      "source": "finding#89",
+      "target": "source#88"
+    },
+    {
+      "id": "rel_061",
+      "type": "supports",
+      "source": "evidence#90",
+      "target": "finding#89"
+    },
+    {
+      "id": "rel_078",
+      "type": "audited_by",
+      "source": "audit#122",
+      "target": "finding#2"
+    },
+    {
+      "id": "rel_079",
+      "type": "audited_by",
+      "source": "audit#123",
+      "target": "finding#8"
+    },
+    {
+      "id": "rel_080",
+      "type": "audited_by",
+      "source": "audit#124",
+      "target": "finding#14"
+    },
+    {
+      "id": "rel_081",
+      "type": "audited_by",
+      "source": "audit#125",
+      "target": "finding#20"
+    },
+    {
+      "id": "rel_082",
+      "type": "audited_by",
+      "source": "audit#126",
+      "target": "finding#25"
+    },
+    {
+      "id": "rel_083",
+      "type": "audited_by",
+      "source": "audit#127",
+      "target": "finding#29"
+    },
+    {
+      "id": "rel_084",
+      "type": "audited_by",
+      "source": "audit#128",
+      "target": "finding#35"
+    },
+    {
+      "id": "rel_085",
+      "type": "audited_by",
+      "source": "audit#129",
+      "target": "finding#42"
+    },
+    {
+      "id": "rel_086",
+      "type": "audited_by",
+      "source": "audit#130",
+      "target": "finding#48"
+    },
+    {
+      "id": "rel_087",
+      "type": "audited_by",
+      "source": "audit#131",
+      "target": "finding#54"
+    },
+    {
+      "id": "rel_088",
+      "type": "audited_by",
+      "source": "audit#132",
+      "target": "finding#61"
+    },
+    {
+      "id": "rel_089",
+      "type": "audited_by",
+      "source": "audit#133",
+      "target": "finding#69"
+    },
+    {
+      "id": "rel_090",
+      "type": "audited_by",
+      "source": "audit#134",
+      "target": "finding#76"
+    },
+    {
+      "id": "rel_091",
+      "type": "audited_by",
+      "source": "audit#135",
+      "target": "finding#83"
+    },
+    {
+      "id": "rel_092",
+      "type": "audited_by",
+      "source": "audit#136",
+      "target": "finding#89"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "evt_001",
+      "type": "pack.loaded",
+      "timestamp": "2026-11-15T19:45:00Z",
+      "timestamp_ct": "Nov 15, 2026, 1:45 PM CT",
+      "actor": "runtime",
+      "summary": "pack.loaded — clawbot"
+    },
+    {
+      "id": "evt_002",
+      "type": "goal.created",
+      "timestamp": "2026-11-15T19:45:01Z",
+      "timestamp_ct": "Nov 15, 2026, 1:45 PM CT",
+      "actor": "user",
+      "summary": "Replay the recorded Clawbot Sentinel, Verifier, and Guardrails fixtures"
+    },
+    {
+      "id": "evt_010",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:45:15Z",
+      "timestamp_ct": "Nov 15, 2026, 1:45 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — A1"
+    },
+    {
+      "id": "evt_025",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:45:44Z",
+      "timestamp_ct": "Nov 15, 2026, 1:45 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — A1-TYPO"
+    },
+    {
+      "id": "evt_032",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:45:57Z",
+      "timestamp_ct": "Nov 15, 2026, 1:45 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — A2"
+    },
+    {
+      "id": "evt_045",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:46:22Z",
+      "timestamp_ct": "Nov 15, 2026, 1:46 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — A3"
+    },
+    {
+      "id": "evt_052",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:46:35Z",
+      "timestamp_ct": "Nov 15, 2026, 1:46 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — A4"
+    },
+    {
+      "id": "evt_059",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:46:48Z",
+      "timestamp_ct": "Nov 15, 2026, 1:46 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — A5"
+    },
+    {
+      "id": "evt_072",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:47:13Z",
+      "timestamp_ct": "Nov 15, 2026, 1:47 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — A6"
+    },
+    {
+      "id": "evt_083",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:47:34Z",
+      "timestamp_ct": "Nov 15, 2026, 1:47 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — A7"
+    },
+    {
+      "id": "evt_096",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:47:59Z",
+      "timestamp_ct": "Nov 15, 2026, 1:47 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — A8"
+    },
+    {
+      "id": "evt_107",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:48:20Z",
+      "timestamp_ct": "Nov 15, 2026, 1:48 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — B-NEG"
+    },
+    {
+      "id": "evt_122",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:48:49Z",
+      "timestamp_ct": "Nov 15, 2026, 1:48 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — BKG-SAFEPAY"
+    },
+    {
+      "id": "evt_135",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:49:14Z",
+      "timestamp_ct": "Nov 15, 2026, 1:49 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — BKG-1"
+    },
+    {
+      "id": "evt_148",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:49:39Z",
+      "timestamp_ct": "Nov 15, 2026, 1:49 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — BKG-2"
+    },
+    {
+      "id": "evt_161",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:50:04Z",
+      "timestamp_ct": "Nov 15, 2026, 1:50 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — BKG-3"
+    },
+    {
+      "id": "evt_170",
+      "type": "finding.ready",
+      "timestamp": "2026-11-15T19:50:21Z",
+      "timestamp_ct": "Nov 15, 2026, 1:50 PM CT",
+      "actor": "clawbot.sentinel_ingest",
+      "summary": "finding.ready — BKG-4"
+    },
+    {
+      "id": "evt_226",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:03Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — A1, 3-source not met"
+    },
+    {
+      "id": "evt_229",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:06Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — A1-TYPO, 3-source met"
+    },
+    {
+      "id": "evt_232",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:09Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — A2, 3-source not met"
+    },
+    {
+      "id": "evt_235",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:12Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — A3, 3-source met"
+    },
+    {
+      "id": "evt_238",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:15Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — A4, 3-source not met"
+    },
+    {
+      "id": "evt_241",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:18Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — A5, 3-source not met"
+    },
+    {
+      "id": "evt_244",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:21Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — A6, 3-source met"
+    },
+    {
+      "id": "evt_247",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:24Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — A7, 3-source met"
+    },
+    {
+      "id": "evt_250",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:27Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — A8, 3-source met"
+    },
+    {
+      "id": "evt_253",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:30Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — B-NEG, 3-source not met"
+    },
+    {
+      "id": "evt_256",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:33Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — BKG-SAFEPAY, 3-source met"
+    },
+    {
+      "id": "evt_259",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:36Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — BKG-1, 3-source met"
+    },
+    {
+      "id": "evt_262",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:39Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — BKG-2, 3-source met"
+    },
+    {
+      "id": "evt_265",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:42Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — BKG-3, 3-source met"
+    },
+    {
+      "id": "evt_268",
+      "type": "verification.checked",
+      "timestamp": "2026-11-15T19:52:45Z",
+      "timestamp_ct": "Nov 15, 2026, 1:52 PM CT",
+      "actor": "clawbot.verifier_three_source",
+      "summary": "verification.checked — BKG-4, 3-source not met"
+    },
+    {
+      "id": "evt_294",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:53:13Z",
+      "timestamp_ct": "Nov 15, 2026, 1:53 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — A1, 3-source not met"
+    },
+    {
+      "id": "evt_299",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:53:20Z",
+      "timestamp_ct": "Nov 15, 2026, 1:53 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — A1-TYPO, 3-source met"
+    },
+    {
+      "id": "evt_304",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:53:27Z",
+      "timestamp_ct": "Nov 15, 2026, 1:53 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — A2, 3-source not met"
+    },
+    {
+      "id": "evt_309",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:53:34Z",
+      "timestamp_ct": "Nov 15, 2026, 1:53 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — A3, 3-source met"
+    },
+    {
+      "id": "evt_314",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:53:41Z",
+      "timestamp_ct": "Nov 15, 2026, 1:53 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — A4, 3-source not met"
+    },
+    {
+      "id": "evt_319",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:53:48Z",
+      "timestamp_ct": "Nov 15, 2026, 1:53 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — A5, 3-source not met"
+    },
+    {
+      "id": "evt_324",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:53:55Z",
+      "timestamp_ct": "Nov 15, 2026, 1:53 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — A6, 3-source met"
+    },
+    {
+      "id": "evt_329",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:54:02Z",
+      "timestamp_ct": "Nov 15, 2026, 1:54 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — A7, 3-source met"
+    },
+    {
+      "id": "evt_334",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:54:09Z",
+      "timestamp_ct": "Nov 15, 2026, 1:54 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — A8, 3-source met"
+    },
+    {
+      "id": "evt_339",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:54:16Z",
+      "timestamp_ct": "Nov 15, 2026, 1:54 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — B-NEG, 3-source not met"
+    },
+    {
+      "id": "evt_344",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:54:23Z",
+      "timestamp_ct": "Nov 15, 2026, 1:54 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — BKG-SAFEPAY, 3-source met"
+    },
+    {
+      "id": "evt_349",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:54:30Z",
+      "timestamp_ct": "Nov 15, 2026, 1:54 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — BKG-1, 3-source met"
+    },
+    {
+      "id": "evt_354",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:54:37Z",
+      "timestamp_ct": "Nov 15, 2026, 1:54 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — BKG-2, 3-source met"
+    },
+    {
+      "id": "evt_359",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:54:44Z",
+      "timestamp_ct": "Nov 15, 2026, 1:54 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — BKG-3, 3-source met"
+    },
+    {
+      "id": "evt_364",
+      "type": "audit.recorded",
+      "timestamp": "2026-11-15T19:54:51Z",
+      "timestamp_ct": "Nov 15, 2026, 1:54 PM CT",
+      "actor": "clawbot.guardrails_audit",
+      "summary": "audit.recorded — BKG-4, 3-source not met"
+    },
+    {
+      "id": "evt_403",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:55:45Z",
+      "timestamp_ct": "Nov 15, 2026, 1:55 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — A1, confirmed, 3-source not met"
+    },
+    {
+      "id": "evt_407",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:55:50Z",
+      "timestamp_ct": "Nov 15, 2026, 1:55 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — A1-TYPO, confirmed, 3-source met"
+    },
+    {
+      "id": "evt_411",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:55:55Z",
+      "timestamp_ct": "Nov 15, 2026, 1:55 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — A2, confirmed, 3-source not met"
+    },
+    {
+      "id": "evt_415",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:00Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — A3, confirmed, 3-source met"
+    },
+    {
+      "id": "evt_419",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:05Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — A4, confirmed, 3-source not met"
+    },
+    {
+      "id": "evt_423",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:10Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — A5, confirmed, 3-source not met"
+    },
+    {
+      "id": "evt_427",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:15Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — A6, confirmed, 3-source met"
+    },
+    {
+      "id": "evt_431",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:20Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — A7, confirmed, 3-source met"
+    },
+    {
+      "id": "evt_435",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:25Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — A8, split, 3-source met"
+    },
+    {
+      "id": "evt_439",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:30Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — B-NEG, confirmed, 3-source not met"
+    },
+    {
+      "id": "evt_443",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:35Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — BKG-SAFEPAY, confirmed, 3-source met"
+    },
+    {
+      "id": "evt_447",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:40Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — BKG-1, confirmed, 3-source met"
+    },
+    {
+      "id": "evt_451",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:45Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — BKG-2, refuted, 3-source met"
+    },
+    {
+      "id": "evt_455",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:50Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — BKG-3, refuted, 3-source met"
+    },
+    {
+      "id": "evt_459",
+      "type": "verdict.recorded",
+      "timestamp": "2026-11-15T19:56:55Z",
+      "timestamp_ct": "Nov 15, 2026, 1:56 PM CT",
+      "actor": "clawbot.record_verdict",
+      "summary": "verdict.recorded — BKG-4, refuted, 3-source not met"
+    },
+    {
+      "id": "evt_489",
+      "type": "runtime.idle",
+      "timestamp": "2026-11-15T19:57:32Z",
+      "timestamp_ct": "Nov 15, 2026, 1:57 PM CT",
+      "actor": "runtime",
+      "summary": "runtime.idle"
+    }
+  ]
+}
