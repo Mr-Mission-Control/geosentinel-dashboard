@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-15T21:02:59Z",
+  "collected_at": "2026-11-16T02:02:11Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -36,23 +36,6 @@
     "count": 33,
     "reported_count": 33,
     "items": [
-      {
-        "des": "2026 VK13",
-        "name": "(2026 VK13)",
-        "time_utc": "2026-11-15T19:57:00Z",
-        "time_ct": "2026-11-15 13:57 CT",
-        "dist_au": 0.0206668080977635,
-        "dist_ld": 8.042951315272989,
-        "dist_min_au": 0.0204871210124935,
-        "v_rel_km_s": 8.59424923577915,
-        "v_inf_km_s": 8.57923474746471,
-        "h": 26.515,
-        "diameter_km": 0.0176791330033385,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.02958284777534528,
-        "diameter_km_albedo_0.25": 0.013229851718740094
-      },
       {
         "des": "2026 VW15",
         "name": "(2026 VW15)",
@@ -171,6 +154,23 @@
         "diameter_source": "h_albedo_0.14",
         "diameter_km_albedo_0.05": 0.113250461061772,
         "diameter_km_albedo_0.25": 0.050647145883463036
+      },
+      {
+        "des": "2026 VY18",
+        "name": "(2026 VY18)",
+        "time_utc": "2026-11-18T18:28:00Z",
+        "time_ct": "2026-11-18 12:28 CT",
+        "dist_au": 0.0257836438048416,
+        "dist_ld": 10.034282549665841,
+        "dist_min_au": 0.0255726810447569,
+        "v_rel_km_s": 17.5265272293371,
+        "v_inf_km_s": 17.5206300374114,
+        "h": 25.057,
+        "diameter_km": 0.034598794169068935,
+        "diameter_sigma_km": null,
+        "diameter_source": "h_albedo_0.14",
+        "diameter_km_albedo_0.05": 0.05789485609508047,
+        "diameter_km_albedo_0.25": 0.025891366755233593
       },
       {
         "des": "2018 NE1",
