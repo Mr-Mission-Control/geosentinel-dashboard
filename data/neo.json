@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-16T20:29:38Z",
+  "collected_at": "2026-11-17T04:31:02Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -33,43 +33,9 @@
     },
     "window_days": 60,
     "dist_max_au": 0.05,
-    "count": 35,
-    "reported_count": 35,
+    "count": 34,
+    "reported_count": 34,
     "items": [
-      {
-        "des": "2026 VW15",
-        "name": "(2026 VW15)",
-        "time_utc": "2026-11-16T05:26:00Z",
-        "time_ct": "2026-11-15 23:26 CT",
-        "dist_au": 0.0131390874922617,
-        "dist_ld": 5.113370217958774,
-        "dist_min_au": 0.0130933549274437,
-        "v_rel_km_s": 6.06052157958389,
-        "v_inf_km_s": 6.0269678313703,
-        "h": 27.113,
-        "diameter_km": 0.013423351514136957,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.0224615632679881,
-        "diameter_km_albedo_0.25": 0.010045116469626744
-      },
-      {
-        "des": "2026 VM3",
-        "name": "(2026 VM3)",
-        "time_utc": "2026-11-16T16:47:00Z",
-        "time_ct": "2026-11-16 10:47 CT",
-        "dist_au": 0.0207275062037755,
-        "dist_ld": 8.066573342887239,
-        "dist_min_au": 0.0205778066733603,
-        "v_rel_km_s": 3.69660977244505,
-        "v_inf_km_s": 3.66167008647945,
-        "h": 27.318,
-        "diameter_km": 0.012214085705921435,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.020438074541611406,
-        "diameter_km_albedo_0.25": 0.00914018480085019
-      },
       {
         "des": "2026 VJ13",
         "name": "(2026 VJ13)",
@@ -205,6 +171,23 @@
         "diameter_source": "h_albedo_0.14",
         "diameter_km_albedo_0.05": 0.12417666125739603,
         "diameter_km_albedo_0.25": 0.055533491158100405
+      },
+      {
+        "des": "2007 WK3",
+        "name": "(2007 WK3)",
+        "time_utc": "2026-11-19T07:19:00Z",
+        "time_ct": "2026-11-19 01:19 CT",
+        "dist_au": 0.0365712065732752,
+        "dist_ld": 14.232504246336662,
+        "dist_min_au": 0.0365705111697952,
+        "v_rel_km_s": 7.76018604283615,
+        "v_inf_km_s": 7.7507917544661,
+        "h": 26.2,
+        "diameter_km": 0.020439062096502033,
+        "diameter_sigma_km": null,
+        "diameter_source": "h_albedo_0.14",
+        "diameter_km_albedo_0.05": 0.03420109247198202,
+        "diameter_km_albedo_0.25": 0.015295193534421624
       },
       {
         "des": "2026 VA11",
@@ -924,8 +907,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/fireball.api",
     "cneos": "https://cneos.jpl.nasa.gov/fireballs/",
     "signature": {
-      "version": "1.2",
-      "source": "NASA/JPL Fireball Data API"
+      "source": "NASA/JPL Fireball Data API",
+      "version": "1.2"
     },
     "count": 15,
     "reported_count": "15",
