@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-17T23:32:00Z",
+  "collected_at": "2026-11-18T07:23:15Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -28,98 +28,30 @@
     "api": "https://ssd-api.jpl.nasa.gov/cad.api",
     "cneos": "https://cneos.jpl.nasa.gov/ca/",
     "signature": {
-      "version": "1.5",
-      "source": "NASA/JPL SBDB Close Approach Data API"
+      "source": "NASA/JPL SBDB Close Approach Data API",
+      "version": "1.5"
     },
     "window_days": 60,
     "dist_max_au": 0.05,
-    "count": 37,
-    "reported_count": 37,
+    "count": 35,
+    "reported_count": 35,
     "items": [
       {
-        "des": "2026 VJ13",
-        "name": "(2026 VJ13)",
-        "time_utc": "2026-11-17T05:36:00Z",
-        "time_ct": "2026-11-16 23:36 CT",
-        "dist_au": 0.0090048004764615,
-        "dist_ld": 3.5044198162252496,
-        "dist_min_au": 0.00897806575675958,
-        "v_rel_km_s": 10.4341227005691,
-        "v_inf_km_s": 10.405725619296,
-        "h": 27.242,
-        "diameter_km": 0.012649138944306148,
+        "des": "2026 WH",
+        "name": "(2026 WH)",
+        "time_utc": "2026-11-18T01:52:00Z",
+        "time_ct": "2026-11-17 19:52 CT",
+        "dist_au": 0.0117446237109627,
+        "dist_ld": 4.570683400969698,
+        "dist_min_au": 0.011721407901456,
+        "v_rel_km_s": 8.96740083881193,
+        "v_inf_km_s": 8.94206585728829,
+        "h": 27.017,
+        "diameter_km": 0.014030106351779214,
         "diameter_sigma_km": null,
         "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.02116605784955278,
-        "diameter_km_albedo_0.25": 0.009465748833458607
-      },
-      {
-        "des": "2023 VE6",
-        "name": "(2023 VE6)",
-        "time_utc": "2026-11-17T06:46:00Z",
-        "time_ct": "2026-11-17 00:46 CT",
-        "dist_au": 0.0470991947664407,
-        "dist_ld": 18.32970668247688,
-        "dist_min_au": 0.0153912148117894,
-        "v_rel_km_s": 10.1012078051812,
-        "v_inf_km_s": 10.0956057676574,
-        "h": 27.16,
-        "diameter_km": 0.013135934162901704,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.02198062205056642,
-        "diameter_km_albedo_0.25": 0.009830033018559467
-      },
-      {
-        "des": "2026 WA",
-        "name": "(2026 WA)",
-        "time_utc": "2026-11-17T07:59:00Z",
-        "time_ct": "2026-11-17 01:59 CT",
-        "dist_au": 0.000844938687608272,
-        "dist_ld": 0.32882681721709145,
-        "dist_min_au": 0.000843123647235508,
-        "v_rel_km_s": 6.70807169244967,
-        "v_inf_km_s": 6.22023377657568,
-        "h": 29.151,
-        "diameter_km": 0.005251229064392143,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.00878698689670168,
-        "diameter_km_albedo_0.25": 0.003929660003684976
-      },
-      {
-        "des": "2026 VB13",
-        "name": "(2026 VB13)",
-        "time_utc": "2026-11-17T11:46:00Z",
-        "time_ct": "2026-11-17 05:46 CT",
-        "dist_au": 0.0254136235770872,
-        "dist_ld": 9.890280889447352,
-        "dist_min_au": 0.0251944378489589,
-        "v_rel_km_s": 20.4726551486594,
-        "v_inf_km_s": 20.4675333096672,
-        "h": 25.262,
-        "diameter_km": 0.03148190203150715,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.05267929797804788,
-        "diameter_km_albedo_0.25": 0.023558898257176455
-      },
-      {
-        "des": "2022 VB2",
-        "name": "(2022 VB2)",
-        "time_utc": "2026-11-17T15:34:00Z",
-        "time_ct": "2026-11-17 09:34 CT",
-        "dist_au": 0.0198705198103645,
-        "dist_ld": 7.733057891084019,
-        "dist_min_au": 0.0198704645835648,
-        "v_rel_km_s": 8.9505037710248,
-        "v_inf_km_s": 8.93550969976075,
-        "h": 25.17,
-        "diameter_km": 0.03284437205576095,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.05495914639133601,
-        "diameter_km_albedo_0.25": 0.024578477463277917
+        "diameter_km_albedo_0.05": 0.023476858305111,
+        "diameter_km_albedo_0.25": 0.010499170213671739
       },
       {
         "des": "2012 VF46",
@@ -290,6 +222,23 @@
         "diameter_source": "h_albedo_0.14",
         "diameter_km_albedo_0.05": 0.04793359242317516,
         "diameter_km_albedo_0.25": 0.021436554212797703
+      },
+      {
+        "des": "2026 WJ",
+        "name": "(2026 WJ)",
+        "time_utc": "2026-11-22T04:20:00Z",
+        "time_ct": "2026-11-21 22:20 CT",
+        "dist_au": 0.00431336571197552,
+        "dist_ld": 1.6786428877781665,
+        "dist_min_au": 0.00429948687853404,
+        "v_rel_km_s": 9.23632520085218,
+        "v_inf_km_s": 9.16920120097564,
+        "h": 27.095,
+        "diameter_km": 0.013535084240488772,
+        "diameter_sigma_km": null,
+        "diameter_source": "h_albedo_0.14",
+        "diameter_km_albedo_0.05": 0.02264852787957657,
+        "diameter_km_albedo_0.25": 0.010128729585806476
       },
       {
         "des": "2026 WF",
@@ -664,6 +613,23 @@
         "diameter_source": "h_albedo_0.14",
         "diameter_km_albedo_0.05": 0.23444446221362444,
         "diameter_km_albedo_0.25": 0.10484675089160901
+      },
+      {
+        "des": "2025 BL",
+        "name": "(2025 BL)",
+        "time_utc": "2027-01-16T08:57:00Z",
+        "time_ct": "2027-01-16 02:57 CT",
+        "dist_au": 0.0406631204821461,
+        "dist_ld": 15.824964204335622,
+        "dist_min_au": 0.0406604865438544,
+        "v_rel_km_s": 6.54348707112275,
+        "v_inf_km_s": 6.53346551645108,
+        "h": 25.56,
+        "diameter_km": 0.027444856421703946,
+        "diameter_sigma_km": null,
+        "diameter_source": "h_albedo_0.14",
+        "diameter_km_albedo_0.05": 0.04592402860401344,
+        "diameter_km_albedo_0.25": 0.020537849951843764
       }
     ]
   },
@@ -673,10 +639,10 @@
     "api": "https://ssd-api.jpl.nasa.gov/sentry.api",
     "cneos": "https://cneos.jpl.nasa.gov/sentry/",
     "signature": {
-      "version": "2.0",
-      "source": "NASA/JPL Sentry Data API"
+      "source": "NASA/JPL Sentry Data API",
+      "version": "2.0"
     },
-    "catalog_count": 2251,
+    "catalog_count": 2250,
     "count": 15,
     "items": [
       {
@@ -958,8 +924,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/fireball.api",
     "cneos": "https://cneos.jpl.nasa.gov/fireballs/",
     "signature": {
-      "version": "1.2",
-      "source": "NASA/JPL Fireball Data API"
+      "source": "NASA/JPL Fireball Data API",
+      "version": "1.2"
     },
     "count": 15,
     "reported_count": "15",
