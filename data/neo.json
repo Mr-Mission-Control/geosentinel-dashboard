@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-25T11:16:22Z",
+  "collected_at": "2026-11-25T21:40:57Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -28,8 +28,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/cad.api",
     "cneos": "https://cneos.jpl.nasa.gov/ca/",
     "signature": {
-      "version": "1.5",
-      "source": "NASA/JPL SBDB Close Approach Data API"
+      "source": "NASA/JPL SBDB Close Approach Data API",
+      "version": "1.5"
     },
     "window_days": 60,
     "dist_max_au": 0.05,
@@ -56,19 +56,19 @@
       {
         "des": "2026 VQ5",
         "name": "(2026 VQ5)",
-        "time_utc": "2026-11-25T21:21:00Z",
-        "time_ct": "2026-11-25 15:21 CT",
-        "dist_au": 0.013432313511248,
-        "dist_ld": 5.227485691616913,
-        "dist_min_au": 0.0134069473216225,
-        "v_rel_km_s": 11.689113806817,
-        "v_inf_km_s": 11.6721315446087,
-        "h": 23.915,
-        "diameter_km": 0.05854111138235372,
+        "time_utc": "2026-11-25T21:22:00Z",
+        "time_ct": "2026-11-25 15:22 CT",
+        "dist_au": 0.0134295966020147,
+        "dist_ld": 5.226428345529017,
+        "dist_min_au": 0.0134071429370242,
+        "v_rel_km_s": 11.6867073400668,
+        "v_inf_km_s": 11.6697181370187,
+        "h": 23.923,
+        "diameter_km": 0.05832583475541451,
         "diameter_sigma_km": null,
         "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.09795801560498868,
-        "diameter_km_albedo_0.25": 0.04380815636674797
+        "diameter_km_albedo_0.05": 0.09759778890817443,
+        "diameter_km_albedo_0.25": 0.0436470580904706
       },
       {
         "des": "2026 VQ19",
