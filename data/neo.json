@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-26T13:53:03Z",
+  "collected_at": "2026-11-26T23:00:37Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -28,8 +28,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/cad.api",
     "cneos": "https://cneos.jpl.nasa.gov/ca/",
     "signature": {
-      "source": "NASA/JPL SBDB Close Approach Data API",
-      "version": "1.5"
+      "version": "1.5",
+      "source": "NASA/JPL SBDB Close Approach Data API"
     },
     "window_days": 60,
     "dist_max_au": 0.05,
@@ -486,8 +486,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/sentry.api",
     "cneos": "https://cneos.jpl.nasa.gov/sentry/",
     "signature": {
-      "version": "2.0",
-      "source": "NASA/JPL Sentry Data API"
+      "source": "NASA/JPL Sentry Data API",
+      "version": "2.0"
     },
     "catalog_count": 2258,
     "count": 15,
@@ -771,8 +771,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/fireball.api",
     "cneos": "https://cneos.jpl.nasa.gov/fireballs/",
     "signature": {
-      "source": "NASA/JPL Fireball Data API",
-      "version": "1.2"
+      "version": "1.2",
+      "source": "NASA/JPL Fireball Data API"
     },
     "count": 15,
     "reported_count": "15",
