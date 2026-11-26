@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-25T21:40:57Z",
+  "collected_at": "2026-11-26T04:11:37Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -33,43 +33,9 @@
     },
     "window_days": 60,
     "dist_max_au": 0.05,
-    "count": 28,
-    "reported_count": 28,
+    "count": 26,
+    "reported_count": 26,
     "items": [
-      {
-        "des": "2026 VV11",
-        "name": "(2026 VV11)",
-        "time_utc": "2026-11-25T21:20:00Z",
-        "time_ct": "2026-11-25 15:20 CT",
-        "dist_au": 0.0414914110073355,
-        "dist_ld": 16.147312016222507,
-        "dist_min_au": 0.0411033426506421,
-        "v_rel_km_s": 8.72955111683002,
-        "v_inf_km_s": 8.72219166707089,
-        "h": 24.675,
-        "diameter_km": 0.0412535154407784,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.06903033464661111,
-        "diameter_km_albedo_0.25": 0.030871304155876272
-      },
-      {
-        "des": "2026 VQ5",
-        "name": "(2026 VQ5)",
-        "time_utc": "2026-11-25T21:22:00Z",
-        "time_ct": "2026-11-25 15:22 CT",
-        "dist_au": 0.0134295966020147,
-        "dist_ld": 5.226428345529017,
-        "dist_min_au": 0.0134071429370242,
-        "v_rel_km_s": 11.6867073400668,
-        "v_inf_km_s": 11.6697181370187,
-        "h": 23.923,
-        "diameter_km": 0.05832583475541451,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.09759778890817443,
-        "diameter_km_albedo_0.25": 0.0436470580904706
-      },
       {
         "des": "2026 VQ19",
         "name": "(2026 VQ19)",
@@ -805,8 +771,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/fireball.api",
     "cneos": "https://cneos.jpl.nasa.gov/fireballs/",
     "signature": {
-      "source": "NASA/JPL Fireball Data API",
-      "version": "1.2"
+      "version": "1.2",
+      "source": "NASA/JPL Fireball Data API"
     },
     "count": 15,
     "reported_count": "15",
