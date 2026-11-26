@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-26T04:11:37Z",
+  "collected_at": "2026-11-26T13:53:03Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -41,17 +41,17 @@
         "name": "(2026 VQ19)",
         "time_utc": "2026-11-26T10:15:00Z",
         "time_ct": "2026-11-26 04:15 CT",
-        "dist_au": 0.0101245921477465,
-        "dist_ld": 3.9402118288470764,
-        "dist_min_au": 0.0100848436381573,
-        "v_rel_km_s": 6.77869500077727,
-        "v_inf_km_s": 6.7397602186926,
-        "h": 25.294,
-        "diameter_km": 0.031021369243561584,
+        "dist_au": 0.0101237883153874,
+        "dist_ld": 3.9398989994783946,
+        "dist_min_au": 0.0100866754620971,
+        "v_rel_km_s": 6.77816327643791,
+        "v_inf_km_s": 6.73922232179121,
+        "h": 25.298,
+        "diameter_km": 0.030964278368436734,
         "diameter_sigma_km": null,
         "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.05190867922888319,
-        "diameter_km_albedo_0.25": 0.023214267075602833
+        "diameter_km_albedo_0.05": 0.05181314792268956,
+        "diameter_km_albedo_0.25": 0.023171544176677175
       },
       {
         "des": "2026 WX1",
@@ -175,19 +175,19 @@
       {
         "des": "2026 WG",
         "name": "(2026 WG)",
-        "time_utc": "2026-12-08T03:28:00Z",
-        "time_ct": "2026-12-07 21:28 CT",
-        "dist_au": 0.0294534297377114,
-        "dist_ld": 11.46246194998357,
-        "dist_min_au": 0.0292472117222113,
-        "v_rel_km_s": 6.25799177187906,
-        "v_inf_km_s": 6.24351925815356,
-        "h": 25.435,
-        "diameter_km": 0.029071066401645765,
+        "time_utc": "2026-12-08T03:31:00Z",
+        "time_ct": "2026-12-07 21:31 CT",
+        "dist_au": 0.029467738621328,
+        "dist_ld": 11.468030572567175,
+        "dist_min_au": 0.0292900209255696,
+        "v_rel_km_s": 6.2591170533738,
+        "v_inf_km_s": 6.24465418199025,
+        "h": 25.278,
+        "diameter_km": 0.03125078730862659,
         "diameter_sigma_km": null,
         "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.04864519837394964,
-        "diameter_km_albedo_0.25": 0.021754794068622726
+        "diameter_km_albedo_0.05": 0.05229256907769256,
+        "diameter_km_albedo_0.25": 0.023385947835164806
       },
       {
         "des": "2016 NV",
@@ -771,8 +771,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/fireball.api",
     "cneos": "https://cneos.jpl.nasa.gov/fireballs/",
     "signature": {
-      "version": "1.2",
-      "source": "NASA/JPL Fireball Data API"
+      "source": "NASA/JPL Fireball Data API",
+      "version": "1.2"
     },
     "count": 15,
     "reported_count": "15",
