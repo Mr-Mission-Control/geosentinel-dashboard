@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-26T23:00:37Z",
+  "collected_at": "2026-11-27T08:24:25Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -33,43 +33,9 @@
     },
     "window_days": 60,
     "dist_max_au": 0.05,
-    "count": 26,
-    "reported_count": 26,
+    "count": 24,
+    "reported_count": 24,
     "items": [
-      {
-        "des": "2026 VQ19",
-        "name": "(2026 VQ19)",
-        "time_utc": "2026-11-26T10:15:00Z",
-        "time_ct": "2026-11-26 04:15 CT",
-        "dist_au": 0.0101237883153874,
-        "dist_ld": 3.9398989994783946,
-        "dist_min_au": 0.0100866754620971,
-        "v_rel_km_s": 6.77816327643791,
-        "v_inf_km_s": 6.73922232179121,
-        "h": 25.298,
-        "diameter_km": 0.030964278368436734,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.05181314792268956,
-        "diameter_km_albedo_0.25": 0.023171544176677175
-      },
-      {
-        "des": "2026 WX1",
-        "name": "(2026 WX1)",
-        "time_utc": "2026-11-26T20:15:00Z",
-        "time_ct": "2026-11-26 14:15 CT",
-        "dist_au": 0.0356464934987276,
-        "dist_ld": 13.87263143946681,
-        "dist_min_au": 0.0338795316517187,
-        "v_rel_km_s": 8.70945662690876,
-        "v_inf_km_s": 8.70087007862347,
-        "h": 27.577,
-        "diameter_km": 0.010840790784847688,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.01814011261140206,
-        "diameter_km_albedo_0.25": 0.008112504983719246
-      },
       {
         "des": "2026 WU1",
         "name": "(2026 WU1)",
@@ -486,8 +452,8 @@
     "api": "https://ssd-api.jpl.nasa.gov/sentry.api",
     "cneos": "https://cneos.jpl.nasa.gov/sentry/",
     "signature": {
-      "source": "NASA/JPL Sentry Data API",
-      "version": "2.0"
+      "version": "2.0",
+      "source": "NASA/JPL Sentry Data API"
     },
     "catalog_count": 2258,
     "count": 15,
