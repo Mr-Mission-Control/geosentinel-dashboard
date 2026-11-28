@@ -3,7 +3,7 @@
   "degraded": false,
   "used_in_index": false,
   "label": "official CNEOS catalog context, not a forecast; not used in the hazard index",
-  "collected_at": "2026-11-27T19:30:13Z",
+  "collected_at": "2026-11-28T02:41:35Z",
   "home": {
     "name": "Rogers, AR",
     "lat": 36.332,
@@ -33,26 +33,9 @@
     },
     "window_days": 60,
     "dist_max_au": 0.05,
-    "count": 25,
-    "reported_count": 25,
+    "count": 24,
+    "reported_count": 24,
     "items": [
-      {
-        "des": "2026 WU1",
-        "name": "(2026 WU1)",
-        "time_utc": "2026-11-27T04:33:00Z",
-        "time_ct": "2026-11-26 22:33 CT",
-        "dist_au": 0.0322250298756685,
-        "dist_ld": 12.541092228522093,
-        "dist_min_au": 0.0320609770550612,
-        "v_rel_km_s": 12.3655536523895,
-        "v_inf_km_s": 12.3588652417231,
-        "h": 24.735,
-        "diameter_km": 0.040129242616057395,
-        "diameter_sigma_km": null,
-        "diameter_source": "h_albedo_0.14",
-        "diameter_km_albedo_0.05": 0.06714906638388589,
-        "diameter_km_albedo_0.25": 0.030029975412002963
-      },
       {
         "des": "2026 WK3",
         "name": "(2026 WK3)",
@@ -472,7 +455,7 @@
       "version": "2.0",
       "source": "NASA/JPL Sentry Data API"
     },
-    "catalog_count": 2258,
+    "catalog_count": 2259,
     "count": 15,
     "items": [
       {
